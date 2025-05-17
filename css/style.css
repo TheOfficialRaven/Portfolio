@@ -350,6 +350,10 @@ img {
   padding: 6rem 2rem;
 }
 
+.section-title {
+  text-align: center;
+}
+
 .services-section .container {
   max-width: 1200px;
   margin: 0 auto;
