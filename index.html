@@ -26,10 +26,10 @@
     <div class="logo">Mark<span>Gor</span></div>
     <nav class="navbar">
       <a href="#hero" class="active">Home</a>
-      <a href="#services">Szolgáltatások</a>
       <a href="#about">About</a>
+      <a href="#services">Szolgáltatások</a>
       <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
+      <a href="#workflow">Workflow</a>
       <a href="#contact">Contact</a>
     </nav>
     <!----------- Hamburger   -->
@@ -40,14 +40,31 @@
     </div>
 
     <nav class="mobile-nav" id="mobileNav">
-    <a href="#hero">Home</a>
-    <a href="#services">Szolgáltatások</a>
-    <a href="#about">About</a>
-    <a href="#journey">Journey</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+      <a href="#hero" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Szolgáltatások</a>
+      <a href="#projects">Projects</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#contact">Contact</a>
     </nav>
-    <div id="theme-toggle" class="theme-toggle"></div>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Téma váltás">
+    <svg id="theme-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="5" class="sun-core" />
+      <g class="sun-rays">
+        <line x1="12" y1="1" x2="12" y2="4" />
+        <line x1="12" y1="20" x2="12" y2="23" />
+        <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
+        <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
+        <line x1="1" y1="12" x2="4" y2="12" />
+        <line x1="20" y1="12" x2="23" y2="12" />
+        <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
+        <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
+      </g>
+      <path class="moon" d="M21 12.79A9 9 0 0112.21 3 7 7 0 1021 12.79z" />
+    </svg>
+    </button>
+    
   </header>
 
 <!-- Hero Section -->
@@ -81,6 +98,49 @@
   </div>
 
   <div class="scroll-indicator">⌄</div>
+</section>
+
+ <!-- About-->
+<section id="about" class="about-section fade-in-up">
+  <div class="about-wrapper">
+    <div class="about-image">
+      <div class="about-img">
+        <img
+          id="about-img"
+          src="imgs/dark.png"
+          data-image-dark="imgs/dark.png"
+          data-image-light="imgs/light.png"
+          alt="Profilkép"
+        />
+        <!-- Két belső ív -->
+        <div class="ring-inner top"></div>
+        <div class="ring-inner bottom"></div>
+
+        <!-- Két külső ív -->
+        <div class="ring-outer top"></div>
+        <div class="ring-outer bottom"></div>
+      </div>
+    </div>
+    <div class="about-content">
+      <h2 class="section-title">Rólam</h2>
+      <p>
+        Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek – akár egyéni vállalkozó vagy, akár egy újonnan induló márkát képviselsz.
+      </p>
+      <p>
+        A munkáim során nagy hangsúlyt fektetek a reszponzivitásra, a gyors betöltésre, és arra, hogy az oldal minden képernyőméreten meggyőző élményt nyújtson. Legyen szó egy bemutatkozó oldalról, szolgáltatásismertetőről vagy kreatív landing page-ről, fontos számomra, hogy a végeredmény tükrözze az ügyfél egyéniségét és céljait.
+      </p>
+      <p>
+        Jól ismerem a HTML, CSS és JavaScript nyelveket, dolgozom Bootstrap és Laravel keretrendszerekkel, és folyamatosan bővítem a tudásomat. Már több weboldalt készítettem megrendelésre, és ezek mellett saját projekteken keresztül is fejlődöm – mert hiszek abban, hogy a tanulás soha nem áll meg.
+      </p>
+      <p>
+        Rugalmasan alkalmazkodom az igényekhez, és mindig arra törekszem, hogy az együttműködés gördülékeny, bizalmi alapú és eredményes legyen. Ha szeretnél egy weboldalt, ami nem csak jól néz ki, hanem hatékonyan is működik, akkor jó helyen jársz.
+      </p>
+      <p>
+        Nézd meg a munkáimat, és ha tetszik, amit látsz, keress bátran! Beszéljük meg, mire van szükséged, és építsünk valami olyat, ami valóban működik – és rád van szabva.
+      </p>
+      <a href="#contact" class="btn about-cta">Írj nekem</a>
+    </div>
+  </div>
 </section>
 
   <!-- Services Section -->
@@ -119,6 +179,15 @@
         <p>Hibajavítás, frissítés, utólagos segítség – megbízható támogatás a fejlesztés után is.</p>
       </div>
     </div>
+  </div>
+</section>
+
+  <!-- Projects-->
+
+<section id="projects" class="projects-section fade-in-up">
+  <div class="container">
+    <h2 class="section-title">Projektek</h2>
+    <div id="project-container" class="project-grid"></div>
   </div>
 </section>
 
@@ -211,59 +280,6 @@
       <!-- Pöttyök -->
       <div class="carousel-dots"></div>
     </div>
-  </div>
-</section>
-
-
- <!-- About-->
-<section id="about" class="about-section fade-in-up">
-  <div class="about-wrapper">
-    <div class="about-image">
-      <div class="about-img">
-        <img
-          id="about-img"
-          src="imgs/dark.png"
-          data-image-dark="imgs/dark.png"
-          data-image-light="imgs/light.png"
-          alt="Profilkép"
-        />
-        <!-- Két belső ív -->
-        <div class="ring-inner top"></div>
-        <div class="ring-inner bottom"></div>
-
-        <!-- Két külső ív -->
-        <div class="ring-outer top"></div>
-        <div class="ring-outer bottom"></div>
-      </div>
-    </div>
-    <div class="about-content">
-      <h2 class="section-title">Rólam</h2>
-      <p>
-        Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek – akár egyéni vállalkozó vagy, akár egy újonnan induló márkát képviselsz.
-      </p>
-      <p>
-        A munkáim során nagy hangsúlyt fektetek a reszponzivitásra, a gyors betöltésre, és arra, hogy az oldal minden képernyőméreten meggyőző élményt nyújtson. Legyen szó egy bemutatkozó oldalról, szolgáltatásismertetőről vagy kreatív landing page-ről, fontos számomra, hogy a végeredmény tükrözze az ügyfél egyéniségét és céljait.
-      </p>
-      <p>
-        Jól ismerem a HTML, CSS és JavaScript nyelveket, dolgozom Bootstrap és Laravel keretrendszerekkel, és folyamatosan bővítem a tudásomat. Már több weboldalt készítettem megrendelésre, és ezek mellett saját projekteken keresztül is fejlődöm – mert hiszek abban, hogy a tanulás soha nem áll meg.
-      </p>
-      <p>
-        Rugalmasan alkalmazkodom az igényekhez, és mindig arra törekszem, hogy az együttműködés gördülékeny, bizalmi alapú és eredményes legyen. Ha szeretnél egy weboldalt, ami nem csak jól néz ki, hanem hatékonyan is működik, akkor jó helyen jársz.
-      </p>
-      <p>
-        Nézd meg a munkáimat, és ha tetszik, amit látsz, keress bátran! Beszéljük meg, mire van szükséged, és építsünk valami olyat, ami valóban működik – és rád van szabva.
-      </p>
-      <a href="#contact" class="btn about-cta">Írj nekem</a>
-    </div>
-  </div>
-</section>
-
-  <!-- Projects-->
-
-<section id="projects" class="projects-section fade-in-up">
-  <div class="container">
-    <h2 class="section-title">Projektek</h2>
-    <div id="project-container" class="project-grid"></div>
   </div>
 </section>
 

@@ -30,6 +30,9 @@ const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 const heroImg = document.getElementById('hero-img');
 const aboutImg = document.getElementById('about-img');
+const heroSection = document.getElementById('hero');
+const vantaOverlay = document.getElementById('vanta-bg');
+const themeIcon = document.getElementById('theme-icon');
 
 // Képváltás funkció
 function updateImages(theme) {
@@ -44,10 +47,18 @@ function updateImages(theme) {
   }
 }
 
+// Téma színváltás Vanta overlaynél
+function updateVantaBackground(theme) {
+  if (vantaOverlay) {
+    vantaOverlay.style.backgroundColor = theme === 'dark' ? '#00c9a7' : '#f7a072';
+  }
+}
+
 // Téma betöltése (alapértelmezés: dark)
 let currentTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', currentTheme);
 updateImages(currentTheme);
+updateVantaBackground(currentTheme);
 
 // Téma váltás esemény
 toggleBtn.addEventListener('click', () => {
@@ -55,11 +66,13 @@ toggleBtn.addEventListener('click', () => {
   body.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
   updateImages(newTheme);
+  updateVantaBackground(newTheme);
 });
 
 // ======== Projects ========= //
 
 // 1. Observer létrehozása még a projects feldolgozása előtt
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -72,7 +85,6 @@ const observer = new IntersectionObserver(entries => {
   rootMargin: "0px 0px -150px 0px"
 });
 
-// 2. Projektkártyák generálása
 const projectContainer = document.getElementById("project-container");
 
 projects.forEach((project, index) => {
@@ -81,28 +93,28 @@ projects.forEach((project, index) => {
   card.style.transitionDelay = `${index * 0.1}s`;
 
   card.innerHTML = `
-    <div class="project-image">
-      <img src="${project.image}" alt="${project.title} előnézet">
-      <div class="image-overlay"></div>
-    </div>
-    <div class="content">
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <div class="tech-tags">
-        ${project.technologies.map(tech => `<span>${tech}</span>`).join("")}
+    <div class="project-image" style="background-image: url('${project.image}')">
+      <div class="overlay">
+        <a href="${project.link}" target="_blank" class="view-btn">Megtekintés</a>
       </div>
-      <a href="${project.link}" target="_blank">Megtekintés</a>
+    </div>
+    <div class="project-info">
+      <h3>${project.title}</h3>
+      <p class="project-description">${project.description}</p>
+      <p class="project-origin">${project.origin}</p>
+      <p class="tech-stack">${project.technologies.join(" / ")}</p>
     </div>
   `;
 
   projectContainer.appendChild(card);
-  observer.observe(card); // ✅ Itt már biztosan létezik
+  observer.observe(card);
 });
 
-document.querySelectorAll('.fade-in-up, .service-card, .step-card').forEach((el, index) => {
+[...document.querySelectorAll('.fade-in-up, .service-card, .step-card')].forEach((el, index) => {
   el.style.transitionDelay = `${index * 0.01}s`;
   observer.observe(el);
 });
+
 
 
 // === Web-like background canvas ===
