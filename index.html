@@ -63,7 +63,10 @@
         <span>Szia,</span> <span>weboldalakat</span> <span>készítek</span> <span>amelyek</span> <span>működnek.</span>
       </h1>
       <p class="hero-subtitle">Letisztult frontend, gyors betöltés, rugalmas együttműködés.</p>
-      <a href="#projects" class="btn about-cta neon-hover">Nézd meg a munkáimat</a>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn neon-hover primary-btn">Nézd meg a munkáimat</a>
+        <a href="#contact" class="btn ghost-btn">Írj nekem</a>
+      </div>
     </div>
 
     <div class="home-image fade-in-up">
@@ -121,42 +124,93 @@
 
 <!--  Work Flow-->
 
-<section id="workflow" class="workflow-section fade-in-up">
-  <h2 class="section-title">Hogyan dolgozom?</h2>
-  <div class="workflow-steps">
-    
-    <div class="step">
-      <div class="step-icon">1️⃣</div>
-      <div class="step-content">
-        <h3>Konzultáció</h3>
-        <p>Megbeszéljük az elképzeléseidet, igényeidet és céljaidat, hogy minden a te vállalkozásodra legyen szabva.</p>
+<section id="workflow" class="workflow-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Így dolgozom</h2>
+    <div class="workflow-steps">
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="step-content">
+          <h3>Kapcsolatfelvétel</h3>
+          <p>Írásban vagy telefonon egyeztetünk az elképzeléseidről és a céljaidról.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+        <div class="step-content">
+          <h3>Árajánlat és igényfelmérés</h3>
+          <p>Megismerem a projekted részleteit, majd pontos árajánlatot küldök.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-code"></i></div>
+        <div class="step-content">
+          <h3>Fejlesztés</h3>
+          <p>Megtervezem és lefejlesztem az oldalad reszponzívan, gyorsan és strukturáltan.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-vial"></i></div>
+        <div class="step-content">
+          <h3>Tesztelés és átadás</h3>
+          <p>Elvégzem az ellenőrzéseket, majd átadom a kész weboldalt.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-icon"><i class="fas fa-tools"></i></div>
+        <div class="step-content">
+          <h3>Utólagos támogatás</h3>
+          <p>Segítek a karbantartásban, frissítésekben, ha később szükség van rá.</p>
+        </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="step">
-      <div class="step-icon">2️⃣</div>
-      <div class="step-content">
-        <h3>Tervezés</h3>
-        <p>Megalkotom a weboldal vázát és a stílusirányokat – UX/UI szempontból is átgondolt módon.</p>
+<!----   Vélemények  -->
+
+<section id="testimonials" class="testimonials-section fade-in">
+  <div class="container">
+    <h2 class="section-title">Vélemények</h2>
+    <div class="carousel">
+      <div class="carousel-track">
+        <!-- Vélemény 1 -->
+        <div class="testimonial">
+          <p>"Nagyon gyors, precíz és megbízható munkát kaptunk. A weboldalunk végre tükrözi a cégünk értékeit."</p>
+          <h3>Kovács Anna</h3>
+          <span>Marketing vezető</span>
+        </div>
+        <!-- Vélemény 2 -->
+        <div class="testimonial">
+          <p>"Rugalmas volt az együttműködés, minden kérésünket figyelembe vette. Ajánlom bárkinek!"</p>
+          <h3>Szabó Péter</h3>
+          <span>Egyéni vállalkozó</span>
+        </div>
+        <!-- Vélemény 3 -->
+        <div class="testimonial">
+          <p>"Profi fejlesztés, szép dizájn és gyors kivitelezés – ritka, hogy valaki ennyire mindent kézben tart."</p>
+          <h3>Nagy Júlia</h3>
+          <span>Divatblogger</span>
+        </div>
+        <!-- Vélemény 4 -->
+        <div class="testimonial">
+          <p>"A weboldalunk mobilon is végre tökéletes! Minden reszponzív és gyors."</p>
+          <h3>Tóth Márton</h3>
+          <span>Kisvállalkozó</span>
+        </div>
       </div>
-    </div>
 
-    <div class="step">
-      <div class="step-icon">3️⃣</div>
-      <div class="step-content">
-        <h3>Fejlesztés</h3>
-        <p>Letesztelt, reszponzív kódot készítek, modern animációkkal és letisztult frontenddel.</p>
-      </div>
-    </div>
+      <!-- Nyilak -->
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
 
-    <div class="step">
-      <div class="step-icon">4️⃣</div>
-      <div class="step-content">
-        <h3>Átadás</h3>
-        <p>Elvégzem az utolsó simításokat, és támogatlak a használatban, igény esetén további fejlesztésekben is.</p>
-      </div>
+      <!-- Pöttyök -->
+      <div class="carousel-dots"></div>
     </div>
-
   </div>
 </section>
 
@@ -219,36 +273,66 @@
   <div class="container">
     <h2 class="section-title">Lépjünk kapcsolatba</h2>
     <p class="contact-intro">
-      Van egy ötleted, vagy weboldalt szeretnél indítani? Írj nekem, és együtt létrehozzuk azt, amire valóban szükséged van.
+      Van egy ötleted, vagy weboldalt szeretnél indítani?<br />
+      Írj nekem, vagy hívj bizalommal – szívesen beszélek róla veled személyesen is!
     </p>
+
+    <!-- Telefonos elérhetőség blokk -->
+    <div class="contact-info">
+      <i class="fas fa-phone-alt"></i>
+      <span class="phone-number">+36 30 123 4567</span>
+      <p class="phone-note">Hétköznapokon 9:00–18:00 között elérhető vagyok.</p>
+    </div>
+
     <form class="contact-form" action="#" method="POST">
-      <input type="text" name="name" placeholder="Neved" required />
-      <input type="email" name="email" placeholder="Email címed" required />
-      <textarea name="message" rows="6" placeholder="Üzeneted..." required></textarea>
-      <button type="submit" class="btn">Üzenet elküldése</button>
+      <div class="input-group">
+        <input type="text" name="name" id="name" placeholder="Neved" required aria-label="Neved" />
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="input-group">
+        <input type="email" name="email" id="email" placeholder="Email címed" required aria-label="Email" />
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="input-group">
+        <textarea name="message" rows="6" placeholder="Üzeneted..." required aria-label="Üzenet"></textarea>
+        <i class="fas fa-comment-dots"></i>
+      </div>
+      <button type="submit" class="btn neon-hover">Üzenet elküldése</button>
     </form>
   </div>
 </section>
 
 <!------------------ Footer ---------------->
 
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2025 Mark Gor – Minden jog fenntartva.</p>
-    <div class="footer-icons">
-      <a href="https://github.com/TheOfficialRaven" target="_blank" aria-label="GitHub">
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>&copy; <span id="year"></span> Mark Gor. Minden jog fenntartva.</p>
+    <div class="footer-socials">
+      <a href="https://github.com/markgor" target="_blank" aria-label="GitHub">
         <i class="fab fa-github"></i>
       </a>
       <a href="https://www.linkedin.com/in/markgor" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
+        <i class="fab fa-linkedin"></i>
       </a>
-      <!-- Theme switcher gomb -->
-      <button id="theme-toggle" aria-label="Téma váltása">
-        <i class="fas fa-moon"></i>
-      </button>
+      <!-- További linkek opcionálisan -->
     </div>
   </div>
 </footer>
+<button id="backToTop" aria-label="Ugrás a lap tetejére">
+  <svg width="24" height="24" viewBox="0 0 24 24" class="arrow-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 19V5" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <animate attributeName="d" dur="1.4s" repeatCount="indefinite"
+        values="
+          M12 19V5;
+          M12 18V6;
+          M12 19V5
+        " />
+    </path>
+    <path d="M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="1.4s" repeatCount="indefinite" />
+    </path>
+  </svg>
+</button>
 
   <!-- Scripts -->
    <script src="js/projects.js"></script>

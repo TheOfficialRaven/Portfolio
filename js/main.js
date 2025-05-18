@@ -104,11 +104,6 @@ document.querySelectorAll('.fade-in-up, .service-card, .step-card').forEach((el,
   observer.observe(el);
 });
 
-// Set current year in footer
-const yearEl = document.getElementById('year');
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
-}
 
 // === Web-like background canvas ===
 function initVantaBackground() {
@@ -137,4 +132,94 @@ function initVantaBackground() {
 }
 
 initVantaBackground();
+
+// ========= Vélemények ===============
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  const testimonials = Array.from(track.children);
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+  const dotsContainer = document.querySelector(".carousel-dots");
+
+  let currentIndex = 0;
+  const visibleCount = window.innerWidth < 768 ? 1 : 2;
+  const totalSlides = Math.ceil(testimonials.length / visibleCount);
+
+  // Generate dots
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement("button");
+    if (i === 0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
+  }
+
+  const dots = Array.from(dotsContainer.children);
+
+  function updateCarousel(index) {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+    currentIndex = index;
+  }
+
+  prevBtn.addEventListener("click", () => {
+    const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel(newIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    const newIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel(newIndex);
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => updateCarousel(index));
+  });
+
+  // Auto slide
+  setInterval(() => {
+    const newIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel(newIndex);
+  }, 7000); // 7 másodpercenként
+});
+
+// =========== Footer Year
+
+document.addEventListener("DOMContentLoaded", () => {
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+});
+
+// ================= Back to top btn
+
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopBtn = document.getElementById("backToTop");
+  const footer = document.querySelector("footer");
+
+  if (footer && backToTopBtn) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            backToTopBtn.classList.add("show");
+          } else {
+            backToTopBtn.classList.remove("show");
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.3, // Akkor aktiválódik, ha a footer legalább 30%-ban látszik
+      }
+    );
+
+    observer.observe(footer);
+  }
+
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
 
