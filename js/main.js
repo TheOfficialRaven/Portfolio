@@ -26,13 +26,13 @@ window.addEventListener('scroll', () => {
 
 // ============ Theme Toggle IMG ============ //
 
+let vantaEffect = null;
+
 const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 const heroImg = document.getElementById('hero-img');
 const aboutImg = document.getElementById('about-img');
-const heroSection = document.getElementById('hero');
 const vantaOverlay = document.getElementById('vanta-bg');
-const themeIcon = document.getElementById('theme-icon');
 
 // Képváltás funkció
 function updateImages(theme) {
@@ -40,33 +40,59 @@ function updateImages(theme) {
     const newHeroSrc = heroImg.getAttribute(`data-image-${theme}`);
     if (newHeroSrc) heroImg.src = newHeroSrc;
   }
-
   if (aboutImg) {
     const newAboutSrc = aboutImg.getAttribute(`data-image-${theme}`);
     if (newAboutSrc) aboutImg.src = newAboutSrc;
   }
 }
 
-// Téma színváltás Vanta overlaynél
-function updateVantaBackground(theme) {
-  if (vantaOverlay) {
-    vantaOverlay.style.backgroundColor = theme === 'dark' ? '#00c9a7' : '#f7a072';
+// Vanta háttér inicializáló
+function initVantaBackground(theme) {
+  const el = document.getElementById('vanta-bg');
+  if (typeof VANTA !== 'undefined' && el) {
+    if (vantaEffect && typeof vantaEffect.destroy === 'function') {
+      vantaEffect.destroy();
+    }
+    vantaEffect = VANTA.NET({
+      el: el,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 100.00,
+      minWidth: 100.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: theme === 'dark'   ? 0x00c9a7
+                             : 0xf7a072,
+      backgroundColor: theme === 'dark'   ? 0x0d0d0d
+                                         : 0xf5f5f5,
+      points: 14.00,
+      maxDistance: 20.00,
+      spacing: 18.00,
+      showDots: false
+    });
   }
 }
 
-// Téma betöltése (alapértelmezés: dark)
+// ————————————————————————————————
+// Téma betöltése (indításkor)
+// ————————————————————————————————
 let currentTheme = localStorage.getItem('theme') || 'dark';
 body.setAttribute('data-theme', currentTheme);
 updateImages(currentTheme);
-updateVantaBackground(currentTheme);
+initVantaBackground(currentTheme);
 
-// Téma váltás esemény
+// ————————————————————————————————
+// Téma váltás gombra kattintva
+// ————————————————————————————————
 toggleBtn.addEventListener('click', () => {
-  const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  const newTheme = body.getAttribute('data-theme') === 'dark'
+                     ? 'light'
+                     : 'dark';
   body.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
   updateImages(newTheme);
-  updateVantaBackground(newTheme);
+  initVantaBackground(newTheme);
 });
 
 // ======== Projects ========= //
@@ -117,33 +143,6 @@ projects.forEach((project, index) => {
 
 
 
-// === Web-like background canvas ===
-function initVantaBackground() {
-  if (typeof VANTA !== "undefined" && document.getElementById("vanta-bg")) {
-    VANTA.NET({
-      el: "#vanta-bg",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 100.00,
-      minWidth: 100.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0x00c9a7,
-      backgroundColor: 0x0d0d0d,
-      points: 14.00,
-      maxDistance: 20.00,
-      spacing: 18.00,
-      showDots: false
-    });
-    console.log("✅ VANTA elindult");
-  } else {
-    console.log("⏳ Várakozás VANTA / elem betöltésére...");
-    setTimeout(initVantaBackground, 200);
-  }
-}
-
-initVantaBackground();
 
 // ========= Vélemények ===============
 
