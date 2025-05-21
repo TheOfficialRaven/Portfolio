@@ -97,49 +97,89 @@ toggleBtn.addEventListener('click', () => {
 
 // ======== Projects ========= //
 
-// 1. Observer létrehozása még a projects feldolgozása előtt
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.01, rootMargin: '0px 0px -150px 0px' });
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.01,
-  rootMargin: "0px 0px -150px 0px"
-});
-
-const projectContainer = document.getElementById("project-container");
-
-projects.forEach((project, index) => {
-  const card = document.createElement("div");
-  card.classList.add("project-card", "fade-in-up");
-  card.style.transitionDelay = `${index * 0.1}s`;
-
-  card.innerHTML = `
-    <div class="project-image" style="background-image: url('${project.image}')">
-      <div class="overlay">
-        <a href="${project.link}" target="_blank" class="view-btn">Megtekintés</a>
+  const projectContainer = document.getElementById('project-container');
+  projects.forEach((project, index) => {
+    const card = document.createElement('div');
+    card.classList.add('project-card', 'fade-in-up');
+    card.style.transitionDelay = `${index * 0.1}s`;
+    card.innerHTML = `
+      <div class="project-image" style="background-image: url('${project.image}')">
+        <div class="overlay">
+        </div>
       </div>
-    </div>
-    <div class="project-info">
-      <h3>${project.title}</h3>
-      <p class="project-description">${project.description}</p>
-      <p class="project-origin">${project.origin}</p>
-      <p class="tech-stack">${project.technologies.join(" / ")}</p>
-    </div>
-  `;
+      <div class="project-info">
+        <h3 class="project-title">${project.title}</h3>
+        <p class="project-description">${project.description}</p>
+        <p class="project-origin">${project.origin.join(', ')}</p>
+        <p class="tech-stack">${project.technologies.join(' / ')}</p>
+      </div>
+    `;
+    card.dataset.title = project.title;
+    card.dataset.description = project.description;
+    card.dataset.origin = project.origin.join(';');
+    card.dataset.technologies = project.technologies.join(',');
+    card.dataset.link = project.link;
+    card.dataset.image = project.image;
+    projectContainer.appendChild(card);
+    observer.observe(card);
+  });
 
-  projectContainer.appendChild(card);
-  observer.observe(card);
+  [...document.querySelectorAll('.fade-in-up, .service-card, .step-card')].forEach((el, i) => {
+    el.style.transitionDelay = `${i * 0.01}s`;
+    observer.observe(el);
+  });
+
+  const modal = document.getElementById('project-modal');
+  const closeBtn = modal.querySelector('.modal-close');
+  const overlay = modal.querySelector('.modal-overlay');
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const title = card.dataset.title;
+      const desc = card.dataset.description;
+      const origin = card.dataset.origin.split(';');
+      const tags = card.dataset.technologies.split(',');
+      const link = card.dataset.link;
+      const imageUrl = card.dataset.image;
+
+      modal.querySelector('.modal-image').src = imageUrl;
+      modal.querySelector('.modal-image').alt = title;
+      modal.querySelector('.modal-title').textContent = title;
+      modal.querySelector('.modal-description').textContent = desc;
+
+      const originContainer = modal.querySelector('.modal-origin-tags');
+      const techContainer = modal.querySelector('.modal-tags');
+      originContainer.innerHTML = '';
+      techContainer.innerHTML = '';
+      origin.forEach(o => { const span = document.createElement('span'); span.className = 'tag'; span.textContent = o.trim(); originContainer.appendChild(span); });
+      tags.forEach(t => { const span = document.createElement('span'); span.className = 'tag'; span.textContent = t.trim(); techContainer.appendChild(span); });
+
+      modal.querySelector('.modal-cta-button').href = link;
+      modal.classList.add('show');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => modal.classList.remove('show'));
+  overlay.addEventListener('click', () => modal.classList.remove('show'));
 });
 
-[...document.querySelectorAll('.fade-in-up, .service-card, .step-card')].forEach((el, index) => {
-  el.style.transitionDelay = `${index * 0.01}s`;
-  observer.observe(el);
-});
+
+
+
+// Close handlers
+const modal = document.getElementById('project-modal');
+modal.querySelector('.modal-close').addEventListener('click', () => modal.classList.remove('show'));
+modal.querySelector('.modal-overlay').addEventListener('click', () => modal.classList.remove('show'));
 
 
 
