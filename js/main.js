@@ -1,122 +1,171 @@
-// Mobile Menu Toggle
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('active');
-});
-
-// Mobile Menu Bezárás linkre kattintva
-const mobileLinks = mobileNav.querySelectorAll('a');
-
-mobileLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mobileNav.classList.remove('active');
-  });
-});
-
-// Scroll Progress Bar
-const progressBar = document.getElementById('progressBar');
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
-  progressBar.style.width = `${scrolled}%`;
-});
-
-// ============ Theme Toggle IMG ============ //
-
-let vantaEffect = null;
-
-const toggleBtn = document.getElementById('theme-toggle');
-const body = document.body;
-const heroImg = document.getElementById('hero-img');
-const aboutImg = document.getElementById('about-img');
-const vantaOverlay = document.getElementById('vanta-bg');
-
-// Képváltás funkció
-function updateImages(theme) {
-  if (heroImg) {
-    const newHeroSrc = heroImg.getAttribute(`data-image-${theme}`);
-    if (newHeroSrc) heroImg.src = newHeroSrc;
-  }
-  if (aboutImg) {
-    const newAboutSrc = aboutImg.getAttribute(`data-image-${theme}`);
-    if (newAboutSrc) aboutImg.src = newAboutSrc;
-  }
-}
-
-// Vanta háttér inicializáló
-function initVantaBackground(theme) {
-  const el = document.getElementById('vanta-bg');
-  if (typeof VANTA !== 'undefined' && el) {
-    if (vantaEffect && typeof vantaEffect.destroy === 'function') {
-      vantaEffect.destroy();
-    }
-    vantaEffect = VANTA.NET({
-      el: el,
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 100.00,
-      minWidth: 100.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: theme === 'dark'   ? 0x00c9a7
-                             : 0xf7a072,
-      backgroundColor: theme === 'dark'   ? 0x0d0d0d
-                                         : 0xf5f5f5,
-      points: 14.00,
-      maxDistance: 20.00,
-      spacing: 18.00,
-      showDots: false
-    });
-  }
-}
-
-// ————————————————————————————————
-// Téma betöltése (indításkor)
-// ————————————————————————————————
-let currentTheme = localStorage.getItem('theme') || 'dark';
-body.setAttribute('data-theme', currentTheme);
-updateImages(currentTheme);
-initVantaBackground(currentTheme);
-
-// ————————————————————————————————
-// Téma váltás gombra kattintva
-// ————————————————————————————————
-toggleBtn.addEventListener('click', () => {
-  const newTheme = body.getAttribute('data-theme') === 'dark'
-                     ? 'light'
-                     : 'dark';
-  body.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  updateImages(newTheme);
-  initVantaBackground(newTheme);
-});
-
-// ======== Projects ========= //
-
 document.addEventListener('DOMContentLoaded', () => {
-  const observer = new IntersectionObserver(entries => {
+  /* ===== Mobile Menu Toggle ===== */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => mobileNav.classList.toggle('active'));
+  mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileNav.classList.remove('active')));
+
+  /* ===== Scroll Progress Bar ===== */
+  const progressBar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    progressBar.style.width = `${(scrollTop / docHeight) * 100}%`;
+  });
+
+  /* ===== Theme Toggle & Vanta Background ===== */
+  let vantaEffect = null;
+  const body = document.body;
+  const toggleBtn = document.getElementById('theme-toggle');
+  const heroImg = document.getElementById('hero-img');
+  const aboutImg = document.getElementById('about-img');
+
+  function updateImages(theme) {
+    if (heroImg) {
+      const newHero = heroImg.getAttribute(`data-image-${theme}`);
+      if (newHero) heroImg.src = newHero;
+    }
+    if (aboutImg) {
+      const newAbout = aboutImg.getAttribute(`data-image-${theme}`);
+      if (newAbout) aboutImg.src = newAbout;
+    }
+  }
+
+  function initVanta(theme) {
+    const el = document.getElementById('vanta-bg');
+    if (vantaEffect && vantaEffect.destroy) vantaEffect.destroy();
+    if (window.VANTA && el) {
+      vantaEffect = VANTA.NET({
+        el, mouseControls: true, touchControls: true, gyroControls: false,
+        color: theme === 'dark' ? 0x00c9a7 : 0xf7a072,
+        backgroundColor: theme === 'dark' ? 0x0d0d0d : 0xf5f5f5,
+        points: 14, maxDistance: 20, spacing: 18, showDots: false
+      });
+    }
+  }
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  body.setAttribute('data-theme', savedTheme);
+  updateImages(savedTheme);
+  initVanta(savedTheme);
+  toggleBtn.addEventListener('click', () => {
+    const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateImages(newTheme);
+    initVanta(newTheme);
+  });
+
+  /* ========= Hero Animation ============== */
+  const hero = document.getElementById('hero');
+  const titleSpans = document.querySelectorAll('.hero-title span');
+  const subtitle = document.querySelector('.hero-subtitle');
+  const buttons = document.querySelectorAll('.hero-buttons a');
+  const heroImgContainer = document.querySelector('.home-image');
+
+  /* ===== Global Scroll-Reveal ===== */
+  const revealObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('section').forEach(sec => revealObserver.observe(sec));
+
+  // Hero text staggering
+  titleSpans.forEach((span, i) => {
+    span.style.transitionDelay = `${i * 0.1 + 0.3}s`;
+  });
+
+  // Stagger subtitle
+  if (subtitle) {
+    subtitle.style.transitionDelay = `${titleSpans.length * 0.1 + 0.3}s`;
+  }
+
+  // Observe hero for reveal and chained animations
+  const heroObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Reveal title spans
+        titleSpans.forEach(span => span.classList.add('reveal'));
+        // Reveal subtitle
+        if (subtitle) subtitle.classList.add('reveal');
+        // Reveal buttons
+        buttons.forEach((btn, i) => {
+          btn.style.transitionDelay = `${titleSpans.length * 0.1 + 0.3 + (i + 1) * 0.1}s`;
+          btn.classList.add('reveal');
+        });
+        // Reveal hero image
+        if (heroImgContainer) {
+          heroImgContainer.style.transitionDelay = `${titleSpans.length * 0.1 + 0.3 + buttons.length * 0.1 + 0.2}s`;
+          heroImgContainer.classList.add('reveal');
+        }
+        obs.unobserve(hero);
+
+        // After reveal finishes, reset transition-delay on buttons to 0, so hover-out is immediate
+        const buttonRevealTotal = titleSpans.length * 0.1 + 0.3 + buttons.length * 0.1;
+        setTimeout(() => {
+          buttons.forEach(btn => btn.style.transitionDelay = '0s');
+        }, buttonRevealTotal * 1000 + 50);
+      }
+    });
+  }, { threshold: 0.2 });
+  if (hero) heroObserver.observe(hero);
+
+  //* ============ About Section Scroll-Reveal and Chained Animations ==
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    const title = aboutSection.querySelector('.section-title');
+    if (title) {
+      const chars = title.textContent.trim().length;
+      title.style.setProperty('--title-chars', chars);
+    }
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          aboutSection.classList.add('reveal');
+          obs.unobserve(aboutSection);
+        }
+      });
+    }, { threshold: 0.2 });
+    observer.observe(aboutSection);
+  }
+});
+
+        // Parallax on hero-container
+const heroContainer = document.querySelector('.hero-container');
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  lastScroll = window.pageYOffset;
+});
+function rafParallax() {
+  heroContainer.style.transform = `translateY(${lastScroll * 0.3}px)`;
+  requestAnimationFrame(rafParallax);
+}
+requestAnimationFrame(rafParallax);
+
+  /* ===== Projects Generation & Reveal ===== */
+  const projectContainer = document.getElementById('project-container');
+  const projectObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
-        observer.unobserve(entry.target);
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.01, rootMargin: '0px 0px -150px 0px' });
 
-  const projectContainer = document.getElementById('project-container');
-  projects.forEach((project, index) => {
+  projects.forEach((project, i) => {
     const card = document.createElement('div');
-    card.classList.add('project-card', 'fade-in-up');
-    card.style.transitionDelay = `${index * 0.1}s`;
+    card.className = 'project-card';
+    card.style.setProperty('--dir', i % 2 === 0 ? '-50px' : '50px');
+    card.style.transitionDelay = `${0.15 + Math.floor(i/2) * 0.1}s`;
     card.innerHTML = `
-      <div class="project-image" style="background-image: url('${project.image}')">
-        <div class="overlay">
-        </div>
-      </div>
+      <div class="project-image" style="background-image:url('${project.image}')"></div>
       <div class="project-info">
         <h3 class="project-title">${project.title}</h3>
         <p class="project-description">${project.description}</p>
@@ -124,153 +173,76 @@ document.addEventListener('DOMContentLoaded', () => {
         <p class="tech-stack">${project.technologies.join(' / ')}</p>
       </div>
     `;
-    card.dataset.title = project.title;
-    card.dataset.description = project.description;
-    card.dataset.origin = project.origin.join(';');
-    card.dataset.technologies = project.technologies.join(',');
-    card.dataset.link = project.link;
-    card.dataset.image = project.image;
+    ['title','description','origin','technologies','link','image'].forEach(key => {
+      card.dataset[key] = Array.isArray(project[key]) ? project[key].join(';') : project[key];
+    });
     projectContainer.appendChild(card);
-    observer.observe(card);
+    projectObserver.observe(card);
   });
 
-  [...document.querySelectorAll('.fade-in-up, .service-card, .step-card')].forEach((el, i) => {
-    el.style.transitionDelay = `${i * 0.01}s`;
-    observer.observe(el);
-  });
-
+  /* ===== Modal Logic ===== */
   const modal = document.getElementById('project-modal');
   const closeBtn = modal.querySelector('.modal-close');
   const overlay = modal.querySelector('.modal-overlay');
-
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', () => {
       const title = card.dataset.title;
       const desc = card.dataset.description;
-      const origin = card.dataset.origin.split(';');
+      const origins = card.dataset.origin.split(';');
       const tags = card.dataset.technologies.split(',');
       const link = card.dataset.link;
-      const imageUrl = card.dataset.image;
-
-      modal.querySelector('.modal-image').src = imageUrl;
-      modal.querySelector('.modal-image').alt = title;
+      const imgUrl = card.dataset.image;
+      modal.querySelector('.modal-image').src = imgUrl;
       modal.querySelector('.modal-title').textContent = title;
       modal.querySelector('.modal-description').textContent = desc;
-
-      const originContainer = modal.querySelector('.modal-origin-tags');
-      const techContainer = modal.querySelector('.modal-tags');
-      originContainer.innerHTML = '';
-      techContainer.innerHTML = '';
-      origin.forEach(o => { const span = document.createElement('span'); span.className = 'tag'; span.textContent = o.trim(); originContainer.appendChild(span); });
-      tags.forEach(t => { const span = document.createElement('span'); span.className = 'tag'; span.textContent = t.trim(); techContainer.appendChild(span); });
-
+      const oC = modal.querySelector('.modal-origin-tags'); oC.innerHTML = '';
+      const tC = modal.querySelector('.modal-tags'); tC.innerHTML = '';
+      origins.forEach(o => { const s = document.createElement('span'); s.className='tag'; s.textContent=o; oC.appendChild(s); });
+      tags.forEach(t=>{ const s = document.createElement('span'); s.className='tag'; s.textContent=t; tC.appendChild(s); });
       modal.querySelector('.modal-cta-button').href = link;
       modal.classList.add('show');
     });
   });
+  closeBtn.addEventListener('click', ()=>modal.classList.remove('show'));
+  overlay.addEventListener('click', ()=>modal.classList.remove('show'));
 
-  closeBtn.addEventListener('click', () => modal.classList.remove('show'));
-  overlay.addEventListener('click', () => modal.classList.remove('show'));
-});
+  /* ===== Testimonials (Custom Carousel) ===== */
+  (function(){
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prev = document.querySelector('.carousel-btn.prev');
+    const next = document.querySelector('.carousel-btn.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    let idx = 0;
+    const visible = window.innerWidth < 768 ? 1 : 2;
+    const total = Math.ceil(slides.length/visible);
+    dotsContainer.innerHTML='';
+    for(let i=0;i<total;i++){ const dot = document.createElement('button'); if(i===0) dot.classList.add('active'); dotsContainer.appendChild(dot); }
+    const dots = Array.from(dotsContainer.children);
+    function update(i){ track.style.transform = `translateX(-${i*100}%)`; dots.forEach(d=>d.classList.remove('active')); dots[i].classList.add('active'); idx=i; }
+    prev.addEventListener('click', ()=>update((idx-1+total)%total));
+    next.addEventListener('click', ()=>update((idx+1)%total));
+    dots.forEach((d,i)=>d.addEventListener('click',()=>update(i)));
+    setInterval(()=>update((idx+1)%total),7000);
+  })();
 
-
-
-
-// Close handlers
-const modal = document.getElementById('project-modal');
-modal.querySelector('.modal-close').addEventListener('click', () => modal.classList.remove('show'));
-modal.querySelector('.modal-overlay').addEventListener('click', () => modal.classList.remove('show'));
-
-
-
-
-// ========= Vélemények ===============
-
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".carousel-track");
-  const testimonials = Array.from(track.children);
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
-  const dotsContainer = document.querySelector(".carousel-dots");
-
-  let currentIndex = 0;
-  const visibleCount = window.innerWidth < 768 ? 1 : 2;
-  const totalSlides = Math.ceil(testimonials.length / visibleCount);
-
-  // Generate dots
-  for (let i = 0; i < totalSlides; i++) {
-    const dot = document.createElement("button");
-    if (i === 0) dot.classList.add("active");
-    dotsContainer.appendChild(dot);
+  /* ===== Testimonials (Swiper.js Fallback) ===== */
+  if(window.Swiper){
+    new Swiper('.swiper-container',{slidesPerView:'auto',spaceBetween:20,loop:true,
+      pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},
+      autoplay:{delay:5000,disableOnInteraction:false},breakpoints:{0:{slidesPerView:1},768:{slidesPerView:2}}});
   }
 
-  const dots = Array.from(dotsContainer.children);
+  /* ===== Footer Year ===== */
+  const yearSpan=document.getElementById('year'); if(yearSpan) yearSpan.textContent=new Date().getFullYear();
 
-  function updateCarousel(index) {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-    currentIndex = index;
-  }
+  /* ===== Back to Top Button ===== */
+  (function(){
+    const btn=document.getElementById('backToTop'); const footer=document.querySelector('footer');
+    if(!btn||!footer) return;
+    const obs=new IntersectionObserver(es=>es.forEach(e=>btn.classList.toggle('show',e.isIntersecting)),{threshold:0.3});
+    obs.observe(footer);
+    btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  })();
 
-  prevBtn.addEventListener("click", () => {
-    const newIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-    updateCarousel(newIndex);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    const newIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel(newIndex);
-  });
-
-  dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => updateCarousel(index));
-  });
-
-  // Auto slide
-  setInterval(() => {
-    const newIndex = (currentIndex + 1) % totalSlides;
-    updateCarousel(newIndex);
-  }, 7000); // 7 másodpercenként
 });
-
-// =========== Footer Year
-
-document.addEventListener("DOMContentLoaded", () => {
-  const yearSpan = document.getElementById("year");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-  }
-});
-
-// ================= Back to top btn
-
-document.addEventListener("DOMContentLoaded", () => {
-  const backToTopBtn = document.getElementById("backToTop");
-  const footer = document.querySelector("footer");
-
-  if (footer && backToTopBtn) {
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            backToTopBtn.classList.add("show");
-          } else {
-            backToTopBtn.classList.remove("show");
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.3, // Akkor aktiválódik, ha a footer legalább 30%-ban látszik
-      }
-    );
-
-    observer.observe(footer);
-  }
-
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-});
-

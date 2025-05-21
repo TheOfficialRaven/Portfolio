@@ -12,7 +12,7 @@ const projects = [
     description: "Egy elegáns étterem bemutatkozó oldala, menüvel és galériával.",
     technologies: ["HTML", "CSS", "JavaScript"],
     origin: ["Design: Klaudia Székelyföldi"],
-    link: "https://monte-bistro-demo.netlify.app",
+    link: "https://montebistro.netlify.app",
     image: "imgs/monteBistro-preview.png"
   }
   // stb.
