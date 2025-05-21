@@ -2,8 +2,11 @@
 :root {
   --bg-color: #1f1f1f;
   --text-color: #eaeaea;
+  --second-text-color: rgba(255, 255, 255, 0.6);
   --main-color: #00c9a7;
   --accent-color: #2b2b2b;
+  --btn-hover-color: #00b396;
+  --effect-color: rgba(0, 255, 150, 0.12);
   --overlay-bg: rgba(0, 197, 111, 0.15); 
   --overlay-hover: rgba(0, 197, 111, 0.25);
 }
@@ -12,8 +15,11 @@
   --bg-color: #fff6e6; 
   --second-bg-color: #eddea4; 
   --text-color: #080808; 
+  --second-text-color: rgba(36, 33, 33, 0.644);
   --main-color: #f7a072; 
-  --accent-color: #eddea4; 
+  --accent-color: #eeda8e4d; 
+  --btn-hover-color: #d47c4d;
+  --effect-color: rgba(233, 156, 14, 0.418);
   --overlay-bg: rgba(201, 140, 9, 0.212);
   --overlay-hover: rgba(197, 145, 0, 0.349);
 }
@@ -379,7 +385,7 @@ img {
   transform: translateY(20px);
 }
 
-.scroll-indicator {
+.scroll-indicator a {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -387,6 +393,7 @@ img {
   font-size: 2rem;
   color: var(--main-color);
   animation: bounce 1.5s infinite;
+  text-decoration: none;
   z-index: 1;
 }
 
@@ -540,7 +547,7 @@ img {
 }
 
 .about-cta:hover {
-  background: #00b396;
+  background: var(--btn-hover-color);
   color: var(--text-color);
   box-shadow: 0 0 10px var(--main-color);
 }
@@ -639,7 +646,7 @@ img {
 /* Hover effektek */
 .service-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 255, 150, 0.3);
+  box-shadow: 0 8px 16px var(--effect-color);
 }
 
 @media (max-width: 600px) {
@@ -680,7 +687,7 @@ img {
   margin: 0 auto;
   width: 100%;
   overflow: hidden;
-  box-shadow: 0 6px 12px rgba(0, 255, 150, 0.15);
+  box-shadow: 0 6px 12px var(--effect-color);
   opacity: 0;
   transform: translateY(40px) scale(0.96);
   transition: all 0.8s ease-out;
@@ -752,13 +759,13 @@ img {
 
 .project-origin {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--second-text-color);
   font-style: italic;
 }
 
 .tech-stack {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--second-text-color);
 }
 
 @media (max-width: 768px) {
@@ -812,11 +819,11 @@ img {
   left: 1.4rem;
   width: 2px;
   height: 100%;
-  background: rgba(0, 255, 150, 0.2);
+  background: var(--effect-color);
 }
 
 .step-icon {
-  background: rgba(0, 255, 150, 0.12);
+  background: var(--effect-color);
   color: var(--main-color);
   border: 2px solid var(--main-color);
   border-radius: 50%;
@@ -935,7 +942,7 @@ img {
   height: 12px;
   border-radius: 50%;
   border: none;
-  background-color: rgba(0, 255, 150, 0.3);
+  background-color: var(--bg-color);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -1026,7 +1033,7 @@ img {
   color: #fff;
   font-size: 1rem;
   transition: box-shadow 0.3s ease, background 0.3s ease;
-  box-shadow: inset 0 0 0 2px rgba(0, 255, 150, 0.15);
+  box-shadow: inset 0 0 0 2px var(--main-color);
 }
 
 .input-group i {
