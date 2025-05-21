@@ -24,6 +24,15 @@
   --overlay-hover: rgba(197, 145, 0, 0.349);
 }
 
+.vanta-triangle-mask {
+  opacity: 0.4;
+}
+
+/* Világos téma felülírása */
+[data-theme="light"] .vanta-triangle-mask {
+  opacity: 0.8;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -261,7 +270,6 @@ img {
   z-index: 0;
   mask-image: linear-gradient(to top left, rgba(0,0,0,0.6), rgba(0,0,0,0) 90%);
   pointer-events: none;
-  opacity: 0.7;
 }
 
 .hero-container {
