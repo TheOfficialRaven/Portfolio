@@ -57,6 +57,46 @@ document.addEventListener('DOMContentLoaded', () => {
     initVanta(newTheme);
   });
 
+  /* ============ Language Change ================ */
+
+  async function loadLocale(lang) {
+  const res = await fetch(`/${lang}.json`);
+  return res.json();
+}
+
+function applyTranslations(translations) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const value = translations[key];
+    if (Array.isArray(value)) {
+      // ha tömb, bejárjuk és span-eket töltünk
+      el.innerHTML = value.map(word => `<span>${word}</span>`).join(' ');
+    } else {
+      el.textContent = value || '';
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  // 1) Eldöntjük a nyelvet (localStorage → alapértelmezett 'hu')
+  const lang = localStorage.getItem('lang') || 'hu';
+  // 2) betöltjük a JSON-t
+  const translations = await loadLocale(lang);
+  // 3) alkalmazzuk a fordítás
+  applyTranslations(translations);
+});
+
+/* Language Change buttons */
+
+document.querySelectorAll('.lang-switcher button').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const newLang = btn.getAttribute('data-lang');
+    localStorage.setItem('lang', newLang);
+    const translations = await loadLocale(newLang);
+    applyTranslations(translations);
+  });
+});
+
   /* ========= Hero Animation ============== */
   const hero = document.getElementById('hero');
   const titleSpans = document.querySelectorAll('.hero-title span');
@@ -207,30 +247,99 @@ requestAnimationFrame(rafParallax);
   overlay.addEventListener('click', ()=>modal.classList.remove('show'));
 
   /* ===== Testimonials (Custom Carousel) ===== */
-  (function(){
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const prev = document.querySelector('.carousel-btn.prev');
-    const next = document.querySelector('.carousel-btn.next');
-    const dotsContainer = document.querySelector('.carousel-dots');
-    let idx = 0;
-    const visible = window.innerWidth < 768 ? 1 : 2;
-    const total = Math.ceil(slides.length/visible);
-    dotsContainer.innerHTML='';
-    for(let i=0;i<total;i++){ const dot = document.createElement('button'); if(i===0) dot.classList.add('active'); dotsContainer.appendChild(dot); }
-    const dots = Array.from(dotsContainer.children);
-    function update(i){ track.style.transform = `translateX(-${i*100}%)`; dots.forEach(d=>d.classList.remove('active')); dots[i].classList.add('active'); idx=i; }
-    prev.addEventListener('click', ()=>update((idx-1+total)%total));
-    next.addEventListener('click', ()=>update((idx+1)%total));
-    dots.forEach((d,i)=>d.addEventListener('click',()=>update(i)));
-    setInterval(()=>update((idx+1)%total),7000);
-  })();
+(function(){
+  const track = document.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const prev = document.querySelector('.carousel-btn.prev');
+  const next = document.querySelector('.carousel-btn.next');
+  const dotsContainer = document.querySelector('.carousel-dots');
+  let idx = 0;
+
+  // Meghatározza, hogy egyszerre hány slide látszik
+  function getVisibleCount() {
+    return window.innerWidth < 768 ? 1 : 2;
+  }
+
+  // Létrehozza a pöttyöket újraszámolással
+  function setupDots() {
+    const visible = getVisibleCount();
+    const total = Math.ceil(slides.length / visible);
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      if (i === 0) dot.classList.add('active');
+      dotsContainer.appendChild(dot);
+    }
+    return { visible, total };
+  }
+
+  let { visible, total } = setupDots();
+  const dots = Array.from(dotsContainer.children);
+
+  function update(i) {
+    // slide szélesség + gap
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const gap = parseInt(getComputedStyle(track).gap) || 0;
+    // eltolás: i * (visible * slideWidth + (visible - 1)*gap )
+    const shift = i * (visible * slideWidth + (visible - 1) * gap);
+    track.style.transform = `translateX(-${shift}px)`;
+
+    dots.forEach(d => d.classList.remove('active'));
+    dots[i].classList.add('active');
+    idx = i;
+  }
+
+  // Gombok, pöttyök eseménykezelése
+  prev.addEventListener('click', () => update((idx - 1 + total) % total));
+  next.addEventListener('click', () => update((idx + 1) % total));
+  dotsContainer.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+      const i = dots.indexOf(e.target);
+      update(i);
+    }
+  });
+
+  // Responsive újraszámolás resize esetén
+  window.addEventListener('resize', () => {
+    ({ visible, total } = setupDots());
+    update(0);
+  });
+
+  // Automatikus slide
+  setInterval(() => update((idx + 1) % total), 7000);
+
+  // Kezdő pozíció
+  update(0);
+})();
 
   /* ===== Testimonials (Swiper.js Fallback) ===== */
-  if(window.Swiper){
-    new Swiper('.swiper-container',{slidesPerView:'auto',spaceBetween:20,loop:true,
-      pagination:{el:'.swiper-pagination',clickable:true},navigation:{nextEl:'.swiper-button-next',prevEl:'.swiper-button-prev'},
-      autoplay:{delay:5000,disableOnInteraction:false},breakpoints:{0:{slidesPerView:1},768:{slidesPerView:2}}});
+ if (window.Swiper) {
+    new Swiper('.carousel-track', {
+      // mivel kártyás flexboxot használsz, slidesPerView: 'auto'
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      loop: true,
+      pagination: {
+        el: '.carousel-dots',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.carousel-btn.next',
+        prevEl: '.carousel-btn.prev'
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1
+        },
+        768: {
+          slidesPerView: 2
+        }
+      }
+    });
   }
 
   /* ===== Footer Year ===== */
