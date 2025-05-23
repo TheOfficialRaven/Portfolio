@@ -312,35 +312,6 @@ requestAnimationFrame(rafParallax);
   update(0);
 })();
 
-  /* ===== Testimonials (Swiper.js Fallback) ===== */
- if (window.Swiper) {
-    new Swiper('.carousel-track', {
-      // mivel kártyás flexboxot használsz, slidesPerView: 'auto'
-      slidesPerView: 'auto',
-      spaceBetween: 20,
-      loop: true,
-      pagination: {
-        el: '.carousel-dots',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.carousel-btn.next',
-        prevEl: '.carousel-btn.prev'
-      },
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      breakpoints: {
-        0: {
-          slidesPerView: 1
-        },
-        768: {
-          slidesPerView: 2
-        }
-      }
-    });
-  }
 
   /* ===== Footer Year ===== */
   const yearSpan=document.getElementById('year'); if(yearSpan) yearSpan.textContent=new Date().getFullYear();
