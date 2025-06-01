@@ -1,12 +1,71 @@
 {
-  "hero.title": ["Formáljuk","együtt","az","online","jelenlétedet."],
-  "hero.subtitle": "Egyedi dizájn, gördülékeny UX és mérhető üzleti növekedés.",
-  "hero.btnPrimary": "Nézd meg a munkáimat",
-  "hero.btnSecondary": "Írj nekem",
-  "contact.heading": "Kapcsolat",
-  "contact.name": "Név",
-  "contact.email": "Email",
-  "contact.message": "Üzenet",
-  "contact.submit": "Üzenet elküldése"
   
+  "nav.home": "Főoldal",
+  "nav.about": "Rólam",
+  "nav.services": "Szolgáltatások",
+  "nav.projects": "Projektek",
+  "nav.workflow": "Workflow",
+  "nav.contact": "Kapcsolat",
+  "nav.career": "Karrier",
+
+  
+  "hero.title": ["Legyél", "te", "a", "következő", "projektem"],
+  "hero.subtitle": "Modern, professzionális frontend fejlesztés – személyre szabottan.",
+  "hero.btnPrimary": "Rólam",
+  "hero.btnSecondary": "Kapcsolat",
+
+  
+  "about.heading": "Rólam",
+  "about.paragraph": "Tapasztalt frontend fejlesztőként több éve dolgozom különböző technológiákkal, egyedi és modern megoldások létrehozásán. Szenvedélyem az optimalizált, felhasználóbarát interfészek tervezése és megvalósítása.",
+
+  
+  "services.heading": "Szolgáltatások",
+  "services.frontendTitle": "Frontend fejlesztés",
+  "services.frontendDesc": "HTML, CSS, JavaScript, React, Vue.js projektek.",
+  "services.uiuxTitle": "UI/UX Design",
+  "services.uiuxDesc": "Felhasználóközpontú tervezés, prototípusok készítése.",
+  "services.responsiveTitle": "Responsive dizájn",
+  "services.responsiveDesc": "Minden eszközön tökéletes megjelenés.",
+
+  
+  "projects.heading": "Projektek",
+  
+
+  
+  "workflow.heading": "Munkafolyamat",
+  "workflow.step1.title": "Konzultáció",
+  "workflow.step1.desc": "Igényfelmérés és specifikáció.",
+  "workflow.step2.title": "Design",
+  "workflow.step2.desc": "UI/UX tervezés és prototípus készítés.",
+  "workflow.step3.title": "Fejlesztés",
+  "workflow.step3.desc": "Kódolás, tesztelés, hibajavítás.",
+  "workflow.step4.title": "Élesítés",
+  "workflow.step4.desc": "Átadás és támogatás.",
+
+ 
+  "contact.heading": "Kapcsolat",
+  "contact.namePlaceholder": "Név",
+  "contact.emailPlaceholder": "Email",
+  "contact.messagePlaceholder": "Üzenet",
+  "contact.sendBtn": "Küldés",
+
+  
+  "career.hero.title": ["Támogasd", "csapatod", "profi", "frontend", "fejlesztővel"],
+  "career.hero.subtitle": "Önálló szakmai fejlődés, átlátható folyamatok és eredményorientált szemlélet.",
+  "career.hero.btnPrimary": "Ismerj meg",
+  "career.hero.btnSecondary": "Önéletrajz letöltése",
+  "career.timeline.heading": "Szakmai út",
+  "career.timeline.2019.title": "HTML & CSS alapok",
+  "career.timeline.2019.desc": "Első projekt: statikus bemutatkozó oldal készítése.",
+  "career.timeline.2020.title": "JavaScript és SPA",
+  "career.timeline.2020.desc": "ToDo App fejlesztés ES6+ és moduláris felépítésben.",
+  "career.timeline.2021.title": "React portfólió",
+  "career.timeline.2021.desc": "React-alapú portfólióoldal létrehozása Tailwind CSS-sel.",
+  "career.timeline.2022.title": "Freelance projektek",
+  "career.timeline.2022.desc": "Kis- és középvállalkozások weboldalain dolgoztam.",
+  "career.timeline.2023-2024.title": "Folyamatos fejlődés",
+  "career.timeline.2023-2024.desc": "Kurzusok, valós ügyfélprojektek, új technológiák.",
+
+  
+  "year": "" 
 }

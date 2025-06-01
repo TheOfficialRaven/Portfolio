@@ -1,8 +1,71 @@
 {
-  "hero.title": ["Let’s","shape","your","online","presence","together."],
-  "hero.subtitle": "Unique design, seamless UX and measurable business growth.",
-  "hero.btnPrimary": "Look at my Projects",
-  "hero.btnSecondary": "Write to me",
-  "contact.about": "Contact"
   
+  "nav.home": "Home",
+  "nav.about": "About",
+  "nav.services": "Services",
+  "nav.projects": "Projects",
+  "nav.workflow": "Workflow",
+  "nav.contact": "Contact",
+  "nav.career": "Career",
+
+  
+  "hero.title": ["Be", "the", "next", "project", "of", "mine"],
+  "hero.subtitle": "Modern, professional frontend development – tailored to you.",
+  "hero.btnPrimary": "About me",
+  "hero.btnSecondary": "Contact",
+
+  
+  "about.heading": "About",
+  "about.paragraph": "As an experienced frontend developer, I have been working with various technologies for years, creating unique and modern solutions. My passion is designing and implementing optimized, user-friendly interfaces.",
+
+  
+  "services.heading": "Services",
+  "services.frontendTitle": "Frontend Development",
+  "services.frontendDesc": "HTML, CSS, JavaScript, React, Vue.js projects.",
+  "services.uiuxTitle": "UI/UX Design",
+  "services.uiuxDesc": "User-centric design and prototyping.",
+  "services.responsiveTitle": "Responsive Design",
+  "services.responsiveDesc": "Perfect appearance on all devices.",
+
+  
+  "projects.heading": "Projects",
+  
+
+  
+  "workflow.heading": "Workflow",
+  "workflow.step1.title": "Consultation",
+  "workflow.step1.desc": "Requirements gathering and specification.",
+  "workflow.step2.title": "Design",
+  "workflow.step2.desc": "UI/UX design and prototyping.",
+  "workflow.step3.title": "Development",
+  "workflow.step3.desc": "Coding, testing, bug fixing.",
+  "workflow.step4.title": "Launch",
+  "workflow.step4.desc": "Delivery and support.",
+
+  
+  "contact.heading": "Contact",
+  "contact.namePlaceholder": "Name",
+  "contact.emailPlaceholder": "Email",
+  "contact.messagePlaceholder": "Message",
+  "contact.sendBtn": "Send",
+
+  
+  "career.hero.title": ["Support", "your", "team", "with", "a", "pro", "frontend", "developer"],
+  "career.hero.subtitle": "Independent professional growth, transparent processes, and goal-oriented mindset.",
+  "career.hero.btnPrimary": "Get to know me",
+  "career.hero.btnSecondary": "Download CV",
+  "career.timeline.heading": "Career Path",
+  "career.timeline.2019.title": "HTML & CSS Basics",
+  "career.timeline.2019.desc": "First project: building a static portfolio page.",
+  "career.timeline.2020.title": "JavaScript & SPA",
+  "career.timeline.2020.desc": "Developed a ToDo App using ES6+ and modular architecture.",
+  "career.timeline.2021.title": "React Portfolio",
+  "career.timeline.2021.desc": "Created a React-based portfolio with Tailwind CSS.",
+  "career.timeline.2022.title": "Freelance Projects",
+  "career.timeline.2022.desc": "Worked on websites for small and medium enterprises.",
+  "career.timeline.2023-2024.title": "Continuous Growth",
+  "career.timeline.2023-2024.desc": "Courses, real client projects, new technologies.",
+
+  
+  "year": "" 
 }

@@ -1,216 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mark Gor | Portfolio</title>
+  <title>Mark Gor | Portfolio – Karrier</title>
+  <meta name="description" content="Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése." />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Boxicons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body data-theme="dark">
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
 
-    <div class="progress-bar" id="progressBar"></div>
-    
   <!-- Header -->
   <header class="header">
     <div class="logo">Mark<span>Gor</span></div>
     <nav class="navbar">
-      <a href="#hero" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Szolgáltatások</a>
-      <a href="#projects">Projects</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#contact">Contact</a>
-      <a href="index.html">Főoldal</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="#career-hero" class="active" data-i18n="nav.career">Karrier</a>
     </nav>
-    <!----------- Hamburger   -->
+
+    <!-- Hamburger -->
     <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
     <nav class="mobile-nav" id="mobileNav">
-      <a href="#hero" class="active">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Szolgáltatások</a>
-      <a href="#projects">Projects</a>
-      <a href="#workflow">Workflow</a>
-      <a href="#contact">Contact</a>
-      <a href="index.html">Főoldal</a>
+      <a href="index.html" data-i18n="nav.home">Home</a>
+      <a href="#career-hero" class="active" data-i18n="nav.career">Karrier</a>
     </nav>
 
+    <!-- Theme Toggle -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Téma váltás">
-    <svg id="theme-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="5" class="sun-core" />
-      <g class="sun-rays">
-        <line x1="12" y1="1" x2="12" y2="4" />
-        <line x1="12" y1="20" x2="12" y2="23" />
-        <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
-        <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
-        <line x1="1" y1="12" x2="4" y2="12" />
-        <line x1="20" y1="12" x2="23" y2="12" />
-        <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
-        <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
-      </g>
-      <path class="moon" d="M21 12.79A9 9 0 0112.21 3 7 7 0 1021 12.79z" />
-    </svg>
+      <svg id="theme-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="5" class="sun-core" />
+        <g class="sun-rays">
+          <line x1="12" y1="1" x2="12" y2="4" />
+          <line x1="12" y1="20" x2="12" y2="23" />
+          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
+          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
+          <line x1="1" y1="12" x2="4" y2="12" />
+          <line x1="20" y1="12" x2="23" y2="12" />
+          <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
+          <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
+        </g>
+        <path class="moon" d="M21 12.79A9 9 0 0112.21 3 7 7 0 1021 12.79z" />
+      </svg>
     </button>
 
+    <!-- Language Switcher -->
     <div class="lang-switcher">
       <button data-lang="hu">HU</button>
       <button data-lang="en">EN</button>
     </div>
-    
   </header>
 
-  <!------------------ Karrier Hero ---------------->
+  <main>
+    <!-- Karrier Hero Section -->
+    <section id="hero" class="home hero-section">
+      <!-- Vanta.js Background -->
+      <div id="vanta-bg" class="vanta-triangle-mask"></div>
 
-  <section id="hero" class="hero-section">
-  <!-- Vanta.js Background -->
-  <div id="vanta-bg" class="vanta-triangle-mask"></div>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title" data-i18n="career.hero.title">
+            <span>Támogasd</span> <span>csapatod</span> <span>profi</span> <span>frontend</span> <span>fejlesztővel</span>
+          </h1>
+          <p class="hero-subtitle" data-i18n="career.hero.subtitle">
+            Önálló szakmai fejlődés, átlátható folyamatok és eredményorientált szemlélet.
+          </p>
+          <div class="hero-buttons">
+            <a href="#career-timeline" class="btn primary-btn" data-i18n="career.hero.btnPrimary">Ismerj meg</a>
+            <a href="cv/MarkGor_CV.pdf" class="btn ghost-btn" download data-i18n="career.hero.btnSecondary">Önéletrajz letöltése</a>
+          </div>
+        </div>
+        <div class="home-image">
+          <img
+            id="career-img"
+            src="imgs/dark.png"
+            data-image-dark="imgs/career-dark.png"
+            data-image-light="imgs/career-light.png"
+            alt="Karrier kép"
+          />
+        </div>
+      </div>
 
-  <div class="hero-container">
-    <div class="hero-content">
-      <h1 class="hero-title">
-        <span>Támogasd</span> <span>csapatod</span> <span>profi</span> <span>frontend</span> <span>fejlesztővel</span>
-      </h1>
-      <p class="hero-subtitle">Önálló szakmai fejlődés, átlátható folyamatok és eredményorientált szemlélet.</p>
-      <div class="hero-buttons">
-        <a href="#career-timeline" class="btn neon-hover primary-btn">Ismerj meg</a>
-        <a href="#download-cv" class="btn ghost-btn">Önéletrajz letöltése</a>
+      <div class="scroll-indicator"><a href="#career-timeline">⌄</a></div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="career-timeline" class="workflow-section reveal-trigger">
+      <div class="container">
+        <h2 class="section-title typewriter" data-i18n="career.timeline.heading">Szakmai út</h2>
+        <div class="workflow-steps">
+          <div class="step">
+            <div class="step-icon">2019</div>
+            <div class="step-content">
+              <h3 data-i18n="career.timeline.2019.title">HTML & CSS alapok</h3>
+              <p data-i18n="career.timeline.2019.desc">Első projekt: statikus bemutatkozó oldal készítése.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">2020</div>
+            <div class="step-content">
+              <h3 data-i18n="career.timeline.2020.title">JavaScript és SPA</h3>
+              <p data-i18n="career.timeline.2020.desc">ToDo App fejlesztés ES6+ és moduláris felépítésben.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">2021</div>
+            <div class="step-content">
+              <h3 data-i18n="career.timeline.2021.title">React portfólió</h3>
+              <p data-i18n="career.timeline.2021.desc">React-alapú portfólióoldal létrehozása Tailwind CSS-sel.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">2022</div>
+            <div class="step-content">
+              <h3 data-i18n="career.timeline.2022.title">Freelance projektek</h3>
+              <p data-i18n="career.timeline.2022.desc">Kis- és középvállalkozások weboldalain dolgoztam.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-icon">2023–2024</div>
+            <div class="step-content">
+              <h3 data-i18n="career.timeline.2023-2024.title">Folyamatos fejlődés</h3>
+              <p data-i18n="career.timeline.2023-2024.desc">Kurzusok, valós ügyfélprojektek, új technológiák.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p>&copy; <span id="year"></span> Mark Gor. Minden jog fenntartva.</p>
+      <div class="footer-socials">
+        <a href="https://github.com/markgor" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/markgor" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
       </div>
     </div>
-    <div class="home-image">
-      <img
-        id="career-img"
-        src="imgs/dark.png"
-        data-image-dark="imgs/career-dark.png"
-        data-image-light="imgs/career-light.png"
-        alt="Karrier kép"
-      />
-    </div>
-  </div>
+  </footer>
 
-  <div class="scroll-indicator"><a href="#career-timeline">⌄</a></div>
-</section>
-
-<!-- Timeline Section -->
-<section id="career-timeline" class="timeline-section">
-  <h2 class="section-title">Szakmai út</h2>
-  <div class="timeline">
-    <!-- Step 1 -->
-    <div class="step">
-      <div class="step-icon">2019</div>
-      <div class="step-content">
-        <h3>HTML & CSS alapok</h3>
-        <p>Első projekt: statikus bemutatkozó oldal készítése.</p>
-      </div>
-    </div>
-    <!-- Step 2 -->
-    <div class="step">
-      <div class="step-icon">2020</div>
-      <div class="step-content">
-        <h3>JavaScript és SPA</h3>
-        <p>ToDo App fejlesztés ES6+ és moduláris felépítésben.</p>
-      </div>
-    </div>
-    <!-- Step 3 -->
-    <div class="step">
-      <div class="step-icon">2021</div>
-      <div class="step-content">
-        <h3>React portfólió</h3>
-        <p>React-alapú portfólióoldal létrehozása Tailwind CSS-sel.</p>
-      </div>
-    </div>
-    <!-- Step 4 -->
-    <div class="step">
-      <div class="step-icon">2022</div>
-      <div class="step-content">
-        <h3>Freelance projektek</h3>
-        <p>Kis- és középvállalkozások weboldalain dolgoztam.</p>
-      </div>
-    </div>
-    <!-- Step 5 -->
-    <div class="step">
-      <div class="step-icon">2023–2024</div>
-      <div class="step-content">
-        <h3>Folyamatos fejlődés</h3>
-        <p>Kurzusok, valós ügyfélprojektek, új technológiák.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!------------------ Footer ---------------->
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <p>&copy; <span id="year"></span> Mark Gor. Minden jog fenntartva.</p>
-    <div class="footer-socials">
-      <a href="https://github.com/markgor" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/markgor" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <!-- További linkek opcionálisan -->
-    </div>
-  </div>
-</footer>
-<button id="backToTop" aria-label="Ugrás a lap tetejére">
-  <svg width="24" height="24" viewBox="0 0 24 24" class="arrow-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 19V5" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-      <animate attributeName="d" dur="1.4s" repeatCount="indefinite"
-        values="
-          M12 19V5;
-          M12 18V6;
-          M12 19V5
-        " />
-    </path>
-    <path d="M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <animateTransform attributeName="transform" type="translate" values="0 0; 0 -2; 0 0" dur="1.4s" repeatCount="indefinite" />
-    </path>
-  </svg>
-</button>
-
-<!----------- Project Modal ------------->
-
-<div id="project-modal" class="modal">
-  <div class="modal-overlay"></div>
-  <div class="modal-content">
-    <button class="modal-close" aria-label="Close">&times;</button>
-    <img src="" alt="" class="modal-image" />
-    <h2 class="modal-title"></h2>
-    <p class="modal-description"></p>
-    <!-- Origin tags displayed on a separate row -->
-    <div class="modal-origin-tags"></div>
-    <!-- Technology tags on their own row -->
-    <div class="modal-tags"></div>
-    <a href="#" class="modal-cta-button">Teljes oldal megtekintése</a>
-  </div>
-</div>
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Ugrás a lap tetejére">↑</button>
 
   <!-- Scripts -->
-    <!-- Projects link -->
+       <!-- Projects link -->
    <script src="js/projects.js"></script>
     <!-- Swiper -->
    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Vanta.Js -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <!-- Main.js link -->
-   <script src="js/karrier.js" defer></script>
+  <script src="js/karrier.js" defer></script>
 </body>
-
 </html>
