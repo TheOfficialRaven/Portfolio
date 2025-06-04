@@ -1,5 +1,4 @@
 {
-  
   "nav.home": "Főoldal",
   "nav.about": "Rólam",
   "nav.services": "Szolgáltatások",
@@ -7,18 +6,18 @@
   "nav.workflow": "Workflow",
   "nav.contact": "Kapcsolat",
   "nav.career": "Karrier",
-
-  
-  "hero.title": ["Legyél", "te", "a", "következő", "projektem"],
-  "hero.subtitle": "Modern, professzionális frontend fejlesztés – személyre szabottan.",
-  "hero.btnPrimary": "Rólam",
-  "hero.btnSecondary": "Kapcsolat",
-
-  
+  "hero.title": [
+    "Formáljuk",
+    "együtt",
+    "az",
+    "online",
+    "jelenlétedet."
+  ],
+  "hero.subtitle": "Egyedi dizájn, villámgyors betöltés, zökkenőmentes UX",
+  "hero.btnPrimary": "Nézd meg a munkáimat",
+  "hero.btnSecondary": "Írj nekem",
   "about.heading": "Rólam",
   "about.paragraph": "Tapasztalt frontend fejlesztőként több éve dolgozom különböző technológiákkal, egyedi és modern megoldások létrehozásán. Szenvedélyem az optimalizált, felhasználóbarát interfészek tervezése és megvalósítása.",
-
-  
   "services.heading": "Szolgáltatások",
   "services.frontendTitle": "Frontend fejlesztés",
   "services.frontendDesc": "HTML, CSS, JavaScript, React, Vue.js projektek.",
@@ -26,12 +25,7 @@
   "services.uiuxDesc": "Felhasználóközpontú tervezés, prototípusok készítése.",
   "services.responsiveTitle": "Responsive dizájn",
   "services.responsiveDesc": "Minden eszközön tökéletes megjelenés.",
-
-  
   "projects.heading": "Projektek",
-  
-
-  
   "workflow.heading": "Munkafolyamat",
   "workflow.step1.title": "Konzultáció",
   "workflow.step1.desc": "Igényfelmérés és specifikáció.",
@@ -41,16 +35,20 @@
   "workflow.step3.desc": "Kódolás, tesztelés, hibajavítás.",
   "workflow.step4.title": "Élesítés",
   "workflow.step4.desc": "Átadás és támogatás.",
-
- 
-  "contact.heading": "Kapcsolat",
+  "contact.heading": "Lépjünk kapcsolatba",
+  "contact.phone": "+36 30 123 4567",
+  "contact.phoneNote": "Hétköznapokon 9:00–18:00 között elérhető vagyok.",
   "contact.namePlaceholder": "Név",
   "contact.emailPlaceholder": "Email",
   "contact.messagePlaceholder": "Üzenet",
   "contact.sendBtn": "Küldés",
-
-  
-  "career.hero.title": ["Támogasd", "csapatod", "profi", "frontend", "fejlesztővel"],
+  "career.hero.title": [
+    "Támogasd",
+    "csapatod",
+    "profi",
+    "frontend",
+    "fejlesztővel"
+  ],
   "career.hero.subtitle": "Önálló szakmai fejlődés, átlátható folyamatok és eredményorientált szemlélet.",
   "career.hero.btnPrimary": "Ismerj meg",
   "career.hero.btnSecondary": "Önéletrajz letöltése",
@@ -65,7 +63,39 @@
   "career.timeline.2022.desc": "Kis- és középvállalkozások weboldalain dolgoztam.",
   "career.timeline.2023-2024.title": "Folyamatos fejlődés",
   "career.timeline.2023-2024.desc": "Kurzusok, valós ügyfélprojektek, új technológiák.",
+  "career.skills.heading": "Technikai készségek",
+  "career.skills.list": [
+    "Laravel",
+    "React",
+    "Tailwind CSS",
+    "Firebase",
+    "Admin panel",
+    "Realtime database",
+    "Regisztráció és Login"
+  ],
+  "career.certificates.heading": "Tanúsítványok",
+  "career.certificates.sololearn.title": "Sololearn tanfolyamok (2023. június – szeptember)",
+  "career.certificates.sololearn.desc": "PHP, Webfejlesztés, JavaScript (középhaladó), Java (középhaladó), SQL bevezető, Python bevezető, Java bevezető, CSS bevezető, JavaScript bevezető, HTML bevezető.",
+  "career.certificates.scrimba.title": "Scrimba: The Frontend Developer Career Path",
+  "about.p1": "Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek – akár egyéni vállalkozó vagy, akár egy újonnan induló márkát képviselsz.",
+  "about.p2": "A munkáim során nagy hangsúlyt fektetek a reszponzivitásra, a gyors betöltésre, és arra, hogy az oldal minden képernyőméreten meggyőző élményt nyújtson. Legyen szó egy bemutatkozó oldalról, szolgáltatásismertetőről vagy kreatív landing page-ről, fontos számomra, hogy a végeredmény tükrözze az ügyfél egyéniségét és céljait.",
+  "about.p3": "Jól ismerem a HTML, CSS és JavaScript nyelveket, dolgozom Bootstrap és Laravel keretrendszerekkel, és folyamatosan bővítem a tudásomat. Már több weboldalt készítettem megrendelésre, és ezek mellett saját projekteken keresztül is fejlődöm – mert hiszek abban, hogy a tanulás soha nem áll meg.",
+  "contact.intro": [
+    "Van egy ötleted, vagy weboldalt szeretnél indítani?",
+    "<br/>Írj nekem, vagy hívj bizalommal – szívesen beszélek róla veled személyesen is!"
+  ],
+  "services.fullSite.title": "Teljes weboldalkészítés",
+  "services.fullSite.desc": "Modern, reszponzív weboldalak az elképzeléseid szerint – az alapoktól vagy már meglévő ötletek alapján.",
+  "services.frontendDev.title": "Frontend fejlesztés",
+  "services.frontendDev.desc": "Letisztult, strukturált HTML, CSS és JavaScript alapú fejlesztés, ami jól is néz ki, és jól is működik.",
+  "services.responsive.title": "Mobilbarát kialakítás",
+  "services.responsive.desc": "Minden képernyőmérethez igazodó dizájn, hogy a látogatók bárhol jó élményt kapjanak.",
+  "services.structuredCode.title": "Strukturált kód",
+  "services.structuredCode.desc": "Átlátható, újrafelhasználható és könnyen karbantartható kód – hosszú távra tervezve.",
+  "services.animations.title": "Animációk és interakciók",
+  "services.animations.desc": "Finom effektek, hover animációk és scroll megoldások, amelyek életre keltik az oldalt.",
+  "services.support.title": "Technikai támogatás",
+  "services.support.desc": "Hibajavítás, frissítés, utólagos segítség – megbízható támogatás a fejlesztés után is.",
 
-  
-  "year": "" 
+  "year": ""
 }

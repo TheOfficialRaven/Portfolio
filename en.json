@@ -1,5 +1,4 @@
 {
-  
   "nav.home": "Home",
   "nav.about": "About",
   "nav.services": "Services",
@@ -7,18 +6,19 @@
   "nav.workflow": "Workflow",
   "nav.contact": "Contact",
   "nav.career": "Career",
-
-  
-  "hero.title": ["Be", "the", "next", "project", "of", "mine"],
-  "hero.subtitle": "Modern, professional frontend development – tailored to you.",
-  "hero.btnPrimary": "About me",
-  "hero.btnSecondary": "Contact",
-
-  
+  "hero.title": [
+    "Let's",
+    "shape",
+    "your",
+    "online",
+    "presence",
+    "together."
+  ],
+  "hero.subtitle": "Unique design, lightning-fast loading, seamless UX",
+  "hero.btnPrimary": "See my work",
+  "hero.btnSecondary": "Contact me",
   "about.heading": "About",
   "about.paragraph": "As an experienced frontend developer, I have been working with various technologies for years, creating unique and modern solutions. My passion is designing and implementing optimized, user-friendly interfaces.",
-
-  
   "services.heading": "Services",
   "services.frontendTitle": "Frontend Development",
   "services.frontendDesc": "HTML, CSS, JavaScript, React, Vue.js projects.",
@@ -26,12 +26,7 @@
   "services.uiuxDesc": "User-centric design and prototyping.",
   "services.responsiveTitle": "Responsive Design",
   "services.responsiveDesc": "Perfect appearance on all devices.",
-
-  
   "projects.heading": "Projects",
-  
-
-  
   "workflow.heading": "Workflow",
   "workflow.step1.title": "Consultation",
   "workflow.step1.desc": "Requirements gathering and specification.",
@@ -41,16 +36,23 @@
   "workflow.step3.desc": "Coding, testing, bug fixing.",
   "workflow.step4.title": "Launch",
   "workflow.step4.desc": "Delivery and support.",
-
-  
-  "contact.heading": "Contact",
+  "contact.heading": "Get in touch",
+  "contact.phone": "+36 30 123 4567",
+  "contact.phoneNote": "Available weekdays from 9:00 to 18:00.",
   "contact.namePlaceholder": "Name",
   "contact.emailPlaceholder": "Email",
   "contact.messagePlaceholder": "Message",
   "contact.sendBtn": "Send",
-
-  
-  "career.hero.title": ["Support", "your", "team", "with", "a", "pro", "frontend", "developer"],
+  "career.hero.title": [
+    "Support",
+    "your",
+    "team",
+    "with",
+    "a",
+    "pro",
+    "frontend",
+    "developer"
+  ],
   "career.hero.subtitle": "Independent professional growth, transparent processes, and goal-oriented mindset.",
   "career.hero.btnPrimary": "Get to know me",
   "career.hero.btnSecondary": "Download CV",
@@ -65,7 +67,40 @@
   "career.timeline.2022.desc": "Worked on websites for small and medium enterprises.",
   "career.timeline.2023-2024.title": "Continuous Growth",
   "career.timeline.2023-2024.desc": "Courses, real client projects, new technologies.",
+  "career.skills.heading": "Technical Skills",
+  "career.skills.list": [
+    "Laravel",
+    "React",
+    "Tailwind CSS",
+    "Firebase",
+    "Admin panel",
+    "Realtime database",
+    "Registration & Login"
+  ],
+  "career.certificates.heading": "Certificates",
+  "career.certificates.sololearn.title": "Sololearn courses (June – September 2023)",
+  "career.certificates.sololearn.desc": "PHP, Web Development, JavaScript (Intermediate), Java (Intermediate), SQL Introduction, Python Introduction, Java Introduction, CSS Introduction, JavaScript Introduction, HTML Introduction.",
+  "career.certificates.scrimba.title": "Scrimba: The Frontend Developer Career Path",
+  "about.p1": "Hi! I'm glad you're here. As a frontend developer, I help turn your ideas into real, well-functioning, and visually clean websites – whether you're a sole entrepreneur or representing a new brand.",
+  "about.p2": "In my work, I place great emphasis on responsiveness, fast loading, and ensuring that the site provides a convincing experience on every screen size. Whether it's an introduction page, a service overview, or a creative landing page, it's important to me that the final result reflects the client's personality and goals.",
+  "about.p3": "I am well-versed in HTML, CSS, and JavaScript, work with frameworks like Bootstrap and Laravel, and continuously expand my knowledge. I have built several websites on commission, and I also develop through personal projects – because I believe learning never stops.",
+  "contact.intro": [
+    "Have an idea or want to launch a website?",
+    "<br/>Drop me a message or feel free to call – I'm happy to discuss it with you in person!"
+  ],
 
+    "services.fullSite.title": "Teljes weboldalkészítés",
+  "services.fullSite.desc": "Modern, reszponzív weboldalak az elképzeléseid szerint – az alapoktól vagy már meglévő ötletek alapján.",
+  "services.frontendDev.title": "Frontend fejlesztés",
+  "services.frontendDev.desc": "Letisztult, strukturált HTML, CSS és JavaScript alapú fejlesztés, ami jól is néz ki, és jól is működik.",
+  "services.responsive.title": "Mobilbarát kialakítás",
+  "services.responsive.desc": "Minden képernyőmérethez igazodó dizájn, hogy a látogatók bárhol jó élményt kapjanak.",
+  "services.structuredCode.title": "Strukturált kód",
+  "services.structuredCode.desc": "Átlátható, újrafelhasználható és könnyen karbantartható kód – hosszú távra tervezve.",
+  "services.animations.title": "Animációk és interakciók",
+  "services.animations.desc": "Finom effektek, hover animációk és scroll megoldások, amelyek életre keltik az oldalt.",
+  "services.support.title": "Technikai támogatás",
+  "services.support.desc": "Hibajavítás, frissítés, utólagos segítség – megbízható támogatás a fejlesztés után is.",
   
-  "year": "" 
+  "year": ""
 }

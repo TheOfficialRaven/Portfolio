@@ -196,7 +196,7 @@ section.reveal .fade-in-right {
   transform: scale(1);
 }
 
-/* ==== Header ==== */
+/* ==== Header Responsive ==== */
 .header {
   position: fixed;
   top: 0;
@@ -206,23 +206,39 @@ section.reveal .fade-in-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 10%;
+  padding: 1.2rem 5vw;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  gap: 1rem;
 }
 
 .logo {
+  color: #fff;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--main-color);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .navbar a {
-  margin-left: 2rem;
   color: var(--text-color);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   text-decoration: none;
   transition: color 0.3s;
+  white-space: nowrap;
+  padding: 0.2rem 0.5rem;
 }
 
 .navbar a:hover,
@@ -230,56 +246,141 @@ section.reveal .fade-in-right {
   color: var(--main-color);
 }
 
-/* ==== Mobile Menu ==== */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lang-switcher button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-switcher button:hover {
+  color: var(--main-color);
+  background: var(--accent-color);
+}
+
+.theme-toggle {
+  margin-left: 0.5rem;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
   z-index: 1100;
+  margin-left: 0.5rem;
 }
 
 .hamburger span {
   display: block;
-  width: 25px;
+  width: 26px;
   height: 3px;
   background: var(--main-color);
-  transition: 0.3s;
   border-radius: 3px;
+  transition: 0.3s;
 }
 
+/* Mobil NAV */
 .mobile-nav {
   position: fixed;
-  top: 6rem; 
-  height: calc(100vh - 4.5rem); 
-  left: -100%;
-  width: 70%;
+  top: 4.1rem;
+  left: -100vw;
+  width: 80vw;
+  max-width: 340px;
+  height: 100vh;
   background: var(--accent-color);
-  padding: 5rem 2rem;
+  padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  transition: left 0.4s ease;
-  z-index: 900;
+  transition: left 0.4s cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  z-index: 1200;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.15);
 }
 
 .mobile-nav a {
   color: var(--text-color);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--main-color);
 }
 
 .mobile-nav.active {
   left: 0;
 }
 
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 1100px) {
+  .header {
+    padding: 1.2rem 2vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    gap: 1rem;
+  }
+}
+
+/* --- Mobil NAV fejlesztett stílus --- */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.7rem 2vw;
+    gap: 0.5rem;
+  }
+  .logo {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+  .header-right {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
   .navbar {
     display: none;
   }
-
   .hamburger {
     display: flex;
+    margin-left: 0.5rem;
+    margin-right: 0;
+    align-self: stretch;
+    align-items: center;
+  }
+  .lang-switcher {
+    gap: 0.2rem;
+  }
+  .theme-toggle {
+    margin-left: 0.3rem;
+  }
+  
+}
+
+/* Extra: a hamburger mindig a jobb szélen legyen */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+@media (max-width: 768px) {
+  .header-right {
+    gap: 0.3rem;
+    flex: 1 1 auto;
+    justify-content: flex-end;
   }
 }
 
@@ -1580,4 +1681,33 @@ section.reveal .fade-in-right {
     flex-direction: column;
     text-align: center;
   }
+}
+
+/* ======= Skills Section ======= */
+
+.skills-section {
+  padding: 6rem 2rem;
+  background: var(--bg-color);
+}
+.skills-list span {
+  display: inline-block;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  padding: 0.3rem 0.6rem;
+  margin: 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+/* ==== Certificates Section ==== */
+.certificates-section {
+  padding: 6rem 2rem;
+  background: var(--accent-color);
+}
+.certificate {
+  margin-bottom: 1.5rem;
+}
+.certificate h3 i {
+  color: var(--main-color);
+  margin-right: 0.5rem;
 }
