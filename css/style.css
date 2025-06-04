@@ -844,25 +844,36 @@ section.reveal .fade-in-right {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2.5rem;
+  align-items: stretch;
   margin-top: 3rem;
 }
 
-/* Service cards: initial state is below and blurred */
 .service-card {
-  background: var(--bg-color);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transform: translateY(60px) scale(0.96);
-  filter: blur(1.5px);
-  transition:
-    opacity var(--anim-duration) var(--anim-ease),
-    transform var(--anim-duration) var(--anim-ease),
-    filter var(--anim-duration) var(--anim-ease),
-    box-shadow var(--anim-duration) var(--anim-ease);
+  min-width: 0;
+  word-break: break-word;
+  hyphens: auto;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.service-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.7rem;
+  word-break: break-word;
+  color: var(--main-color);
+}
+
+.service-card p {
+  font-size: 1rem;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  word-break: break-word;
 }
 
 /* Reveal animations: fade-in-up as default */
@@ -892,9 +903,6 @@ section.reveal .fade-in-right {
   transition: transform 0.4s ease;
   color: var(--main-color);
 }
-.service-card h3 {
-  color: var(--main-color);
-}
 
 .service-card:hover i,
 .service-card:hover .icon {
@@ -920,6 +928,14 @@ section.reveal .fade-in-right {
   .step-icon {
     left: -1.5rem;
     top: -0.2rem;
+  }
+    .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .service-card {
+    font-size: 0.98rem;
+    padding: 1.2rem 1rem;
   }
 }
 
@@ -1206,12 +1222,7 @@ section.reveal .fade-in-right {
   margin: 0 auto;
   text-align: center;
 }
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
-}
+
 
 /* Base service-card hidden state */
 .service-card {
