@@ -24,38 +24,60 @@ document.addEventListener('DOMContentLoaded', () => {
   function initHeroAnimations() {
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
+      // Először eltávolítjuk az összes reveal osztályt
+      heroSection.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
+      
       // Meglévő elemek
       const titleSpans = heroSection.querySelectorAll('.hero-title span');
       const subtitle = heroSection.querySelector('.hero-subtitle');
       const buttons = heroSection.querySelectorAll('.hero-buttons a');
       const heroImage = heroSection.querySelector('.home-image');
-      
-      // Új: Social media ikonok
       const heroSocials = heroSection.querySelector('.hero-socials');
       const socialLinks = heroSection.querySelectorAll('.hero-socials a');
       
       // Animációk időzítése
-      setTimeout(() => {
+      requestAnimationFrame(() => {
+        // Title spans animáció
         titleSpans.forEach((span, i) => {
-          setTimeout(() => span.classList.add('reveal'), i * 200);
+          span.style.transitionDelay = `${i * 200}ms`;
+          setTimeout(() => span.classList.add('reveal'), 100 + i * 200);
         });
         
+        // Subtitle animáció
+        subtitle.style.transitionDelay = `${titleSpans.length * 200}ms`;
         setTimeout(() => subtitle.classList.add('reveal'), 800);
         
+        // Buttons animáció
         buttons.forEach((btn, i) => {
+          btn.style.transitionDelay = `${(titleSpans.length * 200) + 200 + i * 200}ms`;
           setTimeout(() => btn.classList.add('reveal'), 1000 + i * 200);
         });
         
+        // Hero image animáció
+        heroImage.style.transitionDelay = '1200ms';
         setTimeout(() => heroImage.classList.add('reveal'), 1200);
         
-        // Új: Social media animációk
+        // Social media animációk
+        heroSocials.style.transitionDelay = '1200ms';
         setTimeout(() => {
           heroSocials.classList.add('reveal');
           socialLinks.forEach((link, i) => {
+            link.style.transitionDelay = `${1200 + i * 200}ms`;
             setTimeout(() => link.classList.add('reveal'), 1200 + i * 200);
           });
         }, 1200);
-      }, 100);
+      });
+    }
+  }
+
+  function resetHeroAnimations() {
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+      // Eltávolítjuk az összes reveal osztályt és transition delay-t
+      heroSection.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('reveal');
+        el.style.transitionDelay = '';
+      });
     }
   }
 
@@ -86,28 +108,51 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===== 4) Nyelvváltás (i18n) ===== */
   async function loadLocale(lang) {
     try {
-      const res = await fetch(`/${lang}.json`);
+      const res = await fetch(`./${lang}.json`);  // Relatív elérési út
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       return await res.json();
     } catch (err) {
       console.error(`Hiba a ${lang}.json betöltésénél:`, err);
-      return {};
+      // Fallback az alapértelmezett nyelvre
+      try {
+        const fallbackRes = await fetch(`./hu.json`);
+        if (!fallbackRes.ok) throw new Error(`HTTP error! status: ${fallbackRes.status}`);
+        return await fallbackRes.json();
+      } catch (fallbackErr) {
+        console.error('Hiba az alapértelmezett nyelvi fájl betöltésénél:', fallbackErr);
+        return {};
+      }
     }
   }
 
   function applyTranslations(translations) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      const value = translations[key];
-      if (Array.isArray(value)) {
-        el.innerHTML = value.map(word => `<span>${word}</span>`).join(' ');
-      } else {
-        el.textContent = value ?? '';
+      const value = key.split('.').reduce((obj, k) => obj?.[k], translations);
+      
+      if (value) {
+        if (el.classList.contains('hero-title')) {
+          // Hero title speciális kezelése
+          const words = value.split(' ');
+          el.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
+        } else if (el.hasAttribute('data-ph')) {
+          // Placeholder kezelése
+          el.placeholder = value;
+        } else if (el.hasAttribute('content')) {
+          // Meta tag content kezelése
+          el.setAttribute('content', value);
+        } else {
+          // Alap szöveg kezelése
+          el.textContent = value;
+        }
       }
     });
     
     // Reset és újrainicializálás
-    resetAnimations();
-    initHeroAnimations();
+    resetHeroAnimations();
+    setTimeout(() => {
+      initHeroAnimations();
+    }, 100); // Kis késleltetés a DOM frissítés miatt
   }
 
   // Alapértelmezett nyelv betöltése és fordítás alkalmazása

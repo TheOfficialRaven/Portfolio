@@ -565,6 +565,135 @@ section.reveal .fade-in-right {
   transform: none;
 }
 
+.hero-title {
+  font-size: 2.6rem;
+  color: var(--main-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: left;
+  visibility: hidden; /* Alapból rejtve */
+}
+
+.hero-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden; /* Alapból rejtve */
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
+}
+
+.hero-title span.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.hero-subtitle {
+  color: var(--text-color);
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  transform: translateY(20px);
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
+}
+
+.hero-subtitle.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
+  transform: translateY(20px);
+  transition: var(--hover-transition),
+              opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
+  will-change: transform, opacity;
+}
+
+.hero-buttons a.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.home-image {
+  flex: 0 0 48%;
+  max-width: 48%;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
+  transform: scale(0.9) translateY(20px);
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
+}
+
+.home-image.reveal {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  visibility: visible;
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
+  transform: translateY(20px);
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
+}
+
+.hero-socials.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.hero-socials a {
+  color: var(--main-color);
+  font-size: 1.8rem;
+  opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
+  transform: translateY(20px);
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease),
+              color 0.3s ease,
+              filter 0.3s ease;
+}
+
+.hero-socials a.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
 .vanta-triangle-mask {
   position: absolute;
   top: 0;
@@ -2494,24 +2623,28 @@ section::before {
   gap: 1.5rem;
   margin-top: 2rem;
   opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
   transform: translateY(20px);
   transition: opacity var(--anim-duration) var(--anim-ease),
-              transform var(--anim-duration) var(--anim-ease);
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
 }
 
 .hero-socials.reveal {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .hero-socials a {
   color: var(--main-color);
   font-size: 1.8rem;
-  transition: var(--hover-transition);
   opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
   transform: translateY(20px);
   transition: opacity var(--anim-duration) var(--anim-ease),
               transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease),
               color 0.3s ease,
               filter 0.3s ease;
 }
@@ -2519,6 +2652,7 @@ section::before {
 .hero-socials a.reveal {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .hero-socials a:nth-child(1) { transition-delay: 1.2s; }

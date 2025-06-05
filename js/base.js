@@ -91,18 +91,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyTranslations(translations) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
-      const value = translations[key];
+      // Nested key support (pl. "nav.home")
+      const value = key.split('.').reduce((obj, i) => obj?.[i], translations);
       if (Array.isArray(value)) {
         el.innerHTML = value.map(word => `<span>${word}</span>`).join(' ');
-      } else {
-        el.textContent = value || '';
+      } else if (value) {
+        el.textContent = value;
       }
     });
+    
     // Set placeholders
     document.querySelectorAll('[data-ph]').forEach(el => {
       const key = el.getAttribute('data-ph');
-      if (translations[key]) {
-        el.placeholder = translations[key];
+      const value = key.split('.').reduce((obj, i) => obj?.[i], translations);
+      if (value) {
+        el.placeholder = value;
       }
     });
 
