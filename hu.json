@@ -3,12 +3,17 @@
     "title": "Mark Gor | Portfolio",
     "description": "Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése."
   },
+  "general": {
+    "languageChange": "Nyelvváltás..."
+  },
   "nav": {
     "home": "Főoldal",
     "career": "Karrier",
     "about": "Bemutatkozás",
     "timeline": "Szakmai út",
     "courses": "Képzések",
+    "workflow": "Workflow",
+    "services": "Szolgáltatások",
     "projects": "Projektek",
     "skills": "Kompetenciák",
     "contact": "Kapcsolat"
@@ -19,18 +24,22 @@
     "btnPrimary": "Projektek",
     "btnSecondary": "Kapcsolat"
   },
+  "about": {
+    "heading": "Rólam",
+    "description": "Üdvözöllek! Frontend fejlesztőként szenvedélyem a modern és felhasználóbarát weboldalak készítése. Hiszek abban, hogy egy weboldal nem csak szép kell legyen, hanem hatékonyan kell szolgálnia az üzleti célokat is. Személyre szabott megoldásokat kínálok, ahol a te igényeid és vállalkozásod egyedi karaktere áll a középpontban. Legyen szó új weboldal készítéséről vagy meglévő fejlesztéséről, a célom az, hogy olyan digitális jelenlétet teremtsek, ami nem csak vonzza, de meg is tartja az ügyfeleidet. Több éves tapasztalattal és folyamatos tanulással biztosítom, hogy a legújabb technológiákat és legjobb gyakorlatokat alkalmazva készüljön el a projekted.",
+    "cta": "Beszéljünk a projektedről"
+  },
+  "career_about": {
+    "heading": "Szakmai Bemutatkozás",
+    "description": "Frontend fejlesztőként a modern webtechnológiák és felhasználói élmény szakértője vagyok. Több éves gyakorlati tapasztalattal rendelkezem komplex webalkalmazások fejlesztésében, ahol a tiszta kód és a hatékony megoldások mellett a csapatmunka és az agilis módszertanok alkalmazása is kulcsfontosságú. Specializálódtam a React.js és modern JavaScript (ES6+) technológiákra, valamint a reszponzív és teljesítményorientált fejlesztésre. Folyamatosan képzem magam, hogy naprakész maradjak az iparági trendekkel és legjobb gyakorlatokkal. Strukturált gondolkodásmódom és problémamegoldó készségem segít a komplex fejlesztési kihívások hatékony kezelésében.",
+    "cta": "Szakmai önéletrajz megtekintése"
+  },
   "career": {
     "hero": {
       "title": "Támogasd csapatod profi frontend fejlesztővel",
       "subtitle": "Önálló szakmai fejlődés, átlátható folyamatok és eredményorientált szemlélet.",
       "btnPrimary": "Ismerj meg",
       "btnSecondary": "Önéletrajz letöltése"
-    },
-    "about": {
-      "heading": "Szakmai bemutatkozás",
-      "p1": "Frontend fejlesztőként a modern webes technológiák és best practice-ek alkalmazásával építek felhasználóbarát webalkalmazásokat. Szeretem a clean code elveket követni és a komponens alapú fejlesztést.",
-      "p2": "Tapasztalatom kiterjed a React.js, Laravel, és Tailwind CSS használatára. Különösen érdekel a performancia optimalizálás és a modern UI/UX trendek követése. Projektjeim során mindig törekszem a reszponzív design és az akadálymentesség biztosítására.",
-      "p3": "Aktívan fejlesztem magam online kurzusokon és személyes projekteken keresztül. Szívesen dolgozom csapatban, ahol tudásmegosztással és code review-val segítjük egymás fejlődését."
     },
     "timeline": {
       "heading": "Szakmai út",
@@ -67,7 +76,27 @@
       }
     },
     "skills": {
-      "heading": "Kompetenciák és technológiák"
+      "heading": "Kompetenciák és technológiák",
+      "frontend": {
+        "heading": "Frontend Technológiák",
+        "desc": "Modern webes technológiák és eszközök"
+      },
+      "backend": {
+        "heading": "Backend Ismeretek",
+        "desc": "Alapvető backend fejlesztési tapasztalat"
+      },
+      "tools": {
+        "heading": "Keretrendszerek és eszközök",
+        "desc": "Fejlesztői eszközök és keretrendszerek"
+      },
+      "css": {
+        "heading": "CSS Keretrendszerek",
+        "desc": "Modern CSS megoldások és keretrendszerek"
+      },
+      "design": {
+        "heading": "Design készségek",
+        "desc": "Felhasználói élmény és vizuális tervezés"
+      }
     }
   },
   "projects": {
@@ -82,5 +111,52 @@
     "emailPlaceholder": "Email címed",
     "messagePlaceholder": "Üzeneted...",
     "sendBtn": "Üzenet elküldése"
+  },
+  "langSwitch": "Nyelvváltás",
+  "services": {
+    "heading": "Szolgáltatások",
+    "fullSite": {
+      "title": "Teljes weboldalkészítés",
+      "desc": "Egyedi weboldalak tervezése és fejlesztése a nulláról, az Ön igényei szerint."
+    },
+    "frontendDev": {
+      "title": "Frontend fejlesztés",
+      "desc": "Modern, reszponzív felhasználói felületek készítése React és Laravel technológiákkal."
+    },
+    "responsive": {
+      "title": "Mobilbarát kialakítás",
+      "desc": "Minden eszközön tökéletesen működő, reszponzív weboldalak fejlesztése."
+    },
+    "structuredCode": {
+      "title": "Strukturált kód",
+      "desc": "Tiszta, jól dokumentált és könnyen karbantartható kódbázis létrehozása."
+    },
+    "animations": {
+      "title": "Animációk és interakciók",
+      "desc": "Látványos animációk és interaktív elemek a jobb felhasználói élményért."
+    },
+    "support": {
+      "title": "Technikai támogatás",
+      "desc": "Folyamatos technikai támogatás és karbantartás a projekt után is."
+    }
+  },
+  "workflow": {
+    "heading": "Így dolgozom",
+    "step1": {
+      "title": "Kapcsolatfelvétel",
+      "desc": "Írásban vagy telefonon egyeztetünk az elképzeléseidről és a céljaidról."
+    },
+    "step2": {
+      "title": "Árajánlat és igényfelmérés",
+      "desc": "Megismerem a projekted részleteit, majd pontos árajánlatot és ütemtervet készítek."
+    },
+    "step3": {
+      "title": "Fejlesztés",
+      "desc": "Kódolás, tesztelés, hibajavítás."
+    },
+    "step4": {
+      "title": "Élesítés",
+      "desc": "Átadás és támogatás."
+    }
   }
 } 

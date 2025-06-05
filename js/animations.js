@@ -16,15 +16,6 @@ let heroObserver = null;
 export function playLanguageTransition(newLang) {
   return new Promise((resolve) => {
     const transitionOverlay = document.querySelector('.language-transition');
-    const transitionText = transitionOverlay.querySelector('.transition-text');
-    
-    // Szöveg beállítása a célnyelv alapján
-    const transitionTexts = {
-      'hu': 'Váltás magyarra...',
-      'en': 'Switching to English...',
-      'de': 'Wechsel zu Deutsch...'
-    };
-    transitionText.textContent = transitionTexts[newLang] || 'Nyelvváltás...';
     
     // Animáció indítása
     transitionOverlay.classList.add('active');

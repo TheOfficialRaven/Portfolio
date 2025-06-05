@@ -3,6 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light">
+  
+  <!-- Critical CSS a villanás megelőzésére -->
+  <style>
+    html {
+      background: #0a0a0a;
+    }
+    html[data-theme="light"] {
+      background: #ffffff;
+    }
+  </style>
+  
+  <!-- Azonnali téma beállítás -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <title data-i18n="meta.title">Mark Gor | Portfolio – Karrier</title>
   <meta name="description" content="Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése." data-i18n="meta.description" />
 
@@ -14,6 +36,10 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Vanta.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
 <body data-theme="dark">
   <!-- Progress Bar -->
@@ -35,41 +61,35 @@
         <a href="#career-skills" data-i18n="nav.skills">Kompetenciák</a>
         <a href="#career-contact" data-i18n="nav.contact">Kapcsolat</a>
       </nav>
-      <!-- Theme Toggle -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Téma váltás">
-        <svg id="theme-icon" viewBox="0 0 24 24" width="28" height="28" fill="none"
-             xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="5" class="sun-core" />
-          <g class="sun-rays">
-            <line x1="12" y1="1" x2="12" y2="4" />
-            <line x1="12" y1="20" x2="12" y2="23" />
-            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
-            <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
-            <line x1="1" y1="12" x2="4" y2="12" />
-            <line x1="20" y1="12" x2="23" y2="12" />
-            <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
-            <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
-          </g>
-          <path class="moon" d="M21 12.79A9 9 0 0112.21 3 7 7 0 1021 12.79z" />
-        </svg>
-      </button>
-      <!-- Language Switcher -->
-      <div class="lang-switcher">
-        <button data-lang="hu">HU</button>
-        <button data-lang="en">EN</button>
-        <button data-lang="de">DE</button>
-      </div>
-      <!-- Hamburger -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="header-right">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Téma váltás">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2m0 16v2M4 12H2m20 0h-2m-2.828-6.172l-1.414 1.414M6.242 17.758l-1.414 1.414M6.242 6.242L4.828 4.828m12.93 12.93l1.414 1.414"/>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button data-lang="hu">HU</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="de">DE</button>
+        </div>
+        <!-- Hamburger Menu -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- Mobile Nav -->
-  <nav class="mobile-nav" id="mobileNav">
+  <nav id="mobileNav" class="mobile-nav">
     <a href="index.html" class="nav-main" data-i18n="nav.home">Home</a>
     <a href="#hero" class="active nav-main" data-i18n="nav.career">Karrier</a>
     <a href="#career-about" data-i18n="nav.about">Bemutatkozás</a>
@@ -141,24 +161,11 @@
           </div>
         </div>
         <div class="about-content">
-          <h2 class="section-title" data-i18n="career.about.heading">Szakmai bemutatkozás</h2>
-          <p data-i18n="career.about.p1">
-            Frontend fejlesztőként a modern webes technológiák és best practice-ek alkalmazásával építek felhasználóbarát webalkalmazásokat. Szeretem a clean code elveket követni és a komponens alapú fejlesztést.
+          <h2 class="section-title" data-i18n="career_about.heading">Szakmai Bemutatkozás</h2>
+          <p data-i18n="career_about.description">
+            Több éves tapasztalattal rendelkező webfejlesztő vagyok, aki folyamatosan fejleszti tudását. Specializálódtam a modern webes technológiákra és a felhasználói élmény optimalizálására.
           </p>
-          <p data-i18n="career.about.p2">
-            Tapasztalatom kiterjed a React.js, Laravel, és Tailwind CSS használatára. Különösen érdekel a performancia optimalizálás és a modern UI/UX trendek követése. Projektjeim során mindig törekszem a reszponzív design és az akadálymentesség biztosítására.
-          </p>
-          <p data-i18n="career.about.p3">
-            Aktívan fejlesztem magam online kurzusokon és személyes projekteken keresztül. Szívesen dolgozom csapatban, ahol tudásmegosztással és code review-val segítjük egymás fejlődését.
-          </p>
-          <div class="about-links">
-            <a href="https://github.com/markgor" target="_blank" class="about-link">
-              <i class="fab fa-github"></i> GitHub Profilom
-            </a>
-            <a href="https://www.linkedin.com/in/markgor" target="_blank" class="about-link">
-              <i class="fab fa-linkedin"></i> LinkedIn Profilom
-            </a>
-          </div>
+          <a href="#timeline" class="about-cta btn neon-hover primary-btn" data-i18n="career_about.cta">Szakmai önéletrajz megtekintése</a>
         </div>
       </div>
     </section>
@@ -277,7 +284,8 @@
         
         <!-- Core Development Skills -->
         <div class="skills-category">
-          <h3 class="category-title">Alap technológiák</h3>
+          <h3 class="category-title" data-i18n="career.skills.frontend.heading">Frontend Technológiák</h3>
+          <p class="category-desc" data-i18n="career.skills.frontend.desc">Modern webes technológiák és eszközök</p>
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-info">
@@ -419,6 +427,76 @@
             </div>
           </div>
         </div>
+
+        <!-- Backend Ismeretek -->
+        <div class="skills-category">
+          <h3 class="category-title" data-i18n="career.skills.backend.heading">Backend Ismeretek</h3>
+          <p class="category-desc" data-i18n="career.skills.backend.desc">Alapvető backend fejlesztési tapasztalat</p>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-percentage">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="70"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Express</span>
+                <span class="skill-percentage">65%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="65"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">MongoDB</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="75"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fejlesztői Eszközök -->
+        <div class="skills-category">
+          <h3 class="category-title" data-i18n="career.skills.tools.heading">Fejlesztői Eszközök</h3>
+          <p class="category-desc" data-i18n="career.skills.tools.desc">Verziókezelés és fejlesztői környezetek</p>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Git</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">VS Code</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Postman</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="80"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -501,7 +579,8 @@
   <div class="language-transition">
     <div class="transition-content">
       <i class="fas fa-language language-icon"></i>
-      <span class="transition-text">Nyelvváltás...</span>
+      <span class="transition-text" data-i18n="langSwitch">Nyelvváltás</span>
+      <span class="current-lang"></span>
     </div>
   </div>
 

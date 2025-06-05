@@ -106,14 +106,79 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===== 2) Mobil Menü Toggle ===== */
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
+  const body = document.body;
+
   if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      mobileNav.classList.toggle('active');
+    let isAnimating = false;
+
+    const toggleMenu = (show) => {
+      if (isAnimating) return;
+      isAnimating = true;
+
+      if (show) {
+        hamburger.classList.add('active');
+        mobileNav.classList.add('active');
+        body.classList.add('menu-open');
+        
+        // Add transition delay to menu items
+        mobileNav.querySelectorAll('a').forEach((link, index) => {
+          link.style.transitionDelay = `${0.1 + index * 0.05}s`;
+        });
+      } else {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        body.classList.remove('menu-open');
+        
+        // Remove transition delays
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.style.transitionDelay = '';
+        });
+      }
+
+      // Reset animation flag after transition
+      setTimeout(() => {
+        isAnimating = false;
+      }, 300);
+    };
+
+    // Toggle menu on hamburger click
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMenu(!mobileNav.classList.contains('active'));
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (mobileNav.classList.contains('active') && 
+          !hamburger.contains(e.target) && 
+          !mobileNav.contains(e.target)) {
+        toggleMenu(false);
+      }
+    });
+
+    // Close menu when clicking on mobile nav links
     mobileNav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        mobileNav.classList.remove('active');
+        toggleMenu(false);
       });
+    });
+
+    // Close menu on resize if screen becomes larger than mobile breakpoint
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
+          toggleMenu(false);
+        }
+      }, 250);
+    });
+
+    // Handle escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+        toggleMenu(false);
+      }
     });
   }
 

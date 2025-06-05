@@ -2,6 +2,33 @@ import { initializeAllAnimations, resetAnimations, playLanguageTransition } from
 import { renderProjects } from './projects.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Hamburger Menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const mobileNavLinks = mobileNav.querySelectorAll('a');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+  });
+
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+  });
+
   // Render projects
   renderProjects();
 

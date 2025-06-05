@@ -1,7 +1,30 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light">
+  
+  <!-- Critical CSS a villanás megelőzésére -->
+  <style>
+    html {
+      background: #0a0a0a;
+    }
+    html[data-theme="light"] {
+      background: #ffffff;
+    }
+  </style>
+  
+  <!-- Azonnali téma beállítás -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <title data-i18n="meta.title">Mark Gor | Portfolio</title>
   <meta name="description" content="Mark Gor frontend fejlesztő portfólió és szolgáltatások." data-i18n="meta.description" />
 
@@ -13,6 +36,10 @@
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Vanta.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
 <body data-theme="dark">
   <!-- Progress Bar -->
@@ -24,6 +51,8 @@
       <a href="index.html" class="logo">
         <img src="imgs/logo.png" alt="Mark Gor Logo" />
       </a>
+      
+      <!-- Desktop Navigation -->
       <nav class="navbar">
         <a href="#home" class="active nav-main" data-i18n="nav.home">Home</a>
         <a href="karrier.html" class="nav-main" data-i18n="nav.career">Karrier</a>
@@ -33,49 +62,45 @@
         <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
         <a href="#contact" data-i18n="nav.contact">Kapcsolat</a>
       </nav>
-      <!-- Theme Toggle -->
-      <button id="theme-toggle" class="theme-toggle" aria-label="Téma váltás">
-        <svg id="theme-icon" viewBox="0 0 24 24" width="28" height="28" fill="none"
-             xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="5" class="sun-core" />
-          <g class="sun-rays">
-            <line x1="12" y1="1" x2="12" y2="4" />
-            <line x1="12" y1="20" x2="12" y2="23" />
-            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
-            <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
-            <line x1="1" y1="12" x2="4" y2="12" />
-            <line x1="20" y1="12" x2="23" y2="12" />
-            <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
-            <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
-          </g>
-          <path class="moon" d="M21 12.79A9 9 0 0112.21 3 7 7 0 1021 12.79z" />
-        </svg>
-      </button>
-      <!-- Language Switcher -->
-      <div class="lang-switcher">
-        <button data-lang="hu">HU</button>
-        <button data-lang="en">EN</button>
-        <button data-lang="de">DE</button>
-      </div>
-      <!-- Hamburger -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      
+      <div class="header-right">
+        <!-- Theme Toggle -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+        </button>
+        
+        <!-- Language Switcher -->
+        <div class="lang-switcher">
+          <button data-lang="hu">HU</button>
+          <button data-lang="en">EN</button>
+          <button data-lang="de">DE</button>
+        </div>
+        
+        <!-- Hamburger Menu -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
+    
+    <!-- Mobile Navigation -->
+    <nav id="mobileNav" class="mobile-nav">
+      <a href="#home" class="active nav-main" data-i18n="nav.home">Home</a>
+      <a href="karrier.html" class="nav-main" data-i18n="nav.career">Karrier</a>
+      <a href="#about" data-i18n="nav.about">Bemutatkozás</a>
+      <a href="#services" data-i18n="nav.services">Szolgáltatások</a>
+      <a href="#projects" data-i18n="nav.projects">Projektek</a>
+      <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
+      <a href="#contact" data-i18n="nav.contact">Kapcsolat</a>
+    </nav>
   </header>
-
-  <!-- Mobile Nav -->
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#home" class="active nav-main" data-i18n="nav.home">Home</a>
-    <a href="karrier.html" class="nav-main" data-i18n="nav.career">Karrier</a>
-    <a href="#about" data-i18n="nav.about">Bemutatkozás</a>
-    <a href="#services" data-i18n="nav.services">Szolgáltatások</a>
-    <a href="#projects" data-i18n="nav.projects">Projektek</a>
-    <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
-    <a href="#contact" data-i18n="nav.contact">Kapcsolat</a>
-  </nav>
 
   <main>
     <!-- Hero Section -->
@@ -132,18 +157,10 @@
         </div>
         <div class="about-content">
           <h2 class="section-title" data-i18n="about.heading">Rólam</h2>
-          <p data-i18n="about.p1">
-            Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek – akár egyéni vállalkozó vagy, akár egy újonnan induló márkát képviselsz.
+          <p data-i18n="about.description">
+            Szenvedélyes webfejlesztő vagyok, aki szereti a kihívásokat és az új technológiákat. Célom, hogy ügyfeleimnek a lehető legjobb megoldást nyújtsam.
           </p>
-          <p data-i18n="about.p2">
-            A munkáim során nagy hangsúlyt fektetek a reszponzivitásra, a gyors betöltésre, és arra, hogy az oldal minden képernyőméreten meggyőző élményt nyújtson. Legyen szó egy bemutatkozó oldalról, szolgáltatásismertetőről vagy kreatív landing page-ről, fontos számomra, hogy a végeredmény tükrözze az ügyfél egyéniségét és céljait.
-          </p>
-          <p data-i18n="about.p3">
-            Jól ismerem a HTML, CSS és JavaScript nyelveket, dolgozom Bootstrap és Laravel keretrendszerekkel, és folyamatosan bővítem a tudásomat. Már több weboldalt készítettem megrendelésre, és ezek mellett saját projekteken keresztül is fejlődöm – mert hiszek abban, hogy a tanulás soha nem áll meg.
-          </p>
-          <a href="#contact" class="about-cta btn neon-hover primary-btn" data-i18n="about.cta">
-            Beszéljünk a projektedről
-          </a>
+          <a href="#contact" class="about-cta btn neon-hover primary-btn" data-i18n="about.cta">Beszéljünk a projektedről</a>
         </div>
       </div>
     </section>
@@ -323,7 +340,8 @@
   <div class="language-transition">
     <div class="transition-content">
       <i class="fas fa-language language-icon"></i>
-      <span class="transition-text">Nyelvváltás...</span>
+      <span class="transition-text" data-i18n="langSwitch">Nyelvváltás</span>
+      <span class="current-lang"></span>
     </div>
   </div>
 
@@ -334,9 +352,9 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   
   <!-- App Scripts -->
-  <script src="js/projects.js" type="module"></script>
   <script src="js/animations.js" type="module"></script>
   <script src="js/base.js" type="module"></script>
+  <script src="js/projects.js" type="module"></script>
   <script src="js/form.js" type="module"></script>
   <script src="js/main.js" type="module"></script>
 </body>

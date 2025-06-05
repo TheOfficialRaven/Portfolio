@@ -1,7 +1,10 @@
 {
   "meta": {
     "title": "Mark Gor | Portfolio",
-    "description": "Mark Gor's frontend developer journey, milestones achieved and CV download."
+    "description": "Mark Gor's frontend developer career path, milestones and CV download."
+  },
+  "general": {
+    "languageChange": "Changing language..."
   },
   "nav": {
     "home": "Home",
@@ -9,6 +12,8 @@
     "about": "About",
     "timeline": "Timeline",
     "courses": "Courses",
+    "workflow": "Workflow",
+    "services": "Services",
     "projects": "Projects",
     "skills": "Skills",
     "contact": "Contact"
@@ -19,18 +24,22 @@
     "btnPrimary": "Projects",
     "btnSecondary": "Contact"
   },
+  "about": {
+    "heading": "About Me",
+    "description": "Welcome! As a frontend developer, I'm passionate about creating modern and user-friendly websites. I believe that a website should not only look beautiful but also effectively serve business goals. I offer personalized solutions where your needs and your business's unique character are at the center. Whether it's creating a new website or improving an existing one, my goal is to create a digital presence that not only attracts but also retains your customers. With years of experience and continuous learning, I ensure that your project is built using the latest technologies and best practices.",
+    "cta": "Let's discuss your project"
+  },
+  "career_about": {
+    "heading": "Professional Introduction",
+    "description": "As a frontend developer, I specialize in modern web technologies and user experience. I have several years of hands-on experience in developing complex web applications, where clean code and efficient solutions are as crucial as teamwork and agile methodologies. I've specialized in React.js and modern JavaScript (ES6+) technologies, as well as responsive and performance-oriented development. I continuously educate myself to stay up-to-date with industry trends and best practices. My structured thinking and problem-solving skills help me effectively handle complex development challenges.",
+    "cta": "View Professional Resume"
+  },
   "career": {
     "hero": {
       "title": "Support your team with a professional frontend developer",
       "subtitle": "Independent professional development, transparent processes, and result-oriented approach.",
       "btnPrimary": "Get to know me",
       "btnSecondary": "Download CV"
-    },
-    "about": {
-      "heading": "Professional Introduction",
-      "p1": "As a Frontend Developer, I build user-friendly web applications using modern technologies and best practices. I love following clean code principles and component-based development.",
-      "p2": "My experience includes working with React.js, Laravel, and Tailwind CSS. I'm particularly interested in performance optimization and following modern UI/UX trends. In my projects, I always strive for responsive design and accessibility.",
-      "p3": "I actively develop myself through online courses and personal projects. I enjoy working in teams where we help each other's growth through knowledge sharing and code reviews."
     },
     "timeline": {
       "heading": "Professional Journey",
@@ -67,7 +76,27 @@
       }
     },
     "skills": {
-      "heading": "Skills and Technologies"
+      "heading": "Skills and Technologies",
+      "frontend": {
+        "heading": "Frontend Technologies",
+        "desc": "Modern web technologies and tools"
+      },
+      "backend": {
+        "heading": "Backend Knowledge",
+        "desc": "Basic backend development experience"
+      },
+      "tools": {
+        "heading": "Frameworks and Tools",
+        "desc": "Development tools and frameworks"
+      },
+      "css": {
+        "heading": "CSS Frameworks",
+        "desc": "Modern CSS solutions and frameworks"
+      },
+      "design": {
+        "heading": "Design Skills",
+        "desc": "User experience and visual design"
+      }
     }
   },
   "projects": {
@@ -82,5 +111,52 @@
     "emailPlaceholder": "Your Email",
     "messagePlaceholder": "Your Message...",
     "sendBtn": "Send Message"
+  },
+  "langSwitch": "Language Change",
+  "services": {
+    "heading": "Services",
+    "fullSite": {
+      "title": "Complete Website Development",
+      "desc": "Custom website design and development from scratch, according to your needs."
+    },
+    "frontendDev": {
+      "title": "Frontend Development",
+      "desc": "Building modern, responsive user interfaces with React and Laravel technologies."
+    },
+    "responsive": {
+      "title": "Mobile-Friendly Design",
+      "desc": "Developing responsive websites that work perfectly on all devices."
+    },
+    "structuredCode": {
+      "title": "Structured Code",
+      "desc": "Creating clean, well-documented, and easily maintainable codebase."
+    },
+    "animations": {
+      "title": "Animations and Interactions",
+      "desc": "Impressive animations and interactive elements for better user experience."
+    },
+    "support": {
+      "title": "Technical Support",
+      "desc": "Continuous technical support and maintenance even after project completion."
+    }
+  },
+  "workflow": {
+    "heading": "How I Work",
+    "step1": {
+      "title": "Initial Contact",
+      "desc": "We discuss your ideas and goals via email or phone."
+    },
+    "step2": {
+      "title": "Quote and Requirements",
+      "desc": "I learn about your project details, then prepare an accurate quote and timeline."
+    },
+    "step3": {
+      "title": "Development",
+      "desc": "Coding, testing, bug fixing."
+    },
+    "step4": {
+      "title": "Launch",
+      "desc": "Delivery and support."
+    }
   }
 } 

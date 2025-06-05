@@ -1,14 +1,19 @@
 {
   "meta": {
     "title": "Mark Gor | Portfolio",
-    "description": "Mark Gors Weg als Frontend-Entwickler, erreichte Meilensteine und Lebenslauf-Download."
+    "description": "Mark Gors beruflicher Werdegang als Frontend-Entwickler, Meilensteine und Lebenslauf-Download."
+  },
+  "general": {
+    "languageChange": "Sprache wird gewechselt..."
   },
   "nav": {
     "home": "Startseite",
     "career": "Karriere",
     "about": "Über mich",
-    "timeline": "Zeitlinie",
+    "timeline": "Werdegang",
     "courses": "Kurse",
+    "workflow": "Arbeitsweise",
+    "services": "Dienstleistungen",
     "projects": "Projekte",
     "skills": "Fähigkeiten",
     "contact": "Kontakt"
@@ -19,18 +24,27 @@
     "btnPrimary": "Projekte",
     "btnSecondary": "Kontakt"
   },
+  "about": {
+    "heading": "Über mich",
+    "description": "Als Frontend-Entwickler ist es meine Leidenschaft, moderne und benutzerfreundliche Webseiten zu erstellen. Ich glaube daran, dass eine Website nicht nur schön aussehen, sondern auch effektiv die geschäftlichen Ziele unterstützen sollte. Ich biete maßgeschneiderte Lösungen an, bei denen deine Bedürfnisse und der einzigartige Charakter deines Unternehmens im Mittelpunkt stehen. Egal, ob es um die Erstellung einer neuen Website oder die Weiterentwicklung einer bestehenden geht – mein Ziel ist es, eine digitale Präsenz zu schaffen, die nicht nur Besucher anzieht, sondern auch langfristig bindet. Mit mehreren Jahren Erfahrung und kontinuierlicher Weiterbildung stelle ich sicher, dass dein Projekt mit den neuesten Technologien und bewährten Methoden umgesetzt wird.",
+    "cta": "Lass uns über dein Projekt sprechen"
+  },
+  "career_about": {
+    "heading": "Professionelle Vorstellung",
+    "description": "Ich bin ein leidenschaftlicher Webentwickler, der Herausforderungen und neue Technologien liebt. Mein Ziel ist es, meinen Kunden die bestmögliche Lösung zu bieten.",
+    "cta": "Professionellen Lebenslauf ansehen"
+  },
   "career": {
     "hero": {
       "title": "Unterstützen Sie Ihr Team mit einem professionellen Frontend-Entwickler",
-      "subtitle": "Eigenständige berufliche Entwicklung, transparente Prozesse und ergebnisorientierter Ansatz.",
+      "subtitle": "Selbstständige fachliche Entwicklung, transparente Prozesse und ergebnisorientierter Ansatz.",
       "btnPrimary": "Lernen Sie mich kennen",
-      "btnSecondary": "Lebenslauf herunterladen"
+      "btnSecondary": "Lebenslauf"
     },
     "about": {
-      "heading": "Berufliche Vorstellung",
-      "p1": "Als Frontend-Entwickler erstelle ich benutzerfreundliche Webanwendungen mit modernen Technologien und Best Practices. Ich liebe es, Clean-Code-Prinzipien zu befolgen und komponentenbasiert zu entwickeln.",
-      "p2": "Meine Erfahrung umfasst die Arbeit mit React.js, Laravel und Tailwind CSS. Besonders interessiere ich mich für Performanceoptimierung und moderne UI/UX-Trends. In meinen Projekten strebe ich stets nach responsivem Design und Barrierefreiheit.",
-      "p3": "Ich entwickle mich aktiv durch Online-Kurse und persönliche Projekte weiter. Ich arbeite gerne im Team, wo wir durch Wissensaustausch und Code-Reviews voneinander lernen."
+      "heading": "Über Mich",
+      "description": "Ich bin ein leidenschaftlicher Webentwickler, der Herausforderungen und neue Technologien liebt. Mein Ziel ist es, meinen Kunden die bestmöglichen Lösungen zu bieten.",
+      "cta": "Lassen Sie uns über Ihr Projekt sprechen"
     },
     "timeline": {
       "heading": "Beruflicher Werdegang",
@@ -67,7 +81,27 @@
       }
     },
     "skills": {
-      "heading": "Fähigkeiten und Technologien"
+      "heading": "Fähigkeiten und Technologien",
+      "frontend": {
+        "heading": "Frontend-Technologien",
+        "desc": "Moderne Webtechnologien und Tools"
+      },
+      "backend": {
+        "heading": "Backend-Kenntnisse",
+        "desc": "Grundlegende Backend-Entwicklungserfahrung"
+      },
+      "tools": {
+        "heading": "Frameworks und Tools",
+        "desc": "Entwicklungswerkzeuge und Frameworks"
+      },
+      "css": {
+        "heading": "CSS-Frameworks",
+        "desc": "Moderne CSS-Lösungen und Frameworks"
+      },
+      "design": {
+        "heading": "Design-Fähigkeiten",
+        "desc": "Benutzererfahrung und visuelles Design"
+      }
     }
   },
   "projects": {
@@ -82,5 +116,52 @@
     "emailPlaceholder": "Ihre E-Mail",
     "messagePlaceholder": "Ihre Nachricht...",
     "sendBtn": "Nachricht senden"
+  },
+  "langSwitch": "Sprachwechsel",
+  "services": {
+    "heading": "Dienstleistungen",
+    "fullSite": {
+      "title": "Komplette Webentwicklung",
+      "desc": "Individuelle Website-Gestaltung und -Entwicklung von Grund auf, nach Ihren Anforderungen."
+    },
+    "frontendDev": {
+      "title": "Frontend-Entwicklung",
+      "desc": "Entwicklung moderner, responsiver Benutzeroberflächen mit React und Laravel."
+    },
+    "responsive": {
+      "title": "Mobilfreundliches Design",
+      "desc": "Entwicklung responsiver Websites, die auf allen Geräten perfekt funktionieren."
+    },
+    "structuredCode": {
+      "title": "Strukturierter Code",
+      "desc": "Erstellung einer sauberen, gut dokumentierten und leicht wartbaren Codebasis."
+    },
+    "animations": {
+      "title": "Animationen und Interaktionen",
+      "desc": "Beeindruckende Animationen und interaktive Elemente für bessere Benutzererfahrung."
+    },
+    "support": {
+      "title": "Technischer Support",
+      "desc": "Kontinuierlicher technischer Support und Wartung auch nach Projektabschluss."
+    }
+  },
+  "workflow": {
+    "heading": "Arbeitsweise",
+    "step1": {
+      "title": "Erstkontakt",
+      "desc": "Wir besprechen Ihre Ideen und Ziele per E-Mail oder Telefon."
+    },
+    "step2": {
+      "title": "Angebot und Anforderungen",
+      "desc": "Ich lerne Ihre Projektdetails kennen und erstelle ein genaues Angebot und einen Zeitplan."
+    },
+    "step3": {
+      "title": "Entwicklung",
+      "desc": "Programmierung, Tests, Fehlerbehebung."
+    },
+    "step4": {
+      "title": "Launch",
+      "desc": "Übergabe und Support."
+    }
   }
 } 
