@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Mark Gor | Portfolio",
+    "description": "Mark Gors Weg als Frontend-Entwickler, erreichte Meilensteine und Lebenslauf-Download."
+  },
+  "nav": {
+    "home": "Startseite",
+    "career": "Karriere",
+    "about": "Über mich",
+    "timeline": "Zeitlinie",
+    "courses": "Kurse",
+    "projects": "Projekte",
+    "skills": "Fähigkeiten",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Ich bin Frontend-Entwickler",
+    "subtitle": "Entwicklung moderner Webanwendungen mit React und Laravel",
+    "btnPrimary": "Projekte",
+    "btnSecondary": "Kontakt"
+  },
+  "career": {
+    "hero": {
+      "title": "Unterstützen Sie Ihr Team mit einem professionellen Frontend-Entwickler",
+      "subtitle": "Eigenständige berufliche Entwicklung, transparente Prozesse und ergebnisorientierter Ansatz.",
+      "btnPrimary": "Lernen Sie mich kennen",
+      "btnSecondary": "Lebenslauf herunterladen"
+    },
+    "about": {
+      "heading": "Berufliche Vorstellung",
+      "p1": "Als Frontend-Entwickler erstelle ich benutzerfreundliche Webanwendungen mit modernen Technologien und Best Practices. Ich liebe es, Clean-Code-Prinzipien zu befolgen und komponentenbasiert zu entwickeln.",
+      "p2": "Meine Erfahrung umfasst die Arbeit mit React.js, Laravel und Tailwind CSS. Besonders interessiere ich mich für Performanceoptimierung und moderne UI/UX-Trends. In meinen Projekten strebe ich stets nach responsivem Design und Barrierefreiheit.",
+      "p3": "Ich entwickle mich aktiv durch Online-Kurse und persönliche Projekte weiter. Ich arbeite gerne im Team, wo wir durch Wissensaustausch und Code-Reviews voneinander lernen."
+    },
+    "timeline": {
+      "heading": "Beruflicher Werdegang",
+      "2019": {
+        "title": "HTML & CSS Grundlagen",
+        "desc": "Erstes Projekt: Erstellung einer statischen Portfolio-Seite."
+      },
+      "2020": {
+        "title": "JavaScript und SPA",
+        "desc": "ToDo-App-Entwicklung mit ES6+ und modularem Aufbau."
+      },
+      "2021": {
+        "title": "React Portfolio",
+        "desc": "Erstellung einer React-basierten Portfolio-Website mit Tailwind CSS."
+      },
+      "2022": {
+        "title": "Freelance Projekte",
+        "desc": "Arbeit an Websites für kleine und mittlere Unternehmen."
+      },
+      "2023-2024": {
+        "title": "Kontinuierliche Entwicklung",
+        "desc": "Kurse, echte Kundenprojekte, neue Technologien."
+      }
+    },
+    "courses": {
+      "heading": "Ausbildung und Kurse",
+      "sololearn": {
+        "title": "Sololearn (Juni 2023 – September 2023)",
+        "note": "(Zertifikate auf Anfrage verfügbar.)"
+      },
+      "scrimba": {
+        "title": "Scrimba – The Frontend Developer Career Path",
+        "desc": "Während des Frontend Developer Career Path-Kurses habe ich moderne Webtechnologien wie HTML5, CSS3, JavaScript (ES6+), React.js und Git-Versionskontrolle gemeistert. Der Kurs entwickelte meine Problemlösungsfähigkeiten und Clean-Code-Schreibfähigkeiten durch praktische Projekte."
+      }
+    },
+    "skills": {
+      "heading": "Fähigkeiten und Technologien"
+    }
+  },
+  "projects": {
+    "heading": "Projekte"
+  },
+  "contact": {
+    "heading": "Kontakt aufnehmen",
+    "intro": "Haben Sie eine Idee oder möchten Sie eine Website erstellen?\nSchreiben Sie mir oder rufen Sie mich an - ich bespreche es gerne persönlich mit Ihnen!",
+    "phone": "+36 30 123 4567",
+    "phoneNote": "Erreichbar an Werktagen zwischen 9:00 und 18:00 Uhr.",
+    "namePlaceholder": "Ihr Name",
+    "emailPlaceholder": "Ihre E-Mail",
+    "messagePlaceholder": "Ihre Nachricht...",
+    "sendBtn": "Nachricht senden"
+  }
+} 

@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Mark Gor | Portfolio",
+    "description": "Mark Gor's frontend developer journey, milestones achieved and CV download."
+  },
+  "nav": {
+    "home": "Home",
+    "career": "Career",
+    "about": "About",
+    "timeline": "Timeline",
+    "courses": "Courses",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "I'm a Frontend Developer",
+    "subtitle": "Building modern web applications with React and Laravel",
+    "btnPrimary": "Projects",
+    "btnSecondary": "Contact"
+  },
+  "career": {
+    "hero": {
+      "title": "Support your team with a professional frontend developer",
+      "subtitle": "Independent professional development, transparent processes, and result-oriented approach.",
+      "btnPrimary": "Get to know me",
+      "btnSecondary": "Download CV"
+    },
+    "about": {
+      "heading": "Professional Introduction",
+      "p1": "As a Frontend Developer, I build user-friendly web applications using modern technologies and best practices. I love following clean code principles and component-based development.",
+      "p2": "My experience includes working with React.js, Laravel, and Tailwind CSS. I'm particularly interested in performance optimization and following modern UI/UX trends. In my projects, I always strive for responsive design and accessibility.",
+      "p3": "I actively develop myself through online courses and personal projects. I enjoy working in teams where we help each other's growth through knowledge sharing and code reviews."
+    },
+    "timeline": {
+      "heading": "Professional Journey",
+      "2019": {
+        "title": "HTML & CSS Basics",
+        "desc": "First project: creating a static portfolio page."
+      },
+      "2020": {
+        "title": "JavaScript and SPA",
+        "desc": "ToDo App development with ES6+ and modular structure."
+      },
+      "2021": {
+        "title": "React Portfolio",
+        "desc": "Creating a React-based portfolio site with Tailwind CSS."
+      },
+      "2022": {
+        "title": "Freelance Projects",
+        "desc": "Working on websites for small and medium businesses."
+      },
+      "2023-2024": {
+        "title": "Continuous Growth",
+        "desc": "Courses, real client projects, new technologies."
+      }
+    },
+    "courses": {
+      "heading": "Education and Courses",
+      "sololearn": {
+        "title": "Sololearn (June 2023 – September 2023)",
+        "note": "(Credentials available upon request.)"
+      },
+      "scrimba": {
+        "title": "Scrimba – The Frontend Developer Career Path",
+        "desc": "During the Frontend Developer Career Path course, I mastered modern web technologies including HTML5, CSS3, JavaScript (ES6+), React.js, and Git version control. The course developed my problem-solving skills and clean code writing ability through practical projects."
+      }
+    },
+    "skills": {
+      "heading": "Skills and Technologies"
+    }
+  },
+  "projects": {
+    "heading": "Projects"
+  },
+  "contact": {
+    "heading": "Let's Connect",
+    "intro": "Have an idea or want to start a website?\nWrite to me or call me - I'd be happy to discuss it with you in person!",
+    "phone": "+36 30 123 4567",
+    "phoneNote": "Available on weekdays between 9:00 AM and 6:00 PM.",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Your Message...",
+    "sendBtn": "Send Message"
+  }
+} 

@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Mark Gor | Portfolio",
+    "description": "Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése."
+  },
+  "nav": {
+    "home": "Főoldal",
+    "career": "Karrier",
+    "about": "Bemutatkozás",
+    "timeline": "Szakmai út",
+    "courses": "Képzések",
+    "projects": "Projektek",
+    "skills": "Kompetenciák",
+    "contact": "Kapcsolat"
+  },
+  "hero": {
+    "title": "Frontend fejlesztő vagyok",
+    "subtitle": "Modern webalkalmazások fejlesztése React és Laravel technológiákkal",
+    "btnPrimary": "Projektek",
+    "btnSecondary": "Kapcsolat"
+  },
+  "career": {
+    "hero": {
+      "title": "Támogasd csapatod profi frontend fejlesztővel",
+      "subtitle": "Önálló szakmai fejlődés, átlátható folyamatok és eredményorientált szemlélet.",
+      "btnPrimary": "Ismerj meg",
+      "btnSecondary": "Önéletrajz letöltése"
+    },
+    "about": {
+      "heading": "Szakmai bemutatkozás",
+      "p1": "Frontend fejlesztőként a modern webes technológiák és best practice-ek alkalmazásával építek felhasználóbarát webalkalmazásokat. Szeretem a clean code elveket követni és a komponens alapú fejlesztést.",
+      "p2": "Tapasztalatom kiterjed a React.js, Laravel, és Tailwind CSS használatára. Különösen érdekel a performancia optimalizálás és a modern UI/UX trendek követése. Projektjeim során mindig törekszem a reszponzív design és az akadálymentesség biztosítására.",
+      "p3": "Aktívan fejlesztem magam online kurzusokon és személyes projekteken keresztül. Szívesen dolgozom csapatban, ahol tudásmegosztással és code review-val segítjük egymás fejlődését."
+    },
+    "timeline": {
+      "heading": "Szakmai út",
+      "2019": {
+        "title": "HTML & CSS alapok",
+        "desc": "Első projekt: statikus bemutatkozó oldal készítése."
+      },
+      "2020": {
+        "title": "JavaScript és SPA",
+        "desc": "ToDo App fejlesztés ES6+ és moduláris felépítésben."
+      },
+      "2021": {
+        "title": "React portfólió",
+        "desc": "React-alapú portfólióoldal létrehozása Tailwind CSS-sel."
+      },
+      "2022": {
+        "title": "Freelance projektek",
+        "desc": "Kis- és középvállalkozások weboldalain dolgoztam."
+      },
+      "2023-2024": {
+        "title": "Folyamatos fejlődés",
+        "desc": "Kurzusok, valós ügyfélprojektek, új technológiák."
+      }
+    },
+    "courses": {
+      "heading": "Képzések és kurzusok",
+      "sololearn": {
+        "title": "Sololearn (2023. június – 2023. szeptember)",
+        "note": "(Hitelesítő adatok kérésre elérhetők.)"
+      },
+      "scrimba": {
+        "title": "Scrimba – The Frontend Developer Career Path",
+        "desc": "A Frontend Developer Career Path kurzus során elsajátítottam a modern webes technológiákat, beleértve a HTML5, CSS3, JavaScript (ES6+), React.js és Git verziókezelő használatát. A kurzus gyakorlati projekteken keresztül fejlesztette a problémamegoldó készségeimet és a clean code írás képességét."
+      }
+    },
+    "skills": {
+      "heading": "Kompetenciák és technológiák"
+    }
+  },
+  "projects": {
+    "heading": "Projektek"
+  },
+  "contact": {
+    "heading": "Lépjünk kapcsolatba",
+    "intro": "Van egy ötleted, vagy weboldalt szeretnél indítani?\nÍrj nekem, vagy hívj bizalommal – szívesen beszélek róla veled személyesen is!",
+    "phone": "+36 30 123 4567",
+    "phoneNote": "Hétköznapokon 9:00–18:00 között elérhető vagyok.",
+    "namePlaceholder": "Neved",
+    "emailPlaceholder": "Email címed",
+    "messagePlaceholder": "Üzeneted...",
+    "sendBtn": "Üzenet elküldése"
+  }
+} 

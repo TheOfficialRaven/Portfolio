@@ -71,14 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ============ Language Change ================ */
   async function loadLocale(lang) {
     try {
-      const res = await fetch(`./locales/${lang}.json`);
+      const res = await fetch(`./${lang}.json`);
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
       return res.json();
     } catch (error) {
       console.error('Error loading translations:', error);
       // Fallback to default translations if available
       try {
-        const fallbackRes = await fetch(`./locales/hu.json`);
+        const fallbackRes = await fetch(`./hu.json`);
         if (!fallbackRes.ok) throw new Error(`HTTP error! status: ${fallbackRes.status}`);
         return fallbackRes.json();
       } catch (fallbackError) {
