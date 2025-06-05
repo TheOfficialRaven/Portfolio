@@ -3,6 +3,9 @@
   "nav.about": "Rólam",
   "nav.services": "Szolgáltatások",
   "nav.projects": "Projektek",
+  "nav.skills": "Kompetenciák",
+  "nav.timeline": "Szakmai út",
+  "nav.courses": "Képzések",
   "nav.workflow": "Workflow",
   "nav.contact": "Kapcsolat",
   "nav.career": "Karrier",
@@ -97,5 +100,35 @@
   "services.support.title": "Technikai támogatás",
   "services.support.desc": "Hibajavítás, frissítés, utólagos segítség – megbízható támogatás a fejlesztés után is.",
 
-  "year": ""
+  "year": "",
+
+  "career.about.heading": "Szakmai bemutatkozás",
+  "career.about.p1": "Frontend fejlesztőként a modern webes technológiák és best practice-ek alkalmazásával építek felhasználóbarát webalkalmazásokat. Szeretem a clean code elveket követni és a komponens alapú fejlesztést.",
+  "career.about.p2": "Tapasztalatom kiterjed a React.js, Laravel, és Tailwind CSS használatára. Különösen érdekel a performancia optimalizálás és a modern UI/UX trendek követése. Projektjeim során mindig törekszem a reszponzív design és az akadálymentesség biztosítására.",
+  "career.about.p3": "Aktívan fejlesztem magam online kurzusokon és személyes projekteken keresztül. Szívesen dolgozom csapatban, ahol tudásmegosztással és code review-val segítjük egymás fejlődését.",
+  
+  "career.skills.categories.core": "Alap technológiák",
+  "career.skills.categories.frameworks": "Keretrendszerek és eszközök",
+  "career.skills.categories.css": "CSS Keretrendszerek",
+  "career.skills.categories.design": "Design készségek",
+  
+  "career.courses.heading": "Képzések és kurzusok",
+  "career.courses.sololearn.title": "Sololearn tanfolyamok (2023. június – szeptember)",
+  "career.courses.sololearn.note": "(Hitelesítő adatok kérésre elérhetők.)",
+  "career.courses.scrimba.title": "Scrimba – The Frontend Developer Career Path",
+  "career.courses.scrimba.desc": "A Frontend Developer Career Path kurzus során elsajátítottam a modern webes technológiákat, beleértve a HTML5, CSS3, JavaScript (ES6+), React.js és Git verziókezelő használatát. A kurzus gyakorlati projekteken keresztül fejlesztette a problémamegoldó készségeimet és a clean code írás képességét.",
+  
+  "career.skills.html": "HTML",
+  "career.skills.css": "CSS",
+  "career.skills.javascript": "JavaScript",
+  "career.skills.react": "React",
+  "career.skills.laravel": "Laravel",
+  "career.skills.firebase": "Firebase",
+  "career.skills.github": "GitHub",
+  "career.skills.tailwind": "Tailwind CSS",
+  "career.skills.bootstrap": "Bootstrap",
+  "career.skills.uiux": "UI/UX Design",
+  "career.skills.animations": "Animációk",
+  "career.skills.responsive": "Reszponzív Design",
+  "career.skills.visual": "Vizuális Kompozíció"
 }

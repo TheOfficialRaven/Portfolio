@@ -1,3 +1,5 @@
+import { initializeAllAnimations, resetAnimations, playLanguageTransition } from './animations.js';
+
 // --- Observer változók globálisan ---
 let revealObserver, heroObserver, aboutObs;
 
@@ -43,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        color: theme === 'dark' ? 0x00c9a7 : 0xf7a072,
-        backgroundColor: theme === 'dark' ? 0x0d0d0d : 0xf5f5f5,
+        color: 0x00c9a7,
+        backgroundColor: 0x0d0d0d,
         points: 14,
         maxDistance: 20,
         spacing: 18,
@@ -68,35 +70,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ============ Language Change ================ */
   async function loadLocale(lang) {
-    const res = await fetch(`/${lang}.json`);
-    return res.json();
+    try {
+      const res = await fetch(`./locales/${lang}.json`);
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      return res.json();
+    } catch (error) {
+      console.error('Error loading translations:', error);
+      // Fallback to default translations if available
+      try {
+        const fallbackRes = await fetch(`./locales/hu.json`);
+        if (!fallbackRes.ok) throw new Error(`HTTP error! status: ${fallbackRes.status}`);
+        return fallbackRes.json();
+      } catch (fallbackError) {
+        console.error('Error loading fallback translations:', fallbackError);
+        return {};
+      }
+    }
   }
 
-function applyTranslations(translations) {
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    const value = translations[key];
-    if (Array.isArray(value)) {
-      el.innerHTML = value.map(word => `<span>${word}</span>`).join(' ');
-    } else {
-      el.textContent = value || '';
-    }
+  function applyTranslations(translations) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const value = translations[key];
+      if (Array.isArray(value)) {
+        el.innerHTML = value.map(word => `<span>${word}</span>`).join(' ');
+      } else {
+        el.textContent = value || '';
+      }
+    });
+    // Set placeholders
+    document.querySelectorAll('[data-ph]').forEach(el => {
+      const key = el.getAttribute('data-ph');
+      if (translations[key]) {
+        el.placeholder = translations[key];
+      }
+    });
+
+    // Reset és újrainicializálás
+    resetAnimations();
+  }
+
+  // 1) Determine language (use localStorage or default 'hu')
+  const lang = localStorage.getItem('lang') || 'hu';
+  // 2) Load JSON for that language
+  loadLocale(lang).then(translations => {
+    // 3) Apply translations
+    applyTranslations(translations);
   });
-  // Set placeholders
-  document.querySelectorAll('[data-ph]').forEach(el => {
-    const key = el.getAttribute('data-ph');
-    if (translations[key]) {
-      el.placeholder = translations[key];
-    }
-  });
-  
+
+  /* Language Switcher buttons */
   document.querySelectorAll('.lang-switcher button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const newLang = btn.getAttribute('data-lang');
-    localStorage.setItem('lang', newLang);
-    window.location.reload(); // <-- újratölti az oldalt
+    btn.addEventListener('click', async () => {
+      const newLang = btn.getAttribute('data-lang');
+      localStorage.setItem('lang', newLang);
+      
+      // Nyelvváltás animáció lejátszása
+      await playLanguageTransition(newLang);
+      
+      // Fordítások betöltése és alkalmazása
+      const translations = await loadLocale(newLang);
+      applyTranslations(translations);
+    });
   });
-});
+
+  /* ===== Animációk inicializálása ===== */
+  initializeAllAnimations();
+
+  /* ===== Parallax on Hero Container ===== */
+  const heroContainer = document.querySelector('.hero-container');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    lastScroll = window.pageYOffset;
+  });
+  function rafParallax() {
+    if (heroContainer) {
+      heroContainer.style.transform = `translateY(${lastScroll * 0.3}px)`;
+    }
+    requestAnimationFrame(rafParallax);
+  }
+  requestAnimationFrame(rafParallax);
+
+  /* ===== Back to Top Button ===== */
+  {
+    const btn = document.getElementById('backToTop');
+    const footer = document.querySelector('footer');
+    if (btn && footer) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          btn.classList.toggle('show', entry.isIntersecting);
+        });
+      }, { threshold: 0.3 });
+      obs.observe(footer);
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  }
 
   // Minden .reveal osztály eltávolítása
   document.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
@@ -176,128 +245,5 @@ function applyTranslations(translations) {
       });
     }, { threshold: 0.2 });
     aboutObs.observe(aboutSection);
-  }
-}
-
-  // 1) Determine language (use localStorage or default 'hu')
-  const lang = localStorage.getItem('lang') || 'hu';
-  // 2) Load JSON for that language
-  loadLocale(lang).then(translations => {
-    // 3) Apply translations
-    applyTranslations(translations);
-  });
-
-  /* Language Switcher buttons */
-  document.querySelectorAll('.lang-switcher button').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const newLang = btn.getAttribute('data-lang');
-      localStorage.setItem('lang', newLang);
-      const translations = await loadLocale(newLang);
-      applyTranslations(translations);
-    });
-  });
-
-  /* ===== Global Scroll-Reveal ===== */
-  revealObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('section').forEach(sec => revealObserver.observe(sec));
-
-  /* ===== Hero Section Text Animations ===== */
-  const heroSection = document.getElementById('hero');
-  const titleSpans = document.querySelectorAll('.hero-title span');
-  const subtitle = document.querySelector('.hero-subtitle');
-  const heroButtons = document.querySelectorAll('.hero-buttons a');
-  const heroImgContainer = document.querySelector('.home-image');
-
-  // Stagger hero title letters (or words)
-  titleSpans.forEach((span, i) => {
-    span.style.transitionDelay = `${i * 0.1 + 0.3}s`;
-  });
-  if (subtitle) {
-    subtitle.style.transitionDelay = `${titleSpans.length * 0.1 + 0.3}s`;
-  }
-
-  heroObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Reveal title spans
-        titleSpans.forEach(span => span.classList.add('reveal'));
-        // Reveal subtitle
-        if (subtitle) subtitle.classList.add('reveal');
-        // Reveal buttons
-        heroButtons.forEach((btn, i) => {
-          btn.style.transitionDelay = `${titleSpans.length * 0.1 + 0.3 + (i + 1) * 0.1}s`;
-          btn.classList.add('reveal');
-        });
-        // Reveal hero image
-        if (heroImgContainer) {
-          heroImgContainer.style.transitionDelay = `${titleSpans.length * 0.1 + 0.3 + heroButtons.length * 0.1 + 0.2}s`;
-          heroImgContainer.classList.add('reveal');
-        }
-        obs.unobserve(heroSection);
-        // After reveal, reset button transition-delay to 0 for immediate hover-out effect
-        const totalDelay = titleSpans.length * 0.1 + 0.3 + heroButtons.length * 0.1;
-        setTimeout(() => {
-          heroButtons.forEach(btn => btn.style.transitionDelay = '0s');
-        }, totalDelay * 1000 + 50);
-      }
-    });
-  }, { threshold: 0.2 });
-  if (heroSection) heroObserver.observe(heroSection);
-
-  /* ===== About Section Reveal (Typewriter Effect) ===== */
-  const aboutSection = document.getElementById('about');
-  if (aboutSection) {
-    const title = aboutSection.querySelector('.section-title');
-    if (title) {
-      const chars = title.textContent.trim().length;
-      title.style.setProperty('--title-chars', chars);
-    }
-    aboutObs = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          aboutSection.classList.add('reveal');
-          obs.unobserve(aboutSection);
-        }
-      });
-    }, { threshold: 0.2 });
-    aboutObs.observe(aboutSection);
-  }
-
-  /* ===== Parallax on Hero Container ===== */
-  const heroContainer = document.querySelector('.hero-container');
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    lastScroll = window.pageYOffset;
-  });
-  function rafParallax() {
-    if (heroContainer) {
-      heroContainer.style.transform = `translateY(${lastScroll * 0.3}px)`;
-    }
-    requestAnimationFrame(rafParallax);
-  }
-  requestAnimationFrame(rafParallax);
-
-  /* ===== Back to Top Button ===== */
-  {
-    const btn = document.getElementById('backToTop');
-    const footer = document.querySelector('footer');
-    if (btn && footer) {
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          btn.classList.toggle('show', entry.isIntersecting);
-        });
-      }, { threshold: 0.3 });
-      obs.observe(footer);
-      btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
   }
 });

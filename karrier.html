@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mark Gor | Portfolio – Karrier</title>
-  <meta name="description" content="Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek, tanfolyamok és készségek." />
+  <title data-i18n="meta.title">Mark Gor | Portfolio – Karrier</title>
+  <meta name="description" content="Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése." data-i18n="meta.description" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Boxicons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -20,13 +21,44 @@
 
   <!-- Header -->
   <header class="header">
-    <div class="logo">Mark<span>Gor</span></div>
-    <div class="header-right">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="imgs/logo.png" alt="Mark Gor Logo" />
+      </a>
       <nav class="navbar">
-        <a href="index.html" data-i18n="nav.home">Home</a>
-        <a href="#career-hero" class="active" data-i18n="nav.career">Karrier</a>
+        <a href="index.html" class="nav-main" data-i18n="nav.home">Home</a>
+        <a href="#hero" class="active nav-main" data-i18n="nav.career">Karrier</a>
+        <a href="#career-about" data-i18n="nav.about">Bemutatkozás</a>
+        <a href="#career-timeline" data-i18n="nav.timeline">Szakmai út</a>
+        <a href="#career-courses" data-i18n="nav.courses">Képzések</a>
+        <a href="#projects" data-i18n="nav.projects">Projektek</a>
+        <a href="#career-skills" data-i18n="nav.skills">Kompetenciák</a>
+        <a href="#career-contact" data-i18n="nav.contact">Kapcsolat</a>
       </nav>
-
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="theme-toggle" aria-label="Téma váltás">
+        <svg id="theme-icon" viewBox="0 0 24 24" width="28" height="28" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5" class="sun-core" />
+          <g class="sun-rays">
+            <line x1="12" y1="1" x2="12" y2="4" />
+            <line x1="12" y1="20" x2="12" y2="23" />
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
+            <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
+            <line x1="1" y1="12" x2="4" y2="12" />
+            <line x1="20" y1="12" x2="23" y2="12" />
+            <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
+            <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
+          </g>
+          <path class="moon" d="M21 12.79A9 9 0 0112.21 3 7 7 0 1021 12.79z" />
+        </svg>
+      </button>
+      <!-- Language Switcher -->
+      <div class="lang-switcher">
+        <button data-lang="hu">HU</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="de">DE</button>
+      </div>
       <!-- Hamburger -->
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -34,44 +66,25 @@
         <span></span>
       </div>
     </div>
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html" data-i18n="nav.home">Home</a>
-      <a href="#career-hero" class="active" data-i18n="nav.career">Karrier</a>
-    </nav>
-
-    <!-- Theme Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Téma váltás">
-      <svg id="theme-icon" viewBox="0 0 24 24" width="28" height="28" fill="none"
-           xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="5" class="sun-core" />
-        <g class="sun-rays">
-          <line x1="12" y1="1" x2="12" y2="4" />
-          <line x1="12" y1="20" x2="12" y2="23" />
-          <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
-          <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
-          <line x1="1" y1="12" x2="4" y2="12" />
-          <line x1="20" y1="12" x2="23" y2="12" />
-          <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
-          <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
-        </g>
-        <path class="moon" d="M21 12.79A9 9 0 0112.21 3 7 7 0 1021 12.79z" />
-      </svg>
-    </button>
-
-    <!-- Language Switcher -->
-    <div class="lang-switcher">
-      <button data-lang="hu">HU</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="de">DE</button>
-    </div>
   </header>
+
+  <!-- Mobile Nav -->
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="nav-main" data-i18n="nav.home">Home</a>
+    <a href="#hero" class="active nav-main" data-i18n="nav.career">Karrier</a>
+    <a href="#career-about" data-i18n="nav.about">Bemutatkozás</a>
+    <a href="#career-timeline" data-i18n="nav.timeline">Szakmai út</a>
+    <a href="#career-courses" data-i18n="nav.courses">Képzések</a>
+    <a href="#projects" data-i18n="nav.projects">Projektek</a>
+    <a href="#career-skills" data-i18n="nav.skills">Kompetenciák</a>
+    <a href="#career-contact" data-i18n="nav.contact">Kapcsolat</a>
+  </nav>
 
   <main>
     <!-- Karrier Hero Section -->
-    <section id="career-hero" class="hero-section">
+    <section id="hero" class="hero-section">
       <!-- Vanta.js Background -->
       <div id="vanta-bg" class="vanta-triangle-mask"></div>
-
       <div class="hero-container">
         <div class="hero-content">
           <h1 class="hero-title" data-i18n="career.hero.title">
@@ -85,72 +98,121 @@
             Önálló szakmai fejlődés, átlátható folyamatok és eredményorientált szemlélet.
           </p>
           <div class="hero-buttons">
-            <a href="#career-timeline" class="btn primary-btn" data-i18n="career.hero.btnPrimary">
+            <a href="#career-timeline" class="btn neon-hover primary-btn" data-i18n="career.hero.btnPrimary">
               Ismerj meg
             </a>
             <a href="cv/MarkGor_CV.pdf" class="btn ghost-btn" download data-i18n="career.hero.btnSecondary">
               Önéletrajz letöltése
             </a>
           </div>
+          <div class="hero-socials">
+            <a href="https://github.com/markgor" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/markgor" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
         </div>
         <div class="home-image">
-          <img id="career-img"
-               src="imgs/dark.png"
-               data-image-dark="imgs/dark.png"
-               data-image-light="imgs/light.png"
-               alt="Karrier kép" />
+          <img
+            id="career-img"
+            src="imgs/dark.png"
+            data-image-dark="imgs/dark.png"
+            data-image-light="imgs/light.png"
+            alt="Karrier kép" />
         </div>
       </div>
+      <div class="scroll-indicator"><a href="#career-about">⌄</a></div>
+    </section>
 
-      <div class="scroll-indicator"><a href="#career-timeline">⌄</a></div>
+    <!-- Career About Section -->
+    <section id="career-about" class="about-section section animate-on-scroll">
+      <div class="about-wrapper">
+        <div class="about-image">
+          <div class="about-img">
+            <img
+              id="about-img"
+              src="imgs/dark.png"
+              data-image-dark="imgs/dark.png"
+              data-image-light="imgs/light.png"
+              alt="Profilkép"
+            />
+            <div class="ring-inner top"></div>
+            <div class="ring-inner bottom"></div>
+            <div class="ring-outer top"></div>
+            <div class="ring-outer bottom"></div>
+          </div>
+        </div>
+        <div class="about-content">
+          <h2 class="section-title" data-i18n="career.about.heading">Szakmai bemutatkozás</h2>
+          <p data-i18n="career.about.p1">
+            Frontend fejlesztőként a modern webes technológiák és best practice-ek alkalmazásával építek felhasználóbarát webalkalmazásokat. Szeretem a clean code elveket követni és a komponens alapú fejlesztést.
+          </p>
+          <p data-i18n="career.about.p2">
+            Tapasztalatom kiterjed a React.js, Laravel, és Tailwind CSS használatára. Különösen érdekel a performancia optimalizálás és a modern UI/UX trendek követése. Projektjeim során mindig törekszem a reszponzív design és az akadálymentesség biztosítására.
+          </p>
+          <p data-i18n="career.about.p3">
+            Aktívan fejlesztem magam online kurzusokon és személyes projekteken keresztül. Szívesen dolgozom csapatban, ahol tudásmegosztással és code review-val segítjük egymás fejlődését.
+          </p>
+          <div class="about-links">
+            <a href="https://github.com/markgor" target="_blank" class="about-link">
+              <i class="fab fa-github"></i> GitHub Profilom
+            </a>
+            <a href="https://www.linkedin.com/in/markgor" target="_blank" class="about-link">
+              <i class="fab fa-linkedin"></i> LinkedIn Profilom
+            </a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Timeline Section -->
-    <section id="career-timeline" class="workflow-section">
+    <section id="career-timeline" class="career-timeline-section section animate-on-scroll">
       <div class="container">
         <h2 class="section-title typewriter" data-i18n="career.timeline.heading">
           Szakmai út
         </h2>
-        <div class="workflow-steps">
-          <div class="step">
-            <div class="step-icon">2019</div>
-            <div class="step-content">
+        <div class="career-timeline-steps">
+          <div class="career-step fade-in-left">
+            <div class="career-step-icon">2019</div>
+            <div class="career-step-content">
               <h3 data-i18n="career.timeline.2019.title">HTML & CSS alapok</h3>
               <p data-i18n="career.timeline.2019.desc">
                 Első projekt: statikus bemutatkozó oldal készítése.
               </p>
             </div>
           </div>
-          <div class="step">
-            <div class="step-icon">2020</div>
-            <div class="step-content">
+          <div class="career-step fade-in-right">
+            <div class="career-step-icon">2020</div>
+            <div class="career-step-content">
               <h3 data-i18n="career.timeline.2020.title">JavaScript és SPA</h3>
               <p data-i18n="career.timeline.2020.desc">
                 ToDo App fejlesztés ES6+ és moduláris felépítésben.
               </p>
             </div>
           </div>
-          <div class="step">
-            <div class="step-icon">2021</div>
-            <div class="step-content">
+          <div class="career-step fade-in-left">
+            <div class="career-step-icon">2021</div>
+            <div class="career-step-content">
               <h3 data-i18n="career.timeline.2021.title">React portfólió</h3>
               <p data-i18n="career.timeline.2021.desc">
                 React-alapú portfólióoldal létrehozása Tailwind CSS-sel.
               </p>
             </div>
           </div>
-          <div class="step">
-            <div class="step-icon">2022</div>
-            <div class="step-content">
+          <div class="career-step fade-in-right">
+            <div class="career-step-icon">2022</div>
+            <div class="career-step-content">
               <h3 data-i18n="career.timeline.2022.title">Freelance projektek</h3>
               <p data-i18n="career.timeline.2022.desc">
                 Kis- és középvállalkozások weboldalain dolgoztam.
               </p>
             </div>
           </div>
-          <div class="step">
-            <div class="step-icon">2023-2024</div>
-            <div class="step-content">
+          <div class="career-step fade-in-left">
+            <div class="career-step-icon">2023-2024</div>
+            <div class="career-step-content">
               <h3 data-i18n="career.timeline.2023-2024.title">Folyamatos fejlődés</h3>
               <p data-i18n="career.timeline.2023-2024.desc">
                 Kurzusok, valós ügyfélprojektek, új technológiák.
@@ -162,79 +224,210 @@
     </section>
 
     <!-- Courses Section -->
-    <section id="career-courses" class="services-section">
+    <section id="career-courses" class="career-courses-section section animate-on-scroll">
       <div class="container">
         <h2 class="section-title" data-i18n="career.courses.heading">
           Képzések és kurzusok
         </h2>
-        <div class="courses-list">
-          <!-- Sololearn tanfolyamok -->
-          <div class="course-card fade-in-left">
+        <div class="career-courses-list">
+          <!-- Sololearn tanfolyam -->
+          <div class="career-course-card fade-in-left">
             <h3 data-i18n="career.courses.sololearn.title">
               Sololearn (2023. június – 2023. szeptember)
             </h3>
-            <ul data-i18n="career.courses.sololearn.list">
-              <!-- A JSON-ben tömbként adjuk meg a listaelemeket -->
+            <ul>
+              <li>PHP fejlesztés</li>
+              <li>Webfejlesztés haladó szint</li>
+              <li>JavaScript középhaladó</li>
+              <li>Java középhaladó</li>
+              <li>SQL alapok</li>
+              <li>Python alapok</li>
+              <li>Java alapok</li>
+              <li>CSS alapok</li>
+              <li>JavaScript alapok</li>
+              <li>HTML alapok</li>
             </ul>
             <p data-i18n="career.courses.sololearn.note">
               (Hitelesítő adatok kérésre elérhetők.)
             </p>
           </div>
-
           <!-- Scrimba tanfolyam -->
-          <div class="course-card fade-in-right">
+          <div class="career-course-card fade-in-right">
             <h3 data-i18n="career.courses.scrimba.title">
               Scrimba – The Frontend Developer Career Path
             </h3>
             <p data-i18n="career.courses.scrimba.desc">
-              Teljesítve a frontend fejlesztői karrierút kurzus.
+              A Frontend Developer Career Path kurzus során elsajátítottam a modern webes technológiákat, beleértve a HTML5, CSS3, JavaScript (ES6+), React.js és Git verziókezelő használatát. A kurzus gyakorlati projekteken keresztül fejlesztette a problémamegoldó készségeimet és a clean code írás képességét.
             </p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Projects Section (ugyanúgy, mint az indexen) -->
+    <section id="projects" class="projects-section section animate-on-scroll">
+      <div class="container">
+        <h2 class="section-title" data-i18n="projects.heading">Projektek</h2>
+        <div id="project-container" class="project-grid"></div>
+      </div>
+    </section>
+
     <!-- Skills / Technologies Section -->
-    <section id="career-skills" class="projects-section">
+    <section id="career-skills" class="career-skills-section section animate-on-scroll">
       <div class="container">
         <h2 class="section-title" data-i18n="career.skills.heading">
           Kompetenciák és technológiák
         </h2>
-        <div class="skills-grid">
-          <div class="skill-card fade-in-left">
-            <i class="fab fa-laravel fa-2x"></i>
-            <h3 data-i18n="career.skills.laravel.title">Laravel</h3>
-            <p data-i18n="career.skills.laravel.desc">
-              MVC-alapú PHP keretrendszerrel való tapasztalat.
-            </p>
+        
+        <!-- Core Development Skills -->
+        <div class="skills-category">
+          <h3 class="category-title">Alap technológiák</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">HTML</span>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="95"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">CSS</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">JavaScript</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="85"></div>
+              </div>
+            </div>
           </div>
-          <div class="skill-card fade-in-right">
-            <i class="fab fa-react fa-2x"></i>
-            <h3 data-i18n="career.skills.react.title">React.js</h3>
-            <p data-i18n="career.skills.react.desc">
-              Komponensalapú UI fejlesztés és state menedzsment.
-            </p>
+        </div>
+
+        <!-- Frameworks & Tools -->
+        <div class="skills-category">
+          <h3 class="category-title">Keretrendszerek és eszközök</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">React</span>
+                <span class="skill-percentage">65%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="65"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Laravel</span>
+                <span class="skill-percentage">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="75"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Firebase</span>
+                <span class="skill-percentage">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">GitHub</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="85"></div>
+              </div>
+            </div>
           </div>
-          <div class="skill-card fade-in-left">
-            <i class="fas fa-palette fa-2x"></i>
-            <h3 data-i18n="career.skills.tailwind.title">Tailwind CSS</h3>
-            <p data-i18n="career.skills.tailwind.desc">
-              Utility-first CSS keretrendszerrel épített dizájnok.
-            </p>
+        </div>
+
+        <!-- CSS Frameworks -->
+        <div class="skills-category">
+          <h3 class="category-title">CSS Keretrendszerek</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Tailwind CSS</span>
+                <span class="skill-percentage">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="70"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Bootstrap</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="85"></div>
+              </div>
+            </div>
           </div>
-          <div class="skill-card fade-in-right">
-            <i class="fas fa-fire fa-2x"></i>
-            <h3 data-i18n="career.skills.firebase.title">Firebase</h3>
-            <p data-i18n="career.skills.firebase.desc">
-              Realtime Database, autentikáció és hosztolás.
-            </p>
+        </div>
+
+        <!-- Design Skills -->
+        <div class="skills-category">
+          <h3 class="category-title">Design készségek</h3>
+          <div class="skills-grid">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">UI/UX Design</span>
+                <span class="skill-percentage">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Animációk</span>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="95"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Reszponzív Design</span>
+                <span class="skill-percentage">95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="95"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Vizuális Kompozíció</span>
+                <span class="skill-percentage">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="85"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="career-contact" class="contact-section section animate-on-scroll">
       <div class="container">
         <h2 class="section-title" data-i18n="contact.heading">Lépjünk kapcsolatba</h2>
         <p class="contact-intro" data-i18n="contact.intro">
@@ -308,10 +501,25 @@
   <!-- Back to Top Button -->
   <button id="backToTop" aria-label="Ugrás a lap tetejére">↑</button>
 
+  <!-- Language Transition Overlay -->
+  <div class="language-transition">
+    <div class="transition-content">
+      <i class="fas fa-language language-icon"></i>
+      <span class="transition-text">Nyelvváltás...</span>
+    </div>
+  </div>
+
   <!-- Scripts -->
-  <script src="js/karrier.js" defer></script>
-  <!-- Vanta.js -->
+  <!-- Vendor Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  
+  <!-- App Scripts -->
+  <script src="js/projects.js" type="module"></script>
+  <script src="js/animations.js" type="module"></script>
+  <script src="js/base.js" type="module"></script>
+  <script src="js/form.js" type="module"></script>
+  <script src="js/karrier.js" type="module"></script>
 </body>
 </html>
