@@ -23,51 +23,73 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===== 1) Hero Animációk ===== */
   function initHeroAnimations() {
     const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-      // Először eltávolítjuk az összes reveal osztályt
-      heroSection.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
-      
-      // Meglévő elemek
-      const titleSpans = heroSection.querySelectorAll('.hero-title span');
-      const subtitle = heroSection.querySelector('.hero-subtitle');
-      const buttons = heroSection.querySelectorAll('.hero-buttons a');
-      const heroImage = heroSection.querySelector('.home-image');
-      const heroSocials = heroSection.querySelector('.hero-socials');
-      const socialLinks = heroSection.querySelectorAll('.hero-socials a');
-      
-      // Animációk időzítése
-      requestAnimationFrame(() => {
-        // Title spans animáció
-        titleSpans.forEach((span, i) => {
-          span.style.transitionDelay = `${i * 200}ms`;
-          setTimeout(() => span.classList.add('reveal'), 100 + i * 200);
-        });
-        
-        // Subtitle animáció
-        subtitle.style.transitionDelay = `${titleSpans.length * 200}ms`;
-        setTimeout(() => subtitle.classList.add('reveal'), 800);
-        
-        // Buttons animáció
-        buttons.forEach((btn, i) => {
-          btn.style.transitionDelay = `${(titleSpans.length * 200) + 200 + i * 200}ms`;
-          setTimeout(() => btn.classList.add('reveal'), 1000 + i * 200);
-        });
-        
-        // Hero image animáció
-        heroImage.style.transitionDelay = '1200ms';
-        setTimeout(() => heroImage.classList.add('reveal'), 1200);
-        
-        // Social media animációk
-        heroSocials.style.transitionDelay = '1200ms';
-        setTimeout(() => {
-          heroSocials.classList.add('reveal');
-          socialLinks.forEach((link, i) => {
-            link.style.transitionDelay = `${1200 + i * 200}ms`;
-            setTimeout(() => link.classList.add('reveal'), 1200 + i * 200);
-          });
-        }, 1200);
-      });
+    if (!heroSection) return;
+
+    // Először eltávolítjuk az összes reveal osztályt
+    heroSection.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
+
+    // Hero title kezelése
+    const heroTitle = heroSection.querySelector('.hero-title');
+    if (heroTitle) {
+      // Szöveg felbontása szavakra
+      const titleText = heroTitle.textContent.trim();
+      const words = ["Támogasd", "csapatod", "profi", "frontend", "fejlesztővel"];
+      heroTitle.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
     }
+
+    // Elemek kiválasztása
+    const titleSpans = heroSection.querySelectorAll('.hero-title span');
+    const subtitle = heroSection.querySelector('.hero-subtitle');
+    const buttons = heroSection.querySelectorAll('.hero-buttons a');
+    const heroImage = heroSection.querySelector('.home-image');
+    const heroSocials = heroSection.querySelector('.hero-socials');
+    const socialLinks = heroSection.querySelectorAll('.hero-socials a');
+
+    // Animációk időzítése
+    requestAnimationFrame(() => {
+      // Title spans animációk
+      titleSpans.forEach((span, i) => {
+        span.style.transitionDelay = `${0.3 + (i * 0.1)}s`;
+        span.classList.add('reveal');
+      });
+
+      // Subtitle animáció
+      if (subtitle) {
+        subtitle.style.transitionDelay = `${0.3 + (titleSpans.length * 0.1)}s`;
+        subtitle.classList.add('reveal');
+      }
+
+      // Button animációk
+      buttons.forEach((btn, i) => {
+        btn.style.transitionDelay = `${0.3 + ((titleSpans.length + i + 1) * 0.1)}s`;
+        btn.classList.add('reveal');
+      });
+
+      // Hero image animáció
+      if (heroImage) {
+        heroImage.style.transitionDelay = `${0.3 + ((titleSpans.length + buttons.length + 1) * 0.1)}s`;
+        heroImage.classList.add('reveal');
+      }
+
+      // Közösségi média ikonok animációja
+      if (heroSocials) {
+        heroSocials.style.transitionDelay = `${0.3 + ((titleSpans.length + buttons.length + 2) * 0.1)}s`;
+        heroSocials.classList.add('reveal');
+
+        socialLinks.forEach((link, i) => {
+          link.style.transitionDelay = `${0.3 + ((titleSpans.length + buttons.length + 3 + i) * 0.1)}s`;
+          link.classList.add('reveal');
+        });
+      }
+
+      // Késleltetések visszaállítása az animáció után
+      const totalDelay = 0.3 + ((titleSpans.length + buttons.length + socialLinks.length + 3) * 0.1);
+      setTimeout(() => {
+        heroSection.querySelectorAll('[style*="transition-delay"]').forEach(el => {
+          el.style.transitionDelay = '0s';
+        });
+      }, totalDelay * 1000);
+    });
   }
 
   function resetHeroAnimations() {
