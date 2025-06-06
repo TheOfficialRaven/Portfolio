@@ -2,37 +2,26 @@ import { initializeAllAnimations, resetAnimations, playLanguageTransition } from
 import { renderProjects } from './projects.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Hamburger Menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  const mobileNavLinks = mobileNav.querySelectorAll('a');
+  // Only initialize hero animations if we're on the home page
+  const heroSection = document.querySelector('.hero-section');
+  if (heroSection) {
+    const heroTitle = heroSection.querySelector('.hero-title');
+    const heroSubtitle = heroSection.querySelector('.hero-subtitle');
+    const heroButtons = heroSection.querySelector('.hero-buttons');
+    const homeImage = heroSection.querySelector('.home-image');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mobileNav.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
-  });
+    if (heroTitle) heroTitle.classList.add('reveal');
+    if (heroSubtitle) heroSubtitle.classList.add('reveal');
+    if (heroButtons) heroButtons.classList.add('reveal');
+    if (homeImage) homeImage.classList.add('reveal');
+  }
 
-  mobileNavLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      mobileNav.classList.remove('active');
-      document.body.classList.remove('menu-open');
-    });
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
-      hamburger.classList.remove('active');
-      mobileNav.classList.remove('active');
-      document.body.classList.remove('menu-open');
-    }
-  });
+  // Hamburger menu is handled by navigation.js
 
   // Render projects
   renderProjects();
 
-  // Initialize animations
+  // Initialize other animations
   initializeAllAnimations();
 
   // Language transition event listener
@@ -44,6 +33,59 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  const slider = document.querySelector('.slider');
+  
+  if (slider) {
+    const slides = slider.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.dots');
+    let currentSlide = 0;
+    let isAnimating = false;
+
+    function getVisibleCount() {
+      return window.innerWidth > 768 ? 3 : 1;
+    }
+
+    function setupDots() {
+      if (!dotsContainer) return;
+      
+      dotsContainer.innerHTML = '';
+      const visibleCount = getVisibleCount();
+      const dotCount = Math.ceil(slides.length / visibleCount);
+      
+      for (let i = 0; i < dotCount; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => !isAnimating && update(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function update(index) {
+      if (!slides.length) return;
+      
+      isAnimating = true;
+      const visibleCount = getVisibleCount();
+      currentSlide = index;
+
+      const translateX = -(currentSlide * (100 / visibleCount));
+      slider.style.transform = `translateX(${translateX}%)`;
+
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+      }
+
+      setTimeout(() => {
+        isAnimating = false;
+      }, 500);
+    }
+
+    setupDots();
+    window.addEventListener('resize', setupDots);
+  }
 
   /* ===== Testimonials (Custom Carousel) ===== */
   (function(){

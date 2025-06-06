@@ -1,4 +1,5 @@
 import { initializeAllAnimations, resetAnimations, playLanguageTransition } from './animations.js';
+import { initNavigation } from './navigation.js';
 
 // --- Observer változók globálisan ---
 let revealObserver, heroObserver, aboutObs;
@@ -12,23 +13,18 @@ document.documentElement.classList.add('no-transition');
 
 // Téma inicializálás már a DOM betöltése előtt
 const initTheme = () => {
-  // Téma beállítása még a DOM betöltése előtt
   const savedTheme = localStorage.getItem('theme');
-  const initialTheme = savedTheme || (prefersDarkScheme.matches ? 'dark' : 'light');
-  document.documentElement.setAttribute('data-theme', initialTheme);
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
   
-  // Stílus hozzáadása a head-hez a villanás elkerülésére
-  const style = document.createElement('style');
-  style.textContent = `
-    :root[data-theme="light"] {
-      background-color: #ffffff;
-    }
-    :root[data-theme="dark"] {
-      background-color: #0a0a0a;
-    }
-  `;
-  document.head.appendChild(style);
-}
+  // Update images based on theme
+  const images = document.querySelectorAll('img[data-image-dark][data-image-light]');
+  images.forEach(img => {
+    const src = theme === 'dark' ? img.dataset.imageDark : img.dataset.imageLight;
+    if (src) img.src = src;
+  });
+};
 
 // Téma inicializálás azonnal
 initTheme();
@@ -41,86 +37,12 @@ window.addEventListener('load', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  /* ===== Mobile Menu Toggle ===== */
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  const body = document.body;
+  initTheme();
+  initNavigation();
+  initVanta();
+  initializeAllAnimations();
 
-  if (hamburger && mobileNav) {
-    let isAnimating = false;
 
-    const toggleMenu = (show) => {
-      if (isAnimating) return;
-      isAnimating = true;
-
-      const isCurrentlyActive = mobileNav.classList.contains('active');
-      const shouldShow = show !== undefined ? show : !isCurrentlyActive;
-
-      if (shouldShow) {
-        hamburger.classList.add('active');
-        mobileNav.classList.add('active');
-        body.classList.add('menu-open');
-        
-        // Add transition delay to menu items
-        mobileNav.querySelectorAll('a').forEach((link, index) => {
-          link.style.transitionDelay = `${0.1 + index * 0.05}s`;
-        });
-      } else {
-        hamburger.classList.remove('active');
-        mobileNav.classList.remove('active');
-        body.classList.remove('menu-open');
-        
-        // Remove transition delays
-        mobileNav.querySelectorAll('a').forEach(link => {
-          link.style.transitionDelay = '';
-        });
-      }
-
-      // Reset animation flag after transition
-      setTimeout(() => {
-        isAnimating = false;
-      }, 300);
-    };
-
-    // Toggle menu on hamburger click
-    hamburger.addEventListener('click', () => {
-      toggleMenu();
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (mobileNav.classList.contains('active') && 
-          !hamburger.contains(e.target) && 
-          !mobileNav.contains(e.target)) {
-        toggleMenu(false);
-      }
-    });
-
-    // Close menu when clicking on mobile nav links
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggleMenu(false);
-      });
-    });
-
-    // Close menu on resize if screen becomes larger than mobile breakpoint
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
-          toggleMenu(false);
-        }
-      }, 250);
-    });
-
-    // Handle escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-        toggleMenu(false);
-      }
-    });
-  }
 
   /* ===== Scroll Progress Bar ===== */
   const progressBar = document.getElementById('progressBar');
@@ -131,35 +53,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ===== Theme Toggle & Vanta Background ===== */
+  const themeToggle = document.querySelector('.theme-toggle');
   let vantaEffect = null;
   const heroImg = document.getElementById('hero-img') || document.getElementById('career-img');
   const aboutImg = document.getElementById('about-img');
 
-  function updateImages(theme) {
-    if (heroImg) {
-      const newHero = heroImg.getAttribute(`data-image-${theme}`);
-      if (newHero) heroImg.src = newHero;
-    }
-    if (aboutImg) {
-      const newAbout = aboutImg.getAttribute(`data-image-${theme}`);
-      if (newAbout) aboutImg.src = newAbout;
-    }
-  }
-
-  function initVanta(theme) {
-    const el = document.getElementById('vanta-bg');
-    if (vantaEffect && vantaEffect.destroy) vantaEffect.destroy();
-    if (window.VANTA && el) {
-      vantaEffect = VANTA.NET({
-        el,
+  function initVanta() {
+    if (typeof VANTA !== 'undefined') {
+      VANTA.NET({
+        el: "#vanta-bg",
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        color: theme === 'dark' ? 0x00c9a7 : 0x00b396,
-        backgroundColor: theme === 'dark' ? 0x0a0a0a : 0xffffff,
-        points: 14,
-        maxDistance: 20,
-        spacing: 18,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x00c9a7,
+        backgroundColor: 0x0a0a0a,
+        points: 15.00,
+        maxDistance: 25.00,
+        spacing: 17.00,
         showDots: false
       });
     }
@@ -179,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Kezdeti állapot beállítása
   const initialTheme = document.documentElement.getAttribute('data-theme');
   updateThemeSpecificElements(initialTheme);
-  initVanta(initialTheme);
+  initVanta();
 
   // Kezdeti témaikon beállítása
   const themeIcon = document.getElementById('theme-icon');
@@ -218,15 +132,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Témaváltás eseménykezelő
-  themeToggle?.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateThemeSpecificElements(newTheme);
-    initVanta(newTheme);
-  });
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      
+      // Update images based on new theme
+      const images = document.querySelectorAll('img[data-image-dark][data-image-light]');
+      images.forEach(img => {
+        const src = newTheme === 'dark' ? img.dataset.imageDark : img.dataset.imageLight;
+        if (src) img.src = src;
+      });
+      
+      initVanta();
+    });
+  }
 
   // Témaváltó gomb HTML struktúra beállítása
   if (themeToggle) {
@@ -246,8 +169,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!localStorage.getItem('theme')) {
       const newTheme = e.matches ? 'dark' : 'light';
       document.documentElement.setAttribute('data-theme', newTheme);
-      updateThemeSpecificElements(newTheme);
-      initVanta(newTheme);
+      updateImages(newTheme);
+      initVanta();
     }
   });
 
@@ -379,6 +302,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.lang-switcher button').forEach(btn => {
     btn.addEventListener('click', async () => {
       const newLang = btn.getAttribute('data-lang');
+      
+      // Remove active class from all buttons and add to clicked one
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
       localStorage.setItem('lang', newLang);
       
       // Aktuális nyelv beállítása az overlay-ben
@@ -398,22 +326,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Set initial active language button
+  const currentLang = localStorage.getItem('lang') || 'hu';
+  const currentLangBtn = document.querySelector(`[data-lang="${currentLang}"]`);
+  if (currentLangBtn) {
+    currentLangBtn.classList.add('active');
+  }
+
   /* ===== Animációk inicializálása ===== */
   initializeAllAnimations();
 
   /* ===== Parallax on Hero Container ===== */
   const heroContainer = document.querySelector('.hero-container');
   let lastScroll = 0;
+  const header = document.querySelector('.header');
+
+  // Combined scroll event handler
   window.addEventListener('scroll', () => {
-    lastScroll = window.pageYOffset;
-  });
-  function rafParallax() {
+    const currentScroll = window.pageYOffset;
+
+    // Hero parallax effect
     if (heroContainer) {
-      heroContainer.style.transform = `translateY(${lastScroll * 0.3}px)`;
+      heroContainer.style.transform = `translateY(${currentScroll * 0.3}px)`;
     }
-    requestAnimationFrame(rafParallax);
-  }
-  requestAnimationFrame(rafParallax);
+
+    // Close mobile menu when scrolling down (but keep header visible)
+    if (currentScroll > lastScroll) {
+      const mobileNav = document.querySelector('.mobile-nav');
+      if (mobileNav && mobileNav.classList.contains('active')) {
+        // Close mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        if (hamburger) {
+          hamburger.classList.remove('active');
+          mobileNav.classList.remove('active');
+          document.body.classList.remove('menu-open');
+        }
+      }
+    }
+
+    lastScroll = currentScroll;
+  });
 
   /* ===== Back to Top Button ===== */
   {

@@ -11,12 +11,64 @@
  *   - Back-to-Top gomb
  */
 
+import { initNavigation } from './navigation.js';
 import { initializeAllAnimations, resetAnimations, playLanguageTransition } from './animations.js';
 import { projects, renderProjects } from './projects.js';
 
 let revealObserver, heroObserver;
 
+// Update images based on theme
+function updateImages(theme) {
+  const images = document.querySelectorAll('img[data-image-dark][data-image-light]');
+  images.forEach(img => {
+    const src = theme === 'dark' ? img.dataset.imageDark : img.dataset.imageLight;
+    if (src) img.src = src;
+  });
+}
+
+// Initialize vanta.js
+function initVanta() {
+  if (typeof VANTA !== 'undefined') {
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x00c9a7,
+      backgroundColor: 0x0a0a0a,
+      points: 15.00,
+      maxDistance: 25.00,
+      spacing: 17.00,
+      showDots: false
+    });
+  }
+}
+
+// Theme toggle handler
+function setupThemeToggle() {
+  const themeToggle = document.querySelector('.theme-toggle');
+  if (!themeToggle) return;
+
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateImages(newTheme);
+    initVanta();
+  });
+}
+
+// Initialize everything
 document.addEventListener('DOMContentLoaded', () => {
+  initNavigation();
+  initVanta();
+  setupThemeToggle();
   // Render projects
   renderProjects();
 
@@ -31,10 +83,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hero title kezelése
     const heroTitle = heroSection.querySelector('.hero-title');
     if (heroTitle) {
-      // Szöveg felbontása szavakra
-      const titleText = heroTitle.textContent.trim();
-      const words = ["Támogasd", "csapatod", "profi", "frontend", "fejlesztővel"];
-      heroTitle.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
+      // Ha már span-ekben van a szöveg, ne módosítsuk
+      if (!heroTitle.querySelector('span')) {
+        // Szöveg felbontása szavakra az aktuális tartalomból
+        const titleText = heroTitle.textContent.trim();
+        const words = titleText.split(' ');
+        heroTitle.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
+      }
     }
 
     // Elemek kiválasztása
@@ -103,84 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ===== 2) Mobil Menü Toggle ===== */
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  const body = document.body;
 
-  if (hamburger && mobileNav) {
-    let isAnimating = false;
-
-    const toggleMenu = (show) => {
-      if (isAnimating) return;
-      isAnimating = true;
-
-      if (show) {
-        hamburger.classList.add('active');
-        mobileNav.classList.add('active');
-        body.classList.add('menu-open');
-        
-        // Add transition delay to menu items
-        mobileNav.querySelectorAll('a').forEach((link, index) => {
-          link.style.transitionDelay = `${0.1 + index * 0.05}s`;
-        });
-      } else {
-        hamburger.classList.remove('active');
-        mobileNav.classList.remove('active');
-        body.classList.remove('menu-open');
-        
-        // Remove transition delays
-        mobileNav.querySelectorAll('a').forEach(link => {
-          link.style.transitionDelay = '';
-        });
-      }
-
-      // Reset animation flag after transition
-      setTimeout(() => {
-        isAnimating = false;
-      }, 300);
-    };
-
-    // Toggle menu on hamburger click
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      toggleMenu(!mobileNav.classList.contains('active'));
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-      if (mobileNav.classList.contains('active') && 
-          !hamburger.contains(e.target) && 
-          !mobileNav.contains(e.target)) {
-        toggleMenu(false);
-      }
-    });
-
-    // Close menu when clicking on mobile nav links
-    mobileNav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggleMenu(false);
-      });
-    });
-
-    // Close menu on resize if screen becomes larger than mobile breakpoint
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
-          toggleMenu(false);
-        }
-      }, 250);
-    });
-
-    // Handle escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-        toggleMenu(false);
-      }
-    });
-  }
 
   /* ===== 3) Scroll Progress Bar ===== */
   const progressBar = document.getElementById('progressBar');
@@ -235,6 +213,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
+    // Placeholderek beállítása külön
+    document.querySelectorAll('[data-ph]').forEach(el => {
+      const key = el.getAttribute('data-ph');
+      const value = key.split('.').reduce((obj, k) => obj?.[k], translations);
+      if (value) {
+        el.placeholder = value;
+      }
+    });
+    
     // Reset és újrainicializálás
     resetHeroAnimations();
     setTimeout(() => {
@@ -253,6 +240,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.lang-switcher button').forEach(btn => {
     btn.addEventListener('click', async () => {
       const newLang = btn.getAttribute('data-lang');
+      
+      // Remove active class from all buttons and add to clicked one
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
       localStorage.setItem('lang', newLang);
       
       // Nyelvváltás animáció lejátszása
@@ -263,6 +255,13 @@ document.addEventListener('DOMContentLoaded', () => {
       applyTranslations(newTranslations);
     });
   });
+
+  // Set initial active language button
+  const currentLang = localStorage.getItem('lang') || 'hu';
+  const currentLangBtn = document.querySelector(`[data-lang="${currentLang}"]`);
+  if (currentLangBtn) {
+    currentLangBtn.classList.add('active');
+  }
 
   /* ===== 5) Animációk inicializálása ===== */
   initializeAllAnimations();

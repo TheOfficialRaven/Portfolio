@@ -52,14 +52,14 @@
         <img src="imgs/logo.png" alt="Mark Gor Logo" />
       </a>
       <nav class="navbar">
-        <a href="index.html" class="nav-main" data-i18n="nav.home">Home</a>
-        <a href="#hero" class="active nav-main" data-i18n="nav.career">Karrier</a>
-        <a href="#career-about" data-i18n="nav.about">Bemutatkozás</a>
-        <a href="#career-timeline" data-i18n="nav.timeline">Szakmai út</a>
-        <a href="#career-courses" data-i18n="nav.courses">Képzések</a>
-        <a href="#projects" data-i18n="nav.projects">Projektek</a>
-        <a href="#career-skills" data-i18n="nav.skills">Kompetenciák</a>
-        <a href="#career-contact" data-i18n="nav.contact">Kapcsolat</a>
+        <a href="index.html" class="nav-main" data-translate="nav.home">Kezdőlap</a>
+        <a href="karrier.html" class="nav-main" data-translate="nav.career">Karrier</a>
+        <a href="#career-about" data-translate="nav.about">Bemutatkozás</a>
+        <a href="#career-timeline" data-translate="nav.timeline">Szakmai út</a>
+        <a href="#career-courses" data-translate="nav.courses">Képzések</a>
+        <a href="#projects" data-translate="nav.projects">Projektek</a>
+        <a href="#career-skills" data-translate="nav.skills">Kompetenciák</a>
+        <a href="#career-contact" data-translate="nav.contact">Kapcsolat</a>
       </nav>
       <div class="header-right">
         <!-- Theme Toggle -->
@@ -74,31 +74,31 @@
         </button>
         <!-- Language Switcher -->
         <div class="lang-switcher">
-          <button data-lang="hu">HU</button>
-          <button data-lang="en">EN</button>
-          <button data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="hu">HU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="de">DE</button>
         </div>
         <!-- Hamburger Menu -->
-        <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+        <button class="hamburger" aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
     </div>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+      <a href="index.html" data-translate="nav.home">Kezdőlap</a>
+      <a href="karrier.html" data-translate="nav.career">Karrier</a>
+      <a href="#career-about" data-translate="nav.about">Bemutatkozás</a>
+      <a href="#career-timeline" data-translate="nav.timeline">Szakmai út</a>
+      <a href="#career-courses" data-translate="nav.courses">Képzések</a>
+      <a href="#projects" data-translate="nav.projects">Projektek</a>
+      <a href="#career-skills" data-translate="nav.skills">Kompetenciák</a>
+      <a href="#career-contact" data-translate="nav.contact">Kapcsolat</a>
+    </nav>
   </header>
-
-  <!-- Mobile Nav -->
-  <nav id="mobileNav" class="mobile-nav">
-    <a href="index.html" class="nav-main" data-i18n="nav.home">Home</a>
-    <a href="#hero" class="active nav-main" data-i18n="nav.career">Karrier</a>
-    <a href="#career-about" data-i18n="nav.about">Bemutatkozás</a>
-    <a href="#career-timeline" data-i18n="nav.timeline">Szakmai út</a>
-    <a href="#career-courses" data-i18n="nav.courses">Képzések</a>
-    <a href="#projects" data-i18n="nav.projects">Projektek</a>
-    <a href="#career-skills" data-i18n="nav.skills">Kompetenciák</a>
-    <a href="#career-contact" data-i18n="nav.contact">Kapcsolat</a>
-  </nav>
 
   <main>
     <!-- Karrier Hero Section -->
@@ -592,9 +592,7 @@
   
   <!-- App Scripts -->
   <script src="js/projects.js" type="module"></script>
-  <script src="js/animations.js" type="module"></script>
-  <script src="js/base.js" type="module"></script>
-  <script src="js/form.js" type="module"></script>
-  <script src="js/karrier.js" type="module"></script>
+  <script type="module" src="js/karrier.js"></script>
+  <script type="module" src="js/animations.js"></script>
 </body>
 </html>
