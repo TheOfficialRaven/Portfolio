@@ -1,8 +1,7 @@
 import { initializeAllAnimations, resetAnimations, playLanguageTransition } from './animations.js';
 import { initNavigation } from './navigation.js';
 
-// --- Observer változók globálisan ---
-let revealObserver, heroObserver, aboutObs;
+// Observer változók már az animations.js-ben vannak kezelve
 
 // Téma kezelés
 const themeToggle = document.getElementById('theme-toggle');
@@ -384,67 +383,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Minden .reveal osztály eltávolítása
-  document.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
-
-  // --- Újra példányosítjuk az összes observer-t ---
-  // 1. Global Scroll-Reveal
-  if (revealObserver) revealObserver.disconnect();
-  revealObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('section').forEach(sec => revealObserver.observe(sec));
-
-  // 2. Hero Section
-  const heroSection = document.getElementById('hero');
-  const titleSpans = document.querySelectorAll('.hero-title span');
-  const subtitle = document.querySelector('.hero-subtitle');
-  const heroButtons = document.querySelectorAll('.hero-buttons a');
-  const heroImgContainer = document.querySelector('.home-image');
-
-  titleSpans.forEach((span, i) => {
-    span.style.transitionDelay = `${i * 0.1 + 0.3}s`;
-  });
-  if (subtitle) {
-    subtitle.style.transitionDelay = `${titleSpans.length * 0.1 + 0.3}s`;
-  }
-  
-  // Hero elemek animálása
-  setTimeout(() => {
-    titleSpans.forEach(span => span.classList.add('reveal'));
-    if (subtitle) subtitle.classList.add('reveal');
-    heroButtons.forEach((btn, i) => {
-      btn.style.transitionDelay = `${(titleSpans.length + 1) * 0.1 + 0.3 + (i * 0.1)}s`;
-      btn.classList.add('reveal');
-    });
-    if (heroImgContainer) {
-      heroImgContainer.style.transitionDelay = `${(titleSpans.length + 3) * 0.1 + 0.3}s`;
-      heroImgContainer.classList.add('reveal');
-    }
-  }, 100);
-
-  // 3. About Section
-  const aboutSection = document.getElementById('about');
-  if (aboutSection) {
-    const title = aboutSection.querySelector('.section-title');
-    if (title) {
-      const chars = title.textContent.trim().length;
-      title.style.setProperty('--title-chars', chars);
-    }
-    if (aboutObs) aboutObs.disconnect();
-    aboutObs = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          aboutSection.classList.add('reveal');
-          obs.unobserve(aboutSection);
-        }
-      });
-    }, { threshold: 0.2 });
-    aboutObs.observe(aboutSection);
-  }
+  // Az animációkat az initializeAllAnimations() fogja kezelni
 });

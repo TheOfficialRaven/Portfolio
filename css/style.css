@@ -185,7 +185,7 @@ section {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
   will-change: opacity, transform;
 }
 
@@ -1073,8 +1073,8 @@ body.menu-open.active::before {
 .about-section .ring-outer {
   opacity: 0;
   transform: scale(0.8) translateY(20px);
-  transition: opacity var(--anim-duration) var(--anim-ease),
-              transform var(--anim-duration) var(--anim-ease);
+  transition: opacity 1.5s ease,
+              transform 1.5s ease;
 }
 
 .about-section.reveal .about-img,
@@ -1263,7 +1263,7 @@ body.menu-open.active::before {
   gap: 1.5rem;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: all 1.5s ease;
 }
 
 .service-card::before {
@@ -1359,7 +1359,7 @@ body.menu-open.active::before {
   flex-direction: column;
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: all 1.5s ease;
 }
 
 .project-card::before {
@@ -1524,7 +1524,7 @@ body.menu-open.active::before {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
   will-change: opacity, transform;
 }
 
@@ -2453,7 +2453,7 @@ section::before {
   box-shadow: var(--card-shadow);
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .skills-category.reveal {
@@ -2472,6 +2472,14 @@ section::before {
   position: relative;
   display: inline-block;
   padding-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+.category-title.reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .category-title::after {
@@ -2841,7 +2849,7 @@ section::before {
 section {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 section.reveal {
@@ -2877,7 +2885,7 @@ section.reveal {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
   will-change: opacity, transform;
 }
 
@@ -2908,7 +2916,7 @@ section.reveal {
 .contact-section .contact-form {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .about-section .about-img.reveal,
@@ -2922,7 +2930,7 @@ section.reveal {
 /* Timeline specific animations */
 .career-timeline-section .career-step {
   opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .career-timeline-section .career-step:nth-child(odd) {
@@ -2938,13 +2946,17 @@ section.reveal {
   transform: translateX(0);
 }
 
-/* Skills section animations */
+/* Skills section animations - komplett animációs rendszer */
+.career-skills-section .skills-category,
+.career-skills-section .category-title,
 .career-skills-section .skill-item {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(30px);
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
+.career-skills-section .skills-category.reveal,
+.career-skills-section .category-title.reveal,
 .career-skills-section .skill-item.reveal {
   opacity: 1;
   transform: translateY(0);
@@ -2954,7 +2966,7 @@ section.reveal {
 .career-courses-section .career-course-card {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 .career-courses-section .career-course-card.reveal {
@@ -2966,7 +2978,7 @@ section.reveal {
 .service-card {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: all 1.5s ease;
   visibility: visible !important;
   z-index: 1;
   background: var(--bg-color);
@@ -2994,7 +3006,7 @@ section.reveal {
 .project-card {
   opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s ease;
+  transition: all 1.5s ease;
   background: var(--bg-color);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -3011,7 +3023,7 @@ section.reveal {
 .project-card.show {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  animation: fadeInUp 0.8s ease forwards !important;
+  animation: fadeInUp 1.5s ease forwards !important;
   visibility: visible !important;
 }
 

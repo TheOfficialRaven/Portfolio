@@ -1,11 +1,11 @@
-// Animációs konstansok
+// Animációs konstansok - lassabb animációk
 export const ANIMATION_SETTINGS = {
-  duration: 0.8,  // másodperc
-  staggerDelay: 0.1,  // másodperc
-  threshold: 0.15,
-  baseDelay: 0.3,  // másodperc
-  typewriterSpeed: 30, // milliszekundum per karakter
-  typewriterStartDelay: 500 // milliszekundum
+  duration: 1.2,  // másodperc - lassabb
+  staggerDelay: 0.2,  // másodperc - lassabb
+  threshold: 0.2,
+  baseDelay: 0.5,  // másodperc - lassabb
+  typewriterSpeed: 30, // milliszekundum per karakter - gyorsabb, közel a CSS sebességhez
+  typewriterStartDelay: 200 // milliszekundum - gyorsabb
 };
 
 // Observer instances
@@ -28,7 +28,7 @@ export function playLanguageTransition(newLang) {
   });
 }
 
-// Általános reveal animáció beállítása
+// Elem-alapú reveal animáció beállítása
 export function setupRevealObserver() {
   if (revealObserver) revealObserver.disconnect();
   
@@ -40,13 +40,32 @@ export function setupRevealObserver() {
       }
     });
   }, { 
-    threshold: ANIMATION_SETTINGS.threshold,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: window.innerWidth <= 768 ? 0.05 : 0.1, // Még alacsonyabb mobil nézetben
+    rootMargin: window.innerWidth <= 768 ? '0px' : '0px 0px -20px 0px' // Nincs margin mobil nézetben
   });
 
   // Minden animálandó elem megfigyelése
-  document.querySelectorAll('.animate-on-scroll').forEach(element => {
-    revealObserver.observe(element);
+  const elementsToAnimate = [
+    '.section-title',
+    '.category-title',
+    '.service-card',
+    '.project-card', 
+    '.career-step',
+    '.career-course-card',
+    '.skills-category',
+    '.skill-item',
+    '.contact-form',
+    '.contact-info',
+    '.about-img',
+    '.about-content',
+    '.workflow .step',
+    '.animate-on-scroll'
+  ];
+
+  elementsToAnimate.forEach(selector => {
+    document.querySelectorAll(selector).forEach(element => {
+      revealObserver.observe(element);
+    });
   });
 
   return revealObserver;
@@ -177,12 +196,12 @@ function initSkillBars() {
         entry.target.classList.add('animate');
       }
     });
-  }, { threshold: 0.5 });
+  }, { threshold: 0.3 }); // Alacsonyabb threshold a jobb mobil kompatibilitásért
 
   skillBars.forEach(bar => observer.observe(bar));
 }
 
-// Typewriter animáció beállítása
+// Typewriter animáció beállítása - about szekció sebessége alapján
 function setupTypewriterEffect(element) {
   if (!element || element.classList.contains('typewriter-active')) return;
   
@@ -212,6 +231,28 @@ function setupTypewriterEffect(element) {
   
   // Késleltetett indítás
   setTimeout(typeChar, ANIMATION_SETTINGS.typewriterStartDelay);
+}
+
+// Typewriter animációk megfigyelése
+function setupTypewriterObserver() {
+  const typewriterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        setupTypewriterEffect(entry.target);
+        typewriterObserver.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+  // Csak section title-ök megfigyelése (category title-ök nélkül)
+  document.querySelectorAll('.section-title').forEach(title => {
+    typewriterObserver.observe(title);
+  });
+
+  return typewriterObserver;
 }
 
 // Szekció animációk egységes beállítása
@@ -253,62 +294,22 @@ function setupSectionAnimations() {
   });
 }
 
-function initializeSkillsAnimations() {
-  const skillsSection = document.querySelector('.career-skills-section');
-  if (!skillsSection) return;
+// Ez a függvény már nem szükséges, mivel az elem-alapú rendszer kezeli a skills animációkat
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Animate skill categories
-        entry.target.querySelectorAll('.skills-category').forEach((category, i) => {
-          setTimeout(() => {
-            category.classList.add('reveal');
-            
-            // Animate skill items within the category
-            category.querySelectorAll('.skill-item').forEach((item, j) => {
-              setTimeout(() => {
-                item.classList.add('reveal');
-                
-                // Animate progress bars
-                const progressBar = item.querySelector('.skill-progress');
-                if (progressBar) {
-                  const progress = progressBar.getAttribute('data-progress');
-                  progressBar.style.setProperty('--progress', `${progress}%`);
-                  progressBar.classList.add('animate');
-                }
-              }, j * 100);
-            });
-          }, i * 200);
-        });
-        
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  observer.observe(skillsSection);
-}
-
-// Minden animáció inicializálása
+// Minden animáció inicializálása - elem-alapú rendszer
 export function initializeAllAnimations() {
-  console.log('Initializing all animations...');
+  console.log('Initializing all animations with element-based system...');
   
   // Reset any existing animations
   document.querySelectorAll('.typewriter-active').forEach(el => {
     el.classList.remove('typewriter-active', 'typewriter-done');
   });
   
+  // Elem-alapú animációs rendszer
   setupRevealObserver();
+  setupTypewriterObserver();
   setupHeroAnimations();
-  setupSectionAnimations();
-  setupTimelineAnimations();
-  setupSkillCardAnimations();
-  setupCourseCardAnimations();
   initSkillBars();
-  initializeSkillsAnimations();
 }
 
 // Reset animációk

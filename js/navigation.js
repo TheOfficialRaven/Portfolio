@@ -185,9 +185,7 @@ export function setupSectionHighlighting() {
 
 // Initialize navigation
 export function initNavigation() {
-  console.log('Navigation initialization started');
   initElements();
-  console.log('Hamburger:', hamburger, 'Mobile nav:', mobileNav);
   
   if (hamburger && mobileNav) {
     // Setup hamburger click handler

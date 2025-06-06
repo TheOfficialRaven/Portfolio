@@ -2,26 +2,10 @@ import { initializeAllAnimations, resetAnimations, playLanguageTransition } from
 import { renderProjects } from './projects.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Only initialize hero animations if we're on the home page
-  const heroSection = document.querySelector('.hero-section');
-  if (heroSection) {
-    const heroTitle = heroSection.querySelector('.hero-title');
-    const heroSubtitle = heroSection.querySelector('.hero-subtitle');
-    const heroButtons = heroSection.querySelector('.hero-buttons');
-    const homeImage = heroSection.querySelector('.home-image');
-
-    if (heroTitle) heroTitle.classList.add('reveal');
-    if (heroSubtitle) heroSubtitle.classList.add('reveal');
-    if (heroButtons) heroButtons.classList.add('reveal');
-    if (homeImage) homeImage.classList.add('reveal');
-  }
-
-  // Hamburger menu is handled by navigation.js
-
   // Render projects
   renderProjects();
 
-  // Initialize other animations
+  // Initialize all animations (includes hero animations)
   initializeAllAnimations();
 
   // Language transition event listener
