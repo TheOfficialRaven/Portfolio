@@ -12,9 +12,10 @@
     "about": "Über mich",
     "timeline": "Werdegang",
     "courses": "Kurse",
+    "learningProjects": "Lernprojekte",
     "workflow": "Arbeitsweise",
     "services": "Dienstleistungen",
-    "projects": "Projekte",
+    "projects": "Professionelle Projekte",
     "skills": "Fähigkeiten",
     "contact": "Kontakt"
   },
@@ -111,10 +112,17 @@
         "heading": "Design-Fähigkeiten",
         "desc": "Benutzererfahrung und visuelles Design"
       }
+    },
+    "learningProjects": {
+      "heading": "Lernprojekte",
+      "intro": "Projekte, die während der Scrimba-Kurse und Eigenübung entstanden sind - Meilensteine der Entwicklung."
+    },
+    "professionalProjects": {
+      "intro": "Kundenarbeiten, die echte Bedürfnisse erfüllen."
     }
   },
   "projects": {
-    "heading": "Projekte"
+    "heading": "Professionelle Projekte"
   },
   "contact": {
     "heading": "Kontakt aufnehmen",

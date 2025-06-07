@@ -14,6 +14,7 @@
 import { initNavigation } from './navigation.js';
 import { initializeAllAnimations, resetAnimations, playLanguageTransition } from './animations.js';
 import { projects, renderProjects } from './projects.js';
+import { renderLearningProjects } from './learning-projects.js';
 
 let revealObserver, heroObserver;
 
@@ -71,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupThemeToggle();
   // Render projects
   renderProjects();
+  renderLearningProjects();
 
   /* ===== 1) Hero Animációk ===== */
   function initHeroAnimations() {
@@ -265,6 +267,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Fordítások betöltése és alkalmazása
       const newTranslations = await loadLocale(newLang);
       applyTranslations(newTranslations);
+      
+      // Projektek újrarenderelése a nyelvváltás után
+      renderProjects();
+      renderLearningProjects();
     });
   });
 

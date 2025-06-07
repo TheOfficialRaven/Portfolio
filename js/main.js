@@ -2,7 +2,7 @@ import { initializeAllAnimations, resetAnimations, playLanguageTransition } from
 import { renderProjects } from './projects.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Render projects
+  // Render professional projects on main page
   renderProjects();
 
   // Initialize all animations (includes hero animations)

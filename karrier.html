@@ -57,7 +57,8 @@
         <a href="#career-about" data-translate="nav.about">Bemutatkozás</a>
         <a href="#career-timeline" data-translate="nav.timeline">Szakmai út</a>
         <a href="#career-courses" data-translate="nav.courses">Képzések</a>
-        <a href="#projects" data-translate="nav.projects">Projektek</a>
+        <a href="#learning-projects" data-translate="nav.learningProjects">Tanulási projektek</a>
+        <a href="#projects" data-translate="nav.projects">Profi projektek</a>
         <a href="#career-skills" data-translate="nav.skills">Kompetenciák</a>
         <a href="#career-contact" data-translate="nav.contact">Kapcsolat</a>
       </nav>
@@ -94,7 +95,8 @@
       <a href="#career-about" data-translate="nav.about">Bemutatkozás</a>
       <a href="#career-timeline" data-translate="nav.timeline">Szakmai út</a>
       <a href="#career-courses" data-translate="nav.courses">Képzések</a>
-      <a href="#projects" data-translate="nav.projects">Projektek</a>
+      <a href="#learning-projects" data-translate="nav.learningProjects">Tanulási projektek</a>
+      <a href="#projects" data-translate="nav.projects">Profi projektek</a>
       <a href="#career-skills" data-translate="nav.skills">Kompetenciák</a>
       <a href="#career-contact" data-translate="nav.contact">Kapcsolat</a>
     </nav>
@@ -276,10 +278,24 @@
       </div>
     </section>
 
-    <!-- Projects Section (ugyanúgy, mint az indexen) -->
+    <!-- Learning Projects Section -->
+    <section id="learning-projects" class="projects-section section animate-on-scroll" style="background: var(--bg-color);">
+      <div class="container">
+        <h2 class="section-title" data-i18n="career.learningProjects.heading">Tanulási projektek</h2>
+        <p class="contact-intro" data-i18n="career.learningProjects.intro" style="text-align: center; margin-bottom: 3rem;">
+          A Scrimba kurzusok és saját gyakorlás során készített projektek - a fejlődés lépcsőfokai.
+        </p>
+        <div id="learning-project-container" class="project-grid"></div>
+      </div>
+    </section>
+
+    <!-- Professional Projects Section -->
     <section id="projects" class="projects-section section animate-on-scroll">
       <div class="container">
-        <h2 class="section-title" data-i18n="projects.heading">Projektek</h2>
+        <h2 class="section-title" data-i18n="projects.heading">Professzionális projektek</h2>
+        <p class="contact-intro" data-i18n="career.professionalProjects.intro" style="text-align: center; margin-bottom: 3rem;">
+          Ügyfélmunkák, amelyek valós igényeket szolgálnak ki.
+        </p>
         <div id="project-container" class="project-grid"></div>
       </div>
     </section>
@@ -601,6 +617,7 @@
   
   <!-- App Scripts -->
   <script src="js/projects.js" type="module"></script>
+  <script src="js/learning-projects.js" type="module"></script>
   <script type="module" src="js/karrier.js"></script>
   <script type="module" src="js/animations.js"></script>
 </body>

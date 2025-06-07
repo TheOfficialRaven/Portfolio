@@ -12,9 +12,10 @@
     "about": "About",
     "timeline": "Timeline",
     "courses": "Courses",
+    "learningProjects": "Learning Projects",
     "workflow": "Workflow",
     "services": "Services",
-    "projects": "Projects",
+    "projects": "Professional Projects",
     "skills": "Skills",
     "contact": "Contact"
   },
@@ -106,10 +107,17 @@
         "heading": "Design Skills",
         "desc": "User experience and visual design"
       }
+    },
+    "learningProjects": {
+      "heading": "Learning Projects",
+      "intro": "Projects created during Scrimba courses and self-practice - stepping stones of development."
+    },
+    "professionalProjects": {
+      "intro": "Client works that serve real needs."
     }
   },
   "projects": {
-    "heading": "Projects"
+    "heading": "Professional Projects"
   },
   "contact": {
     "heading": "Let's Connect",

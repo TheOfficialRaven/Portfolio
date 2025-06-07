@@ -12,9 +12,10 @@
     "about": "Bemutatkozás",
     "timeline": "Szakmai út",
     "courses": "Képzések",
+    "learningProjects": "Tanulási projektek",
     "workflow": "Workflow",
     "services": "Szolgáltatások",
-    "projects": "Projektek",
+    "projects": "Profi projektek",
     "skills": "Kompetenciák",
     "contact": "Kapcsolat"
   },
@@ -106,10 +107,17 @@
         "heading": "Design készségek",
         "desc": "Felhasználói élmény és vizuális tervezés"
       }
+    },
+    "learningProjects": {
+      "heading": "Tanulási projektek",
+      "intro": "A Scrimba kurzusok és saját gyakorlás során készített projektek - a fejlődés lépcsőfokai."
+    },
+    "professionalProjects": {
+      "intro": "Ügyfélmunkák, amelyek valós igényeket szolgálnak ki."
     }
   },
   "projects": {
-    "heading": "Projektek"
+    "heading": "Professzionális projektek"
   },
   "contact": {
     "heading": "Lépjünk kapcsolatba",
