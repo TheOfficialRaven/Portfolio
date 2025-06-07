@@ -19,60 +19,69 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "I'm a Frontend Developer",
-    "subtitle": "Building modern web applications with React and Laravel",
-    "btnPrimary": "Projects",
-    "btnSecondary": "Contact"
+    "title": ["Don't", "just", "show", "up,", "stand", "out", "in", "the", "online", "space!"],
+    "subtitle": "Custom, responsive website – a confident presence from the start that attracts clients and is a long-term profitable investment.",
+    "btnPrimary": "My Work",
+    "btnSecondary": "Write to me"
   },
   "about": {
     "heading": "About Me",
-    "description": "Welcome! As a frontend developer, I'm passionate about creating modern and user-friendly websites. I believe that a website should not only look beautiful but also effectively serve business goals. I offer personalized solutions where your needs and your business's unique character are at the center. Whether it's creating a new website or improving an existing one, my goal is to create a digital presence that not only attracts but also retains your customers. With years of experience and continuous learning, I ensure that your project is built using the latest technologies and best practices.",
-    "cta": "Let's discuss your project"
+    "description": "Hi! I'm glad you're here. As a frontend developer, I help turn your ideas into real, well-functioning, and visually clean websites – whether you're an individual entrepreneur or representing a newly emerging brand.<br><br>In my work, I place great emphasis on responsiveness, fast loading, and ensuring that the site provides a convincing experience on every screen size. Whether it's a portfolio page, service overview, or creative landing page, it's important to me that the end result reflects the client's personality and goals.<br><br>I'm well-versed in HTML, CSS, and JavaScript languages, work with Bootstrap and Laravel frameworks, and continuously expand my knowledge. I've already created several websites on commission, and I also develop through personal projects – because I believe that learning never stops.<br><br>I adapt flexibly to needs and always strive to make collaboration smooth, trust-based, and successful. If you want a website that not only looks good but also works efficiently, you're in the right place.<br><br>Check out my work, and if you like what you see, feel free to contact me! Let's discuss what you need and build something that really works – and is tailored to you.",
+    "cta": "Write to me"
   },
   "career_about": {
-    "heading": "Professional Introduction",
-    "description": "As a frontend developer, I specialize in modern web technologies and user experience. I have several years of hands-on experience in developing complex web applications, where clean code and efficient solutions are as crucial as teamwork and agile methodologies. I've specialized in React.js and modern JavaScript (ES6+) technologies, as well as responsive and performance-oriented development. I continuously educate myself to stay up-to-date with industry trends and best practices. My structured thinking and problem-solving skills help me effectively handle complex development challenges.",
+    "heading": "Why am I the right choice?",
+    "description": "Hi! If you're looking for a developer who doesn't just code but creates real value, you're in the right place. I acquired my knowledge through a structured, project-based learning path where I mastered every skill through real tasks.<br><br>On the Scrimba Front-End Developer career path, I completed 70+ hours of interactive training videos, 100+ coding exercises, and dozens of real projects. This wasn't just theoretical knowledge, but practical experience – from blackjack games to React applications.<br><br>What makes my approach special is that I learned every technology in small steps, through projects. I don't just know how to use CSS Grid – I also know when and why it's worth applying. The same goes for JavaScript, React, or responsive design.<br><br>If you're looking for a developer who knows the answer to the 'why' question and creates value with every line of code, let's talk!",
     "cta": "View Professional Resume"
   },
   "career": {
     "hero": {
-      "title": "Support your team with a professional frontend developer",
-      "subtitle": "Independent professional development, transparent processes, and result-oriented approach.",
-      "btnPrimary": "Get to know me",
+      "title": ["Experienced", "frontend", "development", "professional"],
+      "subtitle": "Project-based expertise, structured solutions, reliable collaboration.",
+      "btnPrimary": "Discover my journey",
       "btnSecondary": "Download CV"
     },
     "timeline": {
-      "heading": "Professional Journey",
+      "heading": "My Professional Development Steps",
       "2019": {
-        "title": "HTML & CSS Basics",
-        "desc": "First project: creating a static portfolio page."
+        "title": "Foundation Building",
+        "desc": "HTML5 and CSS3 mastery – semantic elements, box model, responsive design basics."
       },
       "2020": {
-        "title": "JavaScript and SPA",
-        "desc": "ToDo App development with ES6+ and modular structure."
+        "title": "JavaScript Mastery",
+        "desc": "ES6+ syntax, DOM manipulation, async/await – practical projects: Blackjack game, Chrome extension."
       },
       "2021": {
-        "title": "React Portfolio",
-        "desc": "Creating a React-based portfolio site with Tailwind CSS."
+        "title": "UI/UX and Responsive Design",
+        "desc": "Flexbox, CSS Grid, mobile-first thinking – complex layouts and visual hierarchy creation."
       },
       "2022": {
-        "title": "Freelance Projects",
-        "desc": "Working on websites for small and medium businesses."
+        "title": "React and Modern Development",
+        "desc": "Component-based architecture, state management, React Router – Todo App, blog application building."
       },
       "2023-2024": {
-        "title": "Continuous Growth",
-        "desc": "Courses, real client projects, new technologies."
+        "title": "Real Projects and Professional Experience",
+        "desc": "Client project implementation, teamwork, agile methodologies application in practice."
       }
     },
     "courses": {
-      "heading": "Education and Courses",
-      "sololearn": {
-        "title": "Sololearn (June 2023 – September 2023)",
-        "note": "(Credentials available upon request.)"
+      "heading": "Learning Path in Detail",
+      "intro": "The Scrimba Front-End Developer career path is a 70+ hour interactive, project-based learning program where I mastered every skill through real tasks.",
+      "basic": {
+        "title": "1. Basic Level – Web Dev Basics & CSS",
+        "desc": "HTML5 semantic elements, CSS3 basics and box model, responsive mobile-first thinking, Flexbox and CSS Grid introduction.<br><strong>Projects:</strong> Living the Simple Life blog, BBQ Splash Page, responsive portfolio pages."
       },
-      "scrimba": {
-        "title": "Scrimba – The Frontend Developer Career Path",
-        "desc": "During the Frontend Developer Career Path course, I mastered modern web technologies including HTML5, CSS3, JavaScript (ES6+), React.js, and Git version control. The course developed my problem-solving skills and clean code writing ability through practical projects."
+      "intermediate": {
+        "title": "2. Intermediate – Interactive JavaScript",
+        "desc": "Modern ES6+ syntax, DOM manipulation, asynchronous operations (fetch, async/await), Promise handling.<br><strong>Projects:</strong> Blackjack game, Chrome Dashboard extension, Pac-Man prototype, modal components."
+      },
+      "advanced": {
+        "title": "3. Advanced – UI Design & Advanced Layouts",
+        "desc": "UI Design principles (white space, contrast, typography), complex Grid and Flexbox layouts, Tailwind CSS.<br><strong>Projects:</strong> Photo Gallery, Pokedex, Jeopardy game, responsive library application."
+      },
+      "react": {
+        "title": "4. React & Modern Development",
+        "desc": "Functional components, hooks (useState, useEffect), React Router 6, state management, component composition.<br><strong>Projects:</strong> Todo App multi-phase development, blog application with authentication system, Pokedex React integration."
       }
     },
     "skills": {
@@ -104,12 +113,12 @@
   },
   "contact": {
     "heading": "Let's Connect",
-    "intro": "Have an idea or want to start a website?\nWrite to me or call me - I'd be happy to discuss it with you in person!",
+    "intro": "Have an idea or want to start a website? Write to me, and together we'll create what you really need.",
     "phone": "+36 30 123 4567",
     "phoneNote": "Available on weekdays between 9:00 AM and 6:00 PM.",
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Your Email",
-    "messagePlaceholder": "Your Message...",
+    "messagePlaceholder": "Your Message…",
     "sendBtn": "Send Message"
   },
   "langSwitch": "Language Change",
@@ -117,46 +126,46 @@
     "heading": "Services",
     "fullSite": {
       "title": "Complete Website Development",
-      "desc": "Custom website design and development from scratch, according to your needs."
+      "desc": "Modern, responsive websites according to your ideas – from basics or based on existing concepts."
     },
     "frontendDev": {
       "title": "Frontend Development",
-      "desc": "Building modern, responsive user interfaces with React and Laravel technologies."
+      "desc": "Clean, structured HTML, CSS and JavaScript-based development that looks good and works well."
     },
     "responsive": {
       "title": "Mobile-Friendly Design",
-      "desc": "Developing responsive websites that work perfectly on all devices."
+      "desc": "Design that adapts to every screen size, ensuring visitors have a good experience anywhere."
     },
     "structuredCode": {
       "title": "Structured Code",
-      "desc": "Creating clean, well-documented, and easily maintainable codebase."
+      "desc": "Transparent, reusable and easily maintainable code – planned for the long term."
     },
     "animations": {
       "title": "Animations and Interactions",
-      "desc": "Impressive animations and interactive elements for better user experience."
+      "desc": "Subtle effects, hover animations and scroll solutions that bring the site to life."
     },
     "support": {
       "title": "Technical Support",
-      "desc": "Continuous technical support and maintenance even after project completion."
+      "desc": "Bug fixes, updates, follow-up assistance – reliable support even after development."
     }
   },
   "workflow": {
-    "heading": "How I Work",
+    "heading": "How do I work?",
     "step1": {
-      "title": "Initial Contact",
-      "desc": "We discuss your ideas and goals via email or phone."
+      "title": "Consultation",
+      "desc": "We discuss your ideas, needs, and goals so everything is tailored to your business."
     },
     "step2": {
-      "title": "Quote and Requirements",
-      "desc": "I learn about your project details, then prepare an accurate quote and timeline."
+      "title": "Planning",
+      "desc": "I create the website wireframe and style directions – thoughtfully designed from UX/UI perspective."
     },
     "step3": {
       "title": "Development",
-      "desc": "Coding, testing, bug fixing."
+      "desc": "I create tested, responsive code with modern animations and clean frontend."
     },
     "step4": {
-      "title": "Launch",
-      "desc": "Delivery and support."
+      "title": "Delivery",
+      "desc": "I make the final touches and support you in usage, and if needed, in further developments."
     }
   }
 } 

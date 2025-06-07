@@ -100,45 +100,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSocials = heroSection.querySelector('.hero-socials');
     const socialLinks = heroSection.querySelectorAll('.hero-socials a');
 
-    // Animációk időzítése
+    // Animációk időzítése - mobil optimalizált
     requestAnimationFrame(() => {
+      // Mobil detektálás
+      const isMobile = window.innerWidth <= 768;
+      const baseDelay = isMobile ? 0.1 : 0.3;
+      const stepDelay = isMobile ? 0.05 : 0.1;
+
       // Title spans animációk
       titleSpans.forEach((span, i) => {
-        span.style.transitionDelay = `${0.3 + (i * 0.1)}s`;
+        span.style.transitionDelay = `${baseDelay + (i * stepDelay)}s`;
         span.classList.add('reveal');
       });
 
       // Subtitle animáció
       if (subtitle) {
-        subtitle.style.transitionDelay = `${0.3 + (titleSpans.length * 0.1)}s`;
+        subtitle.style.transitionDelay = `${baseDelay + (titleSpans.length * stepDelay)}s`;
         subtitle.classList.add('reveal');
       }
 
       // Button animációk
       buttons.forEach((btn, i) => {
-        btn.style.transitionDelay = `${0.3 + ((titleSpans.length + i + 1) * 0.1)}s`;
+        btn.style.transitionDelay = `${baseDelay + ((titleSpans.length + i + 1) * stepDelay)}s`;
         btn.classList.add('reveal');
       });
 
       // Hero image animáció
       if (heroImage) {
-        heroImage.style.transitionDelay = `${0.3 + ((titleSpans.length + buttons.length + 1) * 0.1)}s`;
+        heroImage.style.transitionDelay = `${baseDelay + ((titleSpans.length + buttons.length + 1) * stepDelay)}s`;
         heroImage.classList.add('reveal');
       }
 
       // Közösségi média ikonok animációja
       if (heroSocials) {
-        heroSocials.style.transitionDelay = `${0.3 + ((titleSpans.length + buttons.length + 2) * 0.1)}s`;
+        heroSocials.style.transitionDelay = `${baseDelay + ((titleSpans.length + buttons.length + 2) * stepDelay)}s`;
         heroSocials.classList.add('reveal');
 
         socialLinks.forEach((link, i) => {
-          link.style.transitionDelay = `${0.3 + ((titleSpans.length + buttons.length + 3 + i) * 0.1)}s`;
+          link.style.transitionDelay = `${baseDelay + ((titleSpans.length + buttons.length + 3 + i) * stepDelay)}s`;
           link.classList.add('reveal');
         });
       }
 
       // Késleltetések visszaállítása az animáció után
-      const totalDelay = 0.3 + ((titleSpans.length + buttons.length + socialLinks.length + 3) * 0.1);
+      const totalDelay = baseDelay + ((titleSpans.length + buttons.length + socialLinks.length + 3) * stepDelay);
       setTimeout(() => {
         heroSection.querySelectorAll('[style*="transition-delay"]').forEach(el => {
           el.style.transitionDelay = '0s';
@@ -195,9 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const key = el.getAttribute('data-i18n');
       const value = key.split('.').reduce((obj, k) => obj?.[k], translations);
       
-      if (value) {
-        if (el.classList.contains('hero-title')) {
-          // Hero title speciális kezelése
+      if (value !== undefined && value !== null) {
+        if (Array.isArray(value)) {
+          // Array típusú értékek (pl. hero title) span-ekké alakítása
+          el.innerHTML = value.map(word => `<span>${word}</span>`).join(' ');
+        } else if (el.classList.contains('hero-title')) {
+          // Hero title speciális kezelése string esetén
           const words = value.split(' ');
           el.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
         } else if (el.hasAttribute('data-ph')) {
@@ -207,8 +215,12 @@ document.addEventListener('DOMContentLoaded', () => {
           // Meta tag content kezelése
           el.setAttribute('content', value);
         } else {
-          // Alap szöveg kezelése
-          el.textContent = value;
+          // Alap szöveg kezelése - HTML támogatással
+          if (el.tagName === 'A' && el.hasAttribute('href')) {
+            el.textContent = value;
+          } else {
+            el.innerHTML = value;
+          }
         }
       }
     });

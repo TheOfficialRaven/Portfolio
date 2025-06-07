@@ -19,26 +19,26 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "title": "Ich bin Frontend-Entwickler",
-    "subtitle": "Entwicklung moderner Webanwendungen mit React und Laravel",
-    "btnPrimary": "Projekte",
-    "btnSecondary": "Kontakt"
+    "title": ["Zeigen", "Sie", "sich", "nicht", "nur,", "stechen", "Sie", "im", "Online-Raum", "hervor!"],
+    "subtitle": "Individuelle, responsive Website – ein selbstbewusstes Auftreten von Anfang an, das Kunden anzieht und eine langfristig rentable Investition ist.",
+    "btnPrimary": "Meine Arbeiten",
+    "btnSecondary": "Schreiben Sie mir"
   },
   "about": {
     "heading": "Über mich",
-    "description": "Als Frontend-Entwickler ist es meine Leidenschaft, moderne und benutzerfreundliche Webseiten zu erstellen. Ich glaube daran, dass eine Website nicht nur schön aussehen, sondern auch effektiv die geschäftlichen Ziele unterstützen sollte. Ich biete maßgeschneiderte Lösungen an, bei denen deine Bedürfnisse und der einzigartige Charakter deines Unternehmens im Mittelpunkt stehen. Egal, ob es um die Erstellung einer neuen Website oder die Weiterentwicklung einer bestehenden geht – mein Ziel ist es, eine digitale Präsenz zu schaffen, die nicht nur Besucher anzieht, sondern auch langfristig bindet. Mit mehreren Jahren Erfahrung und kontinuierlicher Weiterbildung stelle ich sicher, dass dein Projekt mit den neuesten Technologien und bewährten Methoden umgesetzt wird.",
-    "cta": "Lass uns über dein Projekt sprechen"
+    "description": "Hallo! Ich freue mich, dass Sie hier sind. Als Frontend-Entwickler helfe ich dabei, aus Ihren Ideen echte, gut funktionierende und visuell saubere Websites zu schaffen – egal, ob Sie Einzelunternehmer sind oder eine neu entstehende Marke vertreten.<br><br>Bei meiner Arbeit lege ich großen Wert auf Responsivität, schnelle Ladezeiten und darauf, dass die Website auf jeder Bildschirmgröße eine überzeugende Erfahrung bietet. Ob es sich um eine Portfolioseite, Dienstleistungsübersicht oder kreative Landing Page handelt, es ist mir wichtig, dass das Endergebnis die Persönlichkeit und Ziele des Kunden widerspiegelt.<br><br>Ich beherrsche HTML, CSS und JavaScript gut, arbeite mit Bootstrap und Laravel Frameworks und erweitere kontinuierlich mein Wissen. Ich habe bereits mehrere Websites im Auftrag erstellt und entwickle mich auch durch persönliche Projekte weiter – denn ich glaube daran, dass das Lernen nie aufhört.<br><br>Ich passe mich flexibel an die Bedürfnisse an und bin immer bestrebt, dass die Zusammenarbeit reibungslos, vertrauensbasiert und erfolgreich ist. Wenn Sie eine Website wollen, die nicht nur gut aussieht, sondern auch effizient funktioniert, sind Sie hier richtig.<br><br>Schauen Sie sich meine Arbeiten an, und wenn Ihnen gefällt, was Sie sehen, kontaktieren Sie mich gerne! Lassen Sie uns besprechen, was Sie brauchen, und etwas bauen, das wirklich funktioniert – und auf Sie zugeschnitten ist.",
+    "cta": "Schreiben Sie mir"
   },
   "career_about": {
-    "heading": "Professionelle Vorstellung",
-    "description": "Ich bin ein leidenschaftlicher Webentwickler, der Herausforderungen und neue Technologien liebt. Mein Ziel ist es, meinen Kunden die bestmögliche Lösung zu bieten.",
+    "heading": "Warum bin ich die richtige Wahl?",
+    "description": "Hallo! Wenn Sie einen Entwickler suchen, der nicht nur programmiert, sondern echten Wert schafft, sind Sie hier richtig. Ich habe mein Wissen über einen strukturierten, projektbasierten Lernweg erworben, bei dem ich jede Fähigkeit durch echte Aufgaben gemeistert habe.<br><br>Auf dem Scrimba Front-End Developer Karriereweg habe ich 70+ Stunden interaktive Trainingsvideos, 100+ Coding-Übungen und dutzende echte Projekte abgeschlossen. Das war nicht nur theoretisches Wissen, sondern praktische Erfahrung – von Blackjack-Spielen bis zu React-Anwendungen.<br><br>Was meinen Ansatz besonders macht: Ich habe jede Technologie in kleinen Schritten, durch Projekte gelernt. Ich weiß nicht nur, wie man CSS Grid verwendet – ich weiß auch, wann und warum es sich lohnt, es anzuwenden. Das Gleiche gilt für JavaScript, React oder responsive Design.<br><br>Wenn Sie einen Entwickler suchen, der die Antwort auf das 'Warum' kennt und mit jeder Codezeile Wert schafft, dann sprechen wir!",
     "cta": "Professionellen Lebenslauf ansehen"
   },
   "career": {
     "hero": {
-      "title": "Unterstützen Sie Ihr Team mit einem professionellen Frontend-Entwickler",
-      "subtitle": "Selbstständige fachliche Entwicklung, transparente Prozesse und ergebnisorientierter Ansatz.",
-      "btnPrimary": "Lernen Sie mich kennen",
+      "title": ["Erfahrener", "Frontend-Entwicklungs-", "Spezialist"],
+      "subtitle": "Projektbasierte Expertise, strukturierte Lösungen, verlässliche Zusammenarbeit.",
+      "btnPrimary": "Entdecken Sie meinen Weg",
       "btnSecondary": "Lebenslauf"
     },
     "about": {
@@ -47,37 +47,46 @@
       "cta": "Lassen Sie uns über Ihr Projekt sprechen"
     },
     "timeline": {
-      "heading": "Beruflicher Werdegang",
+      "heading": "Meine beruflichen Entwicklungsschritte",
       "2019": {
-        "title": "HTML & CSS Grundlagen",
-        "desc": "Erstes Projekt: Erstellung einer statischen Portfolio-Seite."
+        "title": "Fundament legen",
+        "desc": "HTML5 und CSS3 Beherrschung – semantische Elemente, Box-Modell, responsive Design Grundlagen."
       },
       "2020": {
-        "title": "JavaScript und SPA",
-        "desc": "ToDo-App-Entwicklung mit ES6+ und modularem Aufbau."
+        "title": "JavaScript Meisterschaft",
+        "desc": "ES6+ Syntax, DOM-Manipulation, async/await – praktische Projekte: Blackjack-Spiel, Chrome-Erweiterung."
       },
       "2021": {
-        "title": "React Portfolio",
-        "desc": "Erstellung einer React-basierten Portfolio-Website mit Tailwind CSS."
+        "title": "UI/UX und responsive Design",
+        "desc": "Flexbox, CSS Grid, mobile-first Denken – komplexe Layouts und visuelle Hierarchie-Erstellung."
       },
       "2022": {
-        "title": "Freelance Projekte",
-        "desc": "Arbeit an Websites für kleine und mittlere Unternehmen."
+        "title": "React und moderne Entwicklung",
+        "desc": "Komponentenbasierte Architektur, State-Management, React Router – Todo App, Blog-Anwendung Aufbau."
       },
       "2023-2024": {
-        "title": "Kontinuierliche Entwicklung",
-        "desc": "Kurse, echte Kundenprojekte, neue Technologien."
+        "title": "Echte Projekte und berufliche Erfahrung",
+        "desc": "Kundenprojekt-Umsetzung, Teamarbeit, agile Methodiken-Anwendung in der Praxis."
       }
     },
     "courses": {
-      "heading": "Ausbildung und Kurse",
-      "sololearn": {
-        "title": "Sololearn (Juni 2023 – September 2023)",
-        "note": "(Zertifikate auf Anfrage verfügbar.)"
+      "heading": "Lernweg im Detail",
+      "intro": "Der Scrimba Front-End Developer Karriereweg ist ein 70+ Stunden interaktives, projektbasiertes Lernprogramm, bei dem ich jede Fähigkeit durch echte Aufgaben gemeistert habe.",
+      "basic": {
+        "title": "1. Grundstufe – Web Dev Basics & CSS",
+        "desc": "HTML5 semantische Elemente, CSS3 Grundlagen und Box-Modell, responsive mobile-first Denken, Flexbox und CSS Grid Einführung.<br><strong>Projekte:</strong> Living the Simple Life Blog, BBQ Splash Page, responsive Portfolio-Seiten."
       },
-      "scrimba": {
-        "title": "Scrimba – The Frontend Developer Career Path",
-        "desc": "Während des Frontend Developer Career Path-Kurses habe ich moderne Webtechnologien wie HTML5, CSS3, JavaScript (ES6+), React.js und Git-Versionskontrolle gemeistert. Der Kurs entwickelte meine Problemlösungsfähigkeiten und Clean-Code-Schreibfähigkeiten durch praktische Projekte."
+      "intermediate": {
+        "title": "2. Mittelstufe – Interactive JavaScript",
+        "desc": "Moderne ES6+ Syntax, DOM-Manipulation, asynchrone Operationen (fetch, async/await), Promise-Behandlung.<br><strong>Projekte:</strong> Blackjack-Spiel, Chrome Dashboard-Erweiterung, Pac-Man Prototyp, modale Komponenten."
+      },
+      "advanced": {
+        "title": "3. Fortgeschritten – UI Design & Advanced Layouts",
+        "desc": "UI Design Prinzipien (Weißraum, Kontrast, Typografie), komplexe Grid und Flexbox Layouts, Tailwind CSS.<br><strong>Projekte:</strong> Photo Gallery, Pokedex, Jeopardy Spiel, responsive Bibliotheks-Anwendung."
+      },
+      "react": {
+        "title": "4. React & Modern Development",
+        "desc": "Funktionale Komponenten, Hooks (useState, useEffect), React Router 6, State-Management, Komponenten-Komposition.<br><strong>Projekte:</strong> Todo App mehrstufige Entwicklung, Blog-Anwendung mit Authentifizierungssystem, Pokedex React Integration."
       }
     },
     "skills": {
@@ -109,12 +118,12 @@
   },
   "contact": {
     "heading": "Kontakt aufnehmen",
-    "intro": "Haben Sie eine Idee oder möchten Sie eine Website erstellen?\nSchreiben Sie mir oder rufen Sie mich an - ich bespreche es gerne persönlich mit Ihnen!",
+    "intro": "Haben Sie eine Idee oder möchten Sie eine Website erstellen? Schreiben Sie mir, und gemeinsam schaffen wir das, was Sie wirklich brauchen.",
     "phone": "+36 30 123 4567",
     "phoneNote": "Erreichbar an Werktagen zwischen 9:00 und 18:00 Uhr.",
     "namePlaceholder": "Ihr Name",
     "emailPlaceholder": "Ihre E-Mail",
-    "messagePlaceholder": "Ihre Nachricht...",
+    "messagePlaceholder": "Ihre Nachricht…",
     "sendBtn": "Nachricht senden"
   },
   "langSwitch": "Sprachwechsel",
@@ -122,46 +131,46 @@
     "heading": "Dienstleistungen",
     "fullSite": {
       "title": "Komplette Webentwicklung",
-      "desc": "Individuelle Website-Gestaltung und -Entwicklung von Grund auf, nach Ihren Anforderungen."
+      "desc": "Moderne, responsive Websites nach Ihren Vorstellungen – von den Grundlagen oder basierend auf bestehenden Ideen."
     },
     "frontendDev": {
       "title": "Frontend-Entwicklung",
-      "desc": "Entwicklung moderner, responsiver Benutzeroberflächen mit React und Laravel."
+      "desc": "Saubere, strukturierte HTML-, CSS- und JavaScript-basierte Entwicklung, die gut aussieht und gut funktioniert."
     },
     "responsive": {
       "title": "Mobilfreundliches Design",
-      "desc": "Entwicklung responsiver Websites, die auf allen Geräten perfekt funktionieren."
+      "desc": "Design, das sich an jede Bildschirmgröße anpasst, damit Besucher überall eine gute Erfahrung haben."
     },
     "structuredCode": {
       "title": "Strukturierter Code",
-      "desc": "Erstellung einer sauberen, gut dokumentierten und leicht wartbaren Codebasis."
+      "desc": "Transparenter, wiederverwendbarer und leicht wartbarer Code – langfristig geplant."
     },
     "animations": {
       "title": "Animationen und Interaktionen",
-      "desc": "Beeindruckende Animationen und interaktive Elemente für bessere Benutzererfahrung."
+      "desc": "Feine Effekte, Hover-Animationen und Scroll-Lösungen, die die Website zum Leben erwecken."
     },
     "support": {
       "title": "Technischer Support",
-      "desc": "Kontinuierlicher technischer Support und Wartung auch nach Projektabschluss."
+      "desc": "Fehlerbehebung, Updates, Nachbetreuung – zuverlässiger Support auch nach der Entwicklung."
     }
   },
   "workflow": {
-    "heading": "Arbeitsweise",
+    "heading": "Wie arbeite ich?",
     "step1": {
-      "title": "Erstkontakt",
-      "desc": "Wir besprechen Ihre Ideen und Ziele per E-Mail oder Telefon."
+      "title": "Beratung",
+      "desc": "Wir besprechen Ihre Ideen, Bedürfnisse und Ziele, damit alles auf Ihr Unternehmen zugeschnitten ist."
     },
     "step2": {
-      "title": "Angebot und Anforderungen",
-      "desc": "Ich lerne Ihre Projektdetails kennen und erstelle ein genaues Angebot und einen Zeitplan."
+      "title": "Planung",
+      "desc": "Ich erstelle das Website-Gerüst und die Stilrichtungen – durchdacht aus UX/UI-Sicht."
     },
     "step3": {
       "title": "Entwicklung",
-      "desc": "Programmierung, Tests, Fehlerbehebung."
+      "desc": "Ich erstelle getesteten, responsiven Code mit modernen Animationen und sauberem Frontend."
     },
     "step4": {
-      "title": "Launch",
-      "desc": "Übergabe und Support."
+      "title": "Übergabe",
+      "desc": "Ich führe die letzten Feinheiten durch und unterstütze Sie bei der Nutzung und bei Bedarf bei weiteren Entwicklungen."
     }
   }
 } 
