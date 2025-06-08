@@ -12,7 +12,7 @@
  */
 
 import { initNavigation } from './navigation.js';
-import { initializeAllAnimations, resetAnimations, playLanguageTransition } from './animations.js';
+import { initializeAllAnimations, resetAnimations, playLanguageTransition, setupHeroAnimations } from './animations.js';
 import { projects, renderProjects } from './projects.js';
 import { renderLearningProjects } from './learning-projects.js';
 
@@ -75,94 +75,21 @@ document.addEventListener('DOMContentLoaded', () => {
   renderLearningProjects();
 
   /* ===== 1) Hero Animációk ===== */
-  function initHeroAnimations() {
-    const heroSection = document.querySelector('.hero-section');
-    if (!heroSection) return;
-
-    // Először eltávolítjuk az összes reveal osztályt
-    heroSection.querySelectorAll('.reveal').forEach(el => el.classList.remove('reveal'));
-
-    // Hero title kezelése
-    const heroTitle = heroSection.querySelector('.hero-title');
-    if (heroTitle) {
-      // Ha már span-ekben van a szöveg, ne módosítsuk
-      if (!heroTitle.querySelector('span')) {
-        // Szöveg felbontása szavakra az aktuális tartalomból
-        const titleText = heroTitle.textContent.trim();
-        const words = titleText.split(' ');
-        heroTitle.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
-      }
-    }
-
-    // Elemek kiválasztása
-    const titleSpans = heroSection.querySelectorAll('.hero-title span');
-    const subtitle = heroSection.querySelector('.hero-subtitle');
-    const buttons = heroSection.querySelectorAll('.hero-buttons a');
-    const heroImage = heroSection.querySelector('.home-image');
-    const heroSocials = heroSection.querySelector('.hero-socials');
-    const socialLinks = heroSection.querySelectorAll('.hero-socials a');
-
-    // Animációk időzítése - mobil optimalizált
-    requestAnimationFrame(() => {
-      // Mobil detektálás
-      const isMobile = window.innerWidth <= 768;
-      const baseDelay = isMobile ? 0.1 : 0.3;
-      const stepDelay = isMobile ? 0.05 : 0.1;
-
-      // Title spans animációk
-      titleSpans.forEach((span, i) => {
-        span.style.transitionDelay = `${baseDelay + (i * stepDelay)}s`;
-        span.classList.add('reveal');
-      });
-
-      // Subtitle animáció
-      if (subtitle) {
-        subtitle.style.transitionDelay = `${baseDelay + (titleSpans.length * stepDelay)}s`;
-        subtitle.classList.add('reveal');
-      }
-
-      // Button animációk
-      buttons.forEach((btn, i) => {
-        btn.style.transitionDelay = `${baseDelay + ((titleSpans.length + i + 1) * stepDelay)}s`;
-        btn.classList.add('reveal');
-      });
-
-      // Hero image animáció
-      if (heroImage) {
-        heroImage.style.transitionDelay = `${baseDelay + ((titleSpans.length + buttons.length + 1) * stepDelay)}s`;
-        heroImage.classList.add('reveal');
-      }
-
-      // Közösségi média ikonok animációja
-      if (heroSocials) {
-        heroSocials.style.transitionDelay = `${baseDelay + ((titleSpans.length + buttons.length + 2) * stepDelay)}s`;
-        heroSocials.classList.add('reveal');
-
-        socialLinks.forEach((link, i) => {
-          link.style.transitionDelay = `${baseDelay + ((titleSpans.length + buttons.length + 3 + i) * stepDelay)}s`;
-          link.classList.add('reveal');
-        });
-      }
-
-      // Késleltetések visszaállítása az animáció után
-      const totalDelay = baseDelay + ((titleSpans.length + buttons.length + socialLinks.length + 3) * stepDelay);
-      setTimeout(() => {
-        heroSection.querySelectorAll('[style*="transition-delay"]').forEach(el => {
-          el.style.transitionDelay = '0s';
-        });
-      }, totalDelay * 1000);
-    });
-  }
-
-  function resetHeroAnimations() {
+  // Hero animációk újrainicializálása - az animations.js-ben lévő egységes rendszert használjuk
+  function resetAndReinitHeroAnimations() {
+    // Először resetelünk minden animációt
     const heroSection = document.querySelector('.hero-section');
     if (heroSection) {
-      // Eltávolítjuk az összes reveal osztályt és transition delay-t
       heroSection.querySelectorAll('.reveal').forEach(el => {
         el.classList.remove('reveal');
         el.style.transitionDelay = '';
       });
     }
+    
+    // Majd újrainicializáljuk az egységes rendszerrel
+    setTimeout(() => {
+      setupHeroAnimations();
+    }, 100); // Kis késleltetés a DOM frissítés miatt
   }
 
 
@@ -227,6 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
+    // data-translate attribútumok fordítása (navigációhoz)
+    document.querySelectorAll('[data-translate]').forEach(el => {
+      const key = el.getAttribute('data-translate');
+      const value = key.split('.').reduce((obj, k) => obj?.[k], translations);
+      if (value) {
+        el.textContent = value;
+      }
+    });
+    
     // Placeholderek beállítása külön
     document.querySelectorAll('[data-ph]').forEach(el => {
       const key = el.getAttribute('data-ph');
@@ -236,11 +172,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
-    // Reset és újrainicializálás
-    resetHeroAnimations();
-    setTimeout(() => {
-      initHeroAnimations();
-    }, 100); // Kis késleltetés a DOM frissítés miatt
+    // Reset és újrainicializálás az egységes animációs rendszerrel
+    resetAndReinitHeroAnimations();
   }
 
   // Alapértelmezett nyelv betöltése és fordítás alkalmazása
@@ -283,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ===== 5) Animációk inicializálása ===== */
   initializeAllAnimations();
-  initHeroAnimations();
 
   /* ===== 6) Parallax a Hero-container-en ===== */
   const heroContainer = document.querySelector('.hero-container');

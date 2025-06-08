@@ -67,6 +67,219 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Elrejtjük a fordítandó szövegeket kezdetben a villanás elkerülése érdekében */
+[data-i18n]:empty,
+[data-translate]:empty {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Megjelenítjük őket amikor betöltöttek */
+[data-i18n]:not(:empty),
+[data-translate]:not(:empty) {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* További védelem a kezdeti tartalom villanása ellen */
+.section-title[data-i18n]:empty,
+.category-title[data-i18n]:empty {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.section-title[data-i18n]:empty::after,
+.category-title[data-i18n]:empty::after {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Globális ::after visszaállítás minden címhez */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color));
+  border-radius: 2px;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color));
+  border-radius: 2px;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== GLOBÁLIS TIPOGRÁFIAI ALAPOK ===== */
+
+/* Desktop tipográfiai hierarchia */
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.category-title {
+  font-size: 1.8rem;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.career-step-content h3,
+.career-course-card h3,
+.step-content h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+.project-info h3 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+/* Globális címstílusok - természetes szótörés */
+.section-title,
+.category-title {
+  word-break: normal;
+  word-wrap: break-word;
+  hyphens: none;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+/* ::after elemek alapértelmezett pozicionálása - eltávolítva, mert feljebb definiáltuk */
+
+/* ===== MOBIL TIPOGRÁFIAI HIERARCHIA (768px és alatt) ===== */
+@media (max-width: 768px) {
+  /* Egységes mobil címméretek */
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .section-title,
+  .category-title,
+  .career-step-content h3,
+  .career-course-card h3,
+  .step-content h3,
+  .project-info h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: normal;
+    word-wrap: break-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+    position: relative;
+  }
+  
+  /* ::after elemek középre igazítása mobilon - minden címhez */
+  .section-title::after,
+  .category-title::after {
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 50px !important;
+    bottom: -10px;
+    margin-left: 0;
+  }
+  
+  /* About section optimalizálás mobilon */
+  .about-section .section-title {
+    white-space: normal !important;
+    border-right: none !important;
+    animation: none !important;
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+    position: relative !important;
+  }
+  
+  .about-section .section-title::after {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 50px !important;
+    bottom: -10px !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Career szekciók címeinek optimalizálása mobilon */
+  .career-timeline-section .section-title,
+  .career-courses-section .section-title,
+  .career-skills-section .section-title,
+  .projects-section .section-title,
+  .contact-section .section-title {
+    word-break: normal !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+    position: relative !important;
+  }
+  
+  .career-timeline-section .section-title::after,
+  .career-courses-section .section-title::after,
+  .career-skills-section .section-title::after,
+  .projects-section .section-title::after,
+  .contact-section .section-title::after {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 50px !important;
+    bottom: -10px !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Globális mobilbiztonság */
+  * {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
 
 main {
@@ -125,25 +338,7 @@ img {
   box-shadow: 0 0 10px var(--main-color);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-  position: relative;
-  display: inline-block;
-  opacity: 1;
-  visibility: visible;
-}
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 60px;
-  height: 4px;
-  background: var(--main-color);
-  border-radius: 2px;
-}
 
 /* ==== Section Base Styles ==== */
 section {
@@ -1005,11 +1200,27 @@ body.menu-open.active::before {
   .scroll-indicator { bottom: 0.5rem; }
 }
 
-/* ===== Small Mobile (≤ 480px) ===== */
+
+
+/* ===== Nagyon kis képernyők (≤ 480px) ===== */
 @media (max-width: 480px) {
-  .hero-title { font-size: 2rem; }
   .hero-subtitle { font-size: 1rem; }
   .hero-buttons a { width: 100%; }
+  
+  /* Tightened padding for very small screens */
+  .section-title,
+  .category-title,
+  .career-step-content h3,
+  .career-course-card h3,
+  .step-content h3,
+  .project-info h3 {
+    padding: 0 0.5rem;
+  }
+  
+  .section-title::after,
+  .category-title::after {
+    width: 40px;
+  }
 }
 
 /* Animációk */
@@ -1086,25 +1297,46 @@ body.menu-open.active::before {
   transform: scale(1) translateY(0);
 }
 
-/* Typewriter for section title */
-.about-section .section-title {
+/* Egységes typewriter animáció minden section title-hez */
+.section-title.typewriter-active {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 0.2em solid var(--main-color);
-  width: 0;
+  position: relative;
 }
-.about-section.reveal .section-title {
-  animation: typing 2s steps(30,end) forwards,
-             blink-caret 0.75s step-end infinite;
-  animation-delay: 0.2s;
+
+.section-title.typewriter-active:not(.typewriter-done) {
+  border-right: 0.15em solid var(--main-color);
+  animation: blink 1s step-end infinite;
 }
-@keyframes typing {
-  from { width: 0; }
-  to   { width: 100%; }
+
+/* ::after elem elrejtése typewriter alatt - JAVÍTOTT VERZIÓ */
+.section-title.typewriter-active:not(.typewriter-done)::after {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
-@keyframes blink-caret {
-  50% { border-color: transparent; }
+
+/* ::after elem megjelenítése typewriter után - ERŐS VISSZAÁLLÍTÁS */
+.section-title.typewriter-done::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color)) !important;
+  border-radius: 2px !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1 !important;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: var(--main-color); }
 }
 
 .ring-inner {
@@ -1210,9 +1442,15 @@ body.menu-open.active::before {
 
 
 @media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 1rem !important;
+  }
+  
   .about-wrapper {
     flex-direction: column;
     text-align: center;
+    max-width: 100% !important;
+    padding: 0;
   }
 
   .about-image {
@@ -1221,9 +1459,12 @@ body.menu-open.active::before {
 
   .about-content {
     align-items: center;
+    padding: 0 !important;
   }
+  
 
-    .about-cta {
+
+  .about-cta {
     align-self: center;
   }
 }
@@ -1667,25 +1908,7 @@ section::before {
   opacity: 0.3;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 4rem;
-  position: relative;
-  display: inline-block;
-  opacity: 1;
-  visibility: visible;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 60px;
-  height: 4px;
-  background: var(--main-color);
-  border-radius: 2px;
-}
+/* Felesleges duplikált section-title definition eltávolítva */
 
 /* Modern Card Styles */
 .card {
@@ -2026,12 +2249,7 @@ section::before {
     font-size: 1.1rem;
   }
   
-  .section-title {
-    font-size: 1.8rem;
-    word-wrap: break-word;
-    max-width: 100%;
-    hyphens: auto;
-  }
+
 }
 
 /**************** Footer *************/
@@ -2577,7 +2795,7 @@ section::before {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -15px;
   width: 60px;
   height: 4px;
   background: var(--main-color);
@@ -2673,13 +2891,6 @@ section::before {
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-  
-  .category-title {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    word-wrap: break-word;
-    max-width: 100%;
   }
   
   .skill-item {
@@ -3048,6 +3259,37 @@ section.reveal {
   white-space: nowrap;
 }
 
+/* Győződjünk meg arról, hogy minden section-title ::after elem látható */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color));
+  border-radius: 2px;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color));
+  border-radius: 2px;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 .section-title.typewriter-active {
   border-right: 0.15em solid var(--main-color);
 }
@@ -3220,7 +3462,57 @@ section.reveal {
   }
 }
 
-/* Remove duplicate hamburger styles - already defined above */
+/* ====== ERŐS GLOBÁLIS ::AFTER OVERRIDE - A FÁJL VÉGÉN ====== */
+/* Ez felülír minden korábbi szabályt és biztosítja, hogy minden section-title ::after látszódjon */
 
-/* Remove duplicate mobile nav styles - already defined above */
+.section-title::after,
+.about-section .section-title::after,
+.services-section .section-title::after,
+.projects-section .section-title::after,
+.contact-section .section-title::after,
+.workflow-section .section-title::after,
+.career-timeline-section .section-title::after,
+.career-courses-section .section-title::after,
+.career-skills-section .section-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 80px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color)) !important;
+  border-radius: 2px !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1 !important;
+}
+
+.category-title::after,
+.skills-category .category-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -10px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color)) !important;
+  border-radius: 2px !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 1 !important;
+}
+
+/* Mobil override */
+@media (max-width: 768px) {
+  .section-title::after,
+  .category-title::after {
+    width: 50px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
 

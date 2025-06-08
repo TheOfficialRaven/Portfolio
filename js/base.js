@@ -228,6 +228,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
+    // data-translate attribútumok fordítása (navigációhoz)
+    document.querySelectorAll('[data-translate]').forEach(el => {
+      const key = el.getAttribute('data-translate');
+      let value = translations;
+      const keys = key.split('.');
+      
+      for (const k of keys) {
+        if (value === undefined || value === null) {
+          console.warn(`Translation path broken at key "${k}" in path "${key}"`);
+          break;
+        }
+        value = value[k];
+      }
+      
+      if (value !== undefined && value !== null) {
+        el.textContent = value;
+        console.log('Successfully set data-translate for', key, 'to:', value);
+      } else {
+        console.warn(`No data-translate translation found for key: ${key}`);
+        // Próbáljuk meg a fallback nyelvet (magyar)
+        if (translations !== fallbackTranslations) {
+          let fallbackValue = fallbackTranslations;
+          for (const k of keys) {
+            if (fallbackValue === undefined || fallbackValue === null) break;
+            fallbackValue = fallbackValue[k];
+          }
+          if (fallbackValue !== undefined && fallbackValue !== null) {
+            el.textContent = fallbackValue;
+            console.log('Used fallback data-translate for', key, ':', fallbackValue);
+          }
+        }
+      }
+    });
+
     // Placeholderek beállítása
     document.querySelectorAll('[data-ph]').forEach(el => {
       const key = el.getAttribute('data-ph');
