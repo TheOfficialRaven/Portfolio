@@ -1,5 +1,5 @@
 import { initializeAllAnimations, resetAnimations, playLanguageTransition } from './animations.js';
-import { initNavigation } from './navigation.js';
+import { initNavigation, updateActiveMenuItem } from './navigation.js';
 
 // Observer változók már az animations.js-ben vannak kezelve
 
@@ -40,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initVanta();
   initializeAllAnimations();
+  
+  // Aktív navigációs elem beállítása
+  setTimeout(() => {
+    updateActiveMenuItem();
+  }, 100);
 
 
 

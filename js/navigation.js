@@ -110,33 +110,53 @@ export function updateActiveMenuItem() {
   
   // Get all menu items
   const navbarItems = document.querySelectorAll('.navbar a');
-  const mobileNavItems = document.querySelectorAll('.mobile-nav a');
+  const mobileNavItems = document.querySelectorAll('.mobile-nav a.nav-secondary');
+  const pageSwitcherItems = document.querySelectorAll('.page-switcher a, .mobile-page-link');
   const allMenuItems = [...navbarItems, ...mobileNavItems];
   
   // Clear all active states first
   allMenuItems.forEach(item => item.classList.remove('active'));
+  pageSwitcherItems.forEach(item => item.classList.remove('active'));
   
   // Check if we're on index page or karrier page
   const isIndexPage = currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '';
   const isKarrierPage = currentPath.includes('karrier.html');
   
+  console.log('Current path:', currentPath, 'Is index:', isIndexPage, 'Is karrier:', isKarrierPage);
+  
+  // Handle page switcher navigation
+  pageSwitcherItems.forEach(item => {
+    const href = item.getAttribute('href');
+    if (href === 'index.html' && isIndexPage) {
+      item.classList.add('active');
+      console.log('Set active: index page switcher');
+    } else if (href === 'karrier.html' && isKarrierPage) {
+      item.classList.add('active');
+      console.log('Set active: karrier page switcher');
+    }
+  });
+  
+  // Update page switcher background position
+  const pageSwitcher = document.getElementById('pageSwitcher');
+  if (pageSwitcher) {
+    if (isKarrierPage) {
+      pageSwitcher.classList.add('karrier');
+    } else {
+      pageSwitcher.classList.remove('karrier');
+    }
+  }
+  
+  // Handle section-level navigation (hash links) - NAV-SECONDARY elemek
   allMenuItems.forEach(item => {
     const href = item.getAttribute('href');
     
-    // Handle page-level navigation (index vs karrier)
-    if (href === 'index.html' && isIndexPage) {
+    if (item.classList.contains('nav-secondary') && currentHash && href === currentHash) {
       item.classList.add('active');
-    } else if (href === 'karrier.html' && isKarrierPage) {
-      item.classList.add('active');
-    }
-    
-    // Handle section-level navigation (hash links)
-    if (currentHash && href === currentHash) {
-      item.classList.add('active');
+      console.log('Set active section:', currentHash);
     }
     
     // Special case for karrier page internal navigation
-    if (isKarrierPage && href.startsWith('#') && !currentHash && href === '#hero') {
+    if (isKarrierPage && item.classList.contains('nav-secondary') && href.startsWith('#') && !currentHash && href === '#hero') {
       item.classList.add('active');
     }
   });
@@ -145,7 +165,7 @@ export function updateActiveMenuItem() {
 // Set up scroll-based section highlighting
 export function setupSectionHighlighting() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.navbar a[href^="#"], .mobile-nav a[href^="#"]');
+  const navLinks = document.querySelectorAll('.navbar a.nav-secondary[href^="#"], .mobile-nav a.nav-secondary[href^="#"]');
   
   if (sections.length === 0 || navLinks.length === 0) return;
   
@@ -160,7 +180,7 @@ export function setupSectionHighlighting() {
       if (entry.isIntersecting) {
         const sectionId = entry.target.id;
         
-        // Remove active class from all nav links
+        // Remove active class ONLY from secondary nav links (not primary)
         navLinks.forEach(link => link.classList.remove('active'));
         
         // Add active class to corresponding nav links

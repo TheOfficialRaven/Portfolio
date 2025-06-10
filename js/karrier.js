@@ -11,7 +11,7 @@
  *   - Back-to-Top gomb
  */
 
-import { initNavigation } from './navigation.js';
+import { initNavigation, updateActiveMenuItem } from './navigation.js';
 import { initializeAllAnimations, resetAnimations, playLanguageTransition, setupHeroAnimations } from './animations.js';
 import { projects, renderProjects } from './projects.js';
 import { renderLearningProjects } from './learning-projects.js';
@@ -73,23 +73,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render projects
   renderProjects();
   renderLearningProjects();
+  
+  // Aktív navigációs elem beállítása
+  setTimeout(() => {
+    updateActiveMenuItem();
+  }, 100);
 
   /* ===== 1) Hero Animációk ===== */
   // Hero animációk újrainicializálása - az animations.js-ben lévő egységes rendszert használjuk
-  function resetAndReinitHeroAnimations() {
-    // Először resetelünk minden animációt
-    const heroSection = document.querySelector('.hero-section');
-    if (heroSection) {
-      heroSection.querySelectorAll('.reveal').forEach(el => {
-        el.classList.remove('reveal');
-        el.style.transitionDelay = '';
-      });
-    }
-    
-    // Majd újrainicializáljuk az egységes rendszerrel
-    setTimeout(() => {
-      setupHeroAnimations();
-    }, 100); // Kis késleltetés a DOM frissítés miatt
+  function resetAndReinitAllAnimations() {
+    // Resetelünk minden animációt
+    resetAnimations();
   }
 
 
@@ -173,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Reset és újrainicializálás az egységes animációs rendszerrel
-    resetAndReinitHeroAnimations();
+    resetAndReinitAllAnimations();
   }
 
   // Alapértelmezett nyelv betöltése és fordítás alkalmazása

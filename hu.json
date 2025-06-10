@@ -15,7 +15,7 @@
     "learningProjects": "Tanulási projektek",
     "workflow": "Workflow",
     "services": "Szolgáltatások",
-    "projects": "Profi projektek",
+    "projects": "Projektek",
     "skills": "Kompetenciák",
     "contact": "Kapcsolat"
   },
@@ -117,7 +117,7 @@
     }
   },
   "projects": {
-    "heading": "Professzionális projektek"
+    "heading": "Projektek"
   },
   "contact": {
     "heading": "Lépjünk kapcsolatba",

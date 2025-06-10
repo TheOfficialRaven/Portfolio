@@ -52,14 +52,18 @@
         <img src="imgs/Logo.png" alt="Logo" id="logo">
       </a>
       
+      <!-- Page Switcher -->
+      <div class="page-switcher" id="pageSwitcher">
+        <a href="index.html" class="active" data-translate="nav.home">Főoldal</a>
+        <a href="karrier.html" data-translate="nav.career">Karrier</a>
+      </div>
+      
       <!-- Desktop Navigation -->
       <nav class="navbar">
-        <a href="index.html" class="nav-main" data-translate="nav.home">Kezdőlap</a>
-        <a href="karrier.html" class="nav-main" data-translate="nav.career">Karrier</a>
-        <a href="#about" class="nav-main" data-translate="nav.about">Rólam</a>
-        <a href="#services" class="nav-main" data-translate="nav.services">Szolgáltatások</a>
-        <a href="#projects" class="nav-main" data-translate="nav.projects">Projektek</a>
-        <a href="#contact" class="nav-main" data-translate="nav.contact">Kapcsolat</a>
+        <a href="#about" class="nav-main nav-secondary" data-translate="nav.about"></a>
+        <a href="#services" class="nav-main nav-secondary" data-translate="nav.services"></a>
+        <a href="#projects" class="nav-main nav-secondary" data-translate="nav.projects"></a>
+        <a href="#contact" class="nav-main nav-secondary" data-translate="nav.contact"></a>
       </nav>
       
       <div class="header-right">
@@ -99,12 +103,15 @@
     
     <!-- Mobile Navigation -->
     <nav class="mobile-nav">
-      <a href="index.html" data-translate="nav.home">Kezdőlap</a>
-      <a href="karrier.html" data-translate="nav.career">Karrier</a>
-      <a href="#about" data-translate="nav.about">Rólam</a>
-      <a href="#services" data-translate="nav.services">Szolgáltatások</a>
-      <a href="#projects" data-translate="nav.projects">Projektek</a>
-      <a href="#contact" data-translate="nav.contact">Kapcsolat</a>
+      <div class="mobile-page-switcher">
+        <a href="index.html" class="mobile-page-link active" data-translate="nav.home">Főoldal</a>
+        <a href="karrier.html" class="mobile-page-link" data-translate="nav.career">Karrier</a>
+      </div>
+      <div class="mobile-nav-separator"></div>
+      <a href="#about" class="nav-secondary" data-translate="nav.about">Rólam</a>
+      <a href="#services" class="nav-secondary" data-translate="nav.services">Szolgáltatások</a>
+      <a href="#projects" class="nav-secondary" data-translate="nav.projects">Projektek</a>
+      <a href="#contact" class="nav-secondary" data-translate="nav.contact">Kapcsolat</a>
     </nav>
   </header>
 
@@ -221,28 +228,28 @@
       <div class="container">
         <h2 class="section-title" data-i18n="workflow.heading"></h2>
         <div class="workflow-steps">
-          <div class="step">
+          <div class="step animate-on-scroll">
             <div class="step-icon"><i class="fas fa-envelope-open-text"></i></div>
             <div class="step-content">
               <h3 data-i18n="workflow.step1.title"></h3>
               <p data-i18n="workflow.step1.desc"></p>
             </div>
           </div>
-          <div class="step">
+          <div class="step animate-on-scroll">
             <div class="step-icon"><i class="fas fa-file-alt"></i></div>
             <div class="step-content">
               <h3 data-i18n="workflow.step2.title"></h3>
               <p data-i18n="workflow.step2.desc"></p>
             </div>
           </div>
-          <div class="step">
+          <div class="step animate-on-scroll">
             <div class="step-icon"><i class="fas fa-code"></i></div>
             <div class="step-content">
               <h3 data-i18n="workflow.step3.title"></h3>
               <p data-i18n="workflow.step3.desc"></p>
             </div>
           </div>
-          <div class="step">
+          <div class="step animate-on-scroll">
             <div class="step-icon"><i class="fas fa-rocket"></i></div>
             <div class="step-content">
               <h3 data-i18n="workflow.step4.title"></h3>

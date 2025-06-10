@@ -15,7 +15,7 @@
     "learningProjects": "Lernprojekte",
     "workflow": "Arbeitsweise",
     "services": "Dienstleistungen",
-    "projects": "Professionelle Projekte",
+    "projects": "Projekte",
     "skills": "Fähigkeiten",
     "contact": "Kontakt"
   },
@@ -33,7 +33,7 @@
   "career_about": {
     "heading": "Warum bin ich die richtige Wahl?",
     "description": "Hallo! Wenn Sie einen Entwickler suchen, der nicht nur programmiert, sondern echten Wert schafft, sind Sie hier richtig. Ich habe mein Wissen über einen strukturierten, projektbasierten Lernweg erworben, bei dem ich jede Fähigkeit durch echte Aufgaben gemeistert habe.<br><br>Auf dem Scrimba Front-End Developer Karriereweg habe ich 70+ Stunden interaktive Trainingsvideos, 100+ Coding-Übungen und dutzende echte Projekte abgeschlossen. Das war nicht nur theoretisches Wissen, sondern praktische Erfahrung – von Blackjack-Spielen bis zu React-Anwendungen.<br><br>Was meinen Ansatz besonders macht: Ich habe jede Technologie in kleinen Schritten, durch Projekte gelernt. Ich weiß nicht nur, wie man CSS Grid verwendet – ich weiß auch, wann und warum es sich lohnt, es anzuwenden. Das Gleiche gilt für JavaScript, React oder responsive Design.<br><br>Wenn Sie einen Entwickler suchen, der die Antwort auf das 'Warum' kennt und mit jeder Codezeile Wert schafft, dann sprechen wir!",
-    "cta": "Professionellen Lebenslauf ansehen"
+    "cta": "Lebenslauf ansehen"
   },
   "career": {
     "hero": {
@@ -122,7 +122,7 @@
     }
   },
   "projects": {
-    "heading": "Professionelle Projekte"
+    "heading": "Projekte"
   },
   "contact": {
     "heading": "Kontakt aufnehmen",

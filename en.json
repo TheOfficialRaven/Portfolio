@@ -15,7 +15,7 @@
     "learningProjects": "Learning Projects",
     "workflow": "Workflow",
     "services": "Services",
-    "projects": "Professional Projects",
+    "projects": "Projects",
     "skills": "Skills",
     "contact": "Contact"
   },
@@ -33,7 +33,7 @@
   "career_about": {
     "heading": "Why am I the right choice?",
     "description": "Hi! If you're looking for a developer who doesn't just code but creates real value, you're in the right place. I acquired my knowledge through a structured, project-based learning path where I mastered every skill through real tasks.<br><br>On the Scrimba Front-End Developer career path, I completed 70+ hours of interactive training videos, 100+ coding exercises, and dozens of real projects. This wasn't just theoretical knowledge, but practical experience – from blackjack games to React applications.<br><br>What makes my approach special is that I learned every technology in small steps, through projects. I don't just know how to use CSS Grid – I also know when and why it's worth applying. The same goes for JavaScript, React, or responsive design.<br><br>If you're looking for a developer who knows the answer to the 'why' question and creates value with every line of code, let's talk!",
-    "cta": "View Professional Resume"
+    "cta": "View Resume"
   },
   "career": {
     "hero": {
@@ -117,7 +117,7 @@
     }
   },
   "projects": {
-    "heading": "Professional Projects"
+    "heading": "Projects"
   },
   "contact": {
     "heading": "Let's Connect",

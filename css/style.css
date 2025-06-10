@@ -86,18 +86,28 @@ body {
   visibility: visible !important;
 }
 
-/* További védelem a kezdeti tartalom villanása ellen */
+/* További védelem a kezdeti tartalom villanása ellen - DE AZ ::AFTER VONALAK MARADJANAK */
 .section-title[data-i18n]:empty,
 .category-title[data-i18n]:empty {
   opacity: 0 !important;
   visibility: hidden !important;
 }
 
+/* FONTOS: Az ::after vonalak mindig látszódjanak, még üres címeknél is */
+.section-title::after,
+.category-title::after {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Explicit szabály a typewriter alatt is */
+.section-title.typewriter-active::after,
 .section-title[data-i18n]:empty::after,
 .category-title[data-i18n]:empty::after {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Globális ::after visszaállítás minden címhez */
@@ -140,23 +150,38 @@ body {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   line-height: 1.2;
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
   display: inline-block;
   width: 100%;
+  font-weight: 700;
+  /* Alapértelmezetten rejtett a FOUC elkerülésére */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Amikor az animáció készen van, vagy typewriter módban */
+.section-title.typewriter-active,
+.section-title.typewriter-done,
+.section-title.reveal {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .category-title {
-  font-size: 1.8rem;
-  line-height: 1.3;
+  font-size: 1.4rem;
+  line-height: 1.4;
   text-align: center;
   margin-bottom: 2rem;
   position: relative;
   display: inline-block;
   width: 100%;
+  font-weight: 600;
+  opacity: 0.9;
 }
 
 .career-step-content h3,
@@ -191,13 +216,46 @@ body {
     line-height: 1.2;
   }
   
-  .section-title,
-  .category-title,
+  .section-title {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: normal;
+    word-wrap: break-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+    position: relative;
+    font-weight: 700;
+  }
+  
+  .category-title {
+    font-size: 1.2rem !important;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+    padding: 0 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    word-break: normal;
+    word-wrap: break-word;
+    hyphens: none;
+    overflow-wrap: break-word;
+    white-space: normal;
+    position: relative;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+  
   .career-step-content h3,
   .career-course-card h3,
   .step-content h3,
   .project-info h3 {
-    font-size: 1.4rem !important;
+    font-size: 1.3rem !important;
     line-height: 1.4;
     text-align: center;
     width: 100%;
@@ -213,13 +271,23 @@ body {
   }
   
   /* ::after elemek középre igazítása mobilon - minden címhez */
-  .section-title::after,
-  .category-title::after {
-    position: absolute;
+  .section-title::after {
+    position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
-    width: 50px !important;
-    bottom: -10px;
+    width: 60px !important;
+    height: 3px !important;
+    bottom: -8px !important;
+    margin-left: 0;
+  }
+  
+  .category-title::after {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 40px !important;
+    height: 2px !important;
+    bottom: -6px !important;
     margin-left: 0;
   }
   
@@ -555,6 +623,100 @@ section.reveal .fade-in-right {
   gap: 1rem;
 }
 
+/* Page Switcher Komponens */
+.page-switcher {
+  display: flex;
+  background: var(--accent-color);
+  border-radius: 1.5rem;
+  padding: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-right: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-switcher::before {
+  content: '';
+  position: absolute;
+  top: 0.3rem;
+  bottom: 0.3rem;
+  left: 0.3rem;
+  width: calc(50% - 0.3rem);
+  background: linear-gradient(135deg, var(--main-color), var(--btn-hover-color));
+  border-radius: 1.2rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.page-switcher.karrier::before {
+  transform: translateX(100%);
+}
+
+.page-switcher a {
+  position: relative;
+  z-index: 2;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  border-radius: 1.2rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.page-switcher a.active {
+  color: var(--bg-color);
+}
+
+.page-switcher a:not(.active) {
+  color: var(--text-color);
+}
+
+.page-switcher a:hover:not(.active) {
+  color: var(--main-color);
+}
+
+/* Mobile Page Switcher */
+.mobile-page-switcher {
+  display: flex;
+  background: var(--accent-color);
+  border-radius: 1rem;
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-page-link {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border-radius: 0.8rem;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.mobile-page-link.active {
+  background: linear-gradient(135deg, var(--main-color), var(--btn-hover-color));
+  color: var(--bg-color);
+  box-shadow: 0 2px 8px rgba(0, 201, 167, 0.3);
+}
+
+.mobile-page-link:not(.active):hover {
+  color: var(--main-color);
+  background: rgba(0, 201, 167, 0.1);
+}
+
+.mobile-nav-separator {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+  margin: 1rem 0;
+  opacity: 0.3;
+}
+
 /* Language Switcher */
 .lang-switcher {
   display: flex;
@@ -605,6 +767,13 @@ section.reveal .fade-in-right {
   border: 1px solid rgba(255, 255, 255, 0.05);
   margin: 0 2rem;
   max-width: none;
+  position: relative;
+}
+
+/* Navbar aktív oldal kiemelése háttérrel */
+.navbar:has(a.nav-primary.active) {
+  box-shadow: 0 0 20px rgba(0, 201, 167, 0.15);
+  border: 1px solid rgba(0, 201, 167, 0.2);
 }
 
 .navbar a {
@@ -620,17 +789,27 @@ section.reveal .fade-in-right {
   text-align: center;
 }
 
-.navbar a.active {
-  background: var(--main-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 15px var(--main-color);
-  transform: translateY(-1px);
+/* Nav-primary szabályok eltávolítva - most a page-switcher kezeli */
+
+/* Másodlagos navigációs elemek */
+.navbar a.nav-secondary {
+  opacity: 0.85;
+  font-weight: 400;
 }
 
-.navbar a:not(.active):hover {
+.navbar a.nav-secondary.active {
+  background: var(--main-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 10px var(--main-color);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+.navbar a.nav-secondary:not(.active):hover {
   background: rgba(0, 201, 167, 0.1);
   color: var(--main-color);
   transform: translateY(-2px);
+  opacity: 1;
 }
 
 /* Hamburger Menu */
@@ -744,18 +923,28 @@ section.reveal .fade-in-right {
 .mobile-nav a:nth-child(5) { transition-delay: 0.5s; }
 .mobile-nav a:nth-child(6) { transition-delay: 0.6s; }
 
-.mobile-nav a.active {
-  background: var(--main-color);
-  color: var(--bg-color);
-  box-shadow: 0 0 20px var(--main-color);
-  transform: translateX(5px);
-  border-left: 4px solid var(--btn-hover-color);
+/* Mobil nav-primary szabályok eltávolítva - most a mobile-page-switcher kezeli */
+
+/* Mobil navigáció másodlagos elemek */
+.mobile-nav a.nav-secondary {
+  opacity: 0.85;
+  font-weight: 400;
 }
 
-.mobile-nav a:not(.active):hover {
+.mobile-nav a.nav-secondary.active {
+  background: var(--main-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 15px var(--main-color);
+  transform: translateX(5px);
+  border-left: 4px solid var(--btn-hover-color);
+  opacity: 1;
+}
+
+.mobile-nav a.nav-secondary:not(.active):hover {
   background: rgba(0, 201, 167, 0.1);
   color: var(--main-color);
   transform: translateX(5px) !important;
+  opacity: 1;
 }
 
 /* Menu Open State */
@@ -783,6 +972,16 @@ body.menu-open.active::before {
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
+  .page-switcher {
+    margin-right: 0.5rem;
+  }
+  
+  .page-switcher a {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    min-width: 70px;
+  }
+  
   .navbar {
     margin: 0 1rem;
     gap: 0.2rem;
@@ -797,6 +996,10 @@ body.menu-open.active::before {
 @media (max-width: 768px) {
   .header {
     height: 70px;
+  }
+  
+  .page-switcher {
+    display: none;
   }
   
   .navbar {
@@ -1297,35 +1500,24 @@ body.menu-open.active::before {
   transform: scale(1) translateY(0);
 }
 
-/* Egységes typewriter animáció minden section title-hez */
+/* Tiszta typewriter animáció - csak szöveg, mindig látható vonal */
 .section-title.typewriter-active {
   display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
   position: relative;
+  /* Nincs overflow hidden vagy white-space nowrap - a vonal látható marad */
 }
 
-.section-title.typewriter-active:not(.typewriter-done) {
-  border-right: 0.15em solid var(--main-color);
-  animation: blink 1s step-end infinite;
-}
+/* Nincs border-right cursor - tiszta animáció */
 
-/* ::after elem elrejtése typewriter alatt - JAVÍTOTT VERZIÓ */
-.section-title.typewriter-active:not(.typewriter-done)::after {
-  display: none !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-/* ::after elem megjelenítése typewriter után - ERŐS VISSZAÁLLÍTÁS */
-.section-title.typewriter-done::after {
+/* ::after vonalak mindig láthatók */
+.section-title::after {
   content: '' !important;
   position: absolute !important;
   bottom: -10px !important;
   left: 50% !important;
   transform: translateX(-50%) !important;
   width: 80px !important;
-  height: 3px !important;
+  height: 4px !important;
   background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color)) !important;
   border-radius: 2px !important;
   display: block !important;
@@ -1334,10 +1526,25 @@ body.menu-open.active::before {
   z-index: 1 !important;
 }
 
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: var(--main-color); }
+/* Felesleges vonal animációk eltávolítva - vonalak most mindig láthatók */
+
+.category-title::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -8px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 50px !important;
+  height: 2px !important;
+  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color)) !important;
+  border-radius: 2px !important;
+  display: block !important;
+  opacity: 0.8 !important;
+  visibility: visible !important;
+  z-index: 1 !important;
 }
+
+/* Blink animáció eltávolítva - nincs több cursor */
 
 .ring-inner {
   position: absolute;
@@ -2392,6 +2599,83 @@ section::before {
   line-height: 1.6;
 }
 
+/* Workflow mobil optimalizálás */
+@media (max-width: 768px) {
+  .workflow-steps {
+    margin: 2rem auto 0;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+
+  .step {
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 0;
+    padding: 1.5rem;
+    background: var(--accent-color);
+    border-radius: var(--border-radius);
+    border: var(--card-border);
+    position: relative;
+    transition: var(--hover-transition);
+  }
+
+  .step:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-hover-shadow);
+  }
+
+  .step-icon {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.3rem;
+    align-self: flex-start;
+    margin-bottom: 0;
+  }
+
+  .step::before {
+    display: none;
+  }
+
+  .step-content {
+    text-align: left;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+/* Extra kis képernyők */
+@media (max-width: 480px) {
+  .workflow-steps {
+    padding: 0 0.5rem;
+  }
+
+  .step {
+    padding: 1rem;
+  }
+
+  .step-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.1rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-content p {
+    font-size: 0.9rem;
+  }
+}
+
 /* ===== Career Timeline Section ===== */
 .career-timeline-section {
   background: var(--bg-color);
@@ -3290,17 +3574,9 @@ section.reveal {
   visibility: visible !important;
 }
 
+/* Typewriter elemek egyszerűsítve - nincs border-right cursor */
 .section-title.typewriter-active {
-  border-right: 0.15em solid var(--main-color);
-}
-
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: var(--main-color); }
-}
-
-.section-title.typewriter-active:not(.typewriter-done) {
-  animation: blink 1s step-end infinite;
+  /* Nincs border-right vagy blink animáció */
 }
 
 /* Fade animations */
@@ -3462,57 +3738,5 @@ section.reveal {
   }
 }
 
-/* ====== ERŐS GLOBÁLIS ::AFTER OVERRIDE - A FÁJL VÉGÉN ====== */
-/* Ez felülír minden korábbi szabályt és biztosítja, hogy minden section-title ::after látszódjon */
-
-.section-title::after,
-.about-section .section-title::after,
-.services-section .section-title::after,
-.projects-section .section-title::after,
-.contact-section .section-title::after,
-.workflow-section .section-title::after,
-.career-timeline-section .section-title::after,
-.career-courses-section .section-title::after,
-.career-skills-section .section-title::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: -10px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 80px !important;
-  height: 3px !important;
-  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color)) !important;
-  border-radius: 2px !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 1 !important;
-}
-
-.category-title::after,
-.skills-category .category-title::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: -10px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: 60px !important;
-  height: 3px !important;
-  background: linear-gradient(90deg, var(--main-color), var(--btn-hover-color)) !important;
-  border-radius: 2px !important;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  z-index: 1 !important;
-}
-
-/* Mobil override */
-@media (max-width: 768px) {
-  .section-title::after,
-  .category-title::after {
-    width: 50px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-}
+/* Duplikált szabályok eltávolítva - a fő ::after szabályok már definiálva vannak feljebb */
 

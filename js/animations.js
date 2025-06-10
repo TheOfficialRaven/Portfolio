@@ -36,6 +36,12 @@ export function setupRevealObserver() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('reveal');
+        
+        // Ha ez egy section-title, akkor typewriter animációt is indítunk
+        if (entry.target.classList.contains('section-title')) {
+          setupTypewriterEffect(entry.target);
+        }
+        
         obs.unobserve(entry.target);
       }
     });
@@ -201,7 +207,7 @@ function initSkillBars() {
   skillBars.forEach(bar => observer.observe(bar));
 }
 
-// Typewriter animáció beállítása - about szekció sebessége alapján
+// Tiszta typewriter animáció - csak szöveg, nincs cursor
 function setupTypewriterEffect(element) {
   if (!element || element.classList.contains('typewriter-active')) return;
   
@@ -219,41 +225,24 @@ function setupTypewriterEffect(element) {
       charIndex++;
       setTimeout(typeChar, ANIMATION_SETTINGS.typewriterSpeed);
     } else {
-      // Animáció végén visszaállítjuk az eredeti HTML-t
+      // Animáció végén visszaállítjuk az eredeti HTML-t és jelezzük a befejezést
       element.innerHTML = originalContent;
       element.classList.add('typewriter-done');
-      element.style.borderRight = 'none';
+      element.classList.remove('typewriter-active');
+      
+      // Trigger reflow to ensure proper display
+      element.style.position = 'relative';
+      void element.offsetHeight;
     }
   };
 
-  // Kurzor effekt hozzáadása
-  element.style.borderRight = '0.15em solid var(--main-color)';
+  // Nincs kurzor effekt - tiszta typewriter
   
   // Késleltetett indítás
   setTimeout(typeChar, ANIMATION_SETTINGS.typewriterStartDelay);
 }
 
-// Typewriter animációk megfigyelése
-function setupTypewriterObserver() {
-  const typewriterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setupTypewriterEffect(entry.target);
-        typewriterObserver.unobserve(entry.target);
-      }
-    });
-  }, { 
-    threshold: 0.3,
-    rootMargin: '0px 0px -100px 0px'
-  });
-
-  // Csak section title-ök megfigyelése (category title-ök nélkül)
-  document.querySelectorAll('.section-title').forEach(title => {
-    typewriterObserver.observe(title);
-  });
-
-  return typewriterObserver;
-}
+// Typewriter observer eltávolítva - a reveal observer kezeli
 
 // Szekció animációk egységes beállítása
 function setupSectionAnimations() {
@@ -301,13 +290,21 @@ export function initializeAllAnimations() {
   console.log('Initializing all animations with element-based system...');
   
   // Reset any existing animations
-  document.querySelectorAll('.typewriter-active').forEach(el => {
+  document.querySelectorAll('.typewriter-active, .typewriter-done').forEach(el => {
     el.classList.remove('typewriter-active', 'typewriter-done');
+  });
+  
+  // A section title-ök már CSS-ben alapból rejtettek
+  
+  // Category title-ök esetén ne rejtsük el és készítsük fel a vonal animációt
+  document.querySelectorAll('.category-title').forEach(el => {
+    el.style.position = 'relative';
+    // Category title-ök vonala alapból látható marad
+    void el.offsetHeight;
   });
   
   // Elem-alapú animációs rendszer
   setupRevealObserver();
-  setupTypewriterObserver();
   setupHeroAnimations();
   initSkillBars();
 }
@@ -321,15 +318,16 @@ export async function resetAnimations() {
     el.classList.remove('reveal', 'typewriter-active', 'typewriter-done');
   });
   
-  // Reset styles
-  document.querySelectorAll('.section-title').forEach(el => {
-    el.style.borderRight = '';
-    el.style.width = '';
-  });
+  // Reset styles - CSS-ben vannak alapból beállítva
   
   // Reset transition delays
   document.querySelectorAll('[style*="transition-delay"]').forEach(el => {
     el.style.transitionDelay = '';
+  });
+  
+  // Force reflow to ensure proper display
+  document.querySelectorAll('.section-title, .category-title').forEach(el => {
+    void el.offsetHeight;
   });
   
   // Kis késleltetés az új animációk indítása előtt
