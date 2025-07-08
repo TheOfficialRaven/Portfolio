@@ -129,6 +129,16 @@
     "messagePlaceholder": "Üzeneted…",
     "sendBtn": "Üzenet elküldése"
   },
+  "careerContact": {
+    "heading": "Beszéljünk a lehetőségekről",
+    "intro": "Tapasztalt frontend fejlesztőt keresel csapatodba? Szívesen megmutatom, hogyan tudok hozzájárulni a vállalatod digitális céljaihoz. Írj, és beszéljük meg a részleteket!",
+    "phone": "+36 30 123 4567",
+    "phoneNote": "Hétköznapokon 9:00–18:00 között elérhető vagyok.",
+    "namePlaceholder": "Céged neve / Neved",
+    "emailPlaceholder": "Kapcsolattartó email címe",
+    "messagePlaceholder": "Milyen pozícióra keresel fejlesztőt? Mesélj a projektről és az elvárásokról…",
+    "sendBtn": "Kapcsolatfelvétel"
+  },
   "langSwitch": "Nyelvváltás",
   "services": {
     "heading": "Szolgáltatások",

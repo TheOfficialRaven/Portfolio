@@ -134,6 +134,16 @@
     "messagePlaceholder": "Ihre Nachricht…",
     "sendBtn": "Nachricht senden"
   },
+  "careerContact": {
+    "heading": "Lassen Sie uns über Möglichkeiten sprechen",
+    "intro": "Suchen Sie einen erfahrenen Frontend-Entwickler für Ihr Team? Gerne zeige ich Ihnen, wie ich zu den digitalen Zielen Ihres Unternehmens beitragen kann. Schreiben Sie mir, und lassen Sie uns die Details besprechen!",
+    "phone": "+36 30 123 4567",
+    "phoneNote": "Erreichbar an Werktagen zwischen 9:00 und 18:00 Uhr.",
+    "namePlaceholder": "Firmenname / Ihr Name",
+    "emailPlaceholder": "Kontakt-E-Mail",
+    "messagePlaceholder": "Für welche Position suchen Sie einen Entwickler? Erzählen Sie mir von dem Projekt und den Erwartungen…",
+    "sendBtn": "Kontakt aufnehmen"
+  },
   "langSwitch": "Sprachwechsel",
   "services": {
     "heading": "Dienstleistungen",

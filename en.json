@@ -129,6 +129,16 @@
     "messagePlaceholder": "Your Message…",
     "sendBtn": "Send Message"
   },
+  "careerContact": {
+    "heading": "Let's Discuss Opportunities",
+    "intro": "Looking for an experienced frontend developer for your team? I'd be happy to show you how I can contribute to your company's digital goals. Let's talk about the details!",
+    "phone": "+36 30 123 4567",
+    "phoneNote": "Available on weekdays between 9:00 AM and 6:00 PM.",
+    "namePlaceholder": "Company Name / Your Name",
+    "emailPlaceholder": "Contact Email",
+    "messagePlaceholder": "What position are you looking to fill? Tell me about the project and expectations…",
+    "sendBtn": "Get in Touch"
+  },
   "langSwitch": "Language Change",
   "services": {
     "heading": "Services",
