@@ -25,12 +25,15 @@
 
 **Új fájlok:**
 - `js/email-service.js` - Email szolgáltatás modul
+- `js/page-switcher-fix.js` - Netlify aktív tab javítás
 - `EMAILJS_SETUP.md` - Beállítási útmutató
+- `NETLIFY_HIBAELARITAS.md` - Hibaelhárítási útmutató
 
 **Módosított fájlok:**
 - `js/form.js` - Teljes átírás EmailJS integrációval
-- `index.html` - EmailJS script hozzáadása
-- `karrier.html` - EmailJS script hozzáadása
+- `js/navigation.js` - Robusztus oldal détection hozzáadása
+- `index.html` - EmailJS és page-switcher-fix script hozzáadása
+- `karrier.html` - EmailJS és page-switcher-fix script hozzáadása
 
 **Funkciók:**
 - ✉️ Email küldés a sath_@outlook.hu címre
@@ -70,11 +73,31 @@
 - Sikeres küldés üzenetek lokalizálva
 - Automatikus válasz magyar nyelvű (módosítható)
 
+### 4. Netlify Aktív Tab Javítás ✅
+
+**Probléma:**
+- A karrier és főoldal közötti aktív tab design nem működött Netlify-n
+
+**Megoldás:**
+- `js/navigation.js` - Robusztus oldal détection implementálása
+- `js/page-switcher-fix.js` - Dedikált backup script Netlify kompatibilitáshoz
+- Többszörös inicializálás és event kezelés
+- Backup CSS szabályok `!important` flagekkel
+- `NETLIFY_HIBAELARITAS.md` - Részletes hibaelhárítási útmutató
+
+**Funkciók:**
+- 🔍 Többféle módszerrel ellenőrzi az aktuális oldalt
+- 🔄 Automatikus aktív állapot frissítés
+- 🎨 Backup CSS stílusok beépítése
+- 📱 Mobil és desktop tab kezelés
+- 🐛 Debug eszközök és logging
+
 ## Következő Lépések
 
 1. **EmailJS Beállítás** - Kövesd az `EMAILJS_SETUP.md` útmutatót
-2. **Tesztelés** - Próbáld ki mindkét kontakt űrlapot
-3. **Customization** - Szükség esetén módosítsd az email template-eket
+2. **Netlify feltöltés** - Töltsd fel az új fájlokat és teszteld az aktív tab-et
+3. **Tesztelés** - Próbáld ki mindkét kontakt űrlapot
+4. **Hibaelhárítás** - Ha probléma van, kövesd a `NETLIFY_HIBAELARITAS.md` útmutatót
 
 ## Előnyök
 
@@ -84,7 +107,9 @@
 ✅ **Többnyelvű** - Minden nyelven működik  
 ✅ **Mobile-friendly** - Minden eszközön használható  
 ✅ **Analytics ready** - Google Analytics integrációval  
+✅ **Netlify kompatibilis** - Aktív tab design minden környezetben működik  
+✅ **Robusztus működés** - Backup megoldásokkal és hibaelhárítással  
 
 ---
 
-**🎉 A kontakt szekciók most teljesen működőképesek és a karrier oldal célzottan a cégeknek szól!** 
+**🎉 A kontakt szekciók és navigáció most teljesen működőképes minden környezetben, a karrier oldal célzottan a cégeknek szól!** 

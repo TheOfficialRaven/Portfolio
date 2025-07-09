@@ -103,9 +103,50 @@ export function setupCloseOnClickOutside() {
   });
 }
 
+// Robustusabb oldal détection Netlify-hoz
+function getCurrentPageType() {
+  const currentPath = window.location.pathname;
+  const currentHref = window.location.href;
+  
+  // Normalizáljuk az útvonalat
+  const normalizedPath = currentPath.toLowerCase().replace(/\\/g, '/');
+  
+  // Különböző ellenőrzési módszerek
+  const isKarrierPage = (
+    normalizedPath.includes('karrier.html') ||
+    normalizedPath.includes('karrier') ||
+    currentHref.includes('karrier.html') ||
+    currentHref.includes('karrier') ||
+    document.title.toLowerCase().includes('karrier') ||
+    document.querySelector('meta[name="description"]')?.content?.toLowerCase()?.includes('karrier') ||
+    document.body.classList.contains('karrier-page') ||
+    document.querySelector('#career-about, #career-timeline, #career-contact') !== null
+  );
+  
+  const isIndexPage = (
+    normalizedPath === '/' ||
+    normalizedPath === '' ||
+    normalizedPath.includes('index.html') ||
+    normalizedPath.includes('index') ||
+    currentHref.includes('index.html') ||
+    (!isKarrierPage && (normalizedPath === '/' || normalizedPath.endsWith('/')))
+  );
+  
+  console.log('Page detection:', {
+    currentPath,
+    normalizedPath,
+    currentHref,
+    isKarrierPage,
+    isIndexPage,
+    documentTitle: document.title,
+    hasCareerElements: document.querySelector('#career-about, #career-timeline, #career-contact') !== null
+  });
+  
+  return { isKarrierPage, isIndexPage };
+}
+
 // Update active menu item based on current page and section
 export function updateActiveMenuItem() {
-  const currentPath = window.location.pathname;
   const currentHash = window.location.hash;
   
   // Get all menu items
@@ -118,32 +159,82 @@ export function updateActiveMenuItem() {
   allMenuItems.forEach(item => item.classList.remove('active'));
   pageSwitcherItems.forEach(item => item.classList.remove('active'));
   
-  // Check if we're on index page or karrier page
-  const isIndexPage = currentPath.endsWith('index.html') || currentPath.endsWith('/') || currentPath === '';
-  const isKarrierPage = currentPath.includes('karrier.html');
+  // Robusztus oldal détection
+  const { isKarrierPage, isIndexPage } = getCurrentPageType();
   
-  console.log('Current path:', currentPath, 'Is index:', isIndexPage, 'Is karrier:', isKarrierPage);
+  console.log('Updating active menu item:', { isIndexPage, isKarrierPage, currentHash });
   
-  // Handle page switcher navigation
+  // Handle page switcher navigation - KRITIKUS RÉSZ
   pageSwitcherItems.forEach(item => {
     const href = item.getAttribute('href');
-    if (href === 'index.html' && isIndexPage) {
+    const linkText = item.textContent.toLowerCase().trim();
+    
+    // Többféle módon ellenőrizzük
+    if (isKarrierPage && (
+      href === 'karrier.html' || 
+      href?.includes('karrier') ||
+      linkText.includes('karrier') ||
+      linkText.includes('career')
+    )) {
       item.classList.add('active');
-      console.log('Set active: index page switcher');
-    } else if (href === 'karrier.html' && isKarrierPage) {
+      console.log('✅ Set active: karrier page switcher', item);
+    } else if (isIndexPage && (
+      href === 'index.html' || 
+      href === '/' ||
+      href === './' ||
+      href?.includes('index') ||
+      linkText.includes('főoldal') ||
+      linkText.includes('home') ||
+      linkText.includes('startseite')
+    )) {
       item.classList.add('active');
-      console.log('Set active: karrier page switcher');
+      console.log('✅ Set active: index page switcher', item);
     }
   });
   
-  // Update page switcher background position
+  // Update page switcher background position - KRITIKUS RÉSZ
   const pageSwitcher = document.getElementById('pageSwitcher');
+  const mobilePageSwitcher = document.querySelector('.mobile-page-switcher');
+  
   if (pageSwitcher) {
     if (isKarrierPage) {
       pageSwitcher.classList.add('karrier');
+      console.log('✅ Added karrier class to page switcher');
     } else {
       pageSwitcher.classList.remove('karrier');
+      console.log('✅ Removed karrier class from page switcher');
     }
+  }
+  
+  // Mobil page switcher is frissítjük
+  if (mobilePageSwitcher) {
+    const mobileLinks = mobilePageSwitcher.querySelectorAll('.mobile-page-link');
+    mobileLinks.forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href');
+      const linkText = link.textContent.toLowerCase().trim();
+      
+      if (isKarrierPage && (
+        href === 'karrier.html' || 
+        href?.includes('karrier') ||
+        linkText.includes('karrier') ||
+        linkText.includes('career')
+      )) {
+        link.classList.add('active');
+        console.log('✅ Set active: mobile karrier link', link);
+      } else if (isIndexPage && (
+        href === 'index.html' || 
+        href === '/' ||
+        href === './' ||
+        href?.includes('index') ||
+        linkText.includes('főoldal') ||
+        linkText.includes('home') ||
+        linkText.includes('startseite')
+      )) {
+        link.classList.add('active');
+        console.log('✅ Set active: mobile index link', link);
+      }
+    });
   }
   
   // Handle section-level navigation (hash links) - NAV-SECONDARY elemek
@@ -152,14 +243,24 @@ export function updateActiveMenuItem() {
     
     if (item.classList.contains('nav-secondary') && currentHash && href === currentHash) {
       item.classList.add('active');
-      console.log('Set active section:', currentHash);
+      console.log('✅ Set active section:', currentHash);
     }
     
     // Special case for karrier page internal navigation
-    if (isKarrierPage && item.classList.contains('nav-secondary') && href.startsWith('#') && !currentHash && href === '#hero') {
+    if (isKarrierPage && item.classList.contains('nav-secondary') && href?.startsWith('#') && !currentHash && href === '#career-about') {
       item.classList.add('active');
+      console.log('✅ Set active: default karrier section');
     }
   });
+  
+  // Force refresh layout
+  setTimeout(() => {
+    if (pageSwitcher) {
+      pageSwitcher.style.display = 'none';
+      pageSwitcher.offsetHeight; // Force reflow
+      pageSwitcher.style.display = '';
+    }
+  }, 50);
 }
 
 // Set up scroll-based section highlighting
@@ -217,18 +318,23 @@ export function initNavigation() {
     // Setup close on click outside
     setupCloseOnClickOutside();
     
-    // Update active menu item initially
-    updateActiveMenuItem();
+    // Update active menu item initially - TÖBBSZÖRÖS HÍVÁS
+    setTimeout(() => updateActiveMenuItem(), 100);
+    setTimeout(() => updateActiveMenuItem(), 500);
+    setTimeout(() => updateActiveMenuItem(), 1000);
     
     // Setup scroll-based section highlighting
     setupSectionHighlighting();
     
     // Update active menu item on hash change
-    window.addEventListener('hashchange', updateActiveMenuItem);
+    window.addEventListener('hashchange', () => {
+      setTimeout(updateActiveMenuItem, 100);
+    });
     
     // Update active menu item on page load (delayed to ensure DOM is ready)
     window.addEventListener('load', () => {
-      setTimeout(updateActiveMenuItem, 100);
+      setTimeout(updateActiveMenuItem, 200);
+      setTimeout(updateActiveMenuItem, 500);
     });
     
     // Update on scroll (throttled for performance)
@@ -236,6 +342,20 @@ export function initNavigation() {
     window.addEventListener('scroll', () => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(updateActiveMenuItem, 50);
+    });
+    
+    // DOMContentLoaded után is frissítjük
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(updateActiveMenuItem, 200);
+      });
+    }
+    
+    // Visibility change esetén is frissítjük (Netlify előnézet miatt)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        setTimeout(updateActiveMenuItem, 100);
+      }
     });
   }
 } 
