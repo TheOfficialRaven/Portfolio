@@ -59,9 +59,9 @@ const learningProjects = [
       en: ["Ongoing personal project"],
       de: ["Laufendes persönliches Projekt"]
     },
-    githubLink: "", // Jelenleg nincs GitHub link, üresen hagyjuk
+    githubLink: "", 
     liveLink: "https://donezy.netlify.app",
-    image: "imgs/donezy-preview.png" // Placeholder kép - később cseréld le donezy-preview.png-re
+    image: "imgs/donezy-preview.png" 
   }
 ];
 

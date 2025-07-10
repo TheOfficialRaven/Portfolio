@@ -381,6 +381,55 @@ img {
   padding: 0 2rem;
 }
 
+/* Grid System */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+  align-items: center;
+}
+
+.col-30 {
+  flex: 0 0 30%;
+  max-width: 30%;
+  padding: 0 1rem;
+}
+
+.col-50 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 1rem;
+}
+
+.col-70 {
+  flex: 0 0 70%;
+  max-width: 70%;
+  padding: 0 1rem;
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    margin: 0;
+  }
+  
+  .col-30,
+  .col-50,
+  .col-70 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .col-30:last-child,
+  .col-50:last-child,
+  .col-70:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .home,
 .about,
 .projects-section,
@@ -1449,14 +1498,15 @@ body.menu-open.active::before {
 .about-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
 }
 
 .about-image {
-  flex: 1 1 300px;
+  flex: 1 1 250px;
+  max-width: 300px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -1603,12 +1653,15 @@ body.menu-open.active::before {
 
 
 .about-content {
-  flex: 2 1 500px;
+  flex: 2 1 400px;
   color: var(--text-color);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  min-width: 0;
 }
+
+
 
 .about-cta {
   margin-top: 1rem;
@@ -1637,6 +1690,8 @@ body.menu-open.active::before {
   box-shadow: 0 0 10px var(--main-color);
 }
 
+
+
 /* Animáció kulcs */
 @keyframes rotateRing {
   from {
@@ -1648,31 +1703,46 @@ body.menu-open.active::before {
 }
 
 
+/* Tablet és kisebb laptop layout */
+@media (max-width: 900px) {
+  .about-wrapper {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .about-image {
+    margin-bottom: 0;
+    max-width: 260px;
+  }
+
+  .about-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-cta {
+    align-self: center;
+  }
+}
+
 @media (max-width: 768px) {
   .about-section {
     padding: 4rem 1rem !important;
   }
   
   .about-wrapper {
-    flex-direction: column;
-    text-align: center;
-    max-width: 100% !important;
-    padding: 0;
+    gap: 1.5rem;
   }
 
   .about-image {
-    margin-bottom: 2rem;
-  }
-
-  .about-content {
-    align-items: center;
-    padding: 0 !important;
+    max-width: 220px;
   }
   
-
-
-  .about-cta {
-    align-self: center;
+  .about-img {
+    width: 220px;
+    height: 220px;
   }
 }
 

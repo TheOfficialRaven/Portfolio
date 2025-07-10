@@ -27,18 +27,18 @@
   },
   "about": {
     "heading": "Über mich",
-    "description": "Hallo! Ich freue mich, dass Sie hier sind. Als Frontend-Entwickler helfe ich dabei, aus Ihren Ideen echte, gut funktionierende und visuell saubere Websites zu schaffen – egal, ob Sie Einzelunternehmer sind oder eine neu entstehende Marke vertreten.<br><br>Bei meiner Arbeit lege ich großen Wert auf Responsivität, schnelle Ladezeiten und darauf, dass die Website auf jeder Bildschirmgröße eine überzeugende Erfahrung bietet. Ob es sich um eine Portfolioseite, Dienstleistungsübersicht oder kreative Landing Page handelt, es ist mir wichtig, dass das Endergebnis die Persönlichkeit und Ziele des Kunden widerspiegelt.<br><br>Ich beherrsche HTML, CSS und JavaScript gut, arbeite mit Bootstrap und Laravel Frameworks und erweitere kontinuierlich mein Wissen. Ich habe bereits mehrere Websites im Auftrag erstellt und entwickle mich auch durch persönliche Projekte weiter – denn ich glaube daran, dass das Lernen nie aufhört.<br><br>Ich passe mich flexibel an die Bedürfnisse an und bin immer bestrebt, dass die Zusammenarbeit reibungslos, vertrauensbasiert und erfolgreich ist. Wenn Sie eine Website wollen, die nicht nur gut aussieht, sondern auch effizient funktioniert, sind Sie hier richtig.<br><br>Schauen Sie sich meine Arbeiten an, und wenn Ihnen gefällt, was Sie sehen, kontaktieren Sie mich gerne! Lassen Sie uns besprechen, was Sie brauchen, und etwas bauen, das wirklich funktioniert – und auf Sie zugeschnitten ist.",
+    "description": "Hallo! Ich freue mich, dass Sie hier sind. Als Frontend-Entwickler helfe ich dabei, aus Ihren Ideen echte, gut funktionierende und visuell saubere Websites zu schaffen – egal, ob Sie Einzelunternehmer sind oder eine neu entstehende Marke vertreten.<br><br>Bei meiner Arbeit lege ich großen Wert auf Responsivität, schnelle Ladezeiten und darauf, dass die Website auf jeder Bildschirmgröße eine überzeugende Erfahrung bietet. Ob es sich um eine Portfolioseite, Dienstleistungsübersicht oder kreative Landing Page handelt, es ist mir wichtig, dass das Endergebnis die Persönlichkeit und Ziele des Kunden widerspiegelt.<br><br>Ich beherrsche HTML, CSS und JavaScript gut, arbeite mit Bootstrap Framework und erweitere kontinuierlich mein Wissen mit neuen Technologien. Ich habe Grundkenntnisse in Laravel Backend Framework und lerne derzeit React. Ich habe bereits mehrere Websites im Auftrag erstellt und entwickle mich auch durch persönliche Projekte weiter – denn ich glaube daran, dass das Lernen nie aufhört.<br><br>Ich passe mich flexibel an die Bedürfnisse an und bin immer bestrebt, dass die Zusammenarbeit reibungslos, vertrauensbasiert und erfolgreich ist. Wenn Sie eine Website wollen, die nicht nur gut aussieht, sondern auch effizient funktioniert, sind Sie hier richtig.<br><br>Schauen Sie sich meine Arbeiten an, und wenn Ihnen gefällt, was Sie sehen, kontaktieren Sie mich gerne! Lassen Sie uns besprechen, was Sie brauchen, und etwas bauen, das wirklich funktioniert – und auf Sie zugeschnitten ist.",
     "cta": "Schreiben Sie mir"
   },
   "career_about": {
-    "heading": "Warum bin ich die richtige Wahl?",
-    "description": "Hallo! Wenn Sie einen Entwickler suchen, der nicht nur programmiert, sondern echten Wert schafft, sind Sie hier richtig. Ich habe mein Wissen über einen strukturierten, projektbasierten Lernweg erworben, bei dem ich jede Fähigkeit durch echte Aufgaben gemeistert habe.<br><br>Auf dem Scrimba Front-End Developer Karriereweg habe ich 70+ Stunden interaktive Trainingsvideos, 100+ Coding-Übungen und dutzende echte Projekte abgeschlossen. Das war nicht nur theoretisches Wissen, sondern praktische Erfahrung – von Blackjack-Spielen bis zu React-Anwendungen.<br><br>Was meinen Ansatz besonders macht: Ich habe jede Technologie in kleinen Schritten, durch Projekte gelernt. Ich weiß nicht nur, wie man CSS Grid verwendet – ich weiß auch, wann und warum es sich lohnt, es anzuwenden. Das Gleiche gilt für JavaScript, React oder responsive Design.<br><br>Wenn Sie einen Entwickler suchen, der die Antwort auf das 'Warum' kennt und mit jeder Codezeile Wert schafft, dann sprechen wir!",
+    "heading": "Vorstellung",
+    "description": "Hallo! Wenn Sie einen motivierten Junior-Entwickler suchen, der autodidaktisch gelernt hat und 2+ Jahre Erfahrung besitzt, sind Sie hier richtig. Ich habe mein Wissen über einen strukturierten, projektbasierten Lernweg erworben, bei dem ich jede Fähigkeit durch echte Aufgaben gemeistert habe.<br><br>Auf dem Scrimba Front-End Developer Karriereweg habe ich bisher 50+ Stunden interaktive Trainingsvideos, 80+ Coding-Übungen und zahlreiche echte Projekte abgeschlossen. Das ist nicht nur theoretisches Wissen, sondern praktische Erfahrung – von Blackjack-Spielen bis zu komplexen JavaScript-Anwendungen. 2025 begann ich React zu lernen, was eine neue berufliche Herausforderung darstellt.<br><br>Was meinen Ansatz besonders macht: Ich lerne jede Technologie in kleinen Schritten, durch Projekte. Ich weiß nicht nur, wie man CSS Grid verwendet – ich weiß auch, wann und warum es sich lohnt, es anzuwenden. Das Gleiche gilt für JavaScript oder responsive Design. Ich habe Grundkenntnisse in Laravel, was mir hilft, die Frontend-Backend-Kommunikation zu verstehen.<br><br>Als Junior-Entwickler gehe ich jedes Projekt mit frischer Perspektive, hoher Motivation und kontinuierlichem Lerndrang an. Wenn Sie einen Entwickler suchen, der die Antwort auf das 'Warum' kennt und mit jeder Codezeile Wert schafft, dann sprechen wir!",
     "cta": "Lebenslauf ansehen"
   },
   "career": {
     "hero": {
-      "title": ["Erfahrener", "Frontend-Entwicklungs-", "Spezialist"],
-      "subtitle": "Projektbasierte Expertise, strukturierte Lösungen, verlässliche Zusammenarbeit.",
+      "title": ["Motivierter", "Junior", "Frontend-", "Entwickler"],
+      "subtitle": "Autodidaktisches Lernen, 2+ Jahre Erfahrung, projektbasiertes Wachstum und verlässliche Zusammenarbeit.",
       "btnPrimary": "Entdecken Sie meinen Weg",
       "btnSecondary": "Lebenslauf"
     },
@@ -49,25 +49,25 @@
     },
     "timeline": {
       "heading": "Meine beruflichen Entwicklungsschritte",
-      "2019": {
-        "title": "Fundament legen",
-        "desc": "HTML5 und CSS3 Beherrschung – semantische Elemente, Box-Modell, responsive Design Grundlagen."
+      "2023": {
+        "title": "Programmier-Reise beginnt",
+        "desc": "HTML5 und CSS3 Grundlagen lernen, Webtechnologien entdecken. Start des Scrimba Front-End Developer Karrierewegs mit strukturiertem Lernen."
       },
-      "2020": {
-        "title": "JavaScript Meisterschaft",
-        "desc": "ES6+ Syntax, DOM-Manipulation, async/await – praktische Projekte: Blackjack-Spiel, Chrome-Erweiterung."
+      "2023-2": {
+        "title": "JavaScript und Interaktivität",
+        "desc": "ES6+ Syntax, DOM-Manipulation, async/await – praktische Projekte: Blackjack-Spiel, Chrome-Erweiterung, interaktive Komponenten."
       },
-      "2021": {
+      "2023-3": {
         "title": "UI/UX und responsive Design",
-        "desc": "Flexbox, CSS Grid, mobile-first Denken – komplexe Layouts und visuelle Hierarchie-Erstellung."
+        "desc": "Flexbox, CSS Grid, mobile-first Denken – komplexe Layouts und visuelle Hierarchie-Erstellung. Bootstrap Framework Beherrschung."
       },
-      "2022": {
-        "title": "React und moderne Entwicklung",
-        "desc": "Komponentenbasierte Architektur, State-Management, React Router – Todo App, Blog-Anwendung Aufbau."
+      "2024": {
+        "title": "Kundenprojekte und Spezialisierung",
+        "desc": "Erste Kundenaufträge abschließen, echte Projekte entwickeln. Laravel Grundlagen lernen. Firebase und moderne CSS-Frameworks beherrschen."
       },
-      "2023-2024": {
-        "title": "Echte Projekte und berufliche Erfahrung",
-        "desc": "Kundenprojekt-Umsetzung, Teamarbeit, agile Methodiken-Anwendung in der Praxis."
+      "2024-ongoing": {
+        "title": "Kontinuierliches Wachstum und React",
+        "desc": "Aktive Kundenprojekte, berufliche Erfahrung erweitern. 2025 begann ich React durch den Scrimba-Kurs zu lernen. Tailwind CSS, progressive Web-Anwendungen."
       }
     },
     "courses": {
@@ -86,8 +86,8 @@
         "desc": "UI Design Prinzipien (Weißraum, Kontrast, Typografie), komplexe Grid und Flexbox Layouts, Tailwind CSS.<br><strong>Projekte:</strong> Photo Gallery, Pokedex, Jeopardy Spiel, responsive Bibliotheks-Anwendung."
       },
       "react": {
-        "title": "4. React & Modern Development",
-        "desc": "Funktionale Komponenten, Hooks (useState, useEffect), React Router 6, State-Management, Komponenten-Komposition.<br><strong>Projekte:</strong> Todo App mehrstufige Entwicklung, Blog-Anwendung mit Authentifizierungssystem, Pokedex React Integration."
+        "title": "4. React & Modern Development (2025 begonnen)",
+        "desc": "React-Lernen begann 2025 durch den Scrimba-Kurs. Grundlagen funktionaler Komponenten, Einführung in Hooks (useState, useEffect) – frisch begonnener Lernbereich.<br><strong>Geplante Projekte:</strong> Todo App, Blog-Anwendung, interaktive Komponenten."
       }
     },
     "skills": {
@@ -98,7 +98,7 @@
       },
       "backend": {
         "heading": "Backend-Kenntnisse",
-        "desc": "Grundlegende Backend-Entwicklungserfahrung"
+        "desc": "Grundlegende Laravel- und PHP-Kenntnisse"
       },
       "tools": {
         "heading": "Frameworks und Tools",
@@ -136,7 +136,7 @@
   },
   "careerContact": {
     "heading": "Lassen Sie uns über Möglichkeiten sprechen",
-    "intro": "Suchen Sie einen erfahrenen Frontend-Entwickler für Ihr Team? Gerne zeige ich Ihnen, wie ich zu den digitalen Zielen Ihres Unternehmens beitragen kann. Schreiben Sie mir, und lassen Sie uns die Details besprechen!",
+    "intro": "Suchen Sie einen motivierten Junior Frontend-Entwickler für Ihr Team? Mit autodidaktischem Lernen und 2+ Jahren Erfahrung zeige ich Ihnen gerne, wie ich zu den digitalen Zielen Ihres Unternehmens beitragen kann. Schreiben Sie mir, und lassen Sie uns die Details besprechen!",
     "phone": "+36 30 123 4567",
     "phoneNote": "Erreichbar an Werktagen zwischen 9:00 und 18:00 Uhr.",
     "namePlaceholder": "Firmenname / Ihr Name",

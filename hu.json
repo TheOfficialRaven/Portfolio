@@ -27,42 +27,42 @@
   },
   "about": {
     "heading": "Rólam",
-    "description": "Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek – akár egyéni vállalkozó vagy, akár egy újonnan induló márkát képviselsz.<br><br>A munkáim során nagy hangsúlyt fektetek a reszponzivitásra, a gyors betöltésre, és arra, hogy az oldal minden képernyőméreten meggyőző élményt nyújtson. Legyen szó egy bemutatkozó oldalról, szolgáltatásismertetőről vagy kreatív landing page-ről, fontos számomra, hogy a végeredmény tükrözze az ügyfél egyéniségét és céljait.<br><br>Jól ismerem a HTML, CSS és JavaScript nyelveket, dolgozom Bootstrap és Laravel keretrendszerekkel, és folyamatosan bővítem a tudásomat. Már több weboldalt készítettem megrendelésre, és ezek mellett saját projekteken keresztül is fejlődöm – mert hiszek abban, hogy a tanulás soha nem áll meg.<br><br>Rugalmasan alkalmazkodom az igényekhez, és mindig arra törekszem, hogy az együttműködés gördülékeny, bizalmi alapú és eredményes legyen. Ha szeretnél egy weboldalt, ami nem csak jól néz ki, hanem hatékonyan is működik, akkor jó helyen jársz.<br><br>Nézd meg a munkáimat, és ha tetszik, amit látsz, keress bátran! Beszéljük meg, mire van szükséged, és építsünk valami olyat, ami valóban működik – és rád van szabva.",
+    "description": "Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek – akár egyéni vállalkozó vagy, akár egy újonnan induló márkát képviselsz.<br><br>A munkáim során nagy hangsúlyt fektetek a reszponzivitásra, a gyors betöltésre, és arra, hogy az oldal minden képernyőméreten meggyőző élményt nyújtson. Legyen szó egy bemutatkozó oldalról, szolgáltatásismertetőről vagy kreatív landing page-ről, fontos számomra, hogy a végeredmény tükrözze az ügyfél egyéniségét és céljait.<br><br>Jól ismerem a HTML, CSS és JavaScript nyelveket, dolgozom Bootstrap keretrendszerrel, és folyamatosan bővítem a tudásomat új technológiákkal. Alapvető ismereteim vannak Laravel backend keretrendszerben, valamint jelenleg tanulom a React-et. Már több weboldalt készítettem megrendelésre, és ezek mellett saját projekteken keresztül is fejlődöm – mert hiszek abban, hogy a tanulás soha nem áll meg.<br><br>Rugalmasan alkalmazkodom az igényekhez, és mindig arra törekszem, hogy az együttműködés gördülékeny, bizalmi alapú és eredményes legyen. Ha szeretnél egy weboldalt, ami nem csak jól néz ki, hanem hatékonyan is működik, akkor jó helyen jársz.<br><br>Nézd meg a munkáimat, és ha tetszik, amit látsz, keress bátran! Beszéljük meg, mire van szükséged, és építsünk valami olyat, ami valóban működik – és rád van szabva.",
     "cta": "Írj nekem"
   },
   "career_about": {
-    "heading": "Miért vagyok a megfelelő választás?",
-    "description": "Szia! Ha egy olyan fejlesztőt keresel, aki nemcsak kódol, hanem valódi értéket teremt, jó helyen jársz. Strukturált, projektalapú tanulási úton szereztem meg a tudásomat, ahol minden egyes képességet valós feladatokon keresztül sajátítottam el.<br><br>A Scrimba Front-End Developer karrierútján 70+ órányi interaktív oktatóvideót, 100+ kódolási feladatot és tucatnyi valós projektet teljesítettem. Ez nem csak elméleti tudást jelentett, hanem gyakorlati tapasztalatot is – blackjack játéktól kezdve React alkalmazásokig.<br><br>Amit különlegessé tesz az én megközelítésemet, hogy minden technológiát apró lépésekben, projekteken keresztül tanultam meg. Nem csak azt tudom, hogyan kell egy CSS Grid-et használni – tudom azt is, hogy mikor és miért érdemes alkalmazni. Ugyanígy van ez a JavaScript-tel, React-tel vagy a reszponzív tervezéssel is.<br><br>Ha olyan fejlesztőt keresel, aki a 'miért' kérdésre is tudja a választ, és aki minden kódsorral értéket teremt, akkor beszéljünk!",
+    "heading": "Bemutatkozás",
+    "description": "Szia! Ha egy motivált junior fejlesztőt keresel, aki autodidakta módon tanult és 2+ év tapasztalattal rendelkezik, jó helyen jársz. Strukturált, projektalapú tanulási úton szereztem meg a tudásomat, ahol minden egyes képességet valós feladatokon keresztül sajátítottam el.<br><br>A Scrimba Front-End Developer karrierút során eddig 50+ órányi interaktív oktatóvideót, 80+ kódolási feladatot és számos valós projektet teljesítettem. Ez nem csak elméleti tudást jelent, hanem gyakorlati tapasztalatot is – blackjack játéktól kezdve komplex JavaScript alkalmazásokig. 2025-ben kezdtem el a React tanulását, amely új szakmai kihívást jelent.<br><br>Amit különlegessé tesz az én megközelítésemet, hogy minden technológiát apró lépésekben, projekteken keresztül tanulok meg. Nem csak azt tudom, hogyan kell egy CSS Grid-et használni – tudom azt is, hogy mikor és miért érdemes alkalmazni. Ugyanígy van ez a JavaScript-tel vagy a reszponzív tervezéssel is. A Laravel-ben alapvető ismereteim vannak, ami segít a frontend-backend kommunikáció megértésében.<br><br>Junior fejlesztőként friss szemlélettel, nagy motivációval és folyamatos tanulási vágytal közelítek minden projekthez. Ha olyan fejlesztőt keresel, aki a 'miért' kérdésre is tudja a választ, és aki minden kódsorral értéket teremt, akkor beszéljünk!",
     "cta": "Szakmai önéletrajz megtekintése"
   },
   "career": {
     "hero": {
-      "title": ["Tapasztalt", "frontend", "fejlesztő", "szakember"],
-      "subtitle": "Projektalapú tapasztalat, strukturált megoldások, megbízható együttműködés.",
+      "title": ["Motivált", "junior", "frontend", "fejlesztő"],
+      "subtitle": "Autodidakta tanulás, 2+ év tapasztalat, projektalapú fejlődés és megbízható együttműködés.",
       "btnPrimary": "Ismerd meg az utamat",
       "btnSecondary": "Önéletrajz letöltése"
     },
     "timeline": {
       "heading": "Szakmai fejlődésem lépései",
-      "2019": {
-        "title": "Alapok lefektetése",
-        "desc": "HTML5 és CSS3 elsajátítása – szemantikus elemek, box model, responsive design alapjai."
+      "2023": {
+        "title": "Programozási út kezdete",
+        "desc": "HTML5 és CSS3 alapok elsajátítása, webes technológiák megismerése. A Scrimba Front-End Developer karrierút megkezdése strukturált tanulással."
       },
-      "2020": {
-        "title": "JavaScript mesterség",
-        "desc": "ES6+ szintaxis, DOM-manipuláció, async/await – gyakorlati projektek: Blackjack játék, Chrome bővítmény."
+      "2023-2": {
+        "title": "JavaScript és interaktivitás",
+        "desc": "ES6+ szintaxis, DOM-manipuláció, async/await – gyakorlati projektek: Blackjack játék, Chrome bővítmény, interaktív komponensek."
       },
-      "2021": {
+      "2023-3": {
         "title": "UI/UX és reszponzív design",
-        "desc": "Flexbox, CSS Grid, mobile-first gondolkodás – komplex layout-ok és vizuális hierarchia kialakítása."
+        "desc": "Flexbox, CSS Grid, mobile-first gondolkodás – komplex layout-ok és vizuális hierarchia kialakítása. Bootstrap keretrendszer elsajátítása."
       },
-      "2022": {
-        "title": "React és modern fejlesztés",
-        "desc": "Komponens-alapú architektúra, állapotkezelés, React Router – Todo App, blog alkalmazás építése."
+      "2024": {
+        "title": "Ügyfélprojektek és specializáció",
+        "desc": "Első ügyfélmegbízások teljesítése, valós projektek fejlesztése. Laravel alapok megismerése. Firebase és modern CSS keretrendszerek elsajátítása."
       },
-      "2023-2024": {
-        "title": "Valós projektek és szakmai tapasztalat",
-        "desc": "Ügyfélprojektek megvalósítása, csapatmunka, agilis módszertanok alkalmazása a gyakorlatban."
+      "2024-ongoing": {
+        "title": "Folyamatos fejlődés és React",
+        "desc": "Aktív ügyfélprojektek, szakmai tapasztalat bővítése. 2025-ben megkezdtem a React tanulását a Scrimba kurzus keretében. Tailwind CSS, progresszív web alkalmazások."
       }
     },
     "courses": {
@@ -81,8 +81,8 @@
         "desc": "UI Design alapelvek (white space, kontraszt, tipográfia), komplex Grid és Flexbox layout-ok, Tailwind CSS.<br><strong>Projektek:</strong> Photo Gallery, Pokedex, Jeopardy játék, responsive könyvtár alkalmazás."
       },
       "react": {
-        "title": "4. React & Modern Development",
-        "desc": "Funkcionális komponensek, hooks (useState, useEffect), React Router 6, állapotkezelés, komponens kompozíció.<br><strong>Projektek:</strong> Todo App többszakaszos fejlesztés, blog alkalmazás bejelentkező rendszerrel, Pokedex React integráció."
+        "title": "4. React & Modern Development (2025-ben kezdve)",
+        "desc": "2025-ben megkezdett React tanulás a Scrimba kurzus keretében. Funkcionális komponensek alapjai, hooks bevezetése (useState, useEffect) – frissen kezdett tanulási terület.<br><strong>Tervezett projektek:</strong> Todo App, blog alkalmazás, interaktív komponensek."
       }
     },
     "skills": {
@@ -93,7 +93,7 @@
       },
       "backend": {
         "heading": "Backend Ismeretek",
-        "desc": "Alapvető backend fejlesztési tapasztalat"
+        "desc": "Alapszintű Laravel és PHP ismeretek"
       },
       "tools": {
         "heading": "Keretrendszerek és eszközök",
@@ -131,7 +131,7 @@
   },
   "careerContact": {
     "heading": "Beszéljünk a lehetőségekről",
-    "intro": "Tapasztalt frontend fejlesztőt keresel csapatodba? Szívesen megmutatom, hogyan tudok hozzájárulni a vállalatod digitális céljaihoz. Írj, és beszéljük meg a részleteket!",
+    "intro": "Motivált junior frontend fejlesztőt keresel csapatodba? Autodidakta tanulással és 2+ év tapasztalattal szívesen megmutatom, hogyan tudok hozzájárulni a vállalatod digitális céljaihoz. Írj, és beszéljük meg a részleteket!",
     "phone": "+36 30 123 4567",
     "phoneNote": "Hétköznapokon 9:00–18:00 között elérhető vagyok.",
     "namePlaceholder": "Céged neve / Neved",

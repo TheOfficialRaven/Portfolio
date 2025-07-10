@@ -27,42 +27,42 @@
   },
   "about": {
     "heading": "About Me",
-    "description": "Hi! I'm glad you're here. As a frontend developer, I help turn your ideas into real, well-functioning, and visually clean websites – whether you're an individual entrepreneur or representing a newly emerging brand.<br><br>In my work, I place great emphasis on responsiveness, fast loading, and ensuring that the site provides a convincing experience on every screen size. Whether it's a portfolio page, service overview, or creative landing page, it's important to me that the end result reflects the client's personality and goals.<br><br>I'm well-versed in HTML, CSS, and JavaScript languages, work with Bootstrap and Laravel frameworks, and continuously expand my knowledge. I've already created several websites on commission, and I also develop through personal projects – because I believe that learning never stops.<br><br>I adapt flexibly to needs and always strive to make collaboration smooth, trust-based, and successful. If you want a website that not only looks good but also works efficiently, you're in the right place.<br><br>Check out my work, and if you like what you see, feel free to contact me! Let's discuss what you need and build something that really works – and is tailored to you.",
+    "description": "Hi! I'm glad you're here. As a frontend developer, I help turn your ideas into real, well-functioning, and visually clean websites – whether you're an individual entrepreneur or representing a newly emerging brand.<br><br>In my work, I place great emphasis on responsiveness, fast loading, and ensuring that the site provides a convincing experience on every screen size. Whether it's a portfolio page, service overview, or creative landing page, it's important to me that the end result reflects the client's personality and goals.<br><br>I'm well-versed in HTML, CSS, and JavaScript languages, work with Bootstrap framework, and continuously expand my knowledge with new technologies. I have basic knowledge in Laravel backend framework and I'm currently learning React. I've already created several websites on commission, and I also develop through personal projects – because I believe that learning never stops.<br><br>I adapt flexibly to needs and always strive to make collaboration smooth, trust-based, and successful. If you want a website that not only looks good but also works efficiently, you're in the right place.<br><br>Check out my work, and if you like what you see, feel free to contact me! Let's discuss what you need and build something that really works – and is tailored to you.",
     "cta": "Write to me"
   },
   "career_about": {
-    "heading": "Why am I the right choice?",
-    "description": "Hi! If you're looking for a developer who doesn't just code but creates real value, you're in the right place. I acquired my knowledge through a structured, project-based learning path where I mastered every skill through real tasks.<br><br>On the Scrimba Front-End Developer career path, I completed 70+ hours of interactive training videos, 100+ coding exercises, and dozens of real projects. This wasn't just theoretical knowledge, but practical experience – from blackjack games to React applications.<br><br>What makes my approach special is that I learned every technology in small steps, through projects. I don't just know how to use CSS Grid – I also know when and why it's worth applying. The same goes for JavaScript, React, or responsive design.<br><br>If you're looking for a developer who knows the answer to the 'why' question and creates value with every line of code, let's talk!",
+    "heading": "Introduction",
+    "description": "Hi! If you're looking for a motivated junior developer who is self-taught and has 2+ years of experience, you're in the right place. I acquired my knowledge through a structured, project-based learning path where I mastered every skill through real tasks.<br><br>On the Scrimba Front-End Developer career path, I've completed 50+ hours of interactive training videos, 80+ coding exercises, and numerous real projects so far. This isn't just theoretical knowledge, but practical experience – from blackjack games to complex JavaScript applications. I started learning React in 2025, which represents a new professional challenge.<br><br>What makes my approach special is that I learn every technology in small steps, through projects. I don't just know how to use CSS Grid – I also know when and why it's worth applying. The same goes for JavaScript or responsive design. I have basic knowledge in Laravel, which helps me understand frontend-backend communication.<br><br>As a junior developer, I approach every project with fresh perspective, high motivation, and continuous learning drive. If you're looking for a developer who knows the answer to the 'why' question and creates value with every line of code, let's talk!",
     "cta": "View Resume"
   },
   "career": {
     "hero": {
-      "title": ["Experienced", "frontend", "development", "professional"],
-      "subtitle": "Project-based expertise, structured solutions, reliable collaboration.",
+      "title": ["Motivated", "junior", "frontend", "developer"],
+      "subtitle": "Self-taught learning, 2+ years experience, project-based growth and reliable collaboration.",
       "btnPrimary": "Discover my journey",
       "btnSecondary": "Download CV"
     },
     "timeline": {
       "heading": "My Professional Development Steps",
-      "2019": {
-        "title": "Foundation Building",
-        "desc": "HTML5 and CSS3 mastery – semantic elements, box model, responsive design basics."
+      "2023": {
+        "title": "Programming Journey Begins",
+        "desc": "Learning HTML5 and CSS3 fundamentals, discovering web technologies. Starting the Scrimba Front-End Developer career path with structured learning."
       },
-      "2020": {
-        "title": "JavaScript Mastery",
-        "desc": "ES6+ syntax, DOM manipulation, async/await – practical projects: Blackjack game, Chrome extension."
+      "2023-2": {
+        "title": "JavaScript and Interactivity",
+        "desc": "ES6+ syntax, DOM manipulation, async/await – practical projects: Blackjack game, Chrome extension, interactive components."
       },
-      "2021": {
+      "2023-3": {
         "title": "UI/UX and Responsive Design",
-        "desc": "Flexbox, CSS Grid, mobile-first thinking – complex layouts and visual hierarchy creation."
+        "desc": "Flexbox, CSS Grid, mobile-first thinking – complex layouts and visual hierarchy creation. Bootstrap framework mastery."
       },
-      "2022": {
-        "title": "React and Modern Development",
-        "desc": "Component-based architecture, state management, React Router – Todo App, blog application building."
+      "2024": {
+        "title": "Client Projects and Specialization",
+        "desc": "Completing first client commissions, developing real projects. Learning Laravel basics. Mastering Firebase and modern CSS frameworks."
       },
-      "2023-2024": {
-        "title": "Real Projects and Professional Experience",
-        "desc": "Client project implementation, teamwork, agile methodologies application in practice."
+      "2024-ongoing": {
+        "title": "Continuous Growth and React",
+        "desc": "Active client projects, expanding professional experience. Started learning React in 2025 through the Scrimba course. Tailwind CSS, progressive web applications."
       }
     },
     "courses": {
@@ -81,8 +81,8 @@
         "desc": "UI Design principles (white space, contrast, typography), complex Grid and Flexbox layouts, Tailwind CSS.<br><strong>Projects:</strong> Photo Gallery, Pokedex, Jeopardy game, responsive library application."
       },
       "react": {
-        "title": "4. React & Modern Development",
-        "desc": "Functional components, hooks (useState, useEffect), React Router 6, state management, component composition.<br><strong>Projects:</strong> Todo App multi-phase development, blog application with authentication system, Pokedex React integration."
+        "title": "4. React & Modern Development (started 2025)",
+        "desc": "React learning started in 2025 through the Scrimba course. Basics of functional components, introduction to hooks (useState, useEffect) – freshly started learning area.<br><strong>Planned projects:</strong> Todo App, blog application, interactive components."
       }
     },
     "skills": {
@@ -93,7 +93,7 @@
       },
       "backend": {
         "heading": "Backend Knowledge",
-        "desc": "Basic backend development experience"
+        "desc": "Basic Laravel and PHP knowledge"
       },
       "tools": {
         "heading": "Frameworks and Tools",
@@ -131,7 +131,7 @@
   },
   "careerContact": {
     "heading": "Let's Discuss Opportunities",
-    "intro": "Looking for an experienced frontend developer for your team? I'd be happy to show you how I can contribute to your company's digital goals. Let's talk about the details!",
+    "intro": "Looking for a motivated junior frontend developer for your team? With self-taught learning and 2+ years of experience, I'd be happy to show you how I can contribute to your company's digital goals. Let's talk about the details!",
     "phone": "+36 30 123 4567",
     "phoneNote": "Available on weekdays between 9:00 AM and 6:00 PM.",
     "namePlaceholder": "Company Name / Your Name",
