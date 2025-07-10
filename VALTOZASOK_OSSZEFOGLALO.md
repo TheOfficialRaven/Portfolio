@@ -92,12 +92,32 @@
 - 📱 Mobil és desktop tab kezelés
 - 🐛 Debug eszközök és logging
 
+### 5. Donezy Projekt Hozzáadása ✅
+
+**Új tanulási projekt:**
+- **URL**: https://donezy.netlify.app
+- **Típus**: Fejlesztés alatt álló feladatkezelő alkalmazás
+- **Nyelvek**: Magyar, angol, német fordításokkal
+
+**Technikai megvalósítás:**
+- `js/learning-projects.js` - Új projekt hozzáadása a tömbhöz
+- Kondicionális GitHub gomb kezelés (elrejtés ha nincs repository)
+- Modal frissítés üres linkek kezelésére
+- Placeholder kép használata (to-do-list.png) átmenetileg
+
+**Funkciók:**
+- 🚧 "Fejlesztés alatt" jelölés mindhárom nyelven
+- 🔗 Működő live link a Donezy alkalmazásra
+- 👁️ GitHub gomb automatikus elrejtése ha nincs repository
+- 📱 Responsive design minden eszközön
+
 ## Következő Lépések
 
 1. **EmailJS Beállítás** - Kövesd az `EMAILJS_SETUP.md` útmutatót
-2. **Netlify feltöltés** - Töltsd fel az új fájlokat és teszteld az aktív tab-et
-3. **Tesztelés** - Próbáld ki mindkét kontakt űrlapot
-4. **Hibaelhárítás** - Ha probléma van, kövesd a `NETLIFY_HIBAELARITAS.md` útmutatót
+2. **Donezy Screenshot** - Készítsd el a `imgs/donezy-preview.png` képet (lásd `DONEZY_PROJEKT_HOZZAADVA.md`)
+3. **Netlify feltöltés** - Töltsd fel az új fájlokat és teszteld az aktív tab-et és új projektet
+4. **Tesztelés** - Próbáld ki mindkét kontakt űrlapot és a Donezy projekt megjelenítését
+5. **Hibaelhárítás** - Ha probléma van, kövesd a `NETLIFY_HIBAELARITAS.md` útmutatót
 
 ## Előnyök
 
@@ -109,7 +129,9 @@
 ✅ **Analytics ready** - Google Analytics integrációval  
 ✅ **Netlify kompatibilis** - Aktív tab design minden környezetben működik  
 ✅ **Robusztus működés** - Backup megoldásokkal és hibaelhárítással  
+✅ **Aktuális projektek** - Fejlesztés alatt álló munkák bemutatása  
+✅ **Dinamikus tartalom** - Kondicionális GitHub link kezelés  
 
 ---
 
-**🎉 A kontakt szekciók és navigáció most teljesen működőképes minden környezetben, a karrier oldal célzottan a cégeknek szól!** 
+**🎉 A portfólió most teljes funkcionalitással rendelkezik: működő kontakt szekciók, stabil navigáció és aktuális projektek bemutatása minden környezetben!** 

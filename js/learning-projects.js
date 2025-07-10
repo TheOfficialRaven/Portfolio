@@ -41,6 +41,27 @@ const learningProjects = [
     githubLink: "https://github.com/TheOfficialRaven/markscoreboard",
     liveLink: "https://markscoreboard.netlify.app",
     image: "imgs/score-board.png"
+  },
+  {
+    title: {
+      hu: "Donezy - Feladatkezelő Alkalmazás",
+      en: "Donezy - Task Management App",
+      de: "Donezy - Aufgabenverwaltungs-App"
+    },
+    description: {
+      hu: "Fejlett feladatkezelő Progressive Web App (PWA) iteratív fejlesztési módszertannal. Az alkalmazás Firebase real-time adatbázissal és Tailwind CSS utility-first megközelítéssel épült. Egyedi funkciók: drag & drop task management (HTML5 Drag API), offline-first architecture (Service Workers), cloud-local hibrid szinkronizáció, dark/light theme toggle (CSS custom properties), és push notification rendszer. Kódolt megoldások: ES6 modules struktura, async/await aszinkron műveletek, localStorage + Firestore adatperzisztencia, responsive breakpoint rendszer, és component-alapú JavaScript architektúra. A fejlesztés agilis sprint-ekben történik kontinuus deployment pipeline-nal.",
+      en: "Advanced task management Progressive Web App (PWA) built with iterative development methodology. The application features Firebase real-time database and Tailwind CSS utility-first approach. Unique features: drag & drop task management (HTML5 Drag API), offline-first architecture (Service Workers), cloud-local hybrid synchronization, dark/light theme toggle (CSS custom properties), and push notification system. Coded solutions: ES6 modules structure, async/await asynchronous operations, localStorage + Firestore data persistence, responsive breakpoint system, and component-based JavaScript architecture. Development follows agile sprints with continuous deployment pipeline.",
+      de: "Fortgeschrittene Aufgabenverwaltungs Progressive Web App (PWA) mit iterativer Entwicklungsmethodik erstellt. Die Anwendung nutzt Firebase Echtzeit-Datenbank und Tailwind CSS Utility-First-Ansatz. Einzigartige Funktionen: Drag & Drop Aufgabenverwaltung (HTML5 Drag API), Offline-First-Architektur (Service Workers), Cloud-Local-Hybrid-Synchronisation, Dark/Light-Theme-Umschalter (CSS Custom Properties) und Push-Benachrichtigungssystem. Codierte Lösungen: ES6-Module-Struktur, async/await asynchrone Operationen, localStorage + Firestore Datenpersistierung, responsives Breakpoint-System und komponentenbasierte JavaScript-Architektur. Die Entwicklung folgt agilen Sprints mit kontinuierlicher Deployment-Pipeline."
+    },
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "Firebase", "tailwindCSS"],
+    origin: {
+      hu: ["Folyamatban lévő saját projekt"],
+      en: ["Ongoing personal project"],
+      de: ["Laufendes persönliches Projekt"]
+    },
+    githubLink: "", // Jelenleg nincs GitHub link, üresen hagyjuk
+    liveLink: "https://donezy.netlify.app",
+    image: "imgs/donezy-preview.png" // Placeholder kép - később cseréld le donezy-preview.png-re
   }
 ];
 
@@ -124,7 +145,14 @@ function openLearningModal(project) {
   modalTags.innerHTML = project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('');
   modalOrigin.innerHTML = origin.map(originItem => `<span class="tag">${originItem}</span>`).join('');
   liveLink.href = project.liveLink;
-  githubLink.href = project.githubLink;
+  
+  // GitHub link kezelése
+  if (project.githubLink && project.githubLink.trim() !== '') {
+    githubLink.href = project.githubLink;
+    githubLink.style.display = '';
+  } else {
+    githubLink.style.display = 'none';
+  }
 
   modal.classList.add('show');
 
@@ -155,6 +183,13 @@ function renderLearningProjects() {
     const description = project.description[currentLang] || project.description.hu;
     const origin = project.origin[currentLang] || project.origin.hu;
     
+    // GitHub gomb HTML feltételesen
+    const githubButtonHTML = (project.githubLink && project.githubLink.trim() !== '') 
+      ? `<button class="view-btn github-btn" data-link="${project.githubLink}">
+           <i class="fab fa-github"></i> ${texts.githubBtn}
+         </button>` 
+      : '';
+
     projectCard.innerHTML = `
       <div class="project-image" style="background-image: url('${project.image}')">
         <div class="overlay">
@@ -162,9 +197,7 @@ function renderLearningProjects() {
             <button class="view-btn live-btn" data-link="${project.liveLink}">
               <i class="fas fa-external-link-alt"></i> ${texts.websiteBtn}
             </button>
-            <button class="view-btn github-btn" data-link="${project.githubLink}">
-              <i class="fab fa-github"></i> ${texts.githubBtn}
-            </button>
+            ${githubButtonHTML}
           </div>
         </div>
       </div>
@@ -183,10 +216,14 @@ function renderLearningProjects() {
       window.open(project.liveLink, '_blank');
     });
 
-    projectCard.querySelector('.github-btn').addEventListener('click', (e) => {
-      e.stopPropagation();
-      window.open(project.githubLink, '_blank');
-    });
+    // GitHub gomb event listener csak ha létezik a gomb
+    const githubBtn = projectCard.querySelector('.github-btn');
+    if (githubBtn) {
+      githubBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        window.open(project.githubLink, '_blank');
+      });
+    }
 
     // Event listener a teljes kártyára - modal megnyitása (kivéve gombokat)
     projectCard.addEventListener('click', (e) => {
