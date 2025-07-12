@@ -23,11 +23,12 @@
     "title": ["Zeigen", "Sie", "sich", "nicht", "nur,", "stechen", "Sie", "im", "Online-Raum", "hervor!"],
     "subtitle": "Individuelle, responsive Website – ein selbstbewusstes Auftreten von Anfang an, das Kunden anzieht und eine langfristig rentable Investition ist.",
     "btnPrimary": "Meine Arbeiten",
-    "btnSecondary": "Schreiben Sie mir"
+    "btnSecondary": "Schreiben Sie mir",
+    "techSkills": "Technologien, mit denen ich arbeite:"
   },
   "about": {
     "heading": "Über mich",
-    "description": "Hallo! Ich freue mich, dass Sie hier sind. Als Frontend-Entwickler helfe ich dabei, aus Ihren Ideen echte, gut funktionierende und visuell saubere Websites zu schaffen – egal, ob Sie Einzelunternehmer sind oder eine neu entstehende Marke vertreten.<br><br>Bei meiner Arbeit lege ich großen Wert auf Responsivität, schnelle Ladezeiten und darauf, dass die Website auf jeder Bildschirmgröße eine überzeugende Erfahrung bietet. Ob es sich um eine Portfolioseite, Dienstleistungsübersicht oder kreative Landing Page handelt, es ist mir wichtig, dass das Endergebnis die Persönlichkeit und Ziele des Kunden widerspiegelt.<br><br>Ich beherrsche HTML, CSS und JavaScript gut, arbeite mit Bootstrap Framework und erweitere kontinuierlich mein Wissen mit neuen Technologien. Ich habe Grundkenntnisse in Laravel Backend Framework und lerne derzeit React. Ich habe bereits mehrere Websites im Auftrag erstellt und entwickle mich auch durch persönliche Projekte weiter – denn ich glaube daran, dass das Lernen nie aufhört.<br><br>Ich passe mich flexibel an die Bedürfnisse an und bin immer bestrebt, dass die Zusammenarbeit reibungslos, vertrauensbasiert und erfolgreich ist. Wenn Sie eine Website wollen, die nicht nur gut aussieht, sondern auch effizient funktioniert, sind Sie hier richtig.<br><br>Schauen Sie sich meine Arbeiten an, und wenn Ihnen gefällt, was Sie sehen, kontaktieren Sie mich gerne! Lassen Sie uns besprechen, was Sie brauchen, und etwas bauen, das wirklich funktioniert – und auf Sie zugeschnitten ist.",
+    "description": "Hallo! Ich freue mich, dass Sie hier sind. Als Frontend-Entwickler helfe ich dabei, aus Ihren Ideen echte, gut funktionierende und visuell saubere Websites zu schaffen.<br><br>Bei meiner Arbeit lege ich großen Wert auf Responsivität und schnelle Ladezeiten. Ich erstelle Websites, die auf jeder Bildschirmgröße eine überzeugende Erfahrung bieten.<br><br>Ich beherrsche HTML, CSS und JavaScript gut. Ich arbeite mit Bootstrap Framework und erweitere kontinuierlich mein Wissen. Derzeit lerne ich React.<br><br>Ich passe mich flexibel an die Bedürfnisse an. Bei jeder Zusammenarbeit strebe ich eine reibungslose, vertrauensbasierte Arbeitsweise an.<br><br>Wenn Sie eine Website wollen, die nicht nur gut aussieht, sondern auch effizient funktioniert, sind Sie hier richtig!",
     "cta": "Schreiben Sie mir"
   },
   "career_about": {
@@ -170,6 +171,10 @@
     "support": {
       "title": "Technischer Support",
       "desc": "Fehlerbehebung, Updates, Nachbetreuung – zuverlässiger Support auch nach der Entwicklung."
+    },
+    "githubCta": {
+      "text": "Möchten Sie mehr von meinen Programmierfähigkeiten sehen?",
+      "button": "Durchstöbern Sie mein GitHub-Profil"
     }
   },
   "workflow": {

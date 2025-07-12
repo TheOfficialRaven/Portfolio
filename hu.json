@@ -23,11 +23,12 @@
     "title": ["Ne", "csak", "jelenj", "meg,", "tűnj", "ki", "az", "online", "térben!"],
     "subtitle": "Egyedi, reszponzív weboldal – már az induláskor magabiztos megjelenés, amely ügyfeleket vonz, és hosszú távon megtérülő befektetés.",
     "btnPrimary": "Munkáim",
-    "btnSecondary": "Írj nekem"
+    "btnSecondary": "Írj nekem",
+    "techSkills": "Technológiák, amelyekkel dolgozom:"
   },
   "about": {
     "heading": "Rólam",
-    "description": "Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek – akár egyéni vállalkozó vagy, akár egy újonnan induló márkát képviselsz.<br><br>A munkáim során nagy hangsúlyt fektetek a reszponzivitásra, a gyors betöltésre, és arra, hogy az oldal minden képernyőméreten meggyőző élményt nyújtson. Legyen szó egy bemutatkozó oldalról, szolgáltatásismertetőről vagy kreatív landing page-ről, fontos számomra, hogy a végeredmény tükrözze az ügyfél egyéniségét és céljait.<br><br>Jól ismerem a HTML, CSS és JavaScript nyelveket, dolgozom Bootstrap keretrendszerrel, és folyamatosan bővítem a tudásomat új technológiákkal. Alapvető ismereteim vannak Laravel backend keretrendszerben, valamint jelenleg tanulom a React-et. Már több weboldalt készítettem megrendelésre, és ezek mellett saját projekteken keresztül is fejlődöm – mert hiszek abban, hogy a tanulás soha nem áll meg.<br><br>Rugalmasan alkalmazkodom az igényekhez, és mindig arra törekszem, hogy az együttműködés gördülékeny, bizalmi alapú és eredményes legyen. Ha szeretnél egy weboldalt, ami nem csak jól néz ki, hanem hatékonyan is működik, akkor jó helyen jársz.<br><br>Nézd meg a munkáimat, és ha tetszik, amit látsz, keress bátran! Beszéljük meg, mire van szükséged, és építsünk valami olyat, ami valóban működik – és rád van szabva.",
+    "description": "Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek.<br><br>Nagy hangsúlyt fektetek a reszponzivitásra és a gyors betöltésre. Minden képernyőméreten meggyőző élményt nyújtó oldalakat készítek.<br><br>Jól ismerem a HTML, CSS és JavaScript nyelveket. Dolgozom Bootstrap keretrendszerrel, és folyamatosan bővítem a tudásomat. Jelenleg tanulom a React-et.<br><br>Rugalmasan alkalmazkodom az igényekhez. Minden együttműködés során gördülékeny, bizalmi alapú kapcsolatra törekszem.<br><br>Ha szeretnél egy weboldalt, ami nem csak jól néz ki, hanem hatékonyan is működik, akkor jó helyen jársz!",
     "cta": "Írj nekem"
   },
   "career_about": {
@@ -165,6 +166,10 @@
     "support": {
       "title": "Technikai támogatás",
       "desc": "Hibajavítás, frissítés, utólagos segítség – megbízható támogatás a fejlesztés után is."
+    },
+    "githubCta": {
+      "text": "Szeretnél többet látni a kódolási készségeimből?",
+      "button": "Böngészd végig a GitHub profilom"
     }
   },
   "workflow": {

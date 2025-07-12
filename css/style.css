@@ -61,6 +61,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Figyelembe veszi a fix header magasságát */
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -69,6 +74,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   max-width: 100vw;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 /* Elrejtjük a fordítandó szövegeket kezdetben a villanás elkerülése érdekében */
@@ -143,6 +150,19 @@ body {
 
 /* ===== GLOBÁLIS TIPOGRÁFIAI ALAPOK ===== */
 
+/* Globális bekezdés stílusok */
+p {
+  line-height: 1.9;
+  margin-bottom: 1.8rem;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
 /* Desktop tipográfiai hierarchia */
 .hero-title {
   font-size: 3.5rem;
@@ -153,7 +173,7 @@ body {
   font-size: 2.8rem;
   line-height: 1.2;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   position: relative;
   display: inline-block;
   width: 100%;
@@ -1125,13 +1145,16 @@ body.menu-open.active::before {
 }
 
 .hero-title {
-  font-size: 2.6rem;
+  font-size: 4.2rem;
   color: var(--main-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.6rem;
   justify-content: left;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   visibility: hidden; /* Alapból rejtve */
 }
 
@@ -1156,8 +1179,11 @@ body.menu-open.active::before {
   display: inline-block;
   opacity: 0;
   visibility: hidden; /* Alapból rejtve */
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+  max-width: 90%;
   transform: translateY(20px);
   transition: opacity var(--anim-duration) var(--anim-ease),
               transform var(--anim-duration) var(--anim-ease),
@@ -1172,10 +1198,10 @@ body.menu-open.active::before {
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 1.8rem;
   justify-content: left;
   flex-wrap: wrap;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .hero-buttons a {
@@ -1365,11 +1391,14 @@ body.menu-open.active::before {
 }
 
 .hero-buttons .btn {
-  padding: 0.9rem 2rem;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 0.5rem;
+  padding: 1.2rem 2.8rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 0.8rem;
   transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Elsődleges gomb */
@@ -1380,8 +1409,11 @@ body.menu-open.active::before {
 }
 
 .hero-buttons .primary-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 18px var(--main-color), 0 0 36px var(--main-color);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 25px var(--main-color), 
+              0 0 50px var(--main-color),
+              0 10px 30px rgba(0, 201, 167, 0.4);
+  filter: brightness(1.1);
 }
 
 /* Másodlagos (ghost) gomb */
@@ -1394,8 +1426,10 @@ body.menu-open.active::before {
 .hero-buttons .ghost-btn:hover {
   background: var(--main-color);
   color: #fff;
-  box-shadow: 0 0 10px var(--main-color);
-  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--main-color),
+              0 5px 20px rgba(0, 201, 167, 0.3);
+  transform: translateY(-4px) scale(1.05);
+  border-color: var(--main-color);
 }
 
 .hero-title span:nth-child(1) { animation-delay: 0.1s; }
@@ -1442,9 +1476,26 @@ body.menu-open.active::before {
     flex-direction: column;
     text-align: center;
     padding: 0 1rem;
+    gap: 3rem;
   }
   .hero-content {
     max-width: 100%;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+  .hero-buttons {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .hero-buttons .btn {
+    padding: 1rem 2.2rem;
+    font-size: 1rem;
   }
   .home-image {
     display: none;
@@ -1454,8 +1505,58 @@ body.menu-open.active::before {
 
 
 
+/* ===== Mobil tipográfia javítások ===== */
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  p {
+    font-size: 1.05rem;
+    line-height: 2.1;
+    margin-bottom: 2rem;
+  }
+  
+  .service-card p {
+    line-height: 2.2;
+    font-size: 1rem;
+  }
+  
+  .step-content p {
+    line-height: 2.3;
+    font-size: 1rem;
+  }
+  
+  /* Mobil szekció padding csökkentés */
+  .about-section,
+  .projects-section,
+  .contact-section {
+    padding: 5rem 0;
+  }
+  
+  .services-section {
+    padding: 4rem 0;
+  }
+  
+  .workflow-section {
+    padding: 4.5rem 0;
+  }
+}
+
 /* ===== Nagyon kis képernyők (≤ 480px) ===== */
 @media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+  
+  p {
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+  }
+  
   .hero-subtitle { font-size: 1rem; }
   .hero-buttons a { width: 100%; }
   
@@ -1498,10 +1599,11 @@ body.menu-open.active::before {
 .about-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 4rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: center;
+  flex-direction: row-reverse; /* Kép balra, szöveg jobbra */
 }
 
 .about-image {
@@ -1804,8 +1906,10 @@ body.menu-open.active::before {
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 201, 167, 0.25), 
+              0 5px 15px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 201, 167, 0.3);
 }
 
 .service-card i {
@@ -1826,9 +1930,10 @@ body.menu-open.active::before {
 
 .service-card p {
   color: var(--text-color);
-  line-height: 1.6;
+  line-height: 2;
   margin: 0;
   opacity: 0.9;
+  font-size: 1.05rem;
 }
 
 @media (max-width: 768px) {
@@ -1900,8 +2005,10 @@ body.menu-open.active::before {
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 201, 167, 0.3), 
+              0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 201, 167, 0.4);
 }
 
 .project-card:hover .project-description-hint {
@@ -2367,10 +2474,14 @@ section::before {
 .contact-intro {
   text-align: center;
   margin-bottom: 4rem;
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1.3rem;
+  line-height: 2.1;
   color: var(--text-color);
   opacity: 0.9;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
 .contact-info {
@@ -2429,6 +2540,16 @@ section::before {
   visibility: visible !important;
   opacity: 1 !important;
   z-index: 1;
+  background: var(--card-gradient);
+  border: var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  margin: 3rem auto 0;
+  max-width: 700px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15),
+              0 8px 25px rgba(0, 201, 167, 0.1);
+  position: relative;
+  overflow: hidden;
 }
 
 .input-group {
@@ -2487,25 +2608,54 @@ section::before {
 
 .contact-form .btn {
   align-self: center;
-  min-width: 200px;
+  min-width: 250px;
   background: var(--main-color);
   color: var(--bg-color);
   border: none;
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.5px;
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+  border-radius: 0.8rem;
+  text-transform: uppercase;
+  box-shadow: 0 8px 25px rgba(0, 201, 167, 0.3);
 }
 
 .contact-form .btn:hover {
   background: var(--btn-hover-color);
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px var(--main-color);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 30px var(--main-color),
+              0 15px 40px rgba(0, 201, 167, 0.4);
+  filter: brightness(1.1);
+}
+
+/* Contact form hover effects */
+.contact-form::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 201, 167, 0.05) 0%, 
+    rgba(0, 201, 167, 0.1) 100%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.contact-form:hover::before {
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
   .contact-section {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+  
+  .contact-form {
+    padding: 2rem;
+    margin: 2rem auto 0;
+    max-width: 100%;
   }
   
   .contact-info {
@@ -2526,7 +2676,11 @@ section::before {
     font-size: 1.1rem;
   }
   
-
+  .contact-form .btn {
+    min-width: 200px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 /**************** Footer *************/
@@ -2666,7 +2820,9 @@ section::before {
 .step-content p {
   color: var(--text-color);
   opacity: 0.9;
-  line-height: 1.6;
+  line-height: 2.1;
+  font-size: 1.05rem;
+  margin-top: 1rem;
 }
 
 /* Workflow mobil optimalizálás */
@@ -2983,7 +3139,7 @@ section::before {
 
 /* ===== Career Courses Section ===== */
 .career-courses-section {
-  background: var(--bg-color);
+  background: var(--accent-color);
   padding: var(--section-padding);
   position: relative;
   min-height: 100vh;
@@ -3030,7 +3186,7 @@ section::before {
 }
 
 .career-course-card {
-  background: var(--accent-color);
+  background: var(--bg-color);
   border-radius: var(--border-radius);
   padding: 2.5rem;
   border: var(--card-border);
@@ -3100,6 +3256,11 @@ section::before {
   .career-course-card {
     padding: 1.5rem;
   }
+}
+
+/* ===== Learning Projects Section ===== */
+#learning-projects .project-card {
+  background: var(--accent-color) !important;
 }
 
 /* ===== Career Skills Section ===== */
@@ -3809,4 +3970,468 @@ section.reveal {
 }
 
 /* Duplikált szabályok eltávolítva - a fő ::after szabályok már definiálva vannak feljebb */
+
+/* ===== VIZUÁLIS TÖRÉSEK ÉS DINAMIKA ===== */
+
+/* Alternáló szekció háttér színek */
+.about-section {
+  background: var(--accent-color);
+  position: relative;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(0, 201, 167, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(0, 201, 167, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.services-section {
+  background: var(--bg-color);
+  position: relative;
+}
+
+.projects-section {
+  background: var(--accent-color);
+  position: relative;
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 48%, rgba(0, 201, 167, 0.02) 49%, rgba(0, 201, 167, 0.02) 51%, transparent 52%);
+  background-size: 60px 60px;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Váltogatott szekció háttér */
+.workflow-section {
+  background: var(--bg-color);
+  position: relative;
+}
+
+.workflow-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--main-color) 20%, 
+    var(--btn-hover-color) 50%, 
+    var(--main-color) 80%, 
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* Kontakt szekció kiemelése */
+.contact-section {
+  background: var(--bg-color);
+  position: relative;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    var(--main-color) 0%, 
+    var(--btn-hover-color) 100%
+  );
+  opacity: 0.8;
+}
+
+/* Vizuális elválasztó elemek */
+.about-section::after,
+.services-section::after,
+.projects-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--main-color) 30%, 
+    var(--btn-hover-color) 50%, 
+    var(--main-color) 70%, 
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* Változatos szekció padding */
+.about-section {
+  padding: 8rem 0;
+}
+
+.services-section {
+  padding: 6rem 0;
+}
+
+.projects-section {
+  padding: 8rem 0;
+}
+
+.workflow-section {
+  padding: 7rem 0;
+}
+
+.contact-section {
+  padding: 8rem 0;
+}
+
+/* Services CTA */
+.services-cta {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem 2rem;
+  background: var(--card-gradient);
+  border: var(--card-border);
+  border-radius: var(--border-radius);
+  position: relative;
+  overflow: hidden;
+}
+
+.services-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 201, 167, 0.1) 0%, 
+    rgba(0, 201, 167, 0.05) 100%);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.services-cta:hover::before {
+  opacity: 1;
+}
+
+.services-cta-text {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.github-cta {
+  background: #333;
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+  border: 2px solid transparent;
+}
+
+.github-cta:hover {
+  background: #24292e;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(36, 41, 46, 0.4),
+              0 0 20px rgba(0, 201, 167, 0.3);
+  border-color: var(--main-color);
+}
+
+.github-cta i {
+  font-size: 1.3rem;
+  transition: var(--transition);
+}
+
+.github-cta:hover i {
+  transform: rotate(360deg);
+}
+
+@media (max-width: 768px) {
+  .services-cta {
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+  }
+  
+  .services-cta-text {
+    font-size: 1.1rem;
+  }
+  
+  .github-cta {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+/************ Services *************/
+
+/* ==== Contact Form Validation & Email Service ==== */
+
+/* ===== KARRIER OLDAL SPECIFIKUS STÍLUSOK ===== */
+
+/* Karrier oldal hero szekció finom optimalizálása */
+.hero-container:has(.hero-socials) .hero-content {
+  flex: 0 0 55% !important;
+  max-width: 55% !important;
+}
+
+/* Karrier oldal home-image kicsit kisebb */
+.hero-container:has(.hero-socials) .home-image {
+  flex: 0 0 40% !important;
+  max-width: 40% !important;
+}
+
+/* Karrier oldal hero gombok optimalizálása */
+.hero-container:has(.hero-socials) .hero-buttons {
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+}
+
+.hero-container:has(.hero-socials) .hero-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Karrier oldal hero elemek animációs alapállapota */
+.hero-container:has(.hero-socials) .hero-subtitle {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(20px) !important;
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
+}
+
+.hero-container:has(.hero-socials) .hero-buttons a {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(20px) !important;
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease),
+              var(--hover-transition);
+}
+
+/* Karrier oldal hero elemek reveal állapota */
+.hero-container:has(.hero-socials) .hero-subtitle.reveal {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+.hero-container:has(.hero-socials) .hero-buttons a.reveal {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+}
+
+/* Mobilon a karrier oldal hero gombok optimalizálása */
+@media (max-width: 768px) {
+  .hero-container:has(.hero-socials) .hero-content {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .hero-container:has(.hero-socials) .hero-buttons {
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+  
+  .hero-container:has(.hero-socials) .hero-buttons .btn {
+    flex: 1;
+    min-width: 0;
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+/* ===== EMAIL SERVICE VALIDATION STYLES ===== */
+
+/* ===== HERO TECH SKILLS ICONS ===== */
+
+.hero-tech-skills {
+  margin-top: 3rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
+}
+
+.hero-tech-skills.reveal {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tech-skills-title {
+  font-size: 0.95rem;
+  color: var(--second-text-color);
+  margin-bottom: 1.5rem;
+  text-align: left;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tech-icon {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  border: 2px solid rgba(0, 201, 167, 0.2);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  animation: techIconReveal 0.6s ease forwards;
+}
+
+/* Staggered animation delays */
+.tech-icon:nth-child(1) { animation-delay: 0.1s; }
+.tech-icon:nth-child(2) { animation-delay: 0.2s; }
+.tech-icon:nth-child(3) { animation-delay: 0.3s; }
+.tech-icon:nth-child(4) { animation-delay: 0.4s; }
+.tech-icon:nth-child(5) { animation-delay: 0.5s; }
+.tech-icon:nth-child(6) { animation-delay: 0.6s; }
+.tech-icon:nth-child(7) { animation-delay: 0.7s; }
+.tech-icon:nth-child(8) { animation-delay: 0.8s; }
+
+@keyframes techIconReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tech-icon i {
+  font-size: 1.8rem;
+  color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: translateY(-8px) scale(1.1);
+  border-color: var(--main-color);
+  box-shadow: 0 8px 25px rgba(0, 201, 167, 0.25),
+              0 0 20px rgba(0, 201, 167, 0.15);
+  background: rgba(0, 201, 167, 0.05);
+}
+
+.tech-icon:hover i {
+  color: var(--btn-hover-color);
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 8px var(--main-color));
+}
+
+/* Tooltip */
+.tech-icon::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid var(--main-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+
+
+.tech-icon:hover::before,
+.tech-icon:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-tech-skills {
+    margin-top: 2.5rem;
+  }
+  
+  .tech-skills-title {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
+  
+  .tech-icons {
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .tech-icon {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .tech-icon i {
+    font-size: 1.6rem;
+  }
+  
+  .tech-icon::before {
+    bottom: -32px;
+    font-size: 0.7rem;
+  }
+  
+  .tech-icon::after {
+    bottom: -22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-icons {
+    gap: 0.8rem;
+  }
+  
+  .tech-icon {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .tech-icon i {
+    font-size: 1.4rem;
+  }
+}
 

@@ -23,11 +23,12 @@
     "title": ["Don't", "just", "show", "up,", "stand", "out", "in", "the", "online", "space!"],
     "subtitle": "Custom, responsive website – a confident presence from the start that attracts clients and is a long-term profitable investment.",
     "btnPrimary": "My Work",
-    "btnSecondary": "Write to me"
+    "btnSecondary": "Write to me",
+    "techSkills": "Technologies I work with:"
   },
   "about": {
     "heading": "About Me",
-    "description": "Hi! I'm glad you're here. As a frontend developer, I help turn your ideas into real, well-functioning, and visually clean websites – whether you're an individual entrepreneur or representing a newly emerging brand.<br><br>In my work, I place great emphasis on responsiveness, fast loading, and ensuring that the site provides a convincing experience on every screen size. Whether it's a portfolio page, service overview, or creative landing page, it's important to me that the end result reflects the client's personality and goals.<br><br>I'm well-versed in HTML, CSS, and JavaScript languages, work with Bootstrap framework, and continuously expand my knowledge with new technologies. I have basic knowledge in Laravel backend framework and I'm currently learning React. I've already created several websites on commission, and I also develop through personal projects – because I believe that learning never stops.<br><br>I adapt flexibly to needs and always strive to make collaboration smooth, trust-based, and successful. If you want a website that not only looks good but also works efficiently, you're in the right place.<br><br>Check out my work, and if you like what you see, feel free to contact me! Let's discuss what you need and build something that really works – and is tailored to you.",
+    "description": "Hi! I'm glad you're here. As a frontend developer, I help turn your ideas into real, well-functioning, and visually clean websites.<br><br>I place great emphasis on responsiveness and fast loading. I create websites that provide a convincing experience on every screen size.<br><br>I'm well-versed in HTML, CSS, and JavaScript languages. I work with Bootstrap framework and continuously expand my knowledge. Currently learning React.<br><br>I adapt flexibly to needs. I always strive to make every collaboration smooth and trust-based.<br><br>If you want a website that not only looks good but also works efficiently, you're in the right place!",
     "cta": "Write to me"
   },
   "career_about": {
@@ -165,6 +166,10 @@
     "support": {
       "title": "Technical Support",
       "desc": "Bug fixes, updates, follow-up assistance – reliable support even after development."
+    },
+    "githubCta": {
+      "text": "Want to see more of my coding skills?",
+      "button": "Browse my GitHub profile"
     }
   },
   "workflow": {

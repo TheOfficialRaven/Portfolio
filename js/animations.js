@@ -1,16 +1,33 @@
-// Animációs konstansok - lassabb animációk
+// Animációs konstansok - optimalizált sebességek
 export const ANIMATION_SETTINGS = {
-  duration: 1.2,  // másodperc - lassabb
-  staggerDelay: 0.2,  // másodperc - lassabb
-  threshold: 0.2,
-  baseDelay: 0.5,  // másodperc - lassabb
-  typewriterSpeed: 30, // milliszekundum per karakter - gyorsabb, közel a CSS sebességhez
-  typewriterStartDelay: 200 // milliszekundum - gyorsabb
+  duration: 0.8,  // másodperc - gyorsabb, dinamikusabb
+  staggerDelay: 0.15,  // másodperc - gyorsabb
+  threshold: 0.15, // alacsonyabb küszöb = korábban indul
+  baseDelay: 0.3,  // másodperc - gyorsabb
+  typewriterSpeed: 25, // milliszekundum per karakter - még gyorsabb
+  typewriterStartDelay: 150, // milliszekundum - gyorsabb
+  parallaxIntensity: 0.5 // új: parallax hatás intenzitása
 };
 
 // Observer instances
 let revealObserver = null;
 let heroObserver = null;
+let parallaxElements = [];
+
+// Parallax scroll handler
+function handleParallaxScroll() {
+  const scrollY = window.pageYOffset;
+  
+  parallaxElements.forEach(element => {
+    const rect = element.getBoundingClientRect();
+    const speed = element.dataset.parallaxSpeed || ANIMATION_SETTINGS.parallaxIntensity;
+    
+    if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
+      const yPos = -(scrollY * speed);
+      element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    }
+  });
+}
 
 // Nyelvváltás animáció kezelése
 export function playLanguageTransition(newLang) {
@@ -35,19 +52,28 @@ export function setupRevealObserver() {
   revealObserver = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('reveal');
-        
-        // Ha ez egy section-title, akkor typewriter animációt is indítunk
-        if (entry.target.classList.contains('section-title')) {
-          setupTypewriterEffect(entry.target);
-        }
+        // Fokozatos animáció indítás stagger effekttel
+        setTimeout(() => {
+          entry.target.classList.add('reveal');
+          
+          // Speciális effektek különböző elemtípusokhoz
+          if (entry.target.classList.contains('section-title')) {
+            setupTypewriterEffect(entry.target);
+          }
+          
+          if (entry.target.classList.contains('service-card') || 
+              entry.target.classList.contains('project-card')) {
+            // Kártyák esetén további micro-interakciók
+            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+          }
+        }, Math.random() * 200); // Véletlenszerű késleltetés dinamikus hatáshoz
         
         obs.unobserve(entry.target);
       }
     });
   }, { 
-    threshold: window.innerWidth <= 768 ? 0.05 : 0.1, // Még alacsonyabb mobil nézetben
-    rootMargin: window.innerWidth <= 768 ? '0px' : '0px 0px -20px 0px' // Nincs margin mobil nézetben
+    threshold: window.innerWidth <= 768 ? 0.05 : ANIMATION_SETTINGS.threshold,
+    rootMargin: window.innerWidth <= 768 ? '0px' : '0px 0px -50px 0px'
   });
 
   // Minden animálandó elem megfigyelése
@@ -92,6 +118,7 @@ export function setupHeroAnimations() {
   const heroImage = heroSection.querySelector('.home-image');
   const heroSocials = heroSection.querySelector('.hero-socials');
   const socialLinks = heroSection.querySelectorAll('.hero-socials a');
+  const techSkills = heroSection.querySelector('.hero-tech-skills');
 
   // Ha a hero title még nincs span-ekre bontva, akkor felbontjuk
   const heroTitle = heroSection.querySelector('.hero-title');
@@ -137,8 +164,15 @@ export function setupHeroAnimations() {
       });
     }
 
+    // Tech skills ikonok animációja
+    if (techSkills) {
+      techSkills.style.transitionDelay = `${ANIMATION_SETTINGS.baseDelay + ((titleSpans.length + buttons.length + socialLinks.length + 3) * ANIMATION_SETTINGS.staggerDelay)}s`;
+      techSkills.classList.add('reveal');
+    }
+
     // Késleltetések visszaállítása az animáció után
-    const totalDelay = ANIMATION_SETTINGS.baseDelay + ((titleSpans.length + buttons.length + socialLinks.length + 3) * ANIMATION_SETTINGS.staggerDelay);
+    const techSkillsDelay = techSkills ? 1 : 0;
+    const totalDelay = ANIMATION_SETTINGS.baseDelay + ((titleSpans.length + buttons.length + socialLinks.length + 3 + techSkillsDelay) * ANIMATION_SETTINGS.staggerDelay);
     setTimeout(() => {
       heroSection.querySelectorAll('[style*="transition-delay"]').forEach(el => {
         el.style.transitionDelay = '0s';
@@ -287,7 +321,7 @@ function setupSectionAnimations() {
 
 // Minden animáció inicializálása - elem-alapú rendszer
 export function initializeAllAnimations() {
-  console.log('Initializing all animations with element-based system...');
+  console.log('Initializing enhanced animations with parallax and smooth effects...');
   
   // Reset any existing animations
   document.querySelectorAll('.typewriter-active, .typewriter-done').forEach(el => {
@@ -303,10 +337,31 @@ export function initializeAllAnimations() {
     void el.offsetHeight;
   });
   
+  // Parallax elemek inicializálása
+  initParallaxElements();
+  
   // Elem-alapú animációs rendszer
   setupRevealObserver();
   setupHeroAnimations();
   initSkillBars();
+}
+
+// Parallax elemek beállítása
+function initParallaxElements() {
+  // Az about-img eltávolítva a parallax listából
+  parallaxElements = Array.from(document.querySelectorAll('.hero-section .vanta-triangle-mask'));
+  
+  // Parallax scroll listener hozzáadása
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        handleParallaxScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 }
 
 // Reset animációk
