@@ -43,29 +43,6 @@
       "btnPrimary": "Discover my journey",
       "btnSecondary": "Download CV"
     },
-    "skills": {
-      "items": {
-        "html": "HTML",
-        "css": "CSS",
-        "javascript": "JavaScript",
-        "react": "React",
-        "laravel": "Laravel",
-        "firebase": "Firebase",
-        "tailwind": "Tailwind CSS",
-        "bootstrap": "Bootstrap",
-        "uiux": "UI/UX Design",
-        "animations": "Animations",
-        "responsive": "Responsive Design",
-        "visual": "Visual Composition",
-        "php": "PHP",
-        "nodejs": "Node.js",
-        "database": "Database Basics",
-        "git": "Git",
-        "github": "GitHub",
-        "vscode": "VS Code",
-        "netlify": "Netlify"
-      }
-    },
     "timeline": {
       "heading": "My Professional Development Steps",
       "2023": {
@@ -130,6 +107,27 @@
       "design": {
         "heading": "Design Skills",
         "desc": "User experience and visual design"
+      },
+      "items": {
+        "html": "HTML",
+        "css": "CSS",
+        "javascript": "JavaScript",
+        "react": "React",
+        "laravel": "Laravel",
+        "firebase": "Firebase",
+        "tailwind": "Tailwind CSS",
+        "bootstrap": "Bootstrap",
+        "uiux": "UI/UX Design",
+        "animations": "Animations",
+        "responsive": "Responsive Design",
+        "visual": "Visual Composition",
+        "php": "PHP",
+        "nodejs": "Node.js",
+        "database": "Database Basics",
+        "git": "Git",
+        "github": "GitHub",
+        "vscode": "VS Code",
+        "netlify": "Netlify"
       }
     },
     "learningProjects": {

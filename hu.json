@@ -44,6 +44,27 @@
       "btnSecondary": "Önéletrajz letöltése"
     },
     "skills": {
+      "heading": "Kompetenciák és technológiák",
+      "frontend": {
+        "heading": "Frontend Technológiák",
+        "desc": "Modern webes technológiák és eszközök"
+      },
+      "backend": {
+        "heading": "Backend Ismeretek",
+        "desc": "Alapszintű Laravel és PHP ismeretek"
+      },
+      "tools": {
+        "heading": "Keretrendszerek és eszközök",
+        "desc": "Fejlesztői eszközök és keretrendszerek"
+      },
+      "css": {
+        "heading": "CSS Keretrendszerek",
+        "desc": "Modern CSS megoldások és keretrendszerek"
+      },
+      "design": {
+        "heading": "Design készségek",
+        "desc": "Felhasználói élmény és vizuális tervezés"
+      },
       "items": {
         "html": "HTML",
         "css": "CSS",
@@ -107,29 +128,6 @@
       "react": {
         "title": "4. React & Modern Development (2025-ben kezdve)",
         "desc": "2025-ben megkezdett React tanulás a Scrimba kurzus keretében. Funkcionális komponensek alapjai, hooks bevezetése (useState, useEffect) – frissen kezdett tanulási terület.<br><strong>Tervezett projektek:</strong> Todo App, blog alkalmazás, interaktív komponensek."
-      }
-    },
-    "skills": {
-      "heading": "Kompetenciák és technológiák",
-      "frontend": {
-        "heading": "Frontend Technológiák",
-        "desc": "Modern webes technológiák és eszközök"
-      },
-      "backend": {
-        "heading": "Backend Ismeretek",
-        "desc": "Alapszintű Laravel és PHP ismeretek"
-      },
-      "tools": {
-        "heading": "Keretrendszerek és eszközök",
-        "desc": "Fejlesztői eszközök és keretrendszerek"
-      },
-      "css": {
-        "heading": "CSS Keretrendszerek",
-        "desc": "Modern CSS megoldások és keretrendszerek"
-      },
-      "design": {
-        "heading": "Design készségek",
-        "desc": "Felhasználói élmény és vizuális tervezés"
       }
     },
     "learningProjects": {

@@ -44,6 +44,27 @@
       "btnSecondary": "Lebenslauf"
     },
     "skills": {
+      "heading": "Fähigkeiten und Technologien",
+      "frontend": {
+        "heading": "Frontend-Technologien",
+        "desc": "Moderne Webtechnologien und Tools"
+      },
+      "backend": {
+        "heading": "Backend-Kenntnisse",
+        "desc": "Grundlegende Laravel- und PHP-Kenntnisse"
+      },
+      "tools": {
+        "heading": "Frameworks und Tools",
+        "desc": "Entwicklungswerkzeuge und Frameworks"
+      },
+      "css": {
+        "heading": "CSS-Frameworks",
+        "desc": "Moderne CSS-Lösungen und Frameworks"
+      },
+      "design": {
+        "heading": "Design-Fähigkeiten",
+        "desc": "Benutzererfahrung und visuelles Design"
+      },
       "items": {
         "html": "HTML",
         "css": "CSS",
@@ -112,29 +133,6 @@
       "react": {
         "title": "4. React & Modern Development (2025 begonnen)",
         "desc": "React-Lernen begann 2025 durch den Scrimba-Kurs. Grundlagen funktionaler Komponenten, Einführung in Hooks (useState, useEffect) – frisch begonnener Lernbereich.<br><strong>Geplante Projekte:</strong> Todo App, Blog-Anwendung, interaktive Komponenten."
-      }
-    },
-    "skills": {
-      "heading": "Fähigkeiten und Technologien",
-      "frontend": {
-        "heading": "Frontend-Technologien",
-        "desc": "Moderne Webtechnologien und Tools"
-      },
-      "backend": {
-        "heading": "Backend-Kenntnisse",
-        "desc": "Grundlegende Laravel- und PHP-Kenntnisse"
-      },
-      "tools": {
-        "heading": "Frameworks und Tools",
-        "desc": "Entwicklungswerkzeuge und Frameworks"
-      },
-      "css": {
-        "heading": "CSS-Frameworks",
-        "desc": "Moderne CSS-Lösungen und Frameworks"
-      },
-      "design": {
-        "heading": "Design-Fähigkeiten",
-        "desc": "Benutzererfahrung und visuelles Design"
       }
     },
     "learningProjects": {
