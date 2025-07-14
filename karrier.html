@@ -28,6 +28,50 @@
   <title data-i18n="meta.title"></title>
   <meta name="description" content="Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése." data-i18n="meta.description" />
 
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Mark Gor">
+  <meta name="keywords" content="frontend fejlesztő, karrier, önéletrajz, HTML, CSS, JavaScript, React, junior fejlesztő, portfolio">
+  <link rel="canonical" href="https://markgor.dev/karrier.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://markgor.dev/karrier.html">
+  <meta property="og:title" content="Mark Gor | Frontend Fejlesztő Karrier">
+  <meta property="og:description" content="Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése.">
+  <meta property="og:image" content="https://markgor.dev/imgs/Logo.png">
+  <meta property="og:locale" content="hu_HU">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://markgor.dev/karrier.html">
+  <meta property="twitter:title" content="Mark Gor | Frontend Fejlesztő Karrier">
+  <meta property="twitter:description" content="Mark Gor frontend fejlesztő szakmai útja, eddig elért mérföldkövek és önéletrajz letöltése.">
+  <meta property="twitter:image" content="https://markgor.dev/imgs/Logo.png">
+
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mark Gor",
+    "jobTitle": "Frontend Fejlesztő",
+    "description": "Junior frontend fejlesztő autodidakta tanulással és 2+ év tapasztalattal",
+    "url": "https://markgor.dev/karrier.html",
+    "sameAs": [
+      "https://github.com/TheOfficialRaven",
+      "https://www.linkedin.com/in/markgor"
+    ],
+    "knowsAbout": ["HTML", "CSS", "JavaScript", "React", "Bootstrap", "Web Development"],
+    "image": "https://markgor.dev/imgs/Logo.png",
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Frontend Fejlesztő",
+      "description": "Webes alkalmazások fejlesztése"
+    }
+  }
+  </script>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome -->
@@ -37,11 +81,20 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css" />
   
+  <!-- Preload kritikus erőforrások -->
+  <link rel="preload" href="imgs/Logo.png" as="image" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+  <link rel="dns-prefetch" href="//unpkg.com" />
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  
   <!-- Vanta.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
 <body data-theme="dark">
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Ugrás a fő tartalomhoz</a>
+
   <!-- Progress Bar -->
   <div class="progress-bar" id="progressBar"></div>
 
@@ -58,11 +111,11 @@
       </div>
       
       <nav class="navbar">
-        <a href="#career-about" class="nav-main nav-secondary" data-translate="nav.about">Bemutatkozás</a>
-        <a href="#career-timeline" class="nav-main nav-secondary" data-translate="nav.timeline">Szakmai út</a>
-        <a href="#projects" class="nav-main nav-secondary" data-translate="nav.projects">Projektek</a>
-        <a href="#career-skills" class="nav-main nav-secondary" data-translate="nav.skills">Kompetenciák</a>
-        <a href="#career-contact" class="nav-main nav-secondary" data-translate="nav.contact">Kapcsolat</a>
+        <a href="#career-about" class="nav-main nav-secondary" data-translate="nav.about" aria-label="Bemutatkozás">Bemutatkozás</a>
+        <a href="#career-timeline" class="nav-main nav-secondary" data-translate="nav.timeline" aria-label="Szakmai út">Szakmai út</a>
+        <a href="#projects" class="nav-main nav-secondary" data-translate="nav.projects" aria-label="Projektek">Projektek</a>
+        <a href="#career-skills" class="nav-main nav-secondary" data-translate="nav.skills" aria-label="Kompetenciák">Kompetenciák</a>
+        <a href="#career-contact" class="nav-main nav-secondary" data-translate="nav.contact" aria-label="Kapcsolat">Kapcsolat</a>
       </nav>
       <div class="header-right">
         <!-- Theme Toggle -->
@@ -82,7 +135,7 @@
           <button class="lang-btn" data-lang="de">DE</button>
         </div>
         <!-- Hamburger Menu -->
-        <button class="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
           <span></span>
           <span></span>
           <span></span>
@@ -91,23 +144,23 @@
     </div>
     
     <!-- Mobile Navigation -->
-    <nav class="mobile-nav">
+    <nav class="mobile-nav" id="mobileNav">
       <div class="mobile-page-switcher">
-        <a href="index.html" class="mobile-page-link" data-translate="nav.home">Főoldal</a>
-        <a href="karrier.html" class="mobile-page-link active" data-translate="nav.career">Karrier</a>
+        <a href="index.html" class="mobile-page-link" data-translate="nav.home" tabindex="0">Főoldal</a>
+        <a href="karrier.html" class="mobile-page-link active" data-translate="nav.career" tabindex="0" aria-current="page">Karrier</a>
       </div>
       <div class="mobile-nav-separator"></div>
-      <a href="#career-about" class="nav-secondary" data-translate="nav.about">Bemutatkozás</a>
-      <a href="#career-timeline" class="nav-secondary" data-translate="nav.timeline">Szakmai út</a>
-      <a href="#career-courses" class="nav-secondary" data-translate="nav.courses">Képzések</a>
-      <a href="#learning-projects" class="nav-secondary" data-translate="nav.learningProjects">Tanulási projektek</a>
-      <a href="#projects" class="nav-secondary" data-translate="nav.projects">Projektek</a>
-      <a href="#career-skills" class="nav-secondary" data-translate="nav.skills">Kompetenciák</a>
-      <a href="#career-contact" class="nav-secondary" data-translate="nav.contact">Kapcsolat</a>
+      <a href="#career-about" class="nav-secondary" data-translate="nav.about" tabindex="0">Bemutatkozás</a>
+      <a href="#career-timeline" class="nav-secondary" data-translate="nav.timeline" tabindex="0">Szakmai út</a>
+      <a href="#career-courses" class="nav-secondary" data-translate="nav.courses" tabindex="0">Képzések</a>
+      <a href="#learning-projects" class="nav-secondary" data-translate="nav.learningProjects" tabindex="0">Tanulási projektek</a>
+      <a href="#projects" class="nav-secondary" data-translate="nav.projects" tabindex="0">Projektek</a>
+      <a href="#career-skills" class="nav-secondary" data-translate="nav.skills" tabindex="0">Kompetenciák</a>
+      <a href="#career-contact" class="nav-secondary" data-translate="nav.contact" tabindex="0">Kapcsolat</a>
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Karrier Hero Section -->
     <section id="hero" class="hero-section">
       <!-- Vanta.js Background -->
@@ -166,7 +219,9 @@
             src="imgs/dark.png"
             data-image-dark="imgs/dark.png"
             data-image-light="imgs/light.png"
-            alt="Karrier kép" />
+            alt="Karrier hero kép"
+            loading="lazy"
+          />
         </div>
       </div>
       <div class="scroll-indicator"><a href="#career-about">⌄</a></div>
@@ -194,6 +249,37 @@
           <h2 class="section-title" data-i18n="career_about.heading"></h2>
           <p data-i18n="career_about.description"></p>
           <a href="#career-timeline" class="about-cta btn neon-hover primary-btn" data-i18n="career_about.cta"></a>
+          
+          <!-- Tech Skills Icons - Mobile Only -->
+          <div class="hero-tech-skills">
+            <div class="tech-skills-title" data-i18n="hero.techSkills">Technológiák, amelyekkel dolgozom:</div>
+            <div class="tech-icons">
+              <div class="tech-icon" data-tooltip="HTML5">
+                <i class="fab fa-html5"></i>
+              </div>
+              <div class="tech-icon" data-tooltip="CSS3">
+                <i class="fab fa-css3-alt"></i>
+              </div>
+              <div class="tech-icon" data-tooltip="JavaScript">
+                <i class="fab fa-js-square"></i>
+              </div>
+              <div class="tech-icon" data-tooltip="React">
+                <i class="fab fa-react"></i>
+              </div>
+              <div class="tech-icon" data-tooltip="Node.js">
+                <i class="fab fa-node-js"></i>
+              </div>
+              <div class="tech-icon" data-tooltip="Git">
+                <i class="fab fa-git-alt"></i>
+              </div>
+              <div class="tech-icon" data-tooltip="GitHub">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="tech-icon" data-tooltip="Figma">
+                <i class="fab fa-figma"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -301,7 +387,7 @@
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">HTML</span>
+                <span class="skill-name" data-i18n="career.skills.items.html">HTML</span>
                 <span class="skill-percentage">95%</span>
               </div>
               <div class="skill-bar">
@@ -310,7 +396,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">CSS</span>
+                <span class="skill-name" data-i18n="career.skills.items.css">CSS</span>
                 <span class="skill-percentage">90%</span>
               </div>
               <div class="skill-bar">
@@ -319,7 +405,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">JavaScript</span>
+                <span class="skill-name" data-i18n="career.skills.items.javascript">JavaScript</span>
                 <span class="skill-percentage">85%</span>
               </div>
               <div class="skill-bar">
@@ -335,7 +421,7 @@
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">React</span>
+                <span class="skill-name" data-i18n="career.skills.items.react">React</span>
                 <span class="skill-percentage">15%</span>
               </div>
               <div class="skill-bar">
@@ -344,7 +430,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Laravel</span>
+                <span class="skill-name" data-i18n="career.skills.items.laravel">Laravel</span>
                 <span class="skill-percentage">45%</span>
               </div>
               <div class="skill-bar">
@@ -353,7 +439,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Firebase</span>
+                <span class="skill-name" data-i18n="career.skills.items.firebase">Firebase</span>
                 <span class="skill-percentage">55%</span>
               </div>
               <div class="skill-bar">
@@ -362,7 +448,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">GitHub</span>
+                <span class="skill-name" data-i18n="career.skills.items.github">GitHub</span>
                 <span class="skill-percentage">70%</span>
               </div>
               <div class="skill-bar">
@@ -378,7 +464,7 @@
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Tailwind CSS</span>
+                <span class="skill-name" data-i18n="career.skills.items.tailwind">Tailwind CSS</span>
                 <span class="skill-percentage">50%</span>
               </div>
               <div class="skill-bar">
@@ -387,7 +473,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Bootstrap</span>
+                <span class="skill-name" data-i18n="career.skills.items.bootstrap">Bootstrap</span>
                 <span class="skill-percentage">85%</span>
               </div>
               <div class="skill-bar">
@@ -403,7 +489,7 @@
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">UI/UX Design</span>
+                <span class="skill-name" data-i18n="career.skills.items.uiux">UI/UX Design</span>
                 <span class="skill-percentage">90%</span>
               </div>
               <div class="skill-bar">
@@ -412,7 +498,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Animációk</span>
+                <span class="skill-name" data-i18n="career.skills.items.animations">Animációk</span>
                 <span class="skill-percentage">95%</span>
               </div>
               <div class="skill-bar">
@@ -421,7 +507,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Reszponzív Design</span>
+                <span class="skill-name" data-i18n="career.skills.items.responsive">Reszponzív Design</span>
                 <span class="skill-percentage">95%</span>
               </div>
               <div class="skill-bar">
@@ -430,7 +516,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Vizuális Kompozíció</span>
+                <span class="skill-name" data-i18n="career.skills.items.visual">Vizuális Kompozíció</span>
                 <span class="skill-percentage">85%</span>
               </div>
               <div class="skill-bar">
@@ -446,7 +532,7 @@
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">PHP</span>
+                <span class="skill-name" data-i18n="career.skills.items.php">PHP</span>
                 <span class="skill-percentage">40%</span>
               </div>
               <div class="skill-bar">
@@ -455,7 +541,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Node.js</span>
+                <span class="skill-name" data-i18n="career.skills.items.nodejs">Node.js</span>
                 <span class="skill-percentage">25%</span>
               </div>
               <div class="skill-bar">
@@ -464,7 +550,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Adatbázis alapok</span>
+                <span class="skill-name" data-i18n="career.skills.items.database">Adatbázis alapok</span>
                 <span class="skill-percentage">35%</span>
               </div>
               <div class="skill-bar">
@@ -480,7 +566,7 @@
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Git</span>
+                <span class="skill-name" data-i18n="career.skills.items.git">Git</span>
                 <span class="skill-percentage">75%</span>
               </div>
               <div class="skill-bar">
@@ -489,7 +575,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">VS Code</span>
+                <span class="skill-name" data-i18n="career.skills.items.vscode">VS Code</span>
                 <span class="skill-percentage">90%</span>
               </div>
               <div class="skill-bar">
@@ -498,7 +584,7 @@
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Netlify</span>
+                <span class="skill-name" data-i18n="career.skills.items.netlify">Netlify</span>
                 <span class="skill-percentage">80%</span>
               </div>
               <div class="skill-bar">
@@ -574,7 +660,7 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
-      <p>&copy; <span id="year"></span> Mark Gor. Minden jog fenntartva.</p>
+      <p><span id="year"></span> <span data-i18n="footer.copyright"></span></p>
       <div class="footer-socials">
         <a href="https://github.com/TheOfficialRaven" target="_blank" aria-label="GitHub">
           <i class="fab fa-github"></i>

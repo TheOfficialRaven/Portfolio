@@ -43,6 +43,29 @@
       "btnPrimary": "Discover my journey",
       "btnSecondary": "Download CV"
     },
+    "skills": {
+      "items": {
+        "html": "HTML",
+        "css": "CSS",
+        "javascript": "JavaScript",
+        "react": "React",
+        "laravel": "Laravel",
+        "firebase": "Firebase",
+        "tailwind": "Tailwind CSS",
+        "bootstrap": "Bootstrap",
+        "uiux": "UI/UX Design",
+        "animations": "Animations",
+        "responsive": "Responsive Design",
+        "visual": "Visual Composition",
+        "php": "PHP",
+        "nodejs": "Node.js",
+        "database": "Database Basics",
+        "git": "Git",
+        "github": "GitHub",
+        "vscode": "VS Code",
+        "netlify": "Netlify"
+      }
+    },
     "timeline": {
       "heading": "My Professional Development Steps",
       "2023": {
@@ -190,5 +213,8 @@
       "title": "Delivery",
       "desc": "I make the final touches and support you in usage, and if needed, in further developments."
     }
+  },
+  "footer": {
+    "copyright": "© Mark Gor. All rights reserved."
   }
 } 

@@ -321,7 +321,6 @@ function setupSectionAnimations() {
 
 // Minden animáció inicializálása - elem-alapú rendszer
 export function initializeAllAnimations() {
-  console.log('Initializing enhanced animations with parallax and smooth effects...');
   
   // Reset any existing animations
   document.querySelectorAll('.typewriter-active, .typewriter-done').forEach(el => {
@@ -342,7 +341,10 @@ export function initializeAllAnimations() {
   
   // Elem-alapú animációs rendszer
   setupRevealObserver();
-  setupHeroAnimations();
+  // Hero animációk késleltetett indítása a DOM teljes betöltése után
+  setTimeout(() => {
+    setupHeroAnimations();
+  }, 100);
   initSkillBars();
 }
 

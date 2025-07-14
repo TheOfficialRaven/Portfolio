@@ -318,10 +318,8 @@ export function initNavigation() {
     // Setup close on click outside
     setupCloseOnClickOutside();
     
-    // Update active menu item initially - TÖBBSZÖRÖS HÍVÁS
+    // Update active menu item initially
     setTimeout(() => updateActiveMenuItem(), 100);
-    setTimeout(() => updateActiveMenuItem(), 500);
-    setTimeout(() => updateActiveMenuItem(), 1000);
     
     // Setup scroll-based section highlighting
     setupSectionHighlighting();
@@ -334,7 +332,6 @@ export function initNavigation() {
     // Update active menu item on page load (delayed to ensure DOM is ready)
     window.addEventListener('load', () => {
       setTimeout(updateActiveMenuItem, 200);
-      setTimeout(updateActiveMenuItem, 500);
     });
     
     // Update on scroll (throttled for performance)

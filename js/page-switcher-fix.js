@@ -38,16 +38,6 @@
       document.querySelector('#hero .hero-title') !== null
     );
     
-    console.log('🔍 Page Detection:', {
-      url,
-      pathname,
-      title,
-      isKarrier,
-      isIndex,
-      hasCareerElements: document.querySelector('#career-about') !== null,
-      hasIndexElements: document.querySelector('#hero .hero-title') !== null
-    });
-    
     return { isKarrier, isIndex };
   }
   
@@ -61,8 +51,6 @@
     
     // Mobile page switcher
     const mobileLinks = document.querySelectorAll('.mobile-page-link');
-    
-    console.log('🔄 Updating page switcher...', { isKarrier, isIndex });
     
     // Tisztítjuk az aktív osztályokat
     desktopLinks.forEach(link => link.classList.remove('active'));
@@ -80,7 +68,6 @@
         const text = link.textContent.toLowerCase();
         if (href === 'karrier.html' || text.includes('karrier') || text.includes('career')) {
           link.classList.add('active');
-          console.log('✅ Desktop karrier link activated');
         }
       });
       
@@ -89,13 +76,11 @@
         const text = link.textContent.toLowerCase();
         if (href === 'karrier.html' || text.includes('karrier') || text.includes('career')) {
           link.classList.add('active');
-          console.log('✅ Mobile karrier link activated');
         }
       });
       
       if (pageSwitcher) {
         pageSwitcher.classList.add('karrier');
-        console.log('✅ Karrier class added to page switcher');
       }
       
     } else if (isIndex) {
@@ -105,7 +90,6 @@
         const text = link.textContent.toLowerCase();
         if (href === 'index.html' || href === '/' || text.includes('főoldal') || text.includes('home') || text.includes('startseite')) {
           link.classList.add('active');
-          console.log('✅ Desktop index link activated');
         }
       });
       
@@ -114,7 +98,6 @@
         const text = link.textContent.toLowerCase();
         if (href === 'index.html' || href === '/' || text.includes('főoldal') || text.includes('home') || text.includes('startseite')) {
           link.classList.add('active');
-          console.log('✅ Mobile index link activated');
         }
       });
     }
@@ -166,7 +149,6 @@
       }
     `;
     document.head.appendChild(style);
-    console.log('✅ Backup CSS added');
   }
   
   // Inicializálás
@@ -201,8 +183,6 @@
         setTimeout(updatePageSwitcher, 100);
       }
     });
-    
-    console.log('🚀 Page Switcher Fix initialized');
   }
   
   // Indítás

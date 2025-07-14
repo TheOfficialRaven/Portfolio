@@ -125,12 +125,9 @@ function openModal(project) {
 
 // Projektek megjelenítése
 function renderProjects() {
-  console.log('renderProjects called');
   const container = document.getElementById('project-container');
-  console.log('container:', container);
   
   if (!container) {
-    console.log('Project container not found!');
     return;
   }
 
@@ -144,7 +141,6 @@ function renderProjects() {
     const description = project.description[currentLang] || project.description.hu;
     const origin = project.origin[currentLang] || project.origin.hu;
     
-    console.log('Creating project card:', title);
     const projectCard = document.createElement('div');
     projectCard.className = 'project-card';
     projectCard.setAttribute('data-project-id', index);
@@ -174,7 +170,6 @@ function renderProjects() {
     });
 
     container.appendChild(projectCard);
-    console.log('Project card added:', project.title);
 
     // Azonnal hozzáadjuk a show osztályt egy kis késleltetéssel
     setTimeout(() => {
@@ -190,7 +185,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
   
   // Újra meghívjuk a renderProjects-et, ha a hash változik
-  window.addEventListener('hashchange', renderProjects);
+  // Eltávolítva:
+  // window.addEventListener('hashchange', renderProjects);
 });
 
 // Exportálás

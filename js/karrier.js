@@ -86,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
     resetAnimations();
   }
 
+  // Hero animációk beállítása késleltetéssel
+  setTimeout(() => {
+    setupHeroAnimations();
+  }, 100);
+
 
 
   /* ===== 3) Scroll Progress Bar ===== */

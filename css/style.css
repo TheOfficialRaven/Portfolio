@@ -27,6 +27,25 @@
   --success-color: #00c851;
 }
 
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--main-color);
+  color: var(--bg-color);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  font-weight: 600;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
 [data-theme="light"] {
   --bg-color: #ffffff;
   --text-color: #1a1a1a;
@@ -1307,14 +1326,17 @@ body.menu-open.active::before {
   display: flex;
   justify-content: center;
   opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
   transform: scale(0.9) translateY(20px);
   transition: opacity var(--anim-duration) var(--anim-ease),
-              transform var(--anim-duration) var(--anim-ease);
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
 }
 
 .home-image.reveal {
   opacity: 1;
   transform: scale(1) translateY(0);
+  visibility: visible;
 }
 
 .home-image img {
@@ -1353,14 +1375,17 @@ body.menu-open.active::before {
 .hero-title span {
   display: inline-block;
   opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
   transform: translateY(20px);
   transition: opacity var(--anim-duration) var(--anim-ease),
-              transform var(--anim-duration) var(--anim-ease);
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
 }
 
 .hero-title span.reveal {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .hero-buttons {
@@ -1375,8 +1400,12 @@ body.menu-open.active::before {
   text-decoration: none;
   display: inline-block;
   opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
   transform: translateY(20px);
-  transition: var(--hover-transition);
+  transition: var(--hover-transition),
+              opacity var(--anim-duration) var(--anim-ease),
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
   will-change: transform, opacity;
 }
 
@@ -1388,6 +1417,7 @@ body.menu-open.active::before {
 .hero-buttons a.reveal {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .hero-buttons .btn {
@@ -1442,16 +1472,19 @@ body.menu-open.active::before {
   color: var(--text-color);
   display: inline-block;
   opacity: 0;
+  visibility: hidden; /* Alapból rejtve */
   font-size: 1.2rem;
   margin-bottom: 2rem;
   transform: translateY(20px);
   transition: opacity var(--anim-duration) var(--anim-ease),
-              transform var(--anim-duration) var(--anim-ease);
+              transform var(--anim-duration) var(--anim-ease),
+              visibility var(--anim-duration) var(--anim-ease);
 }
 
 .hero-subtitle.reveal {
   opacity: 1;
   transform: translateY(0);
+  visibility: visible;
 }
 
 .scroll-indicator a {
@@ -3065,18 +3098,19 @@ section::before {
   
   .career-timeline-steps {
     margin-top: 2rem;
-    gap: 1.5rem;
+    gap: 2rem;
   }
   
   .career-step {
     width: 100%;
     margin: 0 !important;
-    padding: 1.5rem;
+    padding: 2rem;
     border-left: 4px solid var(--main-color);
     background: var(--accent-color);
     position: relative;
     transform: translateY(0) !important;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 0 8px 8px 0;
   }
   
   .career-step:nth-child(even) {
@@ -3094,11 +3128,11 @@ section::before {
   
   .career-step-icon {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 0.9rem;
+    top: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1rem;
     background: var(--main-color);
     color: var(--bg-color);
     border-radius: 0.5rem;
@@ -3110,19 +3144,23 @@ section::before {
   }
   
   .career-step-content {
-    padding-right: 4rem;
+    padding-right: 5rem;
   }
   
   .career-step-content h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.3;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--main-color);
   }
   
   .career-step-content p {
-    font-size: 1rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    line-height: 1.6;
     opacity: 0.9;
+    word-wrap: break-word;
+    hyphens: auto;
   }
   
   .career-step:hover {
@@ -3134,6 +3172,38 @@ section::before {
   .career-step:hover .career-step-icon {
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 201, 167, 0.4);
+  }
+}
+
+@media (max-width: 480px) {
+  .career-timeline-steps {
+    gap: 1.5rem;
+  }
+  
+  .career-step {
+    padding: 1.5rem;
+  }
+  
+  .career-step-icon {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .career-step-content {
+    padding-right: 4rem;
+  }
+  
+  .career-step-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .career-step-content p {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
 
@@ -4251,11 +4321,10 @@ section.reveal {
   
   .hero-container:has(.hero-socials) .hero-buttons {
     gap: 1rem;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
   
   .hero-container:has(.hero-socials) .hero-buttons .btn {
-    flex: 1;
     min-width: 0;
     padding: 1rem 1.5rem;
     font-size: 0.95rem;
@@ -4275,6 +4344,13 @@ section.reveal {
   transition: opacity var(--anim-duration) var(--anim-ease),
               transform var(--anim-duration) var(--anim-ease),
               visibility var(--anim-duration) var(--anim-ease);
+}
+
+/* Desktop: about szekciós tech skills elrejtése */
+@media (min-width: 769px) {
+  .about-content .hero-tech-skills {
+    display: none !important;
+  }
 }
 
 .hero-tech-skills.reveal {
@@ -4386,41 +4462,55 @@ section.reveal {
 
 /* Responsive design */
 @media (max-width: 768px) {
+  /* MOBIL MEGOLDÁS: Hero tech skills elrejtése */
   .hero-tech-skills {
-    margin-top: 2.5rem;
+    display: none !important;
   }
   
-  .tech-skills-title {
+  /* MOBIL MEGOLDÁS: Tech skills az about szekcióban */
+  .about-content .hero-tech-skills {
+    display: block !important;
+    margin-top: 2rem;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .about-content .tech-skills-title {
     font-size: 0.9rem;
     text-align: center;
     margin-bottom: 1.2rem;
+    color: var(--text-color);
   }
   
-  .tech-icons {
+  .about-content .tech-icons {
     justify-content: center;
     gap: 1rem;
+    max-width: 280px;
+    margin: 0 auto;
   }
   
-  .tech-icon {
-    width: 42px;
-    height: 42px;
+  .about-content .tech-icon {
+    width: 38px;
+    height: 38px;
   }
   
-  .tech-icon i {
-    font-size: 1.6rem;
+  .about-content .tech-icon i {
+    font-size: 1.4rem;
   }
   
-  .tech-icon::before {
-    bottom: -32px;
+  .about-content .tech-icon::before {
+    bottom: -30px;
     font-size: 0.7rem;
   }
   
-  .tech-icon::after {
-    bottom: -22px;
+  .about-content .tech-icon::after {
+    bottom: -20px;
   }
 }
 
 @media (max-width: 480px) {
+  /* Kis mobil képernyők - Hero tech skills */
   .tech-icons {
     gap: 0.8rem;
   }
@@ -4432,6 +4522,121 @@ section.reveal {
   
   .tech-icon i {
     font-size: 1.4rem;
+  }
+  
+  /* Kis mobil képernyők - About szekciós tech skills */
+  .about-content .tech-icons {
+    gap: 0.8rem;
+    max-width: 240px;
+  }
+  
+  .about-content .tech-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .about-content .tech-icon i {
+    font-size: 1.2rem;
+  }
+  
+  .about-content .tech-skills-title {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-timeline-section {
+    padding: 2rem 0.5rem;
+  }
+  .career-timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  .career-step {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: var(--bg-color, #181818);
+    border-radius: 1.2rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    position: relative;
+    border-left: none;
+    border-top: 4px solid var(--main-color, #00c9a7);
+    transition: box-shadow 0.2s;
+  }
+  .career-step-icon {
+    position: static;
+    margin-bottom: 1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 1.1rem;
+    background: var(--main-color, #00c9a7);
+    color: var(--bg-color, #181818);
+    border-radius: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 201, 167, 0.18);
+  }
+  .career-step-content {
+    padding: 0;
+  }
+  .career-step-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+    color: var(--main-color, #00c9a7);
+    font-weight: 700;
+  }
+  .career-step-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-color, #eaeaea);
+    opacity: 0.95;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .career-timeline-steps {
+    gap: 1.5rem;
+  }
+  .career-step {
+    padding: 1.5rem;
+  }
+  .career-step-icon {
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+  .career-step-content {
+    padding: 0;
+  }
+  .career-step-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .career-step-content p {
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-step::before,
+  .career-step::after {
+    display: none !important;
+  }
+  .career-step-icon::before {
+    display: none !important;
+  }
+  .career-step {
+    background: var(--accent-color) !important;
   }
 }
 

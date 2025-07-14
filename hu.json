@@ -43,6 +43,29 @@
       "btnPrimary": "Ismerd meg az utamat",
       "btnSecondary": "Önéletrajz letöltése"
     },
+    "skills": {
+      "items": {
+        "html": "HTML",
+        "css": "CSS",
+        "javascript": "JavaScript",
+        "react": "React",
+        "laravel": "Laravel",
+        "firebase": "Firebase",
+        "tailwind": "Tailwind CSS",
+        "bootstrap": "Bootstrap",
+        "uiux": "UI/UX Design",
+        "animations": "Animációk",
+        "responsive": "Reszponzív Design",
+        "visual": "Vizuális Kompozíció",
+        "php": "PHP",
+        "nodejs": "Node.js",
+        "database": "Adatbázis alapok",
+        "git": "Git",
+        "github": "GitHub",
+        "vscode": "VS Code",
+        "netlify": "Netlify"
+      }
+    },
     "timeline": {
       "heading": "Szakmai fejlődésem lépései",
       "2023": {
@@ -190,5 +213,8 @@
       "title": "Átadás",
       "desc": "Elvégzem az utolsó simításokat, és támogatlak a használatban, igény esetén további fejlesztésekben is."
     }
+  },
+  "footer": {
+    "copyright": "© Mark Gor. Minden jog fenntartva."
   }
 } 

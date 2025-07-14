@@ -42,8 +42,10 @@ class EmailService {
       // Automatikus válasz küldése
       await this.sendAutoReply(formData, 'main');
 
+      alert(this.getSuccessMessage(formData.language || 'hu'));
       return { success: true, response };
     } catch (error) {
+      alert(this.getErrorMessage(error, formData.language || 'hu'));
       console.error('Hiba a főoldal email küldésénél:', error);
       return { success: false, error };
     }
@@ -70,8 +72,10 @@ class EmailService {
       // Automatikus válasz küldése
       await this.sendAutoReply(formData, 'career');
 
+      alert(this.getSuccessMessage(formData.language || 'hu'));
       return { success: true, response };
     } catch (error) {
+      alert(this.getErrorMessage(error, formData.language || 'hu'));
       console.error('Hiba a karrier email küldésénél:', error);
       return { success: false, error };
     }

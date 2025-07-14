@@ -43,6 +43,29 @@
       "btnPrimary": "Entdecken Sie meinen Weg",
       "btnSecondary": "Lebenslauf"
     },
+    "skills": {
+      "items": {
+        "html": "HTML",
+        "css": "CSS",
+        "javascript": "JavaScript",
+        "react": "React",
+        "laravel": "Laravel",
+        "firebase": "Firebase",
+        "tailwind": "Tailwind CSS",
+        "bootstrap": "Bootstrap",
+        "uiux": "UI/UX Design",
+        "animations": "Animationen",
+        "responsive": "Responsives Design",
+        "visual": "Visuelle Komposition",
+        "php": "PHP",
+        "nodejs": "Node.js",
+        "database": "Datenbank-Grundlagen",
+        "git": "Git",
+        "github": "GitHub",
+        "vscode": "VS Code",
+        "netlify": "Netlify"
+      }
+    },
     "about": {
       "heading": "Über Mich",
       "description": "Ich bin ein leidenschaftlicher Webentwickler, der Herausforderungen und neue Technologien liebt. Mein Ziel ist es, meinen Kunden die bestmöglichen Lösungen zu bieten.",
@@ -195,5 +218,8 @@
       "title": "Übergabe",
       "desc": "Ich führe die letzten Feinheiten durch und unterstütze Sie bei der Nutzung und bei Bedarf bei weiteren Entwicklungen."
     }
+  },
+  "footer": {
+    "copyright": "© Mark Gor. Alle Rechte vorbehalten."
   }
 } 
