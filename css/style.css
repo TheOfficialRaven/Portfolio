@@ -1392,7 +1392,7 @@ body.menu-open.active::before {
   display: flex;
   gap: 1rem;
   justify-content: left;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   margin-top: 1.5rem;
 }
 
@@ -1421,9 +1421,9 @@ body.menu-open.active::before {
 }
 
 .hero-buttons .btn {
-  padding: 1.2rem 2.8rem;
+  padding: 1rem 2.2rem;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   border-radius: 0.8rem;
   transition: all 0.3s ease;
   text-transform: uppercase;
@@ -1503,32 +1503,36 @@ body.menu-open.active::before {
 @media (max-width: 768px) {
   .hero-section {
     min-height: 100vh;
-    padding: 8rem 1rem 4rem 1rem;
+    padding: 6rem 1rem 3rem 1rem;
   }
   .hero-container {
     flex-direction: column;
     text-align: center;
     padding: 0 1rem;
-    gap: 3rem;
+    gap: 2rem;
   }
   .hero-content {
     max-width: 100%;
   }
   .hero-title {
-    font-size: 2.8rem;
-    line-height: 1.2;
+    font-size: 2.4rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     max-width: 100%;
+    margin-bottom: 1.5rem;
   }
   .hero-buttons {
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .hero-buttons .btn {
-    padding: 1rem 2.2rem;
-    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
   }
   .home-image {
     display: none;
@@ -1590,7 +1594,36 @@ body.menu-open.active::before {
     margin-bottom: 2rem;
   }
   
-  .hero-subtitle { font-size: 1rem; }
+  /* Hero section for very small screens */
+  .hero-section {
+    padding: 5rem 0.5rem 2rem 0.5rem;
+  }
+  
+  .hero-container {
+    gap: 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.1;
+    margin-bottom: 0.8rem;
+  }
+  
+  .hero-subtitle { 
+    font-size: 0.95rem; 
+    margin-bottom: 1.2rem;
+  }
+  
+  .hero-buttons {
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+  
+  .hero-buttons .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
   .hero-buttons a { width: 100%; }
   
   /* Tightened padding for very small screens */
@@ -4549,89 +4582,7 @@ section.reveal {
   visibility: visible;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  /* MOBIL MEGOLDÁS: Hero tech skills elrejtése */
-  .hero-tech-skills {
-    display: none !important;
-  }
-  
-  /* MOBIL MEGOLDÁS: Tech skills az about szekcióban */
-  .about-content .hero-tech-skills {
-    display: block !important;
-    margin-top: 2rem;
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-  
-  .about-content .tech-skills-title {
-    font-size: 0.9rem;
-    text-align: center;
-    margin-bottom: 1.2rem;
-    color: var(--text-color);
-  }
-  
-  .about-content .tech-icons {
-    justify-content: center;
-    gap: 1rem;
-    max-width: 280px;
-    margin: 0 auto;
-  }
-  
-  .about-content .tech-icon {
-    width: 38px;
-    height: 38px;
-  }
-  
-  .about-content .tech-icon i {
-    font-size: 1.4rem;
-  }
-  
-  .about-content .tech-icon::before {
-    bottom: -30px;
-    font-size: 0.7rem;
-  }
-  
-  .about-content .tech-icon::after {
-    bottom: -20px;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Kis mobil képernyők - Hero tech skills */
-  .tech-icons {
-    gap: 0.8rem;
-  }
-  
-  .tech-icon {
-    width: 38px;
-    height: 38px;
-  }
-  
-  .tech-icon i {
-    font-size: 1.4rem;
-  }
-  
-  /* Kis mobil képernyők - About szekciós tech skills */
-  .about-content .tech-icons {
-    gap: 0.8rem;
-    max-width: 240px;
-  }
-  
-  .about-content .tech-icon {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .about-content .tech-icon i {
-    font-size: 1.2rem;
-  }
-  
-  .about-content .tech-skills-title {
-    font-size: 0.85rem;
-  }
-}
+/* Responsive design - hero-tech-skills removed from mobile */
 
 @media (max-width: 768px) {
   .career-timeline-section {
@@ -4787,7 +4738,7 @@ section.reveal {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   cursor: pointer;
-  transform: scale(0.8) translateY(20px);
+  transform: translateY(20px);
   opacity: 0;
   box-shadow: 0 0 0 rgba(0, 201, 167, 0);
 }
@@ -4879,47 +4830,56 @@ section.reveal {
 /* Tech ribbon icon reveal state */
 .tech-ribbon-icon.reveal {
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: translateY(0);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .tech-ribbon-content {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
     padding: 0 1rem;
   }
   
   .tech-ribbon-title {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
   
   .tech-ribbon-icons {
-    gap: 1rem;
+    gap: 0.6rem;
   }
   
   .tech-ribbon-icon {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 2rem;
+    height: 2rem;
   }
   
   .tech-ribbon-icon i {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
+  .tech-ribbon-content {
+    gap: 0.6rem;
+    padding: 0 0.5rem;
+  }
+  
+  .tech-ribbon-title {
+    font-size: 0.7rem;
+  }
+  
   .tech-ribbon-icons {
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
   
   .tech-ribbon-icon {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1.6rem;
+    height: 1.6rem;
   }
   
   .tech-ribbon-icon i {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
   }
 }
 
