@@ -20,62 +20,61 @@
     "contact": "Kontakt"
   },
   "hero": {
-    "title": ["Zeigen", "Sie", "sich", "nicht", "nur,", "stechen", "Sie", "im", "Online-Raum", "hervor!"],
-    "subtitle": "Individuelle, responsive Website – ein selbstbewusstes Auftreten von Anfang an, das Kunden anzieht und eine langfristig rentable Investition ist.",
-    "btnPrimary": "Meine Arbeiten",
-    "btnSecondary": "Schreiben Sie mir",
-    "techSkills": "Technologien, mit denen ich arbeite:"
+    "title": ["Website", "die", "Wert", "für", "Ihr", "Geschäft", "schafft"],
+    "subtitle": "Professionelle Website, die nicht nur gut aussieht – sie steigert Konversionen, verbessert die Benutzererfahrung und stellt eine rentable Investition dar. Mit modernen Technologien, schnellem Laden und mobilfreundlichem Design.",
+    "btnPrimary": "Meine Lösungen",
+    "btnSecondary": "Kostenlose Beratung"
   },
   "about": {
-    "heading": "Über mich",
-    "description": "Hallo! Ich freue mich, dass Sie hier sind. Als Frontend-Entwickler helfe ich dabei, aus Ihren Ideen echte, gut funktionierende und visuell saubere Websites zu schaffen.<br><br>Bei meiner Arbeit lege ich großen Wert auf Responsivität und schnelle Ladezeiten. Ich erstelle Websites, die auf jeder Bildschirmgröße eine überzeugende Erfahrung bieten.<br><br>Ich beherrsche HTML, CSS und JavaScript gut. Ich arbeite mit Bootstrap Framework und erweitere kontinuierlich mein Wissen. Derzeit lerne ich React.<br><br>Ich passe mich flexibel an die Bedürfnisse an. Bei jeder Zusammenarbeit strebe ich eine reibungslose, vertrauensbasierte Arbeitsweise an.<br><br>Wenn Sie eine Website wollen, die nicht nur gut aussieht, sondern auch effizient funktioniert, sind Sie hier richtig!",
-    "cta": "Schreiben Sie mir"
+    "heading": "Was biete ich Kunden?",
+    "description": "Ich erstelle nicht nur Websites – ich löse Geschäftsprobleme mit digitalen Lösungen. Jedes Projekt zielt darauf ab, konkrete Ergebnisse für Ihr Unternehmen zu liefern.<br><br><strong>Was Sie von mir bekommen:</strong><br>• Schnelle, mobilfreundliche Website, die auf jedem Gerät perfekt funktioniert<br>• SEO-freundlicher Code, der Google-Rankings verbessert<br>• Moderne, benutzerfreundliche Oberfläche, die Konversionen steigert<br>• Strukturierter, wartbarer Code, der langfristig gut dient<br>• Kontinuierlicher technischer Support und Entwicklungsmöglichkeiten<br><br>Ich bin nicht nur ein technischer Experte – ich bin ein Partner für Geschäftserfolg. Jede Codezeile schafft Wert, und jedes Projekt zielt darauf ab, messbare Ergebnisse zu liefern.",
+    "cta": "Lassen Sie uns über das Projekt sprechen"
   },
   "career_about": {
-    "heading": "Vorstellung",
-    "description": "Hallo! Wenn Sie einen motivierten Junior-Entwickler suchen, der autodidaktisch gelernt hat und 2+ Jahre Erfahrung besitzt, sind Sie hier richtig. Ich habe mein Wissen über einen strukturierten, projektbasierten Lernweg erworben, bei dem ich jede Fähigkeit durch echte Aufgaben gemeistert habe.<br><br>Auf dem Scrimba Front-End Developer Karriereweg habe ich bisher 50+ Stunden interaktive Trainingsvideos, 80+ Coding-Übungen und zahlreiche echte Projekte abgeschlossen. Das ist nicht nur theoretisches Wissen, sondern praktische Erfahrung – von Blackjack-Spielen bis zu komplexen JavaScript-Anwendungen. 2025 begann ich React zu lernen, was eine neue berufliche Herausforderung darstellt.<br><br>Was meinen Ansatz besonders macht: Ich lerne jede Technologie in kleinen Schritten, durch Projekte. Ich weiß nicht nur, wie man CSS Grid verwendet – ich weiß auch, wann und warum es sich lohnt, es anzuwenden. Das Gleiche gilt für JavaScript oder responsive Design. Ich habe Grundkenntnisse in Laravel, was mir hilft, die Frontend-Backend-Kommunikation zu verstehen.<br><br>Als Junior-Entwickler gehe ich jedes Projekt mit frischer Perspektive, hoher Motivation und kontinuierlichem Lerndrang an. Wenn Sie einen Entwickler suchen, der die Antwort auf das 'Warum' kennt und mit jeder Codezeile Wert schafft, dann sprechen wir!",
-    "cta": "Lebenslauf ansehen"
+    "heading": "Berufliches Profil",
+    "description": "Als Junior Frontend-Entwickler habe ich 2+ Jahre projektbasierte Erfahrung, die ich durch strukturiertes Lernen und echte Aufgaben erworben habe. Ich habe 50+ Stunden interaktives Training und 80+ praktische Übungen im Scrimba Front-End Developer Karriereweg abgeschlossen.<br><br><strong>Meine beruflichen Stärken:</strong><br>• Tiefgreifende Kenntnisse moderner Webtechnologien (HTML5, CSS3, ES6+ JavaScript)<br>• Responsives Design und mobilfreundliche Entwicklung<br>• UI/UX-Prinzipien und Optimierung der Benutzererfahrung<br>• Schreiben von strukturiertem, wartbarem Code<br>• Verwendung von Bootstrap und Tailwind CSS Frameworks<br>• Laravel-Grundlagen und Verständnis der Backend-Kommunikation<br><br>Ich habe jede Technologie durch Projekte gelernt, daher habe ich nicht nur theoretisches Wissen, sondern auch praktische Fähigkeiten. Ich begann 2025 mit dem React-Lernen, was neue berufliche Möglichkeiten eröffnet.<br><br>Mein kontinuierlicher Selbstverbesserungsdrang und adaptive Lernfähigkeit ermöglichen es mir, mich schnell an neue Technologien und Herausforderungen anzupassen.",
+    "cta": "Beruflichen Lebenslauf ansehen"
   },
   "career": {
     "hero": {
-      "title": ["Motivierter", "Junior", "Frontend-", "Entwickler"],
-      "subtitle": "Autodidaktisches Lernen, 2+ Jahre Erfahrung, projektbasiertes Wachstum und verlässliche Zusammenarbeit.",
-      "btnPrimary": "Entdecken Sie meinen Weg",
-      "btnSecondary": "Lebenslauf"
+      "title": ["Junior", "Frontend-", "Entwickler"],
+      "subtitle": "Moderne Webtechnologien, projektbasiertes Lernen und strukturierte Entwicklung. Kontinuierliche Selbstverbesserung mit professionellen Ergebnissen.",
+      "btnPrimary": "Beruflicher Leitfaden",
+      "btnSecondary": "Lebenslauf herunterladen"
     },
     "skills": {
-      "heading": "Fähigkeiten und Technologien",
+      "heading": "Technologische Kompetenzen",
       "frontend": {
         "heading": "Frontend-Technologien",
-        "desc": "Moderne Webtechnologien und Tools"
+        "desc": "Moderne Webentwicklungswerkzeuge und Technologien"
       },
       "backend": {
         "heading": "Backend-Kenntnisse",
-        "desc": "Grundlegende Laravel- und PHP-Kenntnisse"
+        "desc": "Laravel- und PHP-Grundlagen, API-Kommunikation"
       },
       "tools": {
-        "heading": "Frameworks und Tools",
-        "desc": "Entwicklungswerkzeuge und Frameworks"
+        "heading": "Entwicklungswerkzeuge",
+        "desc": "Versionskontrolle, Deployment und Entwicklungsumgebung"
       },
       "css": {
         "heading": "CSS-Frameworks",
         "desc": "Moderne CSS-Lösungen und Frameworks"
       },
       "design": {
-        "heading": "Design-Fähigkeiten",
+        "heading": "Design-Kompetenzen",
         "desc": "Benutzererfahrung und visuelles Design"
       },
       "items": {
-        "html": "HTML",
-        "css": "CSS",
-        "javascript": "JavaScript",
-        "react": "React",
+        "html": "HTML5",
+        "css": "CSS3",
+        "javascript": "ES6+ JavaScript",
+        "react": "React (Lernen)",
         "laravel": "Laravel",
         "firebase": "Firebase",
         "tailwind": "Tailwind CSS",
         "bootstrap": "Bootstrap",
         "uiux": "UI/UX Design",
-        "animations": "Animationen",
+        "animations": "CSS-Animationen",
         "responsive": "Responsives Design",
         "visual": "Visuelle Komposition",
         "php": "PHP",
@@ -93,46 +92,46 @@
       "cta": "Lassen Sie uns über Ihr Projekt sprechen"
     },
     "timeline": {
-      "heading": "Meine beruflichen Entwicklungsschritte",
+      "heading": "Beruflicher Entwicklungsweg",
       "2023": {
-        "title": "Programmier-Reise beginnt",
-        "desc": "HTML5 und CSS3 Grundlagen lernen, Webtechnologien entdecken. Start des Scrimba Front-End Developer Karrierewegs mit strukturiertem Lernen."
+        "title": "Webtechnologie-Grundlagen",
+        "desc": "Lernen von HTML5 und CSS3, semantisches Markup und moderne CSS-Techniken. Start des Scrimba Front-End Developer Karrierewegs mit strukturierten Lernmethoden."
       },
       "2023-2": {
         "title": "JavaScript und Interaktivität",
-        "desc": "ES6+ Syntax, DOM-Manipulation, async/await – praktische Projekte: Blackjack-Spiel, Chrome-Erweiterung, interaktive Komponenten."
+        "desc": "ES6+ Syntax, DOM-Manipulation, asynchrone Programmierung (fetch, async/await). Praktische Projekte: Blackjack-Spiel, Chrome-Erweiterung, interaktive Komponenten."
       },
       "2023-3": {
-        "title": "UI/UX und responsive Design",
-        "desc": "Flexbox, CSS Grid, mobile-first Denken – komplexe Layouts und visuelle Hierarchie-Erstellung. Bootstrap Framework Beherrschung."
+        "title": "UI/UX und responsives Design",
+        "desc": "Flexbox, CSS Grid, mobile-first Design. Komplexe Layouts und visuelle Hierarchie-Erstellung. Bootstrap Framework Beherrschung."
       },
       "2024": {
         "title": "Kundenprojekte und Spezialisierung",
-        "desc": "Erste Kundenaufträge abschließen, echte Projekte entwickeln. Laravel Grundlagen lernen. Firebase und moderne CSS-Frameworks beherrschen."
+        "desc": "Echte Kundenaufträge abschließen, Geschäftsanforderungen verstehen. Laravel Grundlagen lernen. Firebase und moderne CSS-Frameworks beherrschen."
       },
       "2024-ongoing": {
         "title": "Kontinuierliches Wachstum und React",
-        "desc": "Aktive Kundenprojekte, berufliche Erfahrung erweitern. 2025 begann ich React durch den Scrimba-Kurs zu lernen. Tailwind CSS, progressive Web-Anwendungen."
+        "desc": "Aktive Kundenprojekte, berufliche Erfahrung erweitern. React-Lernen begann 2025 durch den Scrimba-Kurs. Tailwind CSS, progressive Web-Anwendungen."
       }
     },
     "courses": {
-      "heading": "Lernweg im Detail",
-      "intro": "Der Scrimba Front-End Developer Karriereweg ist ein 70+ Stunden interaktives, projektbasiertes Lernprogramm, bei dem ich jede Fähigkeit durch echte Aufgaben gemeistert habe.",
+      "heading": "Strukturierter Lernweg",
+      "intro": "Der Scrimba Front-End Developer Karriereweg ist ein 70+ Stunden interaktives, projektbasiertes Lernprogramm, das jede Fähigkeit durch echte Aufgaben vermittelt.",
       "basic": {
         "title": "1. Grundstufe – Web Dev Basics & CSS",
-        "desc": "HTML5 semantische Elemente, CSS3 Grundlagen und Box-Modell, responsive mobile-first Denken, Flexbox und CSS Grid Einführung.<br><strong>Projekte:</strong> Living the Simple Life Blog, BBQ Splash Page, responsive Portfolio-Seiten."
+        "desc": "HTML5 semantische Elemente, CSS3 Grundlagen und Box-Modell, responsive mobile-first Denken, Flexbox und CSS Grid Einführung.<br><strong>Praktische Projekte:</strong> Living the Simple Life Blog, BBQ Splash Page, responsive Portfolio-Seiten."
       },
       "intermediate": {
         "title": "2. Mittelstufe – Interactive JavaScript",
-        "desc": "Moderne ES6+ Syntax, DOM-Manipulation, asynchrone Operationen (fetch, async/await), Promise-Behandlung.<br><strong>Projekte:</strong> Blackjack-Spiel, Chrome Dashboard-Erweiterung, Pac-Man Prototyp, modale Komponenten."
+        "desc": "Moderne ES6+ Syntax, DOM-Manipulation, asynchrone Operationen (fetch, async/await), Promise-Behandlung.<br><strong>Praktische Projekte:</strong> Blackjack-Spiel, Chrome Dashboard-Erweiterung, Pac-Man Prototyp, modale Komponenten."
       },
       "advanced": {
         "title": "3. Fortgeschritten – UI Design & Advanced Layouts",
-        "desc": "UI Design Prinzipien (Weißraum, Kontrast, Typografie), komplexe Grid und Flexbox Layouts, Tailwind CSS.<br><strong>Projekte:</strong> Photo Gallery, Pokedex, Jeopardy Spiel, responsive Bibliotheks-Anwendung."
+        "desc": "UI Design Prinzipien (Weißraum, Kontrast, Typografie), komplexe Grid und Flexbox Layouts, Tailwind CSS.<br><strong>Praktische Projekte:</strong> Photo Gallery, Pokedex, Jeopardy Spiel, responsive Bibliotheks-Anwendung."
       },
       "react": {
         "title": "4. React & Modern Development (2025 begonnen)",
-        "desc": "React-Lernen begann 2025 durch den Scrimba-Kurs. Grundlagen funktionaler Komponenten, Einführung in Hooks (useState, useEffect) – frisch begonnener Lernbereich.<br><strong>Geplante Projekte:</strong> Todo App, Blog-Anwendung, interaktive Komponenten."
+        "desc": "React-Lernen begann 2025 durch den Scrimba-Kurs. Grundlagen funktionaler Komponenten, Einführung in Hooks (useState, useEffect).<br><strong>Geplante Projekte:</strong> Todo App, Blog-Anwendung, interaktive Komponenten."
       }
     },
     "learningProjects": {
@@ -140,25 +139,25 @@
       "intro": "Projekte, die während der Scrimba-Kurse und Eigenübung entstanden sind - Meilensteine der Entwicklung."
     },
     "professionalProjects": {
-      "intro": "Kundenarbeiten, die echte Bedürfnisse erfüllen."
+      "intro": "Kundenarbeiten, die echte Geschäftsanforderungen erfüllen."
     }
   },
   "projects": {
     "heading": "Projekte"
   },
   "contact": {
-    "heading": "Kontakt aufnehmen",
-    "intro": "Haben Sie eine Idee oder möchten Sie eine Website erstellen? Schreiben Sie mir, und gemeinsam schaffen wir das, was Sie wirklich brauchen.",
+    "heading": "Lassen Sie uns über das Projekt sprechen",
+    "intro": "Haben Sie eine Idee oder möchten Sie eine Website erstellen? Schreiben Sie mir, und gemeinsam schaffen wir die digitale Lösung, die Ihre Geschäftsergebnisse steigert.",
     "phone": "+36 30 123 4567",
     "phoneNote": "Erreichbar an Werktagen zwischen 9:00 und 18:00 Uhr.",
     "namePlaceholder": "Ihr Name",
     "emailPlaceholder": "Ihre E-Mail",
-    "messagePlaceholder": "Ihre Nachricht…",
+    "messagePlaceholder": "Erzählen Sie mir von dem Projekt und Ihren Ideen…",
     "sendBtn": "Nachricht senden"
   },
   "careerContact": {
-    "heading": "Lassen Sie uns über Möglichkeiten sprechen",
-    "intro": "Suchen Sie einen motivierten Junior Frontend-Entwickler für Ihr Team? Mit autodidaktischem Lernen und 2+ Jahren Erfahrung zeige ich Ihnen gerne, wie ich zu den digitalen Zielen Ihres Unternehmens beitragen kann. Schreiben Sie mir, und lassen Sie uns die Details besprechen!",
+    "heading": "Beruflicher Kontakt",
+    "intro": "Suchen Sie einen Junior Frontend-Entwickler für Ihr Team? Mit 2+ Jahren projektbasierter Erfahrung und modernen Webtechnologie-Kenntnissen trage ich gerne zu den digitalen Zielen Ihres Unternehmens bei. Lassen Sie uns die Details besprechen!",
     "phone": "+36 30 123 4567",
     "phoneNote": "Erreichbar an Werktagen zwischen 9:00 und 18:00 Uhr.",
     "namePlaceholder": "Firmenname / Ihr Name",
@@ -171,27 +170,27 @@
     "heading": "Dienstleistungen",
     "fullSite": {
       "title": "Komplette Webentwicklung",
-      "desc": "Moderne, responsive Websites nach Ihren Vorstellungen – von den Grundlagen oder basierend auf bestehenden Ideen."
+      "desc": "Moderne, responsive Websites, die Konversionen steigern und die Benutzererfahrung verbessern. SEO-freundlicher Code und schnelles Laden."
     },
     "frontendDev": {
       "title": "Frontend-Entwicklung",
-      "desc": "Saubere, strukturierte HTML-, CSS- und JavaScript-basierte Entwicklung, die gut aussieht und gut funktioniert."
+      "desc": "Strukturierter, wartbarer HTML-, CSS- und JavaScript-Code. Mit modernen Technologien und optimierter Leistung."
     },
     "responsive": {
       "title": "Mobilfreundliches Design",
-      "desc": "Design, das sich an jede Bildschirmgröße anpasst, damit Besucher überall eine gute Erfahrung haben."
+      "desc": "Website, die auf jedem Gerät perfekt funktioniert. Mobile-first Design, schnelles Laden und benutzerfreundliche Navigation."
     },
     "structuredCode": {
       "title": "Strukturierter Code",
-      "desc": "Transparenter, wiederverwendbarer und leicht wartbarer Code – langfristig geplant."
+      "desc": "Sauberer, dokumentierter und wiederverwendbarer Code. Langfristige Wartbarkeit und einfache Entwicklungsmöglichkeiten."
     },
     "animations": {
       "title": "Animationen und Interaktionen",
-      "desc": "Feine Effekte, Hover-Animationen und Scroll-Lösungen, die die Website zum Leben erwecken."
+      "desc": "Feine, leistungsoptimierte Animationen, die die Benutzererfahrung verbessern und Konversionen steigern."
     },
     "support": {
       "title": "Technischer Support",
-      "desc": "Fehlerbehebung, Updates, Nachbetreuung – zuverlässiger Support auch nach der Entwicklung."
+      "desc": "Kontinuierlicher technischer Support, Fehlerbehebung, Updates und Entwicklungsmöglichkeiten auch nach dem Projekt."
     },
     "githubCta": {
       "text": "Möchten Sie mehr von meinen Programmierfähigkeiten sehen?",
@@ -202,19 +201,19 @@
     "heading": "Wie arbeite ich?",
     "step1": {
       "title": "Beratung",
-      "desc": "Wir besprechen Ihre Ideen, Bedürfnisse und Ziele, damit alles auf Ihr Unternehmen zugeschnitten ist."
+      "desc": "Wir besprechen Geschäftsziele, Zielgruppe und erwartete Ergebnisse. Jedes Projekt ist auf Geschäftsanforderungen zugeschnitten."
     },
     "step2": {
       "title": "Planung",
-      "desc": "Ich erstelle das Website-Gerüst und die Stilrichtungen – durchdacht aus UX/UI-Sicht."
+      "desc": "UX/UI-Design, Optimierung der Benutzererfahrung und Entwicklung der technischen Architektur. Erstellung von Prototypen und Wireframes."
     },
     "step3": {
       "title": "Entwicklung",
-      "desc": "Ich erstelle getesteten, responsiven Code mit modernen Animationen und sauberem Frontend."
+      "desc": "Mit modernen Technologien, optimiertem Code und responsivem Design. Tests und Qualitätssicherung in jedem Schritt."
     },
     "step4": {
-      "title": "Übergabe",
-      "desc": "Ich führe die letzten Feinheiten durch und unterstütze Sie bei der Nutzung und bei Bedarf bei weiteren Entwicklungen."
+      "title": "Übergabe und Support",
+      "desc": "Mit vollständiger Dokumentation, Schulung und kontinuierlichem technischen Support. Langfristige Partnerschaft für Geschäftserfolg."
     }
   },
   "footer": {

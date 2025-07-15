@@ -20,62 +20,61 @@
     "contact": "Kapcsolat"
   },
   "hero": {
-    "title": ["Ne", "csak", "jelenj", "meg,", "tűnj", "ki", "az", "online", "térben!"],
-    "subtitle": "Egyedi, reszponzív weboldal – már az induláskor magabiztos megjelenés, amely ügyfeleket vonz, és hosszú távon megtérülő befektetés.",
-    "btnPrimary": "Munkáim",
-    "btnSecondary": "Írj nekem",
-    "techSkills": "Technológiák, amelyekkel dolgozom:"
+    "title": ["Weboldal", "ami", "értéket", "teremt", "az", "üzletednek"],
+    "subtitle": "Professzionális weboldal, amely nem csak jól néz ki – növeli a konverziókat, javítja a felhasználói élményt és megtérülő befektetést jelent. Modern technológiákkal, gyors betöltéssel és mobilbarát kialakítással.",
+    "btnPrimary": "Megoldásaim",
+    "btnSecondary": "Ingyenes konzultáció"
   },
   "about": {
-    "heading": "Rólam",
-    "description": "Szia! Örülök, hogy itt vagy. Frontend fejlesztőként abban segítek, hogy ötleteidből valódi, jól működő és vizuálisan letisztult weboldalak szülessenek.<br><br>Nagy hangsúlyt fektetek a reszponzivitásra és a gyors betöltésre. Minden képernyőméreten meggyőző élményt nyújtó oldalakat készítek.<br><br>Jól ismerem a HTML, CSS és JavaScript nyelveket. Dolgozom Bootstrap keretrendszerrel, és folyamatosan bővítem a tudásomat. Jelenleg tanulom a React-et.<br><br>Rugalmasan alkalmazkodom az igényekhez. Minden együttműködés során gördülékeny, bizalmi alapú kapcsolatra törekszem.<br><br>Ha szeretnél egy weboldalt, ami nem csak jól néz ki, hanem hatékonyan is működik, akkor jó helyen jársz!",
-    "cta": "Írj nekem"
+    "heading": "Mit nyújtok az ügyfeleknek?",
+    "description": "Nem csak weboldalt készítek – üzleti problémákat oldok meg digitális megoldásokkal. Minden projektem célja, hogy konkrét eredményt hozzon a vállalkozásodnak.<br><br><strong>Mit kapsz tőlem:</strong><br>• Gyors, mobilbarát weboldal, amely minden eszközön tökéletesen működik<br>• SEO-barát kód, amely javítja a Google rangsorolást<br>• Modern, felhasználóbarát felület, amely növeli a konverziókat<br>• Strukturált, karbantartható kód, amely hosszú távon is jól szolgál<br>• Folyamatos technikai támogatás és fejlesztési lehetőségek<br><br>Nem csak technikai szakértő vagyok – partner vagyok az üzleti sikerben. Minden kódsorral értéket teremtek, és minden projektem célja, hogy mérhető eredményt hozzon.",
+    "cta": "Beszéljünk a projektről"
   },
   "career_about": {
-    "heading": "Bemutatkozás",
-    "description": "Szia! Ha egy motivált junior fejlesztőt keresel, aki autodidakta módon tanult és 2+ év tapasztalattal rendelkezik, jó helyen jársz. Strukturált, projektalapú tanulási úton szereztem meg a tudásomat, ahol minden egyes képességet valós feladatokon keresztül sajátítottam el.<br><br>A Scrimba Front-End Developer karrierút során eddig 50+ órányi interaktív oktatóvideót, 80+ kódolási feladatot és számos valós projektet teljesítettem. Ez nem csak elméleti tudást jelent, hanem gyakorlati tapasztalatot is – blackjack játéktól kezdve komplex JavaScript alkalmazásokig. 2025-ben kezdtem el a React tanulását, amely új szakmai kihívást jelent.<br><br>Amit különlegessé tesz az én megközelítésemet, hogy minden technológiát apró lépésekben, projekteken keresztül tanulok meg. Nem csak azt tudom, hogyan kell egy CSS Grid-et használni – tudom azt is, hogy mikor és miért érdemes alkalmazni. Ugyanígy van ez a JavaScript-tel vagy a reszponzív tervezéssel is. A Laravel-ben alapvető ismereteim vannak, ami segít a frontend-backend kommunikáció megértésében.<br><br>Junior fejlesztőként friss szemlélettel, nagy motivációval és folyamatos tanulási vágytal közelítek minden projekthez. Ha olyan fejlesztőt keresel, aki a 'miért' kérdésre is tudja a választ, és aki minden kódsorral értéket teremt, akkor beszéljünk!",
+    "heading": "Szakmai profil",
+    "description": "Junior frontend fejlesztőként 2+ év projektalapú tapasztalattal rendelkezem, amelyet strukturált tanulási úton és valós feladatokon keresztül szereztem. A Scrimba Front-End Developer karrierút során 50+ órányi interaktív oktatást és 80+ gyakorlati feladatot teljesítettem.<br><br><strong>Szakmai erősségeim:</strong><br>• Modern webes technológiák mélyreható ismerete (HTML5, CSS3, ES6+ JavaScript)<br>• Reszponzív design és mobilbarát fejlesztés<br>• UI/UX alapelvek és felhasználói élmény optimalizálás<br>• Strukturált, karbantartható kód írása<br>• Bootstrap és Tailwind CSS keretrendszerek használata<br>• Laravel alapok és backend kommunikáció megértése<br><br>Minden technológiát projekteken keresztül tanultam meg, így nem csak elméleti tudással, hanem gyakorlati készségekkel is rendelkezem. A React tanulását 2025-ben kezdtem el, ami új szakmai lehetőségeket nyit meg.<br><br>Folyamatos önfejlesztési hajlamom és adaptív tanulási képességem lehetővé teszi, hogy gyorsan alkalmazkodjak új technológiákhoz és kihívásokhoz.",
     "cta": "Szakmai önéletrajz megtekintése"
   },
   "career": {
     "hero": {
-      "title": ["Motivált", "junior", "frontend", "fejlesztő"],
-      "subtitle": "Autodidakta tanulás, 2+ év tapasztalat, projektalapú fejlődés és megbízható együttműködés.",
-      "btnPrimary": "Ismerd meg az utamat",
+      "title": ["Junior", "frontend", "fejlesztő"],
+      "subtitle": "Modern webes technológiák, projektalapú tanulás és strukturált fejlődés. Folyamatos önfejlesztéssel, professzionális eredményekkel.",
+      "btnPrimary": "Szakmai útmutató",
       "btnSecondary": "Önéletrajz letöltése"
     },
     "skills": {
-      "heading": "Kompetenciák és technológiák",
+      "heading": "Technológiai kompetenciák",
       "frontend": {
         "heading": "Frontend Technológiák",
-        "desc": "Modern webes technológiák és eszközök"
+        "desc": "Modern webes fejlesztési eszközök és technológiák"
       },
       "backend": {
         "heading": "Backend Ismeretek",
-        "desc": "Alapszintű Laravel és PHP ismeretek"
+        "desc": "Laravel és PHP alapok, API kommunikáció"
       },
       "tools": {
-        "heading": "Keretrendszerek és eszközök",
-        "desc": "Fejlesztői eszközök és keretrendszerek"
+        "heading": "Fejlesztői eszközök",
+        "desc": "Verziókezelés, deployment és fejlesztői környezet"
       },
       "css": {
         "heading": "CSS Keretrendszerek",
         "desc": "Modern CSS megoldások és keretrendszerek"
       },
       "design": {
-        "heading": "Design készségek",
+        "heading": "Design kompetenciák",
         "desc": "Felhasználói élmény és vizuális tervezés"
       },
       "items": {
-        "html": "HTML",
-        "css": "CSS",
-        "javascript": "JavaScript",
-        "react": "React",
+        "html": "HTML5",
+        "css": "CSS3",
+        "javascript": "ES6+ JavaScript",
+        "react": "React (tanulás alatt)",
         "laravel": "Laravel",
         "firebase": "Firebase",
         "tailwind": "Tailwind CSS",
         "bootstrap": "Bootstrap",
         "uiux": "UI/UX Design",
-        "animations": "Animációk",
+        "animations": "CSS Animációk",
         "responsive": "Reszponzív Design",
         "visual": "Vizuális Kompozíció",
         "php": "PHP",
@@ -88,46 +87,46 @@
       }
     },
     "timeline": {
-      "heading": "Szakmai fejlődésem lépései",
+      "heading": "Szakmai fejlődési út",
       "2023": {
-        "title": "Programozási út kezdete",
-        "desc": "HTML5 és CSS3 alapok elsajátítása, webes technológiák megismerése. A Scrimba Front-End Developer karrierút megkezdése strukturált tanulással."
+        "title": "Webes technológiák alapjai",
+        "desc": "HTML5 és CSS3 elsajátítása, szemantikus markup és modern CSS technikák. A Scrimba Front-End Developer karrierút megkezdése strukturált tanulási módszerekkel."
       },
       "2023-2": {
         "title": "JavaScript és interaktivitás",
-        "desc": "ES6+ szintaxis, DOM-manipuláció, async/await – gyakorlati projektek: Blackjack játék, Chrome bővítmény, interaktív komponensek."
+        "desc": "ES6+ szintaxis, DOM-manipuláció, aszinkron programozás (fetch, async/await). Gyakorlati projektek: Blackjack játék, Chrome bővítmény, interaktív komponensek."
       },
       "2023-3": {
         "title": "UI/UX és reszponzív design",
-        "desc": "Flexbox, CSS Grid, mobile-first gondolkodás – komplex layout-ok és vizuális hierarchia kialakítása. Bootstrap keretrendszer elsajátítása."
+        "desc": "Flexbox, CSS Grid, mobile-first tervezés. Komplex layout-ok és vizuális hierarchia kialakítása. Bootstrap keretrendszer elsajátítása."
       },
       "2024": {
         "title": "Ügyfélprojektek és specializáció",
-        "desc": "Első ügyfélmegbízások teljesítése, valós projektek fejlesztése. Laravel alapok megismerése. Firebase és modern CSS keretrendszerek elsajátítása."
+        "desc": "Valós ügyfélmegbízások teljesítése, üzleti igények megértése. Laravel alapok megismerése. Firebase és modern CSS keretrendszerek elsajátítása."
       },
       "2024-ongoing": {
         "title": "Folyamatos fejlődés és React",
-        "desc": "Aktív ügyfélprojektek, szakmai tapasztalat bővítése. 2025-ben megkezdtem a React tanulását a Scrimba kurzus keretében. Tailwind CSS, progresszív web alkalmazások."
+        "desc": "Aktív ügyfélprojektek, szakmai tapasztalat bővítése. 2025-ben megkezdett React tanulás a Scrimba kurzus keretében. Tailwind CSS, progresszív web alkalmazások."
       }
     },
     "courses": {
-      "heading": "Tanulási út részletesen",
-      "intro": "A Scrimba Front-End Developer karrierút egy 70+ órányi interaktív, projektalapú tanulási program, ahol minden készséget valós feladatokon keresztül sajátítottam el.",
+      "heading": "Strukturált tanulási út",
+      "intro": "A Scrimba Front-End Developer karrierút egy 70+ órányi interaktív, projektalapú tanulási program, amely minden készséget valós feladatokon keresztül ad át.",
       "basic": {
         "title": "1. Alapszint – Web Dev Basics & CSS",
-        "desc": "HTML5 szemantikus elemek, CSS3 alapok és box model, responsive mobile-first gondolkodás, Flexbox és CSS Grid bevezető.<br><strong>Projektek:</strong> Living the Simple Life blog, BBQ Splash Page, reszponzív portfolió oldalak."
+        "desc": "HTML5 szemantikus elemek, CSS3 alapok és box model, responsive mobile-first gondolkodás, Flexbox és CSS Grid bevezető.<br><strong>Gyakorlati projektek:</strong> Living the Simple Life blog, BBQ Splash Page, reszponzív portfolió oldalak."
       },
       "intermediate": {
         "title": "2. Középhaladó – Interactive JavaScript",
-        "desc": "Modern ES6+ szintaxis, DOM-manipuláció, aszinkron művezetek (fetch, async/await), Promise-kezelés.<br><strong>Projektek:</strong> Blackjack játék, Chrome Dashboard bővítmény, Pac-Man prototípus, modal komponensek."
+        "desc": "Modern ES6+ szintaxis, DOM-manipuláció, aszinkron művezetek (fetch, async/await), Promise-kezelés.<br><strong>Gyakorlati projektek:</strong> Blackjack játék, Chrome Dashboard bővítmény, Pac-Man prototípus, modal komponensek."
       },
       "advanced": {
         "title": "3. Haladó – UI Design & Advanced Layouts",
-        "desc": "UI Design alapelvek (white space, kontraszt, tipográfia), komplex Grid és Flexbox layout-ok, Tailwind CSS.<br><strong>Projektek:</strong> Photo Gallery, Pokedex, Jeopardy játék, responsive könyvtár alkalmazás."
+        "desc": "UI Design alapelvek (white space, kontraszt, tipográfia), komplex Grid és Flexbox layout-ok, Tailwind CSS.<br><strong>Gyakorlati projektek:</strong> Photo Gallery, Pokedex, Jeopardy játék, responsive könyvtár alkalmazás."
       },
       "react": {
         "title": "4. React & Modern Development (2025-ben kezdve)",
-        "desc": "2025-ben megkezdett React tanulás a Scrimba kurzus keretében. Funkcionális komponensek alapjai, hooks bevezetése (useState, useEffect) – frissen kezdett tanulási terület.<br><strong>Tervezett projektek:</strong> Todo App, blog alkalmazás, interaktív komponensek."
+        "desc": "2025-ben megkezdett React tanulás a Scrimba kurzus keretében. Funkcionális komponensek alapjai, hooks bevezetése (useState, useEffect).<br><strong>Tervezett projektek:</strong> Todo App, blog alkalmazás, interaktív komponensek."
       }
     },
     "learningProjects": {
@@ -135,25 +134,25 @@
       "intro": "A Scrimba kurzusok és saját gyakorlás során készített projektek - a fejlődés lépcsőfokai."
     },
     "professionalProjects": {
-      "intro": "Ügyfélmunkák, amelyek valós igényeket szolgálnak ki."
+      "intro": "Ügyfélmunkák, amelyek valós üzleti igényeket szolgálnak ki."
     }
   },
   "projects": {
     "heading": "Projektek"
   },
   "contact": {
-    "heading": "Lépjünk kapcsolatba",
-    "intro": "Van egy ötleted, vagy weboldalt szeretnél indítani? Írj nekem, és együtt létrehozzuk azt, amire valóban szükséged van.",
+    "heading": "Beszéljünk a projektről",
+    "intro": "Van egy ötleted, vagy weboldalt szeretnél indítani? Írj nekem, és együtt létrehozzuk azt a digitális megoldást, amely növeli az üzleti eredményeidet.",
     "phone": "+36 30 123 4567",
     "phoneNote": "Hétköznapokon 9:00–18:00 között elérhető vagyok.",
     "namePlaceholder": "Neved",
     "emailPlaceholder": "Email címed",
-    "messagePlaceholder": "Üzeneted…",
+    "messagePlaceholder": "Mesélj a projektről és az elképzeléseidről…",
     "sendBtn": "Üzenet elküldése"
   },
   "careerContact": {
-    "heading": "Beszéljünk a lehetőségekről",
-    "intro": "Motivált junior frontend fejlesztőt keresel csapatodba? Autodidakta tanulással és 2+ év tapasztalattal szívesen megmutatom, hogyan tudok hozzájárulni a vállalatod digitális céljaihoz. Írj, és beszéljük meg a részleteket!",
+    "heading": "Szakmai kapcsolatfelvétel",
+    "intro": "Junior frontend fejlesztőt keresel csapatodba? 2+ év projektalapú tapasztalattal és modern webes technológiák ismeretével szívesen hozzájárulok a vállalatod digitális céljaihoz. Írj, és beszéljük meg a részleteket!",
     "phone": "+36 30 123 4567",
     "phoneNote": "Hétköznapokon 9:00–18:00 között elérhető vagyok.",
     "namePlaceholder": "Céged neve / Neved",
@@ -166,27 +165,27 @@
     "heading": "Szolgáltatások",
     "fullSite": {
       "title": "Teljes weboldalkészítés",
-      "desc": "Modern, reszponzív weboldalak az elképzeléseid szerint – az alapoktól vagy már meglévő ötletek alapján."
+      "desc": "Modern, reszponzív weboldalak, amelyek növelik a konverziókat és javítják a felhasználói élményt. SEO-barát kód és gyors betöltés."
     },
     "frontendDev": {
       "title": "Frontend fejlesztés",
-      "desc": "Letisztult, strukturált HTML, CSS és JavaScript alapú fejlesztés, ami jól is néz ki, és jól is működik."
+      "desc": "Strukturált, karbantartható HTML, CSS és JavaScript kód. Modern technológiákkal, optimalizált teljesítménnyel."
     },
     "responsive": {
       "title": "Mobilbarát kialakítás",
-      "desc": "Minden képernyőmérethez igazodó dizájn, hogy a látogatók bárhol jó élményt kapjanak."
+      "desc": "Minden eszközön tökéletesen működő weboldal. Mobile-first tervezés, gyors betöltés és felhasználóbarát navigáció."
     },
     "structuredCode": {
       "title": "Strukturált kód",
-      "desc": "Átlátható, újrafelhasználható és könnyen karbantartható kód – hosszú távra tervezve."
+      "desc": "Tiszta, dokumentált és újrafelhasználható kód. Hosszú távú karbantarthatóság és könnyű fejlesztési lehetőségek."
     },
     "animations": {
       "title": "Animációk és interakciók",
-      "desc": "Finom effektek, hover animációk és scroll megoldások, amelyek életre keltik az oldalt."
+      "desc": "Finom, teljesítmény-optimalizált animációk, amelyek javítják a felhasználói élményt és növelik a konverziókat."
     },
     "support": {
       "title": "Technikai támogatás",
-      "desc": "Hibajavítás, frissítés, utólagos segítség – megbízható támogatás a fejlesztés után is."
+      "desc": "Folyamatos technikai támogatás, hibajavítás, frissítések és fejlesztési lehetőségek a projekt után is."
     },
     "githubCta": {
       "text": "Szeretnél többet látni a kódolási készségeimből?",
@@ -197,19 +196,19 @@
     "heading": "Hogyan dolgozom?",
     "step1": {
       "title": "Konzultáció",
-      "desc": "Megbeszéljük az elképzeléseidet, igényeidet és céljaidat, hogy minden a te vállalkozásodra legyen szabva."
+      "desc": "Megbeszéljük az üzleti célokat, célközönséget és a várt eredményeket. Minden projekt az üzleti igényekre szabott."
     },
     "step2": {
       "title": "Tervezés",
-      "desc": "Megalkotom a weboldal vázát és a stílusirányokat – UX/UI szempontból is átgondolt módon."
+      "desc": "UX/UI tervezés, felhasználói élmény optimalizálás és technikai architektúra kialakítása. Prototípus és wireframe készítése."
     },
     "step3": {
       "title": "Fejlesztés",
-      "desc": "Letesztelt, reszponzív kódot készítek, modern animációkkal és letisztult frontenddel."
+      "desc": "Modern technológiákkal, optimalizált kóddal és reszponzív kialakítással. Tesztelés és minőségbiztosítás minden lépésben."
     },
     "step4": {
-      "title": "Átadás",
-      "desc": "Elvégzem az utolsó simításokat, és támogatlak a használatban, igény esetén további fejlesztésekben is."
+      "title": "Átadás és támogatás",
+      "desc": "Teljes dokumentációval, képzéssel és folyamatos technikai támogatással. Hosszú távú partnerség az üzleti sikerért."
     }
   },
   "footer": {

@@ -20,105 +20,104 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": ["Don't", "just", "show", "up,", "stand", "out", "in", "the", "online", "space!"],
-    "subtitle": "Custom, responsive website – a confident presence from the start that attracts clients and is a long-term profitable investment.",
-    "btnPrimary": "My Work",
-    "btnSecondary": "Write to me",
-    "techSkills": "Technologies I work with:"
+    "title": ["Website", "that", "creates", "value", "for", "your", "business"],
+    "subtitle": "Professional website that doesn't just look good – increases conversions, improves user experience and represents a profitable investment. With modern technologies, fast loading and mobile-friendly design.",
+    "btnPrimary": "My Solutions",
+    "btnSecondary": "Free Consultation"
   },
   "about": {
-    "heading": "About Me",
-    "description": "Hi! I'm glad you're here. As a frontend developer, I help turn your ideas into real, well-functioning, and visually clean websites.<br><br>I place great emphasis on responsiveness and fast loading. I create websites that provide a convincing experience on every screen size.<br><br>I'm well-versed in HTML, CSS, and JavaScript languages. I work with Bootstrap framework and continuously expand my knowledge. Currently learning React.<br><br>I adapt flexibly to needs. I always strive to make every collaboration smooth and trust-based.<br><br>If you want a website that not only looks good but also works efficiently, you're in the right place!",
-    "cta": "Write to me"
+    "heading": "What I offer to clients?",
+    "description": "I don't just create websites – I solve business problems with digital solutions. Every project aims to deliver concrete results for your business.<br><br><strong>What you get from me:</strong><br>• Fast, mobile-friendly website that works perfectly on every device<br>• SEO-friendly code that improves Google rankings<br>• Modern, user-friendly interface that increases conversions<br>• Structured, maintainable code that serves well long-term<br>• Continuous technical support and development opportunities<br><br>I'm not just a technical expert – I'm a partner in business success. Every line of code creates value, and every project aims to deliver measurable results.",
+    "cta": "Let's discuss the project"
   },
   "career_about": {
-    "heading": "Introduction",
-    "description": "Hi! If you're looking for a motivated junior developer who is self-taught and has 2+ years of experience, you're in the right place. I acquired my knowledge through a structured, project-based learning path where I mastered every skill through real tasks.<br><br>On the Scrimba Front-End Developer career path, I've completed 50+ hours of interactive training videos, 80+ coding exercises, and numerous real projects so far. This isn't just theoretical knowledge, but practical experience – from blackjack games to complex JavaScript applications. I started learning React in 2025, which represents a new professional challenge.<br><br>What makes my approach special is that I learn every technology in small steps, through projects. I don't just know how to use CSS Grid – I also know when and why it's worth applying. The same goes for JavaScript or responsive design. I have basic knowledge in Laravel, which helps me understand frontend-backend communication.<br><br>As a junior developer, I approach every project with fresh perspective, high motivation, and continuous learning drive. If you're looking for a developer who knows the answer to the 'why' question and creates value with every line of code, let's talk!",
-    "cta": "View Resume"
+    "heading": "Professional Profile",
+    "description": "As a junior frontend developer, I have 2+ years of project-based experience acquired through structured learning and real tasks. I completed 50+ hours of interactive training and 80+ practical exercises through the Scrimba Front-End Developer career path.<br><br><strong>My professional strengths:</strong><br>• Deep knowledge of modern web technologies (HTML5, CSS3, ES6+ JavaScript)<br>• Responsive design and mobile-friendly development<br>• UI/UX principles and user experience optimization<br>• Writing structured, maintainable code<br>• Using Bootstrap and Tailwind CSS frameworks<br>• Laravel basics and understanding backend communication<br><br>I learned every technology through projects, so I have not only theoretical knowledge but also practical skills. I started learning React in 2025, which opens new professional opportunities.<br><br>My continuous self-improvement drive and adaptive learning ability allow me to quickly adapt to new technologies and challenges.",
+    "cta": "View Professional Resume"
   },
   "career": {
     "hero": {
-      "title": ["Motivated", "junior", "frontend", "developer"],
-      "subtitle": "Self-taught learning, 2+ years experience, project-based growth and reliable collaboration.",
-      "btnPrimary": "Discover my journey",
+      "title": ["Junior", "frontend", "developer"],
+      "subtitle": "Modern web technologies, project-based learning and structured development. Continuous self-improvement with professional results.",
+      "btnPrimary": "Professional Guide",
       "btnSecondary": "Download CV"
     },
     "timeline": {
-      "heading": "My Professional Development Steps",
+      "heading": "Professional Development Path",
       "2023": {
-        "title": "Programming Journey Begins",
-        "desc": "Learning HTML5 and CSS3 fundamentals, discovering web technologies. Starting the Scrimba Front-End Developer career path with structured learning."
+        "title": "Web Technology Fundamentals",
+        "desc": "Learning HTML5 and CSS3, semantic markup and modern CSS techniques. Starting the Scrimba Front-End Developer career path with structured learning methods."
       },
       "2023-2": {
         "title": "JavaScript and Interactivity",
-        "desc": "ES6+ syntax, DOM manipulation, async/await – practical projects: Blackjack game, Chrome extension, interactive components."
+        "desc": "ES6+ syntax, DOM manipulation, asynchronous programming (fetch, async/await). Practical projects: Blackjack game, Chrome extension, interactive components."
       },
       "2023-3": {
         "title": "UI/UX and Responsive Design",
-        "desc": "Flexbox, CSS Grid, mobile-first thinking – complex layouts and visual hierarchy creation. Bootstrap framework mastery."
+        "desc": "Flexbox, CSS Grid, mobile-first design. Complex layouts and visual hierarchy creation. Bootstrap framework mastery."
       },
       "2024": {
         "title": "Client Projects and Specialization",
-        "desc": "Completing first client commissions, developing real projects. Learning Laravel basics. Mastering Firebase and modern CSS frameworks."
+        "desc": "Completing real client commissions, understanding business needs. Learning Laravel basics. Mastering Firebase and modern CSS frameworks."
       },
       "2024-ongoing": {
         "title": "Continuous Growth and React",
-        "desc": "Active client projects, expanding professional experience. Started learning React in 2025 through the Scrimba course. Tailwind CSS, progressive web applications."
+        "desc": "Active client projects, expanding professional experience. React learning started in 2025 through the Scrimba course. Tailwind CSS, progressive web applications."
       }
     },
     "courses": {
-      "heading": "Learning Path in Detail",
-      "intro": "The Scrimba Front-End Developer career path is a 70+ hour interactive, project-based learning program where I mastered every skill through real tasks.",
+      "heading": "Structured Learning Path",
+      "intro": "The Scrimba Front-End Developer career path is a 70+ hour interactive, project-based learning program that teaches every skill through real tasks.",
       "basic": {
         "title": "1. Basic Level – Web Dev Basics & CSS",
-        "desc": "HTML5 semantic elements, CSS3 basics and box model, responsive mobile-first thinking, Flexbox and CSS Grid introduction.<br><strong>Projects:</strong> Living the Simple Life blog, BBQ Splash Page, responsive portfolio pages."
+        "desc": "HTML5 semantic elements, CSS3 basics and box model, responsive mobile-first thinking, Flexbox and CSS Grid introduction.<br><strong>Practical projects:</strong> Living the Simple Life blog, BBQ Splash Page, responsive portfolio pages."
       },
       "intermediate": {
         "title": "2. Intermediate – Interactive JavaScript",
-        "desc": "Modern ES6+ syntax, DOM manipulation, asynchronous operations (fetch, async/await), Promise handling.<br><strong>Projects:</strong> Blackjack game, Chrome Dashboard extension, Pac-Man prototype, modal components."
+        "desc": "Modern ES6+ syntax, DOM manipulation, asynchronous operations (fetch, async/await), Promise handling.<br><strong>Practical projects:</strong> Blackjack game, Chrome Dashboard extension, Pac-Man prototype, modal components."
       },
       "advanced": {
         "title": "3. Advanced – UI Design & Advanced Layouts",
-        "desc": "UI Design principles (white space, contrast, typography), complex Grid and Flexbox layouts, Tailwind CSS.<br><strong>Projects:</strong> Photo Gallery, Pokedex, Jeopardy game, responsive library application."
+        "desc": "UI Design principles (white space, contrast, typography), complex Grid and Flexbox layouts, Tailwind CSS.<br><strong>Practical projects:</strong> Photo Gallery, Pokedex, Jeopardy game, responsive library application."
       },
       "react": {
         "title": "4. React & Modern Development (started 2025)",
-        "desc": "React learning started in 2025 through the Scrimba course. Basics of functional components, introduction to hooks (useState, useEffect) – freshly started learning area.<br><strong>Planned projects:</strong> Todo App, blog application, interactive components."
+        "desc": "React learning started in 2025 through the Scrimba course. Basics of functional components, introduction to hooks (useState, useEffect).<br><strong>Planned projects:</strong> Todo App, blog application, interactive components."
       }
     },
     "skills": {
-      "heading": "Skills and Technologies",
+      "heading": "Technological Competencies",
       "frontend": {
         "heading": "Frontend Technologies",
-        "desc": "Modern web technologies and tools"
+        "desc": "Modern web development tools and technologies"
       },
       "backend": {
         "heading": "Backend Knowledge",
-        "desc": "Basic Laravel and PHP knowledge"
+        "desc": "Laravel and PHP basics, API communication"
       },
       "tools": {
-        "heading": "Frameworks and Tools",
-        "desc": "Development tools and frameworks"
+        "heading": "Development Tools",
+        "desc": "Version control, deployment and development environment"
       },
       "css": {
         "heading": "CSS Frameworks",
         "desc": "Modern CSS solutions and frameworks"
       },
       "design": {
-        "heading": "Design Skills",
+        "heading": "Design Competencies",
         "desc": "User experience and visual design"
       },
       "items": {
-        "html": "HTML",
-        "css": "CSS",
-        "javascript": "JavaScript",
-        "react": "React",
+        "html": "HTML5",
+        "css": "CSS3",
+        "javascript": "ES6+ JavaScript",
+        "react": "React (learning)",
         "laravel": "Laravel",
         "firebase": "Firebase",
         "tailwind": "Tailwind CSS",
         "bootstrap": "Bootstrap",
         "uiux": "UI/UX Design",
-        "animations": "Animations",
+        "animations": "CSS Animations",
         "responsive": "Responsive Design",
         "visual": "Visual Composition",
         "php": "PHP",
@@ -135,25 +134,25 @@
       "intro": "Projects created during Scrimba courses and self-practice - stepping stones of development."
     },
     "professionalProjects": {
-      "intro": "Client works that serve real needs."
+      "intro": "Client works that serve real business needs."
     }
   },
   "projects": {
     "heading": "Projects"
   },
   "contact": {
-    "heading": "Let's Connect",
-    "intro": "Have an idea or want to start a website? Write to me, and together we'll create what you really need.",
+    "heading": "Let's discuss the project",
+    "intro": "Have an idea or want to start a website? Write to me, and together we'll create the digital solution that increases your business results.",
     "phone": "+36 30 123 4567",
     "phoneNote": "Available on weekdays between 9:00 AM and 6:00 PM.",
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Your Email",
-    "messagePlaceholder": "Your Message…",
+    "messagePlaceholder": "Tell me about the project and your ideas…",
     "sendBtn": "Send Message"
   },
   "careerContact": {
-    "heading": "Let's Discuss Opportunities",
-    "intro": "Looking for a motivated junior frontend developer for your team? With self-taught learning and 2+ years of experience, I'd be happy to show you how I can contribute to your company's digital goals. Let's talk about the details!",
+    "heading": "Professional Contact",
+    "intro": "Looking for a junior frontend developer for your team? With 2+ years of project-based experience and modern web technology knowledge, I'd be happy to contribute to your company's digital goals. Let's discuss the details!",
     "phone": "+36 30 123 4567",
     "phoneNote": "Available on weekdays between 9:00 AM and 6:00 PM.",
     "namePlaceholder": "Company Name / Your Name",
@@ -166,27 +165,27 @@
     "heading": "Services",
     "fullSite": {
       "title": "Complete Website Development",
-      "desc": "Modern, responsive websites according to your ideas – from basics or based on existing concepts."
+      "desc": "Modern, responsive websites that increase conversions and improve user experience. SEO-friendly code and fast loading."
     },
     "frontendDev": {
       "title": "Frontend Development",
-      "desc": "Clean, structured HTML, CSS and JavaScript-based development that looks good and works well."
+      "desc": "Structured, maintainable HTML, CSS and JavaScript code. With modern technologies and optimized performance."
     },
     "responsive": {
       "title": "Mobile-Friendly Design",
-      "desc": "Design that adapts to every screen size, ensuring visitors have a good experience anywhere."
+      "desc": "Website that works perfectly on every device. Mobile-first design, fast loading and user-friendly navigation."
     },
     "structuredCode": {
       "title": "Structured Code",
-      "desc": "Transparent, reusable and easily maintainable code – planned for the long term."
+      "desc": "Clean, documented and reusable code. Long-term maintainability and easy development opportunities."
     },
     "animations": {
       "title": "Animations and Interactions",
-      "desc": "Subtle effects, hover animations and scroll solutions that bring the site to life."
+      "desc": "Subtle, performance-optimized animations that improve user experience and increase conversions."
     },
     "support": {
       "title": "Technical Support",
-      "desc": "Bug fixes, updates, follow-up assistance – reliable support even after development."
+      "desc": "Continuous technical support, bug fixes, updates and development opportunities even after the project."
     },
     "githubCta": {
       "text": "Want to see more of my coding skills?",
@@ -197,19 +196,19 @@
     "heading": "How do I work?",
     "step1": {
       "title": "Consultation",
-      "desc": "We discuss your ideas, needs, and goals so everything is tailored to your business."
+      "desc": "We discuss business goals, target audience and expected results. Every project is tailored to business needs."
     },
     "step2": {
       "title": "Planning",
-      "desc": "I create the website wireframe and style directions – thoughtfully designed from UX/UI perspective."
+      "desc": "UX/UI design, user experience optimization and technical architecture development. Prototype and wireframe creation."
     },
     "step3": {
       "title": "Development",
-      "desc": "I create tested, responsive code with modern animations and clean frontend."
+      "desc": "With modern technologies, optimized code and responsive design. Testing and quality assurance at every step."
     },
     "step4": {
-      "title": "Delivery",
-      "desc": "I make the final touches and support you in usage, and if needed, in further developments."
+      "title": "Delivery and Support",
+      "desc": "With complete documentation, training and continuous technical support. Long-term partnership for business success."
     }
   },
   "footer": {
