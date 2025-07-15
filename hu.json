@@ -114,19 +114,19 @@
       "intro": "A Scrimba Front-End Developer karrierút egy 70+ órányi interaktív, projektalapú tanulási program, amely minden készséget valós feladatokon keresztül ad át.",
       "basic": {
         "title": "1. Alapszint – Web Dev Basics & CSS",
-        "desc": "HTML5 szemantikus elemek, CSS3 alapok és box model, responsive mobile-first gondolkodás, Flexbox és CSS Grid bevezető.<br><strong>Gyakorlati projektek:</strong> Living the Simple Life blog, BBQ Splash Page, reszponzív portfolió oldalak."
+        "desc": "HTML5 szemantikus elemek, CSS3 alapok és box model, responsive mobile-first gondolkodás, Flexbox és CSS Grid bevezető."
       },
       "intermediate": {
         "title": "2. Középhaladó – Interactive JavaScript",
-        "desc": "Modern ES6+ szintaxis, DOM-manipuláció, aszinkron művezetek (fetch, async/await), Promise-kezelés.<br><strong>Gyakorlati projektek:</strong> Blackjack játék, Chrome Dashboard bővítmény, Pac-Man prototípus, modal komponensek."
+        "desc": "Modern ES6+ szintaxis, DOM-manipuláció, aszinkron művezetek (fetch, async/await), Promise-kezelés."
       },
       "advanced": {
         "title": "3. Haladó – UI Design & Advanced Layouts",
-        "desc": "UI Design alapelvek (white space, kontraszt, tipográfia), komplex Grid és Flexbox layout-ok, Tailwind CSS.<br><strong>Gyakorlati projektek:</strong> Photo Gallery, Pokedex, Jeopardy játék, responsive könyvtár alkalmazás."
+        "desc": "UI Design alapelvek (white space, kontraszt, tipográfia), komplex Grid és Flexbox layout-ok, Tailwind CSS."
       },
       "react": {
         "title": "4. React & Modern Development (2025-ben kezdve)",
-        "desc": "2025-ben megkezdett React tanulás a Scrimba kurzus keretében. Funkcionális komponensek alapjai, hooks bevezetése (useState, useEffect).<br><strong>Tervezett projektek:</strong> Todo App, blog alkalmazás, interaktív komponensek."
+        "desc": "2025-ben megkezdett React tanulás a Scrimba kurzus keretében. Funkcionális komponensek alapjai, hooks bevezetése (useState, useEffect)."
       }
     },
     "learningProjects": {

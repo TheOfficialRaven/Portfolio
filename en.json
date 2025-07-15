@@ -70,19 +70,19 @@
       "intro": "The Scrimba Front-End Developer career path is a 70+ hour interactive, project-based learning program that teaches every skill through real tasks.",
       "basic": {
         "title": "1. Basic Level – Web Dev Basics & CSS",
-        "desc": "HTML5 semantic elements, CSS3 basics and box model, responsive mobile-first thinking, Flexbox and CSS Grid introduction.<br><strong>Practical projects:</strong> Living the Simple Life blog, BBQ Splash Page, responsive portfolio pages."
+        "desc": "HTML5 semantic elements, CSS3 basics and box model, responsive mobile-first thinking, Flexbox and CSS Grid introduction."
       },
       "intermediate": {
         "title": "2. Intermediate – Interactive JavaScript",
-        "desc": "Modern ES6+ syntax, DOM manipulation, asynchronous operations (fetch, async/await), Promise handling.<br><strong>Practical projects:</strong> Blackjack game, Chrome Dashboard extension, Pac-Man prototype, modal components."
+        "desc": "Modern ES6+ syntax, DOM manipulation, asynchronous operations (fetch, async/await), Promise handling."
       },
       "advanced": {
         "title": "3. Advanced – UI Design & Advanced Layouts",
-        "desc": "UI Design principles (white space, contrast, typography), complex Grid and Flexbox layouts, Tailwind CSS.<br><strong>Practical projects:</strong> Photo Gallery, Pokedex, Jeopardy game, responsive library application."
+        "desc": "UI Design principles (white space, contrast, typography), complex Grid and Flexbox layouts, Tailwind CSS."
       },
       "react": {
         "title": "4. React & Modern Development (started 2025)",
-        "desc": "React learning started in 2025 through the Scrimba course. Basics of functional components, introduction to hooks (useState, useEffect).<br><strong>Planned projects:</strong> Todo App, blog application, interactive components."
+        "desc": "React learning started in 2025 through the Scrimba course. Basics of functional components, introduction to hooks (useState, useEffect)."
       }
     },
     "skills": {

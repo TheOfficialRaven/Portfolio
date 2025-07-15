@@ -119,19 +119,19 @@
       "intro": "Der Scrimba Front-End Developer Karriereweg ist ein 70+ Stunden interaktives, projektbasiertes Lernprogramm, das jede Fähigkeit durch echte Aufgaben vermittelt.",
       "basic": {
         "title": "1. Grundstufe – Web Dev Basics & CSS",
-        "desc": "HTML5 semantische Elemente, CSS3 Grundlagen und Box-Modell, responsive mobile-first Denken, Flexbox und CSS Grid Einführung.<br><strong>Praktische Projekte:</strong> Living the Simple Life Blog, BBQ Splash Page, responsive Portfolio-Seiten."
+        "desc": "HTML5 semantische Elemente, CSS3 Grundlagen und Box-Modell, responsive mobile-first Denken, Flexbox und CSS Grid Einführung."
       },
       "intermediate": {
         "title": "2. Mittelstufe – Interactive JavaScript",
-        "desc": "Moderne ES6+ Syntax, DOM-Manipulation, asynchrone Operationen (fetch, async/await), Promise-Behandlung.<br><strong>Praktische Projekte:</strong> Blackjack-Spiel, Chrome Dashboard-Erweiterung, Pac-Man Prototyp, modale Komponenten."
+        "desc": "Moderne ES6+ Syntax, DOM-Manipulation, asynchrone Operationen (fetch, async/await), Promise-Behandlung."
       },
       "advanced": {
         "title": "3. Fortgeschritten – UI Design & Advanced Layouts",
-        "desc": "UI Design Prinzipien (Weißraum, Kontrast, Typografie), komplexe Grid und Flexbox Layouts, Tailwind CSS.<br><strong>Praktische Projekte:</strong> Photo Gallery, Pokedex, Jeopardy Spiel, responsive Bibliotheks-Anwendung."
+        "desc": "UI Design Prinzipien (Weißraum, Kontrast, Typografie), komplexe Grid und Flexbox Layouts, Tailwind CSS."
       },
       "react": {
         "title": "4. React & Modern Development (2025 begonnen)",
-        "desc": "React-Lernen begann 2025 durch den Scrimba-Kurs. Grundlagen funktionaler Komponenten, Einführung in Hooks (useState, useEffect).<br><strong>Geplante Projekte:</strong> Todo App, Blog-Anwendung, interaktive Komponenten."
+        "desc": "React-Lernen begann 2025 durch den Scrimba-Kurs. Grundlagen funktionaler Komponenten, Einführung in Hooks (useState, useEffect)."
       }
     },
     "learningProjects": {
